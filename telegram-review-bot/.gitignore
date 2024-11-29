@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.7z
+*.rar
+*.zip
+.env
+*.env
+!.env.example
+*.lock
+.DS_Store
