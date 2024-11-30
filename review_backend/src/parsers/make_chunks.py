@@ -1,4 +1,4 @@
-from parsers.language import LANGUAGE
+from src.parsers.language import LANGUAGE
 from tree_sitter import Parser
 
 
@@ -47,90 +47,120 @@ STATEMENT = {
 
 
 def chunk_code(code: str, extension: str):
-    base_chunk = ""
+
+    tree = Parser(LANGUAGE[extension]).parse(bytes(code, "utf-8"))
+    
+    code_lines = code.split("\n")
+    base_chunk = Chunk(code_lines)
+
     declarations = dict()
 
     def chunk(node):
         nonlocal base_chunk
         nonlocal declarations
 
+        base_chunk.consume(node.start_point)
 
 
-        if node.type in IMPORT[extension]:
-            base_chunk += (
-                "<IMPORT>"
-                + concatenate_lines(code_lines, node.start_point, node.end_point)
-                + "</IMPORT>\n"
-            )
-            return
-        elif node.type in DECLARATION[extension] or (
+        if node.type in DECLARATION[extension] or (
             node.type == "variable_declarator"
             and any([child.type == "arrow_function" for child in node.children])
         ):
-            identifier, declaration, body = chunk_declaration(
-                code_lines, node, extension
+            identifier, declaration_chunk, body_chunk = chunk_declaration(
+                node, base_chunk, extension
             )
-            declarations[identifier] = {
+            declarations[str(identifier)] = {
                 "identifier": identifier,
-                "declaration": declaration,
-                "body": body,
+                "declaration": declaration_chunk,
+                "body": body_chunk,
             }
-            base_chunk += declaration
+
         elif not node.children:
-            base_chunk += concatenate_lines(
-                code_lines, node.start_point, node.end_point
-            )
+            base_chunk.consume(node.end_point)
         else:
             for child in node.children:
                 chunk(child)
-
-    tree = Parser(LANGUAGE[extension]).parse(bytes(code, "utf-8"))
-    code_lines = code.split("\n")
 
     chunk(tree.root_node)
 
     return base_chunk, declarations
 
 
-def chunk_declaration(code_lines, node, extension):
+def chunk_declaration(node, base_chunk, extension):
     identifier = None
-    declaration = ""
-    body = ""
+    declaration_chunk = base_chunk.fork()
+    body_chunk = None
+
 
     def chunk(node):
         nonlocal identifier
-        nonlocal declaration
-        nonlocal body
+        nonlocal declaration_chunk
+        nonlocal body_chunk
+        
+        base_chunk.consume(node.start_point)
+        declaration_chunk.consume(node.start_point)
 
         if "identifier" in node.type and identifier is None:
-            identifier = concatenate_lines(code_lines, node.start_point, node.end_point)
-            declaration += identifier
+            identifier = base_chunk.fork()
+            identifier.consume(node.end_point)
+            base_chunk.consume(node.end_point)
+            declaration_chunk.consume(node.end_point)
+
             return
-        elif node.type in STATEMENT[extension]:
-            body = concatenate_lines(code_lines, node.start_point, node.end_point)
-            declaration += f"<BODY {identifier}></BODY>\n"
+        
+        if node.type in STATEMENT[extension]:
+            body_chunk = declaration_chunk.fork()
+            base_chunk.add_tag(f"<BODY {identifier}>")
+            declaration_chunk.add_tag(f"<BODY {identifier}>")
+            body_chunk.consume(node.end_point)
+            base_chunk.skip(node.end_point)
+            declaration_chunk.skip(node.end_point)
+
             return
 
         if not node.children:
-            declaration += concatenate_lines(
-                code_lines, node.start_point, node.end_point
-            )
+            base_chunk.consume(node.end_point)
+            declaration_chunk.consume(node.end_point)
         else:
             for child in node.children:
                 chunk(child)
 
     chunk(node)
 
-    return identifier, declaration, body
+    return identifier, declaration_chunk, body_chunk
 
+class Chunk:
+    def __init__(self, code_lines, chunk_start=(0, 0)):
+        self._code_lines = code_lines
+        self._chunk_start = chunk_start
+        self._chunk_str = ""
+        self._ptr = chunk_start
 
-def concatenate_lines(code_lines, start_point, end_point):
-    if start_point[0] == end_point[0]:
-        return code_lines[start_point[0]][start_point[1] : end_point[1]] + " "
-    string = code_lines[start_point[0]][start_point[1] :] + "\n"
-    for i in range(start_point[0] + 1, end_point[0]):
-        string += code_lines[i] + "\n"
-    string += code_lines[end_point[0]][: end_point[1]]
-    if len(code_lines[end_point[0]]) == end_point[1]:
-        string += "\n"
-    return string + " "
+    def consume(self, until_point):
+        if self._ptr[0] == until_point[0]:
+            self._chunk_str += (
+                self._code_lines[self._ptr[0]][self._ptr[1] : until_point[1]] + ("\n" if until_point[1] == len(self._code_lines[self._ptr[0]]) else "")
+            )
+            self._ptr = until_point
+            return
+        
+
+        self._chunk_str += self._code_lines[self._ptr[0]][self._ptr[1] :] + "\n"
+
+        for i in range(self._ptr[0] + 1, until_point[0]):
+            self._chunk_str += self._code_lines[i] + "\n"
+
+        self._chunk_str += self._code_lines[until_point[0]][: until_point[1]]
+        self._ptr = until_point
+
+    def add_tag(self, tag):
+        self._chunk_str += tag
+
+    def fork(self):
+        return Chunk(self._code_lines, self._ptr)
+    
+    def skip(self, until_point):
+        self._ptr = until_point
+
+    def __str__(self):
+        return self._chunk_str
