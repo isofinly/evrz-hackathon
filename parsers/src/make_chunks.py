@@ -1,4 +1,4 @@
-from parsers import LANGUAGE
+from language import LANGUAGE
 from tree_sitter import Parser
 
 
