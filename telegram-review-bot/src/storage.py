@@ -210,9 +210,9 @@ class MinioStorage:
         elements.append(Spacer(1, 0.2 * inch))
 
         for diff in diffs:
-            # File information (using simpler Unicode symbols)
+            # File information
             elements.append(Paragraph(
-                f"» {html.escape(diff['file'])}",
+                f"» {diff['file']}",
                 heading_style
             ))
             elements.append(Paragraph(
@@ -220,45 +220,45 @@ class MinioStorage:
                 normal_style
             ))
 
-            # Review comment
+            # Review comment (escape only the review text)
             elements.append(Paragraph(
                 "• Review Comment:",
                 heading_style
             ))
             elements.append(Paragraph(
-                html.escape(diff['review']),
+                diff['review'],
                 normal_style
             ))
 
-            # Original code
+            # Original code (don't escape code blocks)
             elements.append(Paragraph(
                 "• Original Code:",
                 heading_style
             ))
             elements.append(
                 Preformatted(
-                    html.escape(diff["original"]),
+                    diff["original"],
                     code_style
                 )
             )
 
-            # Suggested replacement
+            # Suggested replacement (don't escape code blocks)
             elements.append(Paragraph(
                 "• Suggested Replacement:",
                 heading_style
             ))
             elements.append(
                 Preformatted(
-                    html.escape(diff["replacement"]),
+                    diff["replacement"],
                     code_style
                 )
             )
 
-            # Add separator using basic Unicode characters
+            # Add separator
             elements.append(Spacer(1, 0.3 * inch))
             elements.append(
                 Paragraph(
-                    "\u2500" * 50,  # Unicode BOX DRAWINGS LIGHT HORIZONTAL
+                    "\u2500" * 50,
                     ParagraphStyle(
                         'Separator',
                         alignment=1,
