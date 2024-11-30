@@ -14,6 +14,7 @@ from src.review.utils import (
 from src.review.prompt import PromptGenerator
 from src.review.parsers.parser import parse_file
 from src.review.parsers.project_parser import parse_project_structure
+from src.review.rag import Data
 
 from src.review.api import get_response
 # from gemma_api import get_response
@@ -22,8 +23,11 @@ from src.review.api import get_response
 FILE_EXTENSIONS = ["py", "cs", "ts", "tsx", "css", "scss"]
 
 
+DATA_PATH = Path(__file__).parent.parent.parent / "data"
+
+
 class FileReviewer:
-    def __init__(self, file_path: Path, result_path: Path) -> None:
+    def __init__(self, data, file_path: Path, result_path: Path) -> None:
         self.file_path = file_path
         self.result_path = result_path
 
@@ -35,6 +39,9 @@ class FileReviewer:
         self.styleguide_prompts = get_styleguide_by_language(
             language_from_file_extension(self.extension)
         )
+
+        self.prompt_generator = PromptGenerator(data, self.extension)
+
 
     def _review_interface(self, base_chunks: str) -> str:
         # TODO: add prompt
@@ -59,13 +66,12 @@ class FileReviewer:
         # print(f"Reviewing {self.file_path}")
 
         base_chunks, declarations = parse_file(self.file_path)
-        prompt_generator = PromptGenerator(self.extension)
         json_responses = []
 
         for chunk in declarations.values():
-            system_prompt = prompt_generator.generate_system_prompt()
-            user_prompt = prompt_generator.generate_user_prompt(chunk)
-            context = prompt_generator.generate_context(str(chunk))
+            system_prompt = self.prompt_generator.generate_system_prompt()
+            user_prompt = self.prompt_generator.generate_user_prompt(chunk)
+            context = self.prompt_generator.generate_context(str(chunk))
 
             review_json = get_response(system_prompt, user_prompt, context)
             review_json = review_json[
@@ -96,6 +102,8 @@ class ProjectReviewer:
         self.max_workers = max_workers
         self.print_lock = threading.Lock()
 
+        self.data = Data(DATA_PATH)
+
     def _review_structure(self) -> None:
         project_structure = parse_project_structure(self.project_path)
         # TODO: review project structure
@@ -114,35 +122,17 @@ class ProjectReviewer:
         src_path = self.project_path / "src"
         if not src_path.exists():
             raise FileNotFoundError(f"Source directory not found")
-
-        # Collect all files to review first
-        files_to_review = [
-            file
-            for file in src_path.rglob("*")
-            if file.is_file() and get_file_extension(file) in FILE_EXTENSIONS
-        ]
-
-        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-            future_to_file = {
-                executor.submit(self._review_file, file): file
-                for file in files_to_review
-            }
-
-            # Process completed reviews with progress bar
-            with tqdm(total=len(files_to_review)) as pbar:
-                for future in as_completed(future_to_file):
-                    file = future_to_file[future]
-                    try:
-                        future.result()  # This will raise any exceptions that occurred
-                    except Exception as e:
-                        with self.print_lock:
-                            print(f"Review failed for {file}: {str(e)}")
-                    pbar.update(1)
+        
+        for file in tqdm(src_path.rglob("*")):
+            if not file.is_file() or get_file_extension(file) not in FILE_EXTENSIONS:
+                continue
+            relative_path = file.relative_to(self.project_path)
+            print(self.result_path / relative_path)
+            file_reviewer = FileReviewer(file, self.result_path / relative_path)
+            file_reviewer.review()
 
 
 if __name__ == "__main__":
-    project_reviewer = ProjectReviewer(
-        Path("./react-2/market-main"), Path("./react-2/REVIEW/market-main")
-    )
-    # project_reviewer = ProjectReviewer(Path("./TEST_PROJECT"), Path("./TEST_PROJECT/REVIEW"))
+    # project_reviewer = ProjectReviewer(Path("./react-2/market-main"), Path("./react-2/REVIEW/market-main"))
+    project_reviewer = ProjectReviewer(Path("./TEST_PROJECT"), Path("./TEST_PROJECT/REVIEW"))
     project_reviewer.review()
