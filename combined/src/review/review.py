@@ -42,7 +42,6 @@ class FileReviewer:
 
         self.prompt_generator = PromptGenerator(data, self.extension)
 
-
     def _review_interface(self, base_chunks: str) -> str:
         # TODO: add prompt
         pass
@@ -122,7 +121,7 @@ class ProjectReviewer:
         src_path = self.project_path / "src"
         if not src_path.exists():
             raise FileNotFoundError(f"Source directory not found")
-        
+
         for file in tqdm(src_path.rglob("*")):
             if not file.is_file() or get_file_extension(file) not in FILE_EXTENSIONS:
                 continue
@@ -132,7 +131,17 @@ class ProjectReviewer:
             file_reviewer.review()
 
 
-if __name__ == "__main__":
-    # project_reviewer = ProjectReviewer(Path("./react-2/market-main"), Path("./react-2/REVIEW/market-main"))
-    project_reviewer = ProjectReviewer(Path("./TEST_PROJECT"), Path("./TEST_PROJECT/REVIEW"))
+# if __name__ == "__main__":
+#     # project_reviewer = ProjectReviewer(Path("./react-2/market-main"), Path("./react-2/REVIEW/market-main"))
+#     project_reviewer = ProjectReviewer(Path("./TEST_PROJECT"), Path("./TEST_PROJECT/REVIEW"))
+#     project_reviewer.review()
+def review2() -> None:
+    project_reviewer = ProjectReviewer(
+        Path("./react-2/market-main"), Path("./react-2/REVIEW/market-main")
+    )
+    # project_reviewer = ProjectReviewer(Path("./TEST_PROJECT"), Path("./TEST_PROJECT/REVIEW"))
     project_reviewer.review()
+
+
+if __name__ == "__main__":
+    review2()

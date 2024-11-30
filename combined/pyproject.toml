@@ -28,6 +28,7 @@ tree-sitter-typescript = "*"
 
 [tool.poetry.scripts]
 telegram_review_bot = "src.bot.bot:run_bot"
+review = "src.review.review:review2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

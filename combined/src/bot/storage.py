@@ -12,7 +12,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Preformatte
 from reportlab.lib.units import inch
 from pygments import highlight
 from pygments.formatters import HtmlFormatter
-from pygments.lexers import get_lexer_for_filename, TextLexer
+from pygments.lexers import get_lexer_for_filename, TextLexer, get_lexer_by_name
 import html
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
@@ -118,6 +118,47 @@ class MinioStorage:
         except S3Error as e:
             raise Exception(f"Error generating presigned URL: {e}")
 
+    def _apply_syntax_highlighting(self, code: str, language: str = "text") -> str:
+        """Apply syntax highlighting to code"""
+        try:
+            # First decode any HTML entities in the input
+            code = html.unescape(code)
+
+            # Get the appropriate lexer
+            lexer = get_lexer_by_name(language, stripall=True)
+        except:
+            lexer = TextLexer()
+
+        # Use a simpler formatter without HTML markup
+        formatter = HtmlFormatter(
+            style='monokai',
+            noclasses=True,
+            nowrap=True,  # Disable line wrapping
+            linenos=False  # Disable line numbers
+        )
+
+        try:
+            highlighted = highlight(code, lexer, formatter)
+
+            # Clean up any remaining HTML
+            highlighted = (html.unescape(highlighted)
+                         .replace('<div class="highlight">', '')
+                         .replace('</div>', '')
+                         .replace('<pre>', '')
+                         .replace('</pre>', '')
+                         .replace('<code>', '')
+                         .replace('</code>', '')
+                         .strip())
+
+            # Preserve indentation with non-breaking spaces
+            highlighted = highlighted.replace('    ', '\xa0\xa0\xa0\xa0')
+
+            return highlighted
+        except Exception as e:
+            logger.error(f"Error in syntax highlighting: {e}")
+            # Return original code if highlighting fails
+            return code
+
     def generate_diff_report(self, diffs: list, user_id: int, page: int) -> str:
         """Generate a PDF diff report and upload it to MinIO"""
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -182,11 +223,11 @@ class MinioStorage:
             encoding='utf-8'  # Add explicit encoding
         )
 
-        # Code block style
+        # Modified code block style
         code_style = ParagraphStyle(
             'CodeBlock',
             parent=styles['Code'],
-            fontName='DejaVuSansMono',
+            fontName='DejaVuSansMono',  # Monospace font for code
             fontSize=9,
             leading=12,
             textColor=colors.HexColor('#2c3e50'),
@@ -198,7 +239,8 @@ class MinioStorage:
             spaceAfter=20,
             leftIndent=40,
             rightIndent=40,
-            encoding='utf-8'  # Add explicit encoding
+            encoding='utf-8',
+            firstLineIndent=0  # Ensure no extra indentation on first line
         )
 
         # Build PDF content
@@ -220,7 +262,7 @@ class MinioStorage:
                 normal_style
             ))
 
-            # Review comment (escape only the review text)
+            # Review comment
             elements.append(Paragraph(
                 "• Review Comment:",
                 heading_style
@@ -230,29 +272,59 @@ class MinioStorage:
                 normal_style
             ))
 
-            # Original code (don't escape code blocks)
+            # Original code section
             elements.append(Paragraph(
                 "• Original Code:",
                 heading_style
             ))
-            elements.append(
-                Preformatted(
-                    diff["original"],
-                    code_style
-                )
-            )
+            try:
+                original_code = diff["original"].strip()
+                original_code = html.unescape(original_code)
+                original_code = original_code.replace('\t', '    ')
+                original_code = original_code.replace('\r\n', '\n')
 
-            # Suggested replacement (don't escape code blocks)
+                if diff.get("language"):
+                    original_code = self._apply_syntax_highlighting(
+                        original_code,
+                        diff.get("language", "text")
+                    )
+
+                elements.append(
+                    Preformatted(
+                        original_code,
+                        code_style
+                    )
+                )
+            except Exception as e:
+                logger.error(f"Error processing original code block: {e}")
+                elements.append(Preformatted(diff["original"], code_style))
+
+            # Suggested replacement section
             elements.append(Paragraph(
                 "• Suggested Replacement:",
                 heading_style
             ))
-            elements.append(
-                Preformatted(
-                    diff["replacement"],
-                    code_style
+            try:
+                replacement_code = diff["replacement"].strip()
+                replacement_code = html.unescape(replacement_code)
+                replacement_code = replacement_code.replace('\t', '    ')
+                replacement_code = replacement_code.replace('\r\n', '\n')
+
+                if diff.get("language"):
+                    replacement_code = self._apply_syntax_highlighting(
+                        replacement_code,
+                        diff.get("language", "text")
+                    )
+
+                elements.append(
+                    Preformatted(
+                        replacement_code,
+                        code_style
+                    )
                 )
-            )
+            except Exception as e:
+                logger.error(f"Error processing replacement code block: {e}")
+                elements.append(Preformatted(diff["replacement"], code_style))
 
             # Add separator
             elements.append(Spacer(1, 0.3 * inch))

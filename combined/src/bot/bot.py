@@ -9,6 +9,8 @@ from telebot.handler_backends import State, StatesGroup
 from telebot.storage import StateMemoryStorage
 from src.bot.storage import MinioStorage
 from datetime import datetime
+from src.review.review import ProjectReviewer, FileReviewer
+from pathlib import Path
 
 # Setup logging
 logging.basicConfig(
@@ -255,21 +257,31 @@ def handle_download(call):
 
         # Generate and upload diff report
         try:
+            # Show progress message
+            progress_msg = bot.send_message(
+                call.message.chat.id, "📊 Generating PDF report..."
+            )
+
             object_name = storage.generate_diff_report(current_diffs, user_id, page)
             download_url = storage.get_presigned_url("reports", object_name)
 
-            bot.answer_callback_query(call.id)
-            bot.send_message(
-                call.message.chat.id,
-                f"📥 Download your diff report:\n{download_url}",
+            # Update progress message with download link
+            bot.edit_message_text(
+                f"📥 Your report is ready!\n\nClick here to download:\n{download_url}",
+                chat_id=progress_msg.chat.id,
+                message_id=progress_msg.message_id,
                 disable_web_page_preview=True,
             )
+            bot.answer_callback_query(call.id, "Report generated successfully!")
 
         except Exception as e:
             logger.error(f"Error generating diff report: {e}", exc_info=True)
-            bot.answer_callback_query(
-                call.id, "Failed to generate report. Please try again."
+            bot.edit_message_text(
+                "❌ Failed to generate report. Please try again.",
+                chat_id=progress_msg.chat.id,
+                message_id=progress_msg.message_id,
             )
+            bot.answer_callback_query(call.id, "Failed to generate report")
 
     except Exception as e:
         logger.error(f"Error handling download: {e}", exc_info=True)
@@ -326,6 +338,10 @@ def handle_document(message):
                     },
                 )
 
+                # Create review directories
+                review_dir = Path(tmpdir) / "review_output"
+                review_dir.mkdir(parents=True, exist_ok=True)
+
                 # Update status
                 bot.edit_message_text(
                     "📦 Extracting files..."
@@ -354,22 +370,20 @@ def handle_document(message):
                         message_id=status_message.message_id,
                     )
 
-                    # Send project structure for archives
-                    structure = get_project_structure(extract_dir)
-                    if len(structure) > 4000:
-                        structure = structure[:4000] + "\n... (truncated)"
-
-                    bot.send_message(
-                        message.chat.id,
-                        f"📂 *Project Structure:*\n```\n{structure}\n```",
-                        parse_mode="Markdown",
+                    # Use ProjectReviewer for archives
+                    project_reviewer = ProjectReviewer(
+                        Path(extract_dir), review_dir, max_workers=3
                     )
-
-                    # Parse archive
-                    diffs = parse_review_tags(extract_dir)
+                    project_reviewer.review()
                 else:
-                    # Parse single file
-                    diffs = parse_review_tags(file_path)
+                    # Use FileReviewer for single files
+                    file_reviewer = FileReviewer(
+                        Path(file_path), review_dir / file_name
+                    )
+                    file_reviewer.review()
+
+                # Parse review tags from the output
+                diffs = parse_review_tags(review_dir)
 
                 # Update status
                 bot.edit_message_text(

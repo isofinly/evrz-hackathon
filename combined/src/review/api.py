@@ -3,6 +3,9 @@ import requests
 
 from src.review.prompt import PromptGenerator
 
+from dotenv import load_dotenv
+
+load_dotenv()
 
 MODEL_API_KEY = os.getenv("MODEL_API_KEY")
 URL = "http://84.201.152.196:8020/v1/completions"
