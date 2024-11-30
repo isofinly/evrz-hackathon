@@ -33,6 +33,7 @@ torch = [
     { platform = "darwin", version = "^2.1.0", source = "PyPI" },
     { platform = "linux", version = "^2.1.0+cpu", source = "torch-cpu" },
 ]
+optimum = "*"
 
 [[tool.poetry.source]]
 name = "PyPI"
