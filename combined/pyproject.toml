@@ -25,6 +25,25 @@ tree-sitter = "*"
 tree-sitter-python = "*"
 tree-sitter-c-sharp = "*"
 tree-sitter-typescript = "*"
+jina = "*"
+chromadb = "*"
+transformers = "4.46.3"
+numpy = "*"
+torch = [
+    { platform = "darwin", version = "^2.1.0", source = "PyPI" },
+    { platform = "linux", version = "^2.1.0+cpu", source = "torch-cpu" },
+]
+optimum = "*"
+onnx = "*"
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
+[[tool.poetry.source]]
+name = "torch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "supplemental"
 
 [tool.poetry.scripts]
 telegram_review_bot = "src.bot.bot:run_bot"

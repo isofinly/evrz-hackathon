@@ -48,6 +48,6 @@ class PromptGenerator:
         # print(examples)
 
         return {
-            "user": [ex['query'] for ex in examples],
-            "assistant": [ex['answer'] for ex in examples]
+            "user": [ex["query"] for ex in examples],
+            "assistant": [ex["answer"] for ex in examples],
         }
