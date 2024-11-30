@@ -1,0 +1,13 @@
+type Action =
+  | {
+      type: 'link'
+      to: RouteInstance<RouteParams>
+    }
+  | {
+      type: 'external-link'
+      href: string
+    }
+  | {
+      type: 'button'
+      onClick: () => void
+    }

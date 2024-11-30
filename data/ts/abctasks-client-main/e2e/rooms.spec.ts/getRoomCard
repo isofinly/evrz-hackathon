@@ -1,0 +1,13 @@
+getRoomCard = (
+	loc: Locator | Page,
+	name: string,
+	description: string
+) => {
+	return loc
+		.getByRole('listitem')
+		.filter({
+			hasText: new RegExp(`^${name}`),
+		})
+		.filter({ hasText: new RegExp(`${description}`) })
+		.first();
+}

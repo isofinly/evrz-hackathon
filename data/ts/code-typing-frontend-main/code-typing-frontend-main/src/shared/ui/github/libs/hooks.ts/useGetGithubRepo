@@ -1,0 +1,6 @@
+useGetGithubRepo = (owner: string, repoName: string) => {
+    return useQuery({
+        queryKey: [queryKeysEnum.githubRepo, owner, repoName],
+        queryFn: () => GithubService.getReposByOwnerAndRepoName(owner, repoName)
+    })
+}

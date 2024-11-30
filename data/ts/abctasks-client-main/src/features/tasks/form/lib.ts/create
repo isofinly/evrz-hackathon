@@ -1,0 +1,22 @@
+create = () => {
+	return createForm<TaskFormValues>({
+		fields: {
+			title: {
+				init: '',
+				rules: [createRuleFromSchema('title', schemas.title)],
+			},
+			description: {
+				init: '',
+				rules: [createRuleFromSchema('description', schemas.title)],
+			},
+			tagIds: {
+				init: [],
+				rules: [createRuleFromSchema('tagIds', schemas.tagIds)],
+			},
+			status: {
+				init: 'ready',
+				rules: [createRuleFromSchema('status', schemas.status)],
+			},
+		},
+	});
+}

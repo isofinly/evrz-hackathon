@@ -1,0 +1,10 @@
+RoomCard: React.FC<RoomCardProps> = (props) => {
+	const { id, canChange, } = props;
+	return (
+		<TemplateRoomCard
+			{...props}
+			menu={<CardMenu roomId={id} canChange={canChange} />}
+			actions={<OpenRoom id={id} />}
+		/>
+	);
+}

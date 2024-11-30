@@ -1,0 +1,5 @@
+import { Box } from "@chakra-ui/react"
+
+import { TimerItem, TimerProps } from "@shared/ui/timer"
+
+export const Timer = (props: TimerProps) => <BODY Timer>

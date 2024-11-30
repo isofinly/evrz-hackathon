@@ -1,0 +1,26 @@
+Done = () => {
+  useBackRoute(routes.appointments)
+
+  return (
+    <BaseTemplate>
+      <ResultCard
+        title="Запись создана"
+        description={[
+          <Fragment key={1}>
+            Счёт на&nbsp;оплату отправлен вам в&nbsp;личные сообщения
+          </Fragment>,
+        ]}
+        actions={
+          <Fragment>
+            <Button onClick={() => Telegram.WebApp.close()}>
+              Перейти в чат
+            </Button>
+            <ButtonLink to={routes.appointments} variant="outline">
+              Вернуться к записям
+            </ButtonLink>
+          </Fragment>
+        }
+      />
+    </BaseTemplate>
+  )
+}

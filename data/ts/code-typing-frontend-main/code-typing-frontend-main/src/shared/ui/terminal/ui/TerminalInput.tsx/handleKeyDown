@@ -1,0 +1,6 @@
+handleKeyDown: KeyboardEventHandler<HTMLInputElement> = e => {
+        requestAnimationFrame(() => {
+            setCursorPosition(inputRef.current?.selectionStart)
+        })
+        onKeyDown && onKeyDown(e)
+    }

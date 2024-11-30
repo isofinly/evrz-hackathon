@@ -1,0 +1,5 @@
+interface Source {
+  query: Query<any, any, any>
+  refresh?: boolean
+  succeedIf?: Store<boolean>
+}

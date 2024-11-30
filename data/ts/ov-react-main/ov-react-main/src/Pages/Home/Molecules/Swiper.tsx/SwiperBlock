@@ -1,0 +1,63 @@
+SwiperBlock = () => {
+  //<REVIEW>Рассмотрите возможность использолвать более читаемый нейминг переменных</REVIEW>
+  const [windowor, setwindowor] = useState(4);
+  //<REVIEW>Рассмотрите возможность использолвать более читаемый нейминг переменных</REVIEW>
+  const [windowsp, setwindowsp] = useState(10);
+
+  useEffect(() => {
+    console.log("asd");
+    if (window.innerHeight > window.innerWidth) {
+      setwindowor(1);
+      setwindowsp(100);
+    } else {
+      setwindowor(4);
+      setwindowsp(10);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  });
+  return (
+    <div className="SwiperBlock">
+      <Swiper
+        slidesPerView={windowor}
+        spaceBetween={100}
+        freeMode={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <img src={Picture_0} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={Picture_1} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={Picture_2} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={Picture_3} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={Picture_4} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={Picture_5} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={Picture_6} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={Picture_7} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={Picture_8} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={Picture_9} />
+        </SwiperSlide>
+      </Swiper>
+    </div>
+  );
+}

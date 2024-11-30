@@ -1,0 +1,7 @@
+interface TemplateInvitationCardProps extends CommonProps {
+	readonly slots: Required<Slots<'userAvatar' | 'inviterAvatar'>> &
+		Slots<'actions'>;
+	readonly inviterName: string;
+	readonly username: string;
+	readonly roomName: string;
+}

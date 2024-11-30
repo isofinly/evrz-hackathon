@@ -1,0 +1,5 @@
+interface TimerItemProps {
+    time: number
+    postfix: string
+    required?: boolean
+}

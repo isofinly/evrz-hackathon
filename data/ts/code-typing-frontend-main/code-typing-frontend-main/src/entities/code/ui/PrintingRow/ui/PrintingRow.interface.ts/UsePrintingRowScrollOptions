@@ -1,0 +1,5 @@
+interface UsePrintingRowScrollOptions {
+    rowRef: RefObject<HTMLDivElement>
+    text: string
+    typingValue?: string | null
+}

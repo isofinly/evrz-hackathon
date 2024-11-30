@@ -1,0 +1,4 @@
+interface UseMethodsOptions<State, Methods> {
+    initialState: State
+    methods: Methods
+}

@@ -1,0 +1,14 @@
+Providers = ({ children }: { children?: ReactNode }) => {
+    const theme = useCurrentTheme()
+
+    return (
+        <QueryClientProvider client={queryClient}>
+            <ChakraProvider theme={theme} colorModeManager={colorModeManager}>
+                <ViewerProvider>
+                    <RouterProvider router={router} />
+                    {children}
+                </ViewerProvider>
+            </ChakraProvider>
+        </QueryClientProvider>
+    )
+}

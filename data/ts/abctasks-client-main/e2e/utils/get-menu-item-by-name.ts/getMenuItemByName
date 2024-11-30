@@ -1,0 +1,6 @@
+getMenuItemByName = (
+	parent: Page | Locator,
+	name: string
+): Locator => {
+	return parent.getByRole('menuitem', { name });
+}

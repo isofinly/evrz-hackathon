@@ -1,0 +1,66 @@
+function createChain<Params extends RouteParams>(
+  route: RouteInstance<Params>,
+  options: Options,
+) {
+  const { sources } = options
+
+  // <REVIEW>событие должно происходить в хранилище по пути /src/Model/{название}/events/event.ts</REVIEW> 
+  const startLoading = createEvent<RouteParamsAndQuery<Params>>()
+  // <REVIEW>событие должно происходить в хранилище по пути /src/Model/{название}/events/event.ts</REVIEW> 
+  const loadingFinished = createEvent()
+  // <REVIEW>событие должно происходить в хранилище по пути /src/Model/{название}/events/event.ts</REVIEW> 
+  const loadingFailed = createEvent()
+
+  for (const { query, refresh = false } of sources) {
+    // <REVIEW>сэмплирование должно происходить в хранилище по пути /src/Model/{название}/state.ts</REVIEW> 
+    sample({
+      clock: startLoading,
+      source: query.$status,
+      filter: (status) => {
+        if (refresh) return status !== 'pending'
+        return status === 'initial' || status === 'fail'
+      },
+      target: query.start,
+    })
+  }
+
+  const noRefresh = sources.every((source) => !source.refresh)
+
+  const checkTriggers: Event<any>[] = sources.map(
+    (source) => source.query.finished.finally,
+  )
+
+  if (noRefresh) {
+    checkTriggers.push(startLoading)
+  }
+
+  // <REVIEW>сэмплирование должно происходить в хранилище по пути /src/Model/{название}/state.ts</REVIEW> 
+  sample({
+    clock: checkTriggers,
+    source: sources.map(({ query, succeedIf }) => {
+      if (succeedIf) return and(or(query.$succeeded, query.$failed), succeedIf)
+      return query.$status.map((status) => status === 'done')
+    }),
+    filter: (statuses) => statuses.every(Boolean),
+    target: loadingFinished,
+  })
+
+  // <REVIEW>сэмплирование должно происходить в хранилище по пути /src/Model/{название}/state.ts</REVIEW> 
+  sample({
+    clock: checkTriggers,
+    source: sources.map(({ query, succeedIf }) => {
+      if (succeedIf)
+        return and(or(query.$succeeded, query.$failed), not(succeedIf))
+      return query.$failed
+    }),
+    filter: (statuses) => statuses.some(Boolean),
+    target: loadingFailed,
+  })
+
+  return chainRoute({
+    route,
+    beforeOpen: startLoading,
+    openOn: loadingFinished,
+    cancelOn: loadingFailed,
+  })
+}

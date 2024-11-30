@@ -1,0 +1,9 @@
+withRouter =
+	(Component: React.ComponentType): React.ComponentType =>
+	() => {
+		return (
+			<RouterProvider router={router}>
+				<Component />
+			</RouterProvider>
+		);
+	}

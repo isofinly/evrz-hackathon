@@ -1,0 +1,3 @@
+TileText = (props: TileTextProps) => {
+    return <Text fontSize="15px" {...props} />
+}

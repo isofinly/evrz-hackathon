@@ -1,0 +1,21 @@
+Name: React.FC<FieldProps> = (props) => {
+	const { $form, } = props;
+	const { t, } = useTranslation('room-tags');
+
+	const label = t('actions.tag_form.fields.name');
+
+	const name = useUnit($form.fields.name);
+
+	return (
+		<Field
+			className={styles.input}
+			value={name.value}
+			onChange={name.onChange}
+			onBlur={name.onBlur}
+			helperText={name.errorText}
+			isValid={name.isValid}
+			name='name'
+			label={label}
+		/>
+	);
+}

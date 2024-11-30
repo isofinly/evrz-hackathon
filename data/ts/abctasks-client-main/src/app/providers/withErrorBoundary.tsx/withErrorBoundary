@@ -1,0 +1,9 @@
+withErrorBoundary =
+	(Component: React.ComponentType): React.ComponentType =>
+	() => {
+		return (
+			<ErrorBoundary>
+				<Component />
+			</ErrorBoundary>
+		);
+	}

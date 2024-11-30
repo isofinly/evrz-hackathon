@@ -1,0 +1,2 @@
+
+export const roundToFixed = (num: number, fixed: number): number => <BODY roundToFixed>

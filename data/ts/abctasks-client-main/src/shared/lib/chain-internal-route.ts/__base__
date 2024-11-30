@@ -1,0 +1,20 @@
+
+
+import {
+	RouteInstance,
+	RouteParams,
+	RouteParamsAndQuery,
+	chainRoute,
+} from 'atomic-router';
+import { Event, Store, createEvent, sample } from 'effector';
+import { not } from 'patronum';
+
+import { ChainedParams } from '../types';
+
+
+export interface ChainInternalRouteParams extends ChainedParams <BODY ChainInternalRouteParams>
+
+export const chainInternalRoute = <Params extends RouteParams>(
+	route: RouteInstance<Params>,
+	options: ChainInternalRouteParams
+): RouteInstance<Params> => <BODY chainInternalRoute>;

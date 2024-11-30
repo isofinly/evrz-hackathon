@@ -1,0 +1,8 @@
+interface QueryModel<T> {
+	readonly $value: Store<T>;
+	readonly $isEmpty: Store<boolean>;
+	readonly reset: Event<void>;
+	readonly set: Event<T>;
+
+	'@@unitShape': () => { value: Store<T>; set: Event<T> };
+}

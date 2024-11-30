@@ -1,0 +1,3 @@
+getOne = async ({ roomId, id, }: GetTaskParams) => {
+	return instance.get(`tasks/${roomId}/${id}`).json<StandardResponse<Task>>();
+}

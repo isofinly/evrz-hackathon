@@ -1,0 +1,8 @@
+Routing = ():JSX.Element => {
+    return (
+        <Routes>
+            <Route path={AppRoutes.home} element={<HomePage />} />
+            <Route path={AppRoutes.all} element={<NotFoundPage />} />
+        </Routes>
+    );
+}

@@ -1,0 +1,11 @@
+import { ReactNode, useEffect } from "react"
+
+import { useNavigate } from "react-router-dom"
+
+import { useRefresh, useViewer } from "@entities/viewer"
+import { paths } from "@pages/routes"
+import { CodeLoading, CodeLoadingProgress, CodeLoadingTitle } from "@shared/ui/loading"
+
+export const privatePage = (children: ReactNode) => <BODY privatePage>
+
+const PrivatePage = ({ children }: { children: ReactNode }) => <BODY PrivatePage>

@@ -1,0 +1,16 @@
+import { useToast } from "@chakra-ui/react"
+
+import { useSearchParams } from "react-router-dom"
+
+import { defaultTexts, useGetCodeExamples, useGetCodeExamplesByName } from "@entities/code"
+import { searchParamsEnum } from "@shared/constants"
+import { useRandom } from "@shared/libs/hooks/random"
+
+export type UseRandomCodeWithSearchReturn = [
+    textContent: string | undefined,
+    options: UseRandomCodeWithSearchReturnOptions
+]
+
+export interface UseRandomCodeWithSearchReturnOptions <BODY UseRandomCodeWithSearchReturnOptions>
+
+export const useRandomCodeWithSearchParam = (): UseRandomCodeWithSearchReturn => <BODY useRandomCodeWithSearchParam>

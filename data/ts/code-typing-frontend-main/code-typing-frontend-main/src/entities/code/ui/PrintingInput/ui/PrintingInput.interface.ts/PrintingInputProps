@@ -1,0 +1,3 @@
+interface PrintingInputProps extends InputProps {
+    isRightRow: boolean
+}

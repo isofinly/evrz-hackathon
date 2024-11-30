@@ -1,0 +1,7 @@
+
+
+import * as React from 'react';
+
+export interface ShowProps extends Required<React.PropsWithChildren> <BODY ShowProps>
+
+export const Show: React.FC<ShowProps> = (props) => <BODY Show>;

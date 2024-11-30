@@ -1,0 +1,1 @@
+interface PageLoaderProps extends CommonProps {}

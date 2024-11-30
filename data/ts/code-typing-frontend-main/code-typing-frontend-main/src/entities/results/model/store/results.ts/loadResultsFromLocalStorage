@@ -1,0 +1,4 @@
+loadResultsFromLocalStorage = (): TResultStore | null => {
+    const preloadResultsString = localStorage.getItem(storageKeysEnum.results)
+    return preloadResultsString ? JSON.parse(preloadResultsString) : null
+}

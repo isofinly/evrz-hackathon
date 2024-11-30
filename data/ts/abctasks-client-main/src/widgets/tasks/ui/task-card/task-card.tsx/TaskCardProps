@@ -1,0 +1,1 @@
+interface TaskCardProps extends CommonProps, Task {}

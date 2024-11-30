@@ -1,0 +1,3 @@
+getTagsLabels = (tags: Tag[]): string[] => {
+	return tags.map((tag) => tag.name);
+}

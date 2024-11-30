@@ -1,0 +1,4 @@
+interface CardMenuProps {
+	readonly taskId: number;
+	readonly roomId: number;
+}

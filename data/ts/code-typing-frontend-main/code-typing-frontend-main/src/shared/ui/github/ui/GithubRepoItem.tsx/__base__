@@ -1,0 +1,9 @@
+import { useState } from "react"
+
+import { Flex, Image, Link } from "@chakra-ui/react"
+
+import githubIcon from "@shared/assets/github.svg"
+import { GithubRepoSkeleton, useGetGithubRepo } from "@shared/ui/github"
+import { GithubRepoItemProps } from "@shared/ui/github/types"
+
+export const GithubRepoItem = (props: GithubRepoItemProps) => <BODY GithubRepoItem>

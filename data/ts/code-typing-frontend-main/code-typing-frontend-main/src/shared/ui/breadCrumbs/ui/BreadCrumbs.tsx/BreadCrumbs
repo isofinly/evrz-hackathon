@@ -1,0 +1,21 @@
+BreadCrumbs: FC<BreadCrumbsProps> = props => {
+    const { crumbs, onCrumbClick } = props
+
+    return (
+        {/* <REVIEW>стили передавать через параметры className или style</REVIEW> */}
+        <Box display="flex" gap={2}>
+            <Text as="button" onClick={() => onCrumbClick(-1, "Menu")}>
+                Menu
+            </Text>
+            {crumbs.map((openItem, index) => (
+                <Fragment key={openItem}>
+                    {/* <REVIEW>{" > "} нужно заменить на svg элемент</REVIEW> */}
+                    {" > "}
+                    <Text as="button" onClick={() => onCrumbClick(index, openItem)}>
+                        {openItem}
+                    </Text>
+                </Fragment>
+            ))}
+        </Box>
+    )
+}

@@ -1,0 +1,5 @@
+useRefresh = () => {
+    return useMutation({
+        mutationFn: () => ViewerService.refresh()
+    })
+}

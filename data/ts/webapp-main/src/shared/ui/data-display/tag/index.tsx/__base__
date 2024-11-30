@@ -1,0 +1,26 @@
+
+
+import clsx from 'clsx'
+import { ReactNode } from 'react'
+import { Skeleton } from '../../feedback/skeleton'
+import { Icon, IconName } from '../../general/icon'
+import styles from './styles.module.css'
+
+
+type TagColor = 'gray' | 'blue' | 'orange' | 'green' | 'pink' | 'purple'
+
+
+interface TagProps <BODY TagProps>
+
+export const Tag = ({
+  className,
+  color = 'gray',
+  icon,
+  children,
+}: TagProps) => <BODY Tag>
+
+
+interface SkeletonProps <BODY SkeletonProps>
+
+
+export const TagSkeleton = ({ className, width = 120 }: SkeletonProps) => <BODY TagSkeleton>

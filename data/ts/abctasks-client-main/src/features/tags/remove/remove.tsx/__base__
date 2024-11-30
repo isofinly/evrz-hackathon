@@ -1,0 +1,13 @@
+import DeleteIcon from '@mui/icons-material/Delete';
+import { IconButton, Tooltip } from '@mui/material';
+import { useUnit } from 'effector-react';
+import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { CommonProps } from '@/shared/types';
+
+import { openConfirm } from './model';
+
+export interface RemoveTagProps extends CommonProps <BODY RemoveTagProps>
+
+export const RemoveTag: React.FC<RemoveTagProps> = (props) => <BODY RemoveTag>;

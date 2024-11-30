@@ -1,0 +1,11 @@
+CustomTextTab = () => {
+    return (
+        <Tooltip label="Custom Texts (Alt+2)">
+            <Box>
+                <AsideTab name={settingTabs.customText} cursor="pointer">
+                    <Image src={customText} />
+                </AsideTab>
+            </Box>
+        </Tooltip>
+    )
+}

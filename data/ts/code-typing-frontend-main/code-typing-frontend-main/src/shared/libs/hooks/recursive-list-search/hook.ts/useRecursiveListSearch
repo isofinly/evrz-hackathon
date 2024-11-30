@@ -1,0 +1,12 @@
+useRecursiveListSearch = (
+    items: RecursiveListItemType[],
+    value: string
+): RecursiveListItemType[] => {
+    return useMemo(() => {
+        if (value === "") {
+            return items
+        }
+        const searchItems = recursiveListSearchFunction(items, value)
+        return searchItems.sort((a, b) => (a.parents?.length ?? 0) - (b.parents?.length ?? 0))
+    }, [items, value])
+}

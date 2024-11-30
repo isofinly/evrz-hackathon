@@ -1,0 +1,3 @@
+interface TemplateHeaderProps extends CommonProps {
+	readonly slots?: Slots<'left' | 'right' | 'center'>;
+}

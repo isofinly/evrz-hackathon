@@ -1,0 +1,10 @@
+import { TimerDirection } from "@shared/ui/timer"
+
+export type TimerStatus = "stopped" | "started"
+
+export interface TypingCodeTimerStore <BODY TypingCodeTimerStore>
+
+export type TypingTimerSettings = {
+    direction: TimerDirection
+    startSeconds: number
+}

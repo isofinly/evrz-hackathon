@@ -1,0 +1,6 @@
+
+import { useMemo } from "react"
+
+import { RecursiveListItemType } from "@shared/types"
+
+export const useItemsRecursiveList = (openItemNames: string[], list: RecursiveListItemType[]) => <BODY useItemsRecursiveList>

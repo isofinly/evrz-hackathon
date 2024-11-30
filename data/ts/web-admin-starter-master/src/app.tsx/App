@@ -1,0 +1,15 @@
+App = () => {
+  useAuth()
+
+  const isUserPending = useStore($isUserPending);
+  const user = useStore($user);
+
+  return (
+    <GenericTemplate
+      isAuthed={Boolean(user.role)}
+      isPending={isUserPending}
+    >
+      <Routing />
+    </GenericTemplate>
+  );
+}

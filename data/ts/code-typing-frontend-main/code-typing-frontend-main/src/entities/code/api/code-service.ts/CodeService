@@ -1,0 +1,96 @@
+class CodeService {
+    // <REVIEW>данная функция должна пользоваться в других местах проекта, функция должна быть экспортируемая export async fetchProgrammingLanguages() {}</REVIEW>
+    async fetchProgrammingLanguages() {
+        // <REVIEW>
+        //     значение "texts/code-examples/" нужно вынести в переменную константу (к примеру const CODE_EXAMPLES = "texts/code-examples/") и
+        //     данная константа должна храниться в файле по пути "/src/shared/constants.ts" и далее реализовать импорт в данный файл с подстановкой
+        //     const response = await baseQueryV1<CodeExampleByUUID>({
+        //          url: CODE_EXAMPLES,
+        //          method: "POST",
+        //          data: body
+        //     })
+        // </REVIEW>
+        const response = await baseQueryV1<CodeExampleByUUID>({
+            url: `texts/code-examples`,
+            method: "POST",
+            data: body
+        })
+        return response.data
+    }
+
+    // <REVIEW>данная функция должна пользоваться в других местах проекта, функция должна быть экспортируемая export async fetchCodeExamples() {}</REVIEW>
+    async fetchCodeExamples() {
+        // <REVIEW>
+        //     значение "texts/code-examples/" нужно вынести в переменную константу (к примеру const CODE_EXAMPLES = "texts/code-examples/") и
+        //     данная константа должна храниться в файле по пути "/src/shared/constants.ts" и далее реализовать импорт в данный файл с подстановкой
+        //     const response = await baseQueryV1<CodeExampleByUUID>({
+        //          url: CODE_EXAMPLES,
+        //          method: "POST",
+        //          data: body
+        //     })
+        // </REVIEW>
+        const response = await baseQueryV1<CodeExampleByUUID>({
+            url: `texts/code-examples`,
+            method: "POST",
+            data: body
+        })
+        return response.data
+    }
+
+    // <REVIEW>данная функция должна пользоваться в других местах проекта, функция должна быть экспортируемая export async fetchCodeExamplesByName(name: string) {}</REVIEW>
+    async fetchCodeExamplesByName(name: string) {
+        // <REVIEW>
+        //     значение "texts/code-examples/" нужно вынести в переменную константу (к примеру const CODE_EXAMPLES = "texts/code-examples/") и
+        //     данная константа должна храниться в файле по пути "/src/shared/constants.ts" и далее реализовать импорт в данный файл с подстановкой
+        //     const response = await baseQueryV1<CodeExampleByUUID>({
+        //          url: CODE_EXAMPLES,
+        //          method: "POST",
+        //          data: body
+        //     })
+        // </REVIEW>
+        const response = await baseQueryV1<CodeExampleByUUID>({
+            url: `texts/code-examples`,
+            method: "POST",
+            data: body
+        })
+        return response.data
+    }
+
+    // <REVIEW>данная функция должна пользоваться в других местах проекта, функция должна быть экспортируемая export async fetchCodeExamplesByUUID(uuid: string) {}</REVIEW>
+    async fetchCodeExamplesByUUID(uuid: string) {
+        // <REVIEW>
+        //     значение "texts/code-examples/" нужно вынести в переменную константу (к примеру const CODE_EXAMPLES = "texts/code-examples/") и
+        //     данная константа должна храниться в файле по пути "/src/shared/constants.ts" и далее реализовать импорт в данный файл с подстановкой
+        //     const response = await baseQueryV1<CodeExampleByUUID>({
+        //          url: CODE_EXAMPLES,
+        //          method: "POST",
+        //          data: body
+        //     })
+        // </REVIEW>
+        const response = await baseQueryV1<CodeExampleByUUID>({
+            url: `texts/code-examples`,
+            method: "POST",
+            data: body
+        })
+        return response.data
+    }
+
+    // <REVIEW>данная функция должна пользоваться в других местах проекта, функция должна быть экспортируемая export async addCustomCodeExample(body: CustomCodeExampleBody) {}</REVIEW>
+    async addCustomCodeExample(body: CustomCodeExampleBody) {
+        // <REVIEW>
+        //     значение "texts/code-examples/" нужно вынести в переменную константу (к примеру const CODE_EXAMPLES = "texts/code-examples/") и
+        //     данная константа должна храниться в файле по пути "/src/shared/constants.ts" и далее реализовать импорт в данный файл с подстановкой
+        //     const response = await baseQueryV1<CodeExampleByUUID>({
+        //          url: CODE_EXAMPLES,
+        //          method: "POST",
+        //          data: body
+        //     })
+        // </REVIEW>
+        const response = await baseQueryV1<CodeExampleByUUID>({
+            url: `texts/code-examples`,
+            method: "POST",
+            data: body
+        })
+        return response.data
+    }
+}

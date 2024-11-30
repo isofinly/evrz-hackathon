@@ -1,0 +1,23 @@
+OpenUpdateTagButton: React.FC<OpenUpdateTagButtonProps> = (
+	props
+) => {
+	const { tagId, className, } = props;
+
+	const open = useUnit(openPopup);
+
+	const { t, } = useTranslation('room-tags');
+
+	const onClick = () => {
+		open(tagId);
+	};
+
+	const updateTitle = t('actions.update_tag.actions.open');
+
+	return (
+		<Tooltip title={updateTitle}>
+			<IconButton className={className} onClick={onClick}>
+				<EditIcon />
+			</IconButton>
+		</Tooltip>
+	);
+}

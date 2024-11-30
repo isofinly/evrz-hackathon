@@ -1,0 +1,4 @@
+interface RenderProps {
+	readonly isPopup: boolean;
+	readonly titleId: string;
+}

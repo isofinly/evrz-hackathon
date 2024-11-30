@@ -1,0 +1,9 @@
+Result: React.FC = () => {
+	const invitation = useUnit(invitationViaTokenModel.query.$data);
+
+	if (!invitation) {
+		return null;
+	}
+
+	return <InvitationCard {...invitation} />;
+}

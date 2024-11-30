@@ -1,0 +1,28 @@
+import TuneIcon from '@mui/icons-material/Tune';
+import { Button } from '@mui/material';
+import cn from 'classnames';
+import { useUnit } from 'effector-react';
+import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { TagPicker } from '@/entities/tags';
+import { UsersInRoomPicker } from '@/entities/users';
+
+import { usePreventDefault, useToggle } from '@/shared/lib';
+import { CommonProps } from '@/shared/types';
+import { DatePicker, FiltersPopover, Show } from '@/shared/ui';
+
+import { form } from './model';
+import styles from './tasks-filters.module.css';
+
+export interface TasksFiltersProps extends CommonProps <BODY TasksFiltersProps>
+
+export const TasksFilters: React.FC<TasksFiltersProps> = (props) => <BODY TasksFilters>;
+
+const Tags: React.FC = () => <BODY Tags>;
+
+const Users: React.FC = () => <BODY Users>;
+
+const After: React.FC = () => <BODY After>;
+
+const Before: React.FC = () => <BODY Before>;

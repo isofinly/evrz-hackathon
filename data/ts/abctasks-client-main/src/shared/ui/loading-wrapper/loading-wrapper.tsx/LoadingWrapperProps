@@ -1,0 +1,4 @@
+interface LoadingWrapperProps extends CommonProps {
+	readonly isLoading: boolean;
+	readonly loadingIndicator: React.ReactElement;
+}

@@ -1,0 +1,6 @@
+interface TypingCodeTimerStore {
+    timerStatus: TimerStatus
+    timeMillisecondsStart: number | null
+    timeMillisecondsEnd: number | null
+    timerSettings: TypingTimerSettings
+}

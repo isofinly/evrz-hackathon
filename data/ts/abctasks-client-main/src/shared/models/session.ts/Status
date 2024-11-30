@@ -1,0 +1,1 @@
+type Status = 'initial' | 'pending' | 'authorized' | 'anonymous';

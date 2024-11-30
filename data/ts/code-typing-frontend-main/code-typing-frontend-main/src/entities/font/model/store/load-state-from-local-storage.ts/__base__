@@ -1,0 +1,4 @@
+import { FontState } from "@entities/font"
+import { FontFamilies, storageKeysEnum, typingFontSizes } from "@shared/constants"
+
+export const loadStateFromLocalStorage = (): FontState => <BODY loadStateFromLocalStorage>

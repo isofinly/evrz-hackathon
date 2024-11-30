@@ -1,0 +1,4 @@
+interface ActivityListItemProps
+	extends CommonProps,
+		Activity,
+		Omit<ListItemProps, keyof Activity> {}

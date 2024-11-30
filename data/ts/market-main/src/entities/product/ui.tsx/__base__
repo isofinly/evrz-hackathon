@@ -1,0 +1,17 @@
+import { Product } from "@/entities/CardsGallary/model/types/types";
+import styles from "./styles.module.scss";
+import clsx from "clsx";
+import { Theme } from "@/app/providers/ThemeProvider";
+
+
+
+type ProductProps = {
+  product: Product;
+  theme: Theme;
+  setProduct: (product: Product) => void;
+};
+
+
+const ProductItem = ({ product, setProduct, theme }: ProductProps) => <BODY ProductItem>;
+
+export default ProductItem;

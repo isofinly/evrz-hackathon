@@ -1,0 +1,4 @@
+interface TerminalProps {
+    onClose: () => void
+    isOpen: boolean
+}

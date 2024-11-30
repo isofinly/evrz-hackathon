@@ -1,0 +1,5 @@
+interface Props {
+  className?: string
+  gap?: 1 | 2
+  children: ReactNode
+}

@@ -1,0 +1,5 @@
+import { useEffect, useRef, useState } from "react"
+
+import { TimerDirection, UseTimerOptions } from "@shared/ui/timer"
+
+export const useTimer = (options: UseTimerOptions) => <BODY useTimer>

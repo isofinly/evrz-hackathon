@@ -1,0 +1,21 @@
+Spheres: React.FC = () => {
+	// <REVIEW>переменная должна иметь явный смысл в своем названии</REVIEW>
+	const { t } = useTranslation('room-activities');
+
+	const label = t('actions.filter_activities.fields.spheres');
+	const sphereIds = useUnit(form.fields.sphereIds);
+
+	return (
+		<ActivitiesSpheresPicker
+			value={sphereIds.value}
+			onChange={sphereIds.onChange}
+			helperText={sphereIds.errorText}
+			isValid={sphereIds.isValid}
+			limitTags={2}
+			name='spheres'
+			label={label}
+			multiple
+			fullWidth
+		/>
+	);
+}

@@ -1,0 +1,23 @@
+import * as React from 'react';
+import { Input, Button } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
+
+type FilterDropdown = {
+  setSelectedKeys: (keys: string[]) => string;
+  selectedKeys: string[];
+  confirm: () => void;
+  clearFilters: () => void;
+};
+
+type SearchTypes = {
+  ref: React.RefObject<Input>;
+  placeholder: string;
+};
+
+export function addSearch({ placeholder, ref }: SearchTypes) <BODY addSearch>
+
+export function addFilter<T>(fields: (keyof T)[]) <BODY addFilter>
+
+export function addSorter<T>(field: keyof T) <BODY addSorter>
+
+export function addFilterOptions(items: string[]) <BODY addFilterOptions>

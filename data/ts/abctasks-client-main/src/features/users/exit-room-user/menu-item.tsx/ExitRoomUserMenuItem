@@ -1,0 +1,23 @@
+ExitRoomUserMenuItem: React.FC<ExitRoomUserMenuItemProps> = (
+	props
+) => {
+	const { className, roomId, } = props;
+	const { t, } = useTranslation('rooms');
+
+	const open = useUnit(openConfirm);
+
+	const nameText = t('actions.exit_room.name');
+
+	const onClick = () => {
+		open(roomId);
+	};
+
+	return (
+		<MenuItem
+			className={className}
+			onClick={onClick}
+			icon={<ExitRoomIcon />}
+			label={nameText}
+		/>
+	);
+}

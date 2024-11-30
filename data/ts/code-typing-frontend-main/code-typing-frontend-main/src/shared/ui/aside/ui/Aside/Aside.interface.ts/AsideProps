@@ -1,0 +1,4 @@
+interface AsideProps extends FlexProps {
+    currentTabName: AsideTabName | null
+    onChangeTabName?: (name: AsideTabName | null) => void
+}

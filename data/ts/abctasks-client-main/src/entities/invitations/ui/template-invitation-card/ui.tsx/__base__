@@ -1,0 +1,25 @@
+
+
+
+
+import {
+	Card,
+	CardActions,
+	CardContent,
+	CardHeader,
+	Typography,
+} from '@mui/material';
+import cn from 'classnames';
+import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { CommonProps, Slots } from '@/shared/types';
+
+import styles from './ui.module.css';
+
+
+export interface TemplateInvitationCardProps extends CommonProps <BODY TemplateInvitationCardProps>
+
+export const TemplateInvitationCard: React.FC<TemplateInvitationCardProps> = (
+	props
+) => <BODY TemplateInvitationCard>;

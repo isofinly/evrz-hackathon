@@ -1,0 +1,9 @@
+
+
+
+import { Image } from "@chakra-ui/react"
+
+import terminalIcon from "@shared/assets/terminal.svg"
+import { IconProps } from "@shared/ui/icons"
+
+export const TerminalIcon = (props: IconProps) => <BODY TerminalIcon>

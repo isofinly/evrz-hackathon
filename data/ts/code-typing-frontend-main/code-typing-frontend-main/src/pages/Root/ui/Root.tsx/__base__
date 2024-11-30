@@ -1,0 +1,17 @@
+{
+
+import { Suspense } from "react"
+
+
+import { Flex } from "@chakra-ui/react"
+
+import { Outlet, useLocation } from "react-router-dom"
+
+import { paths } from "@pages/routes"
+import { CodeLoading, CodeLoadingProgress, CodeLoadingTitle } from "@shared/ui/loading"
+import { Footer } from "@widgets/Footer"
+import { Header } from "@widgets/Header"
+
+const Root = () => <BODY Root>
+
+export default Root

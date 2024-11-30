@@ -1,0 +1,28 @@
+function useSyncHeight(ref: RefObject<HTMLElement>) {
+  useEffect(() => {
+    const element = ref.current
+    if (!element) return
+
+    const listener = () => {
+      const { height } = element.getBoundingClientRect()
+      heightChanged(height)
+
+      return () => heightChanged(0)
+    }
+
+    // sync on initial render
+    listener()
+
+    const observer = new MutationObserver(listener)
+    const config = { attributes: true, childList: true, subtree: true }
+
+    window.addEventListener('resize', listener, { passive: true })
+    observer.observe(element, config)
+
+    return () => {
+      heightChanged(0)
+      window.removeEventListener('resize', listener)
+      observer.disconnect()
+    }
+  }, [ref])
+}

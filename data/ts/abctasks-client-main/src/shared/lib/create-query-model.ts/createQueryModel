@@ -1,0 +1,50 @@
+createQueryModel = <T>(
+	params: CreateQueryModelParams<T>
+): QueryModel<T> => {
+	const { name, defaultValue, clock, route } = params;
+
+	// <REVIEW>хранение состояние в переменной должно происходить в хранилище по пути /src/Model/{название}/state.ts</REVIEW>
+	const $value = createStore<T>(defaultValue);
+	const $isEmpty = $value.map((value) => value === defaultValue);
+	const set = createEvent<T>();
+	const reset = createEvent();
+
+	querySync({
+		controls,
+		clock,
+		route,
+		source: {
+			[name]: $value,
+		},
+		cleanup: {
+			irrelevant: false,
+			empty: true,
+		},
+	});
+
+	// <REVIEW>сэмплирование должно происходить в хранилище по пути /src/Model/{название}/state.ts</REVIEW>
+	sample({
+		clock: set,
+		target: $value,
+	});
+
+	// <REVIEW>сэмплирование должно происходить в хранилище по пути /src/Model/{название}/state.ts</REVIEW>
+	sample({
+		clock: reset,
+		target: $value.reinit!,
+	});
+
+	return {
+		$value,
+		$isEmpty,
+		set,
+		reset,
+
+		'@@unitShape': () => {
+			return {
+				set,
+				value: $value,
+			};
+		},
+	};
+}

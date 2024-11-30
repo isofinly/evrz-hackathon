@@ -1,0 +1,5 @@
+logIn = (): Promise<void> =>
+  request({
+    method: 'post',
+    url: '/user/login',
+  })

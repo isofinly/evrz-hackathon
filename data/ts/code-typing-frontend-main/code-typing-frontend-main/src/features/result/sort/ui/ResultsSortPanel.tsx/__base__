@@ -1,0 +1,11 @@
+
+
+
+import { ChangeEventHandler } from "react"
+
+import { Flex, Input, Select, Text } from "@chakra-ui/react"
+
+import { fieldsSortBy } from "@entities/results/constants"
+import { ResultsSortPanelProps } from "@features/result"
+
+export const ResultsSortPanel = (props: ResultsSortPanelProps) => <BODY ResultsSortPanel>

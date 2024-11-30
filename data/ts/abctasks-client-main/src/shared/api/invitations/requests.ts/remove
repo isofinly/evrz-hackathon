@@ -1,0 +1,6 @@
+remove = async ({
+	roomId,
+	id,
+}: RemoveInvitationRequestParams): RemoveInvitationResponseData => {
+	return instance.delete(`invitations/invite/${roomId}/${id}`).json();
+}

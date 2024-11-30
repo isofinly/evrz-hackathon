@@ -1,0 +1,1 @@
+type ScrollDirection = 'vertical' | 'horizontal';

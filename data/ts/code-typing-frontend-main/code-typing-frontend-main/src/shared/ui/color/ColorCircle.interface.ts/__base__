@@ -1,0 +1,6 @@
+
+
+
+import { BoxProps } from "@chakra-ui/react"
+
+export interface ColorCircleProps extends BoxProps <BODY ColorCircleProps>

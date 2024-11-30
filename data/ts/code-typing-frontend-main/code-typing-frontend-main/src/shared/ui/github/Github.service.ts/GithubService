@@ -1,0 +1,14 @@
+class GithubService {
+    public async getUserByUsername(username: string): Promise<GithubUser> {
+        const response = await baseQueryGithub<GithubRepository>(`repos/${owner}/${repoName}`)
+        return response.data
+    }
+
+    public async getReposByOwnerAndRepoName(
+        owner: string,
+        repoName: string
+    ): Promise<GithubRepository> {
+        const response = await baseQueryGithub<GithubRepository>(`repos/${owner}/${repoName}`)
+        return response.data
+    }
+}

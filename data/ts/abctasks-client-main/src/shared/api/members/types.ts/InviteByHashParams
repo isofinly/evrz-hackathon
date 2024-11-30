@@ -1,0 +1,3 @@
+interface InviteByHashParams extends InRoomParams {
+	readonly token: string;
+}

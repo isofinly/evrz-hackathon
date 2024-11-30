@@ -1,0 +1,3 @@
+getAll = async ({ roomId, }: InRoomParams) => {
+	return instance.get(`members/${roomId}`).json<StandardResponse<User[]>>();
+}

@@ -1,0 +1,7 @@
+
+
+import { Box } from "@chakra-ui/react"
+
+import { ColorCircleProps } from "./ColorCircle.interface.ts"
+
+export const ColorCircle = (props: ColorCircleProps) => <BODY ColorCircle>

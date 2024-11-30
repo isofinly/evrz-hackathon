@@ -1,0 +1,11 @@
+routesWithHOC = (
+    hoc: (children: ReactNode) => ReactNode,
+    routes: RouteObject[]
+): RouteObject[] => {
+    return routes.map(route => {
+        return {
+            ...route,
+            element: hoc(route.element)
+        }
+    })
+}

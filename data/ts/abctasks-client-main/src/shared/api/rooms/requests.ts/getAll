@@ -1,0 +1,3 @@
+getAll = async () => {
+	return instance.get('rooms').json<StandardResponse<Room[]>>();
+}

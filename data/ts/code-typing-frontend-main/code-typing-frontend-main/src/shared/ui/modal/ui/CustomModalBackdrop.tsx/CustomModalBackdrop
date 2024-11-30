@@ -1,0 +1,17 @@
+CustomModalBackdrop = (props: FlexProps) => {
+    return createPortal(
+        // <REVIEW>в компоненту нужно передавтаь стили в виде className или style</REVIEW>
+        <Flex
+            justify="center"
+            align="center"
+            bg="blackAlpha.300"
+            h="100vh"
+            w="100vw"
+            position="fixed"
+            top="0"
+            left="0"
+            {...props}
+        />,
+        document.body
+    )
+}

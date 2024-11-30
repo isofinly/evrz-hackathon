@@ -1,0 +1,24 @@
+TemplateTagListItem: React.FC<TemplateTagListItemProps> = (
+	props
+) => {
+	const {
+		id: _,
+		mainColor,
+		secondColor,
+		name,
+		className,
+		slots,
+		...rest
+	} = props;
+
+	return (
+		<ListItem className={className} {...rest}>
+			<ListItemText>
+				<TagLabel mainColor={mainColor} name={name} secondColor={secondColor} />
+			</ListItemText>
+			{slots?.actions ? (
+				<ListItemSecondaryAction>{slots.actions}</ListItemSecondaryAction>
+			) : null}
+		</ListItem>
+	);
+}

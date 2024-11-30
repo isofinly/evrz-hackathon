@@ -1,0 +1,5 @@
+export interface IResult <BODY IResult>
+
+export interface IResultCode <BODY IResultCode>
+
+export type TResultStore = IResult[]

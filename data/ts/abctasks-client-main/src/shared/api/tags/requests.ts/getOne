@@ -1,0 +1,3 @@
+getOne = async ({ roomId, id, }: GetTagParams) => {
+	return instance.get(`tags/${roomId}/${id}`).json<StandardResponse<Tag>>();
+}

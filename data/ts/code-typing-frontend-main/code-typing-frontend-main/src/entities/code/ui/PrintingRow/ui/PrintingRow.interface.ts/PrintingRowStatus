@@ -1,0 +1,1 @@
+type PrintingRowStatus = "default" | "active" | "printed"

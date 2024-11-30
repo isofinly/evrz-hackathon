@@ -1,0 +1,3 @@
+interface OpenRoomProps extends CommonProps {
+	readonly id: number;
+}

@@ -1,0 +1,3 @@
+interface PopupsProps extends CommonProps {
+	readonly popupMap: Record<string, React.ComponentType<BasePopupProps>>;
+}

@@ -1,0 +1,10 @@
+useTaskCardIsDrag = (id: number): boolean => {
+	return useStoreMap({
+		store: dragTaskModel.$id,
+		keys: [id],
+		defaultValue: false,
+		fn: (draggingId, [id]) => {
+			return draggingId === id;
+		},
+	});
+}

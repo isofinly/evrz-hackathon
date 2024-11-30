@@ -1,0 +1,13 @@
+PageLoader: React.FC<PageLoaderProps> = (props) => {
+	const { className } = props;
+
+	const { t } = useTranslation('common');
+
+	const loadingText = t('loading');
+
+	return (
+		<Center className={className} height='page'>
+			<LoadingIndicator text={loadingText} />
+		</Center>
+	);
+}

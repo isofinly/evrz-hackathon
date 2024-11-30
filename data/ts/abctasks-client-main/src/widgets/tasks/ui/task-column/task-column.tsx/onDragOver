@@ -1,0 +1,2 @@
+onDragOver: React.DragEventHandler<HTMLDivElement> = (evt) =>
+	evt.preventDefault()

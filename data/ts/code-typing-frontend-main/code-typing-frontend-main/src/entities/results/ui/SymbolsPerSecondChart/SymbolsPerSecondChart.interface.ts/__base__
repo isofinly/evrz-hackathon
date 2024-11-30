@@ -1,0 +1,3 @@
+export interface ISymbolsPerSecondChartItem <BODY ISymbolsPerSecondChartItem>
+
+export interface SymbolsPerSecondChartProps <BODY SymbolsPerSecondChartProps>

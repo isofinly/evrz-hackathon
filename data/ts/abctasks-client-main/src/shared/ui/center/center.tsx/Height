@@ -1,0 +1,1 @@
+type Height = 'auto' | 'container' | 'page' | 'content';

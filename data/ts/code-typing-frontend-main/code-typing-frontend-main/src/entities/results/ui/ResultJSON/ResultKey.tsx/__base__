@@ -1,0 +1,8 @@
+import { useState } from "react"
+
+import { Box, Text } from "@chakra-ui/react"
+
+import { CodeRow } from "@entities/code"
+import { ResultJSONProps } from "@entities/results"
+
+export const ResultKey = (props: ResultJSONProps) => <BODY ResultKey>

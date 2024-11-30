@@ -1,0 +1,24 @@
+import { Button, Stack } from '@mui/material';
+import cn from 'classnames';
+import { Form } from 'effector-forms';
+import { useUnit } from 'effector-react';
+import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { MIN_LENGTH, MAX_SHORT_LENGTH } from '@/shared/configs';
+import { usePreventDefault } from '@/shared/lib';
+import { CommonProps } from '@/shared/types';
+import { Field, Show } from '@/shared/ui';
+
+import styles from './form.module.css';
+import { RoomFormValues } from './model';
+
+export interface RoomFormProps extends CommonProps <BODY RoomFormProps>
+
+export const RoomForm: React.FC<RoomFormProps> = (props) => <BODY RoomForm>;
+
+interface FieldProps <BODY FieldProps>
+
+const Name: React.FC<FieldProps> = (props) => <BODY Name>;
+
+const Description: React.FC<FieldProps> = (props) => <BODY Description>;

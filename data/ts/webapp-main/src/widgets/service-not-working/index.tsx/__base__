@@ -1,0 +1,5 @@
+
+import { ButtonLink, ResultCard } from '@shared/ui'
+import { Fragment } from 'react'
+
+export const ServiceNotWorking = () => <BODY ServiceNotWorking>

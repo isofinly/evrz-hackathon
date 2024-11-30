@@ -1,0 +1,19 @@
+
+
+import { useMemo } from "react"
+
+import { RecursiveListItemType } from "@shared/types"
+
+export const useRecursiveListSearch = (
+    items: RecursiveListItemType[],
+    value: string
+): RecursiveListItemType[] => <BODY useRecursiveListSearch>
+
+
+const getIsIncludes = (value1: string, value2: string) => <BODY getIsIncludes>
+
+export const recursiveListSearchFunction = (
+    items: RecursiveListItemType[],
+    value: string,
+    parents: string[] = []
+): RecursiveListItemType[] => <BODY recursiveListSearchFunction>

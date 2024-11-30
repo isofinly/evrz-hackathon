@@ -1,0 +1,7 @@
+
+
+import * as React from 'react';
+
+export const withStrictMode =
+	(Component: React.ComponentType): React.ComponentType =>
+	() => <BODY withStrictMode>;

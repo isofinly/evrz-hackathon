@@ -1,0 +1,10 @@
+interface SharedProps {
+  size?: ButtonSize
+  variant?: ButtonVariant
+  color?: ButtonColor
+  fluid?: boolean
+  loading?: boolean
+  disabled?: boolean
+  loadingText?: ReactNode
+  icon?: ReactNode
+}

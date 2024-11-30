@@ -1,0 +1,9 @@
+
+
+import { $$user } from '@entities/user'
+import { Loader } from '@shared/ui'
+import { useUnit } from 'effector-react'
+import { MessageRequiredPage } from './message-required'
+import { ServiceNotWorkingPage } from './service-not-working'
+
+export const AppStatusPage = () => <BODY AppStatusPage>

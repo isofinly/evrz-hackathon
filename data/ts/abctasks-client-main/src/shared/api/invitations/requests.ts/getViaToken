@@ -1,0 +1,5 @@
+getViaToken = async ({
+	token,
+}: GetInvitationViaTokenRequestParams): GetInvitationViaTokenResponseData => {
+	return instance.get(`invitations/via/${token}`).json();
+}

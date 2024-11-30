@@ -1,0 +1,3 @@
+interface GetInvitationViaTokenRequestParams {
+	readonly token: string;
+}

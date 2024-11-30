@@ -1,0 +1,3 @@
+buildUrl = (endpoint: string): string => {
+	return `${process.env.API_HOST}/testing${endpoint}`;
+}

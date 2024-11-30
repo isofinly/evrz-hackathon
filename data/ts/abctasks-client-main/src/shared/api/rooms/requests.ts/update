@@ -1,0 +1,7 @@
+update = async ({ roomId, ...body }: UpdateRoomParams) => {
+	return instance
+		.put(`rooms/${roomId}/update`, {
+			json: body,
+		})
+		.json<StandardResponse<Room>>();
+}

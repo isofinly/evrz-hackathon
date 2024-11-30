@@ -1,0 +1,7 @@
+update = ({ roomId, taskId, id, ...body }: UpdateParams) => {
+	return instance
+		.put(`comments/${roomId}/${taskId}/${id}/update`, {
+			json: body,
+		})
+		.json<StandardResponse<Comment>>();
+}

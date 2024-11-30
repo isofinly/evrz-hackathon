@@ -1,0 +1,11 @@
+
+
+import clsx from 'clsx'
+import { CSSProperties } from 'react'
+import { Icon } from '../../general/icon'
+import styles from './styles.module.css'
+
+
+interface Props <BODY Props>
+
+export const Loader = ({ className, style }: Props) => <BODY Loader>

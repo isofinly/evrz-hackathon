@@ -1,0 +1,9 @@
+type RecursiveListProps = {
+    openItems: RecursiveListItemType[]
+    setOpenItemNames: Dispatch<SetStateAction<string[]>>
+    itemFocusedIndex: number
+    itemFocusedRef: RefObject<HTMLDivElement>
+    containerRef: RefObject<HTMLDivElement>
+    onOpenNew?: () => void
+    searchValue: string
+}

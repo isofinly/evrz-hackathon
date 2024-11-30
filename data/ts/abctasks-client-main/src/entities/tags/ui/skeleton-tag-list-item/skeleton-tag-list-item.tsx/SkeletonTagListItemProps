@@ -1,0 +1,1 @@
+interface SkeletonTagListItemProps extends CommonProps, ListItemProps {}

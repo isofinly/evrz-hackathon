@@ -1,0 +1,6 @@
+type RenderItemProps = {
+    onClick: () => void
+    item: RecursiveListItemType
+    ref: RefObject<HTMLDivElement> | undefined
+    isFocus: boolean
+}

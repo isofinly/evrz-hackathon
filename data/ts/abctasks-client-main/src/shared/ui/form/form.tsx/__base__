@@ -1,0 +1,11 @@
+
+
+
+
+import { Paper, PaperProps } from '@mui/material';
+import cn from 'classnames';
+import * as React from 'react';
+
+import styles from './form.module.css';
+
+export const Form: React.FC<PaperProps<'form'>> = (props) => <BODY Form>;

@@ -1,0 +1,7 @@
+List = ({ className, style, children, ...rest }: ListProps) => {
+  return (
+    <ul className={clsx(styles.list, className)} {...rest}>
+      {children}
+    </ul>
+  )
+}

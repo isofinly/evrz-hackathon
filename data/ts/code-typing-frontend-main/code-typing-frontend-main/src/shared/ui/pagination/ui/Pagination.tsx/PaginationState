@@ -1,0 +1,6 @@
+interface PaginationState {
+    page: number
+    onChangePage: (page: number) => void
+    totalPages: number
+    isDisabled?: boolean
+}

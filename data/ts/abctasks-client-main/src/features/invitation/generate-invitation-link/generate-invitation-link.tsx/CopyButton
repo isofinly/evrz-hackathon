@@ -1,0 +1,16 @@
+CopyButton: React.FC = () => {
+	// <REVIEW>переменная должна иметь явный смысл в своем названии</REVIEW>
+	const { t } = useTranslation('room-invitations');
+
+	const onClick = useUnit(copyLink);
+
+	const title = t('actions.generate_link.actions.copy');
+
+	return (
+		<Tooltip title={title}>
+			<IconButton onClick={onClick} color='primary'>
+				<CopyAllIcon />
+			</IconButton>
+		</Tooltip>
+	);
+}

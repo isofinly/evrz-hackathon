@@ -1,0 +1,1 @@
+type GetUserResult = { payload: API.UserSession };

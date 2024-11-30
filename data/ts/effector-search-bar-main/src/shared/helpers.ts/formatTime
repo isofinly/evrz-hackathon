@@ -1,0 +1,3 @@
+function formatTime(date: Date | number) {
+  return format(date, 'HH:mm');
+}

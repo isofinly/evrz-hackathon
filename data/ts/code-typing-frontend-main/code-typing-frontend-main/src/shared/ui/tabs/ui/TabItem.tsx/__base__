@@ -1,0 +1,5 @@
+import { ListItem } from "@chakra-ui/react"
+
+import { TabItemProps } from "@shared/ui/tabs"
+
+export const TabItem = (props: TabItemProps) => <BODY TabItem>

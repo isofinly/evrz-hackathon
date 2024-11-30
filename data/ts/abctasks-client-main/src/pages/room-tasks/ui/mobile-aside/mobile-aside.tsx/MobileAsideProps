@@ -1,0 +1,1 @@
+interface MobileAsideProps extends CommonProps {}

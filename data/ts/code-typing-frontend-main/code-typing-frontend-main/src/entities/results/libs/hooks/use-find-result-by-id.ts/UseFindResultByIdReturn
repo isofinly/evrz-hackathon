@@ -1,0 +1,4 @@
+interface UseFindResultByIdReturn {
+    result: IResult
+    resultIndex: number
+}

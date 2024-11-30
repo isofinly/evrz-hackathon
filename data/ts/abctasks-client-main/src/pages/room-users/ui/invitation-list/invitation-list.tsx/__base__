@@ -1,0 +1,26 @@
+import ReplayIcon from '@mui/icons-material/Replay';
+import { useUnit } from 'effector-react';
+import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
+import {
+	InvitationListItem,
+	InvitationListItemProps
+} from '@/widgets/invitations';
+
+import {
+	SkeletonInvitationListItem,
+	invitationsModel
+} from '@/entities/invitations';
+
+import { Invitation } from '@/shared/api';
+import { routes } from '@/shared/configs';
+import { useParam } from '@/shared/lib';
+import { CommonProps } from '@/shared/types';
+import { FriendlyList, TextWithAction } from '@/shared/ui';
+
+export interface InvitationListProps extends CommonProps <BODY InvitationListProps>
+
+export const InvitationList: React.FC<InvitationListProps> = (props) => <BODY InvitationList>;
+
+const Error: React.FC = () => <BODY Error>;

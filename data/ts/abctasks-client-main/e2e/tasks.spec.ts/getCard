@@ -1,0 +1,9 @@
+getCard = (params: GetCardParams) => {
+	const { description, parent, tags, title } = params;
+
+	return parent
+		.getByRole('article')
+		.filter({ hasText: title })
+		.filter({ hasText: description })
+		.filter({ hasText: new RegExp(tags.join('|')) });
+}

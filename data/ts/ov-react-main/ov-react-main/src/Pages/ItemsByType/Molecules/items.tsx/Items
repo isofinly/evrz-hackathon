@@ -1,0 +1,57 @@
+Items = (params: IItems) => {
+  const [list, setList] = useState([{}]);
+  useEffect(() => {
+    setList(
+      params.item === 0
+        ? [
+            {
+              picture: Shirt_1,
+              name: "PSYCHOSOCIAL TEE",
+              price: "1800",
+              salePrice: "",
+              sale: false,
+            },
+            {
+              picture: Shirt_2,
+              name: "SALUKI RIP BABY AIDS DOUBLETEE",
+              price: "1800",
+              salePrice: "",
+              sale: false,
+            },
+            {
+              picture: Shirt_3,
+              name: "Fast Food Music TEE",
+              price: "3000",
+              salePrice: "2000",
+              sale: true,
+            },
+            {
+              picture: Shirt_4,
+              name: "MERCH MARKET DARK TEE",
+              price: "1800",
+              salePrice: "",
+              sale: false,
+            },
+            {
+              picture: Shirt_5,
+              name: "MERCH MARKET BLUE TEE",
+              price: "1800",
+              salePrice: "",
+              sale: false,
+            },
+          ]
+        : params.item === 1
+        ? []
+        : params.item === 2
+        ? []
+        : params.item === 3
+        ? []
+        : []
+    );
+  }, []);
+  return <div className="ItemsByType__Items">
+    {list.map((e:any)=>
+    <ListItem picture={e.picture} name={e.name} price={e.price} salePrice={e.salePrice} sale={e.sale}/>
+    )}
+  </div>;
+}

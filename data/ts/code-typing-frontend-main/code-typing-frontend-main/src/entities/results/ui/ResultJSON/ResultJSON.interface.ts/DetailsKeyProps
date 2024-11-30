@@ -1,0 +1,5 @@
+interface DetailsKeyProps extends Omit<ResultJSONProps, "value"> {
+    name: ResultDetails
+    onShowDetails: () => void
+    openDetails?: ResultDetails
+}

@@ -1,0 +1,5 @@
+import { Box, Text } from "@chakra-ui/react"
+
+import { AnswersKeys, CommandsEnum, TerminalAnswerProps } from "@shared/ui/terminal/types"
+
+export const TerminalAnswer = (props: TerminalAnswerProps) => <BODY TerminalAnswer>

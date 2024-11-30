@@ -1,0 +1,5 @@
+getListItem = (params: GetListItemParams) => {
+	const { parent, name } = params;
+
+	return parent.getByRole('listitem').filter({ hasText: name });
+}

@@ -1,0 +1,21 @@
+import { Flex, Image, Text } from "@chakra-ui/react"
+import { Tooltip } from "@chakra-ui/react"
+
+import chakraUiIcon from "@shared/assets/chakraui.png"
+import effectorIcon from "@shared/assets/effector-icon.svg"
+import goIcon from "@shared/assets/go-original.svg"
+import javaIcon from "@shared/assets/java-original-wordmark.svg"
+import mongodbIcon from "@shared/assets/mongodb-original-wordmark.svg"
+import postgresqlIcon from "@shared/assets/postgresql-original-wordmark.svg"
+import rabbitmqIcon from "@shared/assets/rabbitmq-icon.svg"
+import reactIcon from "@shared/assets/react-original-wordmark.svg"
+import reactQueryIcon from "@shared/assets/react-query-icon.svg"
+import reactRouter from "@shared/assets/react-router-icon.svg"
+import redisIcon from "@shared/assets/redis-original-wordmark.svg"
+import springIcon from "@shared/assets/springio-icon.svg"
+import typescriptIcon from "@shared/assets/typescript-original.svg"
+import { motion } from "framer-motion"
+
+export interface StackObjectItem <BODY StackObjectItem>
+
+export const Stack = () => <BODY Stack>

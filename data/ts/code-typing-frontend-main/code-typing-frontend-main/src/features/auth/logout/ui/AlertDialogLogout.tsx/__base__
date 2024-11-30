@@ -1,0 +1,19 @@
+
+import { useRef } from "react"
+
+
+import {
+    AlertDialog,
+    AlertDialogBody,
+    AlertDialogContent,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogOverlay,
+    Button
+} from "@chakra-ui/react"
+
+import { useLogout } from "@entities/viewer"
+
+export interface AlertDialogLogoutProps <BODY AlertDialogLogoutProps>
+
+export const AlertDialogLogout = (props: AlertDialogLogoutProps) => <BODY AlertDialogLogout>

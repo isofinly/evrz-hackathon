@@ -1,0 +1,11 @@
+useSaveResultOnEnd = () => {
+    const { mutate: saveResult } = useSaveResult()
+    const { randomTextUUID } = useRandomCode()
+    const { result } = useResult()
+
+    useEffect(() => {
+        if (!result.resultTime || !randomTextUUID) return
+
+        saveResult(mapResultToApiBody({ ...result, codeExampleUUID: randomTextUUID }))
+    }, [result.resultTime])
+}

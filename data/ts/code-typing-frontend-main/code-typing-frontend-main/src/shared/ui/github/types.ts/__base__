@@ -1,0 +1,7 @@
+export interface GithubUser <BODY GithubUser>
+
+export interface GithubUserItemProps <BODY GithubUserItemProps>
+
+export interface GithubRepoItemProps <BODY GithubRepoItemProps>
+
+export interface GithubRepository <BODY GithubRepository>

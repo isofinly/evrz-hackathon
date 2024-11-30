@@ -1,0 +1,6 @@
+passValidator = (password: string) => {
+  if (password.length === 0) {
+    return 'Обязательное поле';
+  }
+  return null;
+}

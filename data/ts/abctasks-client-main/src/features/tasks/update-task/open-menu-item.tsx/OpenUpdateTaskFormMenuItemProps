@@ -1,0 +1,3 @@
+interface OpenUpdateTaskFormMenuItemProps extends CommonProps {
+	readonly taskId: number;
+}

@@ -1,0 +1,16 @@
+
+
+
+
+import { Card, CardContent, Typography } from '@mui/material';
+import * as React from 'react';
+
+import { Comment } from '@/shared/api';
+import { CommonProps } from '@/shared/types';
+
+
+export interface TemplateCommentCardProps extends CommonProps, Comment <BODY TemplateCommentCardProps>
+
+export const TemplateCommentCard: React.FC<TemplateCommentCardProps> = (
+	props
+) => <BODY TemplateCommentCard>;

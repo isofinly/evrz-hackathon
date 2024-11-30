@@ -1,0 +1,19 @@
+
+
+
+
+import { Button } from '@mui/material';
+import { useUnit } from 'effector-react';
+import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { CommonProps } from '@/shared/types';
+
+import { mutation } from './model';
+
+
+export interface ApproveInvitationButtonProps extends CommonProps <BODY ApproveInvitationButtonProps>
+
+export const ApproveInvitationButton: React.FC<ApproveInvitationButtonProps> = (
+	props
+) => <BODY ApproveInvitationButton>;

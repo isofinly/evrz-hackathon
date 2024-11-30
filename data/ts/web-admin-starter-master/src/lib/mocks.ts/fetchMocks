@@ -1,0 +1,14 @@
+fetchMocks = async (
+  url: string,
+  { method, body }: FetchProps,
+): Promise<any> => {
+  const mockMethod = `${method} ${url}`;
+
+  const answer = apiMock[mockMethod](body);
+
+  console.group(`REQUEST MOCK: ${mockMethod}`);
+  console.info(`answer:`, answer);
+  console.groupEnd();
+
+  return await wait(answer);
+}

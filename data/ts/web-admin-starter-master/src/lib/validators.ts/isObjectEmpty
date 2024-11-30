@@ -1,0 +1,3 @@
+function isObjectEmpty(obj: object) {
+  return Object.getOwnPropertyNames(obj).length > 0;
+}

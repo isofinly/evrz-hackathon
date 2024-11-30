@@ -1,0 +1,14 @@
+OpenCreateRoom: React.FC<OpenCreateRoomProps> = (props) => {
+	const { className } = props;
+
+	const onClick = useUnit(popupControls.open);
+	const { t } = useTranslation('rooms');
+
+	const label = t('actions.create_room.actions.open');
+
+	return (
+		<IconButton className={className} onClick={onClick} aria-label={label}>
+			<AddIcon />
+		</IconButton>
+	);
+}

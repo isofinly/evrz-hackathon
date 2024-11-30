@@ -1,0 +1,1 @@
+interface Progress extends Static<typeof progress> {}

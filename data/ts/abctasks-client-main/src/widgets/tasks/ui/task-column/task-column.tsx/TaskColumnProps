@@ -1,0 +1,7 @@
+interface TaskColumnProps extends CommonProps {
+	readonly tasks: Task[];
+	readonly isLoading: boolean;
+	readonly columnStatus: TaskStatus;
+	readonly hasActions?: boolean;
+	readonly header?: string | null;
+}

@@ -1,0 +1,11 @@
+interface UseTerminalReturn {
+    terminalValue: string
+    handleChange: ChangeEventHandler<HTMLInputElement>
+    containerRef: RefObject<HTMLDivElement>
+    inputRef: RefObject<HTMLInputElement>
+    handleInputFocus: MouseEventHandler<HTMLDivElement>
+    handleKeyDown: KeyboardEventHandler<HTMLInputElement>
+    handleAddCommand: () => void
+    terminalCommands: string[]
+    setTerminalCommands: Dispatch<SetStateAction<string[]>>
+}

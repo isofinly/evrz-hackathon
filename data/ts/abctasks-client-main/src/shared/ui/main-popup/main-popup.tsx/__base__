@@ -1,0 +1,26 @@
+
+
+
+
+import CloseIcon from '@mui/icons-material/Close';
+
+import {
+	Breakpoint,
+	Dialog,
+	DialogActions,
+	DialogContent,
+	DialogTitle,
+	DialogTitleProps,
+	IconButton,
+} from '@mui/material';
+import * as React from 'react';
+
+import { BasePopupProps, CommonProps, VoidFunction } from '@/shared/types';
+
+import styles from './main-popup.module.css';
+
+export interface MainPopupProps extends CommonProps, BasePopupProps <BODY MainPopupProps>
+
+export const MainPopup: React.FC<React.PropsWithChildren<MainPopupProps>> = (
+	props
+) => <BODY MainPopup>;

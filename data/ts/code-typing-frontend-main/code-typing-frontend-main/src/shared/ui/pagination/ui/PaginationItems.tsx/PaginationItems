@@ -1,0 +1,18 @@
+PaginationItems = (props: { items: number[] }) => {
+    const { items } = props
+    const { onChangePage, page } = usePagination()
+
+    return (
+        <Flex gap={1} minW="300px" justify="center" flexGrow={1}>
+            {items.map(item => (
+                <PaginationItem
+                    key={item}
+                    isActive={page === item}
+                    onClick={() => onChangePage(item)}
+                >
+                    {item}
+                </PaginationItem>
+            ))}
+        </Flex>
+    )
+}

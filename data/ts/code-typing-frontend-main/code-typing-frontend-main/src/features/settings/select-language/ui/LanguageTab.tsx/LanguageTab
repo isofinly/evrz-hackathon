@@ -1,0 +1,28 @@
+LanguageTab = () => {
+    const [searchParams] = useSearchParams()
+    const languageName = searchParams.get(searchParamsEnum.languageName)
+
+    const { data: programmingLanguages } = useGetProgrammingLanguages()
+
+    const currentCodeIcon = programmingLanguages?.find(
+        language => language.name === languageName
+    )?.logo
+
+    return (
+        <Tooltip
+            label={
+                (languageName ? `Current language: ${languageName}` : "Select language") + "(Alt+1)"
+            }
+        >
+            <Box>
+                <AsideTab name={settingTabs.language} cursor="pointer">
+                    <Image
+                        w="50px"
+                        color="main.900"
+                        src={currentCodeIcon ? currentCodeIcon : programmingLanguageIcon}
+                    />
+                </AsideTab>
+            </Box>
+        </Tooltip>
+    )
+}

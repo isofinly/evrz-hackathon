@@ -1,0 +1,17 @@
+useAxiosErrorToast = () => {
+    const toast = useToast()
+
+    return (error: AxiosError<ApiError>) => {
+        const errorTitle = error.response?.data?.message
+
+        // <REVIEW>
+        // условный оператор должен иметь фигурные скобки
+        // if (!errorTitle) {
+        //  return toast({ ...toastStyles, title: "Something went wrong!" })
+        // }
+        // </REVIEW>
+        if (!errorTitle) return toast({ ...toastStyles, title: "Something went wrong!" })
+
+        toast({ colorScheme: "red", title: error.response?.data?.message, status: "error" })
+    }
+}

@@ -1,0 +1,42 @@
+chainInternalRoute = <Params extends RouteParams>(
+	route: RouteInstance<Params>,
+	options: ChainInternalRouteParams
+): RouteInstance<Params> => {
+	const { isInternal, otherwise } = options;
+
+	// <REVIEW>событие должно происходить в хранилище по пути /src/Model/{название}/events/event.ts</REVIEW>
+	const startNavigationChecking = createEvent<RouteParamsAndQuery<Params>>();
+	// <REVIEW>событие должно происходить в хранилище по пути /src/Model/{название}/events/event.ts</REVIEW>
+	const userNavigated = createEvent();
+	// <REVIEW>событие должно происходить в хранилище по пути /src/Model/{название}/events/event.ts</REVIEW>
+	const internalNavigated = createEvent();
+
+	// <REVIEW>сэмплирование должно происходить в хранилище по пути /src/Model/{название}/state.ts</REVIEW>
+	sample({
+		clock: startNavigationChecking,
+		filter: isInternal,
+		target: internalNavigated,
+	});
+
+	// <REVIEW>сэмплирование должно происходить в хранилище по пути /src/Model/{название}/state.ts</REVIEW>
+	sample({
+		clock: startNavigationChecking,
+		filter: not(isInternal),
+		target: userNavigated,
+	});
+
+	if (otherwise) {
+		// <REVIEW>сэмплирование должно происходить в хранилище по пути /src/Model/{название}/state.ts</REVIEW>
+		sample({
+			clock: userNavigated,
+			target: otherwise as Event<any>,
+		});
+	}
+
+	return chainRoute({
+		route,
+		beforeOpen: startNavigationChecking,
+		openOn: internalNavigated,
+		cancelOn: userNavigated,
+	});
+}

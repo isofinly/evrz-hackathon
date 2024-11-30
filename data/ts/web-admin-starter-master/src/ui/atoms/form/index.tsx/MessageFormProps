@@ -1,0 +1,3 @@
+type MessageFormProps = {
+  handleSubmit: Event<void>;
+};

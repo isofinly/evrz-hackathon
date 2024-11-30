@@ -1,0 +1,8 @@
+import { Filter } from "./model";
+import { Result } from "../results";
+
+
+export interface FilterCheckboxProps <BODY FilterCheckboxProps>
+
+
+export interface FilterParams <BODY FilterParams>

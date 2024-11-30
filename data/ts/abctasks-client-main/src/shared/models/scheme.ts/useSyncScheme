@@ -1,0 +1,8 @@
+useSyncScheme = () => {
+	const { setMode } = useColorScheme();
+	const mode = useUnit($biScheme);
+
+	useLayoutEffect(() => {
+		setMode(mode);
+	}, [mode]);
+}

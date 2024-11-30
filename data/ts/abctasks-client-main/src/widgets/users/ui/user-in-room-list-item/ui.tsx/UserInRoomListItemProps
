@@ -1,0 +1,7 @@
+interface UserInRoomListItemProps
+
+	extends CommonProps,
+
+		Omit<TemplateUserListItemProps, 'slots'> {
+	readonly roomId: number;
+}

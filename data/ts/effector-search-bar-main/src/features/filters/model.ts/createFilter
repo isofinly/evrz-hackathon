@@ -1,0 +1,41 @@
+function createFilter(filterName: string, { isFit }: FilterParams) {
+  // <REVIEW>Создание домена происходить в хранилище по пути /src/Model/{название}/state.ts</REVIEW> 
+  const filterDomain = createDomain(filterName);
+
+  // <REVIEW>хранение состояние в переменной должно происходить в хранилище по пути /src/Model/{название}/state.ts</REVIEW> 
+  const $active = filterDomain.createStore(false);
+  // <REVIEW>хранение состояние в переменной должно происходить в хранилище по пути /src/Model/{название}/state.ts</REVIEW> 
+  const $disabled = filterDomain.createStore(false);
+
+    // <REVIEW>события изменения состояния должно происходить в хранилище по пути /src/Model/{название}/state.ts</REVIEW> 
+  const { activate, deactivate } = createApi($active, {
+    activate: (_, _1: { ctx: string }) => true,
+    deactivate: (_, _1: { ctx: string }) => false,
+  });
+
+    // <REVIEW>события изменения состояния должно происходить в хранилище по пути /src/Model/{название}/state.ts</REVIEW> 
+  const { enable, disable } = createApi($disabled, {
+    enable: () => false,
+    disable: () => true,
+  });
+
+  // <REVIEW>события изменения состояния должно происходить в хранилище по пути /src/Model/{название}/state.ts</REVIEW> 
+  $active.on(disable, () => false);
+
+  // <REVIEW>Данная функция является утилитой для хранилища и должна быть по пути /src/Model/{название}/utils.ts</REVIEW>  
+  function applyFilter(isActive: boolean, results: Result[]) {
+    if (!isActive) return results;
+
+    return results.filter((result) => isFit(result));
+  }
+
+  return {
+    activate,
+    deactivate,
+    enable,
+    disable,
+    $active,
+    $disabled,
+    applyFilter,
+  };
+}

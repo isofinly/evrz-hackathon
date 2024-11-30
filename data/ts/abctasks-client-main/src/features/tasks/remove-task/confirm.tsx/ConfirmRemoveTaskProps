@@ -1,0 +1,1 @@
+interface ConfirmRemoveTaskProps extends CommonProps, BasePopupProps {}

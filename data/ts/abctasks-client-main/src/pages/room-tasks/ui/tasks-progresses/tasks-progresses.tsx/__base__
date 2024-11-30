@@ -1,0 +1,24 @@
+import ReplayIcon from '@mui/icons-material/Replay';
+import { Typography } from '@mui/material';
+import { useUnit } from 'effector-react';
+import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
+import {
+	SkeletonTaskProgress,
+	TaskProgress,
+	progressesModel
+} from '@/entities/progresses';
+
+import { routes } from '@/shared/configs';
+import { useParam } from '@/shared/lib';
+import { CommonProps } from '@/shared/types';
+import { FriendlyList, TextWithAction } from '@/shared/ui';
+
+import styles from './tasks-progresses.module.css';
+
+export interface TasksProgressProps extends CommonProps <BODY TasksProgressProps>
+
+export const TasksProgress: React.FC<TasksProgressProps> = (props) => <BODY TasksProgress>;
+
+const Error: React.FC = () => <BODY Error>;

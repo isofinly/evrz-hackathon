@@ -1,0 +1,11 @@
+export interface ProgrammingLanguage <BODY ProgrammingLanguage>
+
+export type ProgrammingLanguageResponse = ProgrammingLanguage[]
+
+export interface CodeExample <BODY CodeExample>
+
+export type CodeExampleByUUID = CodeExample
+export type CodeExamplesByNameResponse = CodeExample[]
+export type CodeExamplesResponse = CodeExample[]
+
+export interface CustomCodeExampleBody <BODY CustomCodeExampleBody>

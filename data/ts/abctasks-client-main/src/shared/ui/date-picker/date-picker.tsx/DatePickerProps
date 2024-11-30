@@ -1,0 +1,6 @@
+interface DatePickerProps
+	extends CommonProps,
+		Pick<FieldProps, FieldKeys>,
+		Omit<MUIDatePIckerProps<Dayjs>, FieldKeys | 'onChange'> {
+	readonly onChange: (date: string | null) => void;
+}

@@ -1,0 +1,4 @@
+interface Props {
+  className?: string
+  children: ReactNode
+}

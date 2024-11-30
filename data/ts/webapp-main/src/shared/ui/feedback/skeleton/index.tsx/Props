@@ -1,0 +1,8 @@
+interface Props {
+  className?: string
+  type: 'block' | 'inline'
+  width?: number | string
+  maxWidth?: number | string
+  height?: number | string
+  radius?: number | string
+}

@@ -1,0 +1,71 @@
+Confirmation = () => {
+  useBackAction(goToRequestInfoStep)
+
+  const price = useUnit(priceQuery)
+  const createMutation = useUnit(appointmentCreateMutation)
+
+  if (price.pending) {
+    return (
+      <BaseTemplate>
+        <Header title="Подтвердите запись" />
+        <ResultCard
+          title={<Skeleton type="inline" width={280} />}
+          description={[
+            <Fragment key={1}>
+              <Skeleton type="inline" width={230} />
+            </Fragment>,
+            <Fragment key={2}>
+              <Skeleton type="inline" width={250} />
+              <Skeleton type="inline" />
+              <Skeleton type="inline" width={265} />
+              <Skeleton type="inline" width={160} />
+            </Fragment>,
+          ]}
+          actions={
+            <Fragment>
+              <ButtonSkeleton />
+              <ButtonSkeleton />
+            </Fragment>
+          }
+        />
+      </BaseTemplate>
+    )
+  }
+
+  return (
+    <BaseTemplate>
+      <Header title="Подтвердите запись" />
+      <ResultCard
+        title="Подтверждение записи"
+        description={[
+          <Fragment key={1}>
+            Стоимость услуги составит{' '}
+            {/*<REVIEW>Стили className должны быть модульными</REVIEW>  */}
+            <span className="font-bold">
+              {formatRUB(price.data?.value ?? 0)}
+            </span>
+          </Fragment>,
+          <Fragment key={2}>
+            Счёт на&nbsp;оплату будет отправлен вам в&nbsp;личные сообщения.
+            Для&nbsp;продолжения нужно будет перейти в&nbsp;чат с&nbsp;ботом и
+            вызвать окно оплаты
+          </Fragment>,
+        ]}
+        actions={
+          <Fragment>
+            <Button
+              onClick={confirmed}
+              loading={createMutation.pending}
+              loadingText="Создаем запись"
+            >
+              Создать запись
+            </Button>
+            <ButtonLink to={routes.appointments} variant="outline">
+              Вернуться к записям
+            </ButtonLink>
+          </Fragment>
+        }
+      />
+    </BaseTemplate>
+  )
+}

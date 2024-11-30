@@ -1,0 +1,7 @@
+interface UpdateTagParams
+
+	extends Partial<Omit<CreateTagParams, 'roomId'>>,
+
+		InRoomParams {
+	readonly id: number;
+}

@@ -1,0 +1,20 @@
+PublicPage = ({ children }: { children: ReactNode }) => {
+    const { mutate: refreshMutate, isPending } = useRefresh()
+    const { loginViewer } = useViewer()
+    const [isAccess, setAccess] = useState(false)
+
+    useEffect(() => {
+        refreshMutate(undefined, {
+            onSuccess: access => {
+                loginViewer(access)
+            },
+            onSettled: () => {
+                setAccess(true)
+            }
+        })
+    }, [])
+
+    if (isPending) return <Progress isIndeterminate />
+
+    return isAccess ? children : null
+}

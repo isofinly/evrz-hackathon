@@ -1,0 +1,7 @@
+function sendEvent({ name, payload }: AnalyticsEvent) {
+  if (!initialized) throw new Error("Analytics is not initialized!");
+
+  console.log(
+    `Sending event: ${name} with payload "${JSON.stringify(payload)}"`
+  );
+}

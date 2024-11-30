@@ -1,0 +1,21 @@
+Heading = ({
+  as: Element = 'h2',
+  className,
+  style,
+  font = 'interface',
+  size = 'base',
+  children,
+  ...rest
+}: HeadingProps) => {
+  return (
+    <Element
+      className={clsx(styles.heading, className)}
+      style={style}
+      data-font={font}
+      data-size={size}
+      {...rest}
+    >
+      {children}
+    </Element>
+  )
+}

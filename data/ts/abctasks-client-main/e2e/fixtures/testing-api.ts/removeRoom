@@ -1,0 +1,9 @@
+removeRoom = async (
+	ctx: BrowserContext,
+	data: RoomParams = {}
+): Promise<boolean> => {
+	return request(ctx, '/room', {
+		method: 'PUT',
+		data,
+	});
+}

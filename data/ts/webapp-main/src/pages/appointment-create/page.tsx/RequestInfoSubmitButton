@@ -1,0 +1,20 @@
+RequestInfoSubmitButton = ({ form }: PropsWithForm) => {
+  const { dirtyFields, isValid } = useFormState({
+    control: form.control,
+  })
+
+  const canBeSubmitted =
+    dirtyFields.requestId && dirtyFields.requestSecurityCode && isValid
+
+  if (!canBeSubmitted) {
+    return null
+  }
+
+  return (
+    <StickyActions>
+      <Button type="submit" fluid={true}>
+        Продолжить
+      </Button>
+    </StickyActions>
+  )
+}

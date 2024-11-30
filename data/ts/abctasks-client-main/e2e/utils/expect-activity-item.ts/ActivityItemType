@@ -1,0 +1,1 @@
+type ActivityItemType = 'success' | 'error' | 'warning';

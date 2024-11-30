@@ -1,0 +1,7 @@
+getAll = async ({ roomId, ...query }: GetTasksParams) => {
+	return instance
+		.get(`tasks/${roomId}`, {
+			searchParams: new URLSearchParams(normalizeQuery(query)),
+		})
+		.json<StandardResponse<Task[]>>();
+}

@@ -1,0 +1,3 @@
+interface LastActivitiesProps extends CommonProps {
+	readonly disableBorder?: boolean;
+}

@@ -1,0 +1,1 @@
+Footer: React.FC = () => <FooterContainer>WEB © 2012 – {todayYear}</FooterContainer>

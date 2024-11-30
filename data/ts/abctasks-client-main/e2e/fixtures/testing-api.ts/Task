@@ -1,0 +1,9 @@
+task = async (
+	ctx: BrowserContext,
+	data: TaskParams = {}
+): Promise<Task> => {
+	return request(ctx, '/task', {
+		method: 'POST',
+		data,
+	});
+}

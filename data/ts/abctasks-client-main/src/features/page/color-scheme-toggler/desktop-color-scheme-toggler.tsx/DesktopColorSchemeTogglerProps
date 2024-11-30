@@ -1,0 +1,3 @@
+interface DesktopColorSchemeTogglerProps extends CommonProps {
+	readonly size?: 'small' | 'medium' | 'large';
+}

@@ -1,0 +1,35 @@
+FullWidthPopup: React.FC<FullWidthPopupProps> = (props) => {
+	const {
+		id,
+		isOpen,
+		onClose,
+		title,
+		className,
+		children,
+		slots,
+		DialogTitleProps,
+	} = props;
+
+	return (
+		<Dialog
+			id={id}
+			open={isOpen}
+			onClose={onClose}
+			TransitionComponent={Transition}
+			fullScreen>
+			<DialogTitle
+				className={styles.title}
+				align='center'
+				{...DialogTitleProps}>
+				{title}
+				<IconButton className={styles.cross} onClick={onClose}>
+					<CloseIcon />
+				</IconButton>
+			</DialogTitle>
+			<DialogContent className={cn(styles.content, className)}>
+				{children}
+			</DialogContent>
+			{slots?.actions ? <DialogActions>{slots.actions}</DialogActions> : null}
+		</Dialog>
+	);
+}

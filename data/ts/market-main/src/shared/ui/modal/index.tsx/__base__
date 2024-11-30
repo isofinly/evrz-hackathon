@@ -1,0 +1,26 @@
+import { useState, useContext, useLayoutEffect } from "react";
+import { Product } from "@/entities/CardsGallary/model/types/types";
+import { ThemeContext } from "@/app/providers/ThemeProvider";
+import styles from "./styles.module.scss";
+import ICON from "@/shared/ui/Icons";
+import clsx from "clsx";
+import { Portal } from "@/shared/ui/portal";
+
+type ModalProps = {
+  isVisible: boolean;
+  hideModal: () => void;
+  setActiveProduct: (product: Product | null) => void;
+  product: Product | null;
+  products: Product[];
+};
+
+
+
+
+export function Modal({
+  isVisible,
+  hideModal,
+  product,
+  products,
+  setActiveProduct,
+}: ModalProps): JSX.Element | null <BODY Modal>

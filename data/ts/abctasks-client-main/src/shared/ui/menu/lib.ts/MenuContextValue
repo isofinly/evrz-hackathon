@@ -1,0 +1,3 @@
+interface MenuContextValue {
+	readonly onClose?: (...args: any[]) => any;
+}

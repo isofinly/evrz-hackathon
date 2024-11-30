@@ -1,0 +1,23 @@
+Error: React.FC = () => {
+	const { t, } = useTranslation('room-tags');
+
+	const actionText = t('actions.retry', { ns: 'common', });
+	const text = t('actions.retry_tags.text');
+
+	const start = useUnit(tagsModel.query.start);
+
+	const roomId = useParam(routes.room.tags, 'id');
+
+	const onRetry = () => {
+		start({ roomId, });
+	};
+
+	return (
+		<TextWithAction
+			actionText={actionText}
+			text={text}
+			onClick={onRetry}
+			icon={<ReplayIcon />}
+		/>
+	);
+}

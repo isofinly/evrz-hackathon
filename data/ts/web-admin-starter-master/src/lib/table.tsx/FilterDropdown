@@ -1,0 +1,6 @@
+type FilterDropdown = {
+  setSelectedKeys: (keys: string[]) => string;
+  selectedKeys: string[];
+  confirm: () => void;
+  clearFilters: () => void;
+};

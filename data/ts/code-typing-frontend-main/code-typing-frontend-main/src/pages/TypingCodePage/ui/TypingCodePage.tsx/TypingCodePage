@@ -1,0 +1,27 @@
+TypingCodePage = () => {
+    const isOpenTerminal = useTerminalIsOpen()
+    const { closeTerminal } = useTerminalHandlers()
+    const { handleCloseHelpModal, isOpenHelpModal } = useOpenHelpModal()
+
+    useTerminalKeyDown()
+
+    return (
+        <TypingCodeProviders>
+             {/* <REVIEW>Не используемых переменных не должно быть, например <Flex className={styles.root}></REVIEW>*/}
+            <Flex justify="start" flexGrow="1" maxW="100vw" gap="10px" overflow="hidden">
+                <AsideSettings />
+
+                 {/* <REVIEW>Не используемых переменных не должно быть, например <Flex className={styles.root}></REVIEW>*/}
+                <Flex flex="1" direction="column" py="5px" ml="10px">
+                    <TypingCodePanel />
+
+                    <TypingCode />
+                </Flex>
+            </Flex>
+
+            <Terminal onClose={closeTerminal} isOpen={isOpenTerminal} />
+
+            <HelpModal isOpen={isOpenHelpModal} onClose={handleCloseHelpModal} isTypingCodePage />
+        </TypingCodeProviders>
+    )
+}

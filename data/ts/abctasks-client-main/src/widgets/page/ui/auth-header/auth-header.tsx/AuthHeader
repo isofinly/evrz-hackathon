@@ -1,0 +1,17 @@
+AuthHeader: React.FC<AuthHeaderProps> = (props) => {
+	const { className } = props;
+
+	return (
+		<TemplateHeader
+			className={className}
+			slots={{
+				right: (
+					<>
+						<ChangeLanguage />
+						<AdaptiveColorSchemeToggler />
+					</>
+				),
+			}}
+		/>
+	);
+}

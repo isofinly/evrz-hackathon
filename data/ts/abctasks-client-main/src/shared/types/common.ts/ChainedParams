@@ -1,0 +1,3 @@
+interface ChainedParams {
+	readonly otherwise?: Event<any> | Effect<any, any>;
+}

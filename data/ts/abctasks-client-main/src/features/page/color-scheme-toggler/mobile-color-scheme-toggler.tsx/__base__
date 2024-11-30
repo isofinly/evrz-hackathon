@@ -1,0 +1,25 @@
+
+
+
+import {
+	IconButton,
+	ListItemIcon,
+	Menu,
+	MenuItem,
+	Tooltip,
+} from '@mui/material';
+import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { useToggle } from '@/shared/lib';
+import { colorSchemeModel } from '@/shared/models';
+import { CommonProps } from '@/shared/types';
+
+import { ICONS_MAP, SCHEMES } from './config';
+import { useToggleColorScheme } from './lib';
+
+export interface MobileColorSchemeTogglerProps extends CommonProps <BODY MobileColorSchemeTogglerProps>
+
+export const MobileColorSchemeToggler: React.FC<
+	MobileColorSchemeTogglerProps
+> = (props) => <BODY MobileColorSchemeToggler>;

@@ -1,0 +1,6 @@
+type ProductFilters = {
+    limit: number;
+    query: string;
+    skip: number;
+    category: Category;
+}

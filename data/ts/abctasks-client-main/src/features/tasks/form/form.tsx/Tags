@@ -1,0 +1,22 @@
+Tags: React.FC<FieldProps> = (props) => {
+	const { $form, } = props;
+
+	const { t, } = useTranslation('tasks');
+	const label = t('actions.task_form.fields.tags');
+
+	const tagIds = useUnit($form.fields.tagIds);
+
+	return (
+		<TagPicker
+			value={tagIds.value}
+			onChange={tagIds.onChange}
+			onBlur={tagIds.onBlur}
+			helperText={tagIds.errorText}
+			isValid={tagIds.isValid}
+			name='tagIds'
+			label={label}
+			limitTags={1}
+			multiple
+		/>
+	);
+}

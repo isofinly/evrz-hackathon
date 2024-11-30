@@ -1,0 +1,4 @@
+interface GithubRepoItemProps {
+    owner: string
+    repo: string
+}

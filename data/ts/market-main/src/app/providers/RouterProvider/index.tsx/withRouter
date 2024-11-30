@@ -1,0 +1,7 @@
+withRouter = (component: () => React.ReactNode) => () => (
+    <BrowserRouter>
+        <ThemeProvider>
+                {component()}
+        </ThemeProvider>
+    </BrowserRouter>
+)

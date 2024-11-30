@@ -1,0 +1,14 @@
+
+
+import { FC, Fragment } from "react"
+
+
+import { Box, Text } from "@chakra-ui/react"
+
+
+export type BreadCrumbsProps = {
+    crumbs: string[]
+    onCrumbClick: (index: number, name: string) => void
+}
+
+export const BreadCrumbs: FC<BreadCrumbsProps> = props => <BODY BreadCrumbs>

@@ -1,0 +1,7 @@
+import { ReactElement } from "react"
+
+import { ProgrammingLanguage } from "@entities/code"
+
+export interface ProgrammingLanguagesListProps <BODY ProgrammingLanguagesListProps>
+
+export interface RenderProgrammingLanguageProps extends ProgrammingLanguage <BODY RenderProgrammingLanguageProps>

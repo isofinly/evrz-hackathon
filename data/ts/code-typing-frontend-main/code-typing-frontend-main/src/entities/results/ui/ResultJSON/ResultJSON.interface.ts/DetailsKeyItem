@@ -1,0 +1,4 @@
+interface DetailsKeyItem {
+    name: ResultDetails
+    jsonKey: string
+}

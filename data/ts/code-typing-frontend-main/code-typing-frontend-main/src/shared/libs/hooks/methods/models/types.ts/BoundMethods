@@ -1,0 +1,3 @@
+type BoundMethods<Methods extends AnyMethodsMap<any>> = {
+    [Key in keyof Methods]: BoundMethod<Methods[Key]>
+}

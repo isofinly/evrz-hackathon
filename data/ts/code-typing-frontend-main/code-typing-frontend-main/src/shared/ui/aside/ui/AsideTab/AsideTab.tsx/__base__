@@ -1,0 +1,4 @@
+import { AsideTabProps, useAside } from "@shared/ui/aside"
+import { Tile } from "@shared/ui/tile"
+
+export const AsideTab = (props: AsideTabProps) => <BODY AsideTab>

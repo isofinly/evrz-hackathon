@@ -1,0 +1,4 @@
+type BreadCrumbsProps = {
+    crumbs: string[]
+    onCrumbClick: (index: number, name: string) => void
+}

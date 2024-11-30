@@ -1,0 +1,20 @@
+TemplateHeader: React.FC<TemplateHeaderProps> = (props) => {
+	const { className, slots = {} } = props;
+
+	return (
+		<AppBar
+			className={cn(styles.container, className)}
+			position='static'
+			color='default'
+			elevation={0}
+			variant='outlined'>
+			<Toolbar className={styles.bar}>
+				<div className={cn(styles.left, styles.side)}>{slots.left}</div>
+				{slots.center ? (
+					<div className={styles.center}>{slots.center}</div>
+				) : null}
+				<div className={cn(styles.right, styles.side)}>{slots.right}</div>
+			</Toolbar>
+		</AppBar>
+	);
+}

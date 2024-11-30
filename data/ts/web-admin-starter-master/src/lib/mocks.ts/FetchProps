@@ -1,0 +1,4 @@
+type FetchProps = {
+  method: string;
+  body: string;
+};

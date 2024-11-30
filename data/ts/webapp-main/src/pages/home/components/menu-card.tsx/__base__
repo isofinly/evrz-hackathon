@@ -1,0 +1,33 @@
+
+
+import { Container, Typography } from '@shared/ui'
+import { RouteInstance, RouteParams } from 'atomic-router'
+import { Link } from 'atomic-router-react'
+import clsx from 'clsx'
+import styles from './menu-card.module.css'
+
+{
+type Action =
+  | {
+      type: 'link'
+      to: RouteInstance<RouteParams>
+    }
+  | {
+      type: 'external-link'
+      href: string
+    }
+  | {
+      type: 'button'
+      onClick: () => void
+    }
+
+{
+interface Props <BODY Props>
+
+export const MenuCard = ({
+  className,
+  text,
+  image,
+  skeleton = false,
+  action,
+}: Props) => <BODY MenuCard>

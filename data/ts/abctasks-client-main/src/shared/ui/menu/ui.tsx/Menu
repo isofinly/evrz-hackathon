@@ -1,0 +1,9 @@
+Menu: React.FC<MenuProps> = (props) => {
+	const { onClose, children, ...rest } = props;
+
+	return (
+		<MUIMenu {...rest} onClose={onClose}>
+			<MenuProvider value={{ onClose }}>{children}</MenuProvider>
+		</MUIMenu>
+	);
+}

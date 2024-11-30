@@ -1,0 +1,6 @@
+interface CurrentRowMethods {
+    nextRow: () => void
+    setTypingValue: (value: string) => void
+    setValueWithTab: (tabWidth?: number) => void
+    resetState: () => void
+}

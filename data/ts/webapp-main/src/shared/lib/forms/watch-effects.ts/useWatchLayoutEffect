@@ -1,0 +1,10 @@
+function useWatchLayoutEffect<T extends FieldValues>(
+  form: UseFormReturn<T>,
+  effect: WatchObserver<T>,
+) {
+  useLayoutEffect(() => {
+    const subscription = form.watch(effect)
+    return () => subscription.unsubscribe()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+}

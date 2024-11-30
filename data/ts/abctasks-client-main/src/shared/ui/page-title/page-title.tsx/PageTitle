@@ -1,0 +1,11 @@
+PageTitle: React.FC<PageTitleProps> = (props) => {
+	const { extra, className, title } = props;
+	return (
+		<div className={cn(styles.wrapper, className)}>
+			<Typography className={styles.title} variant='h4' component='h1'>
+				{title}
+			</Typography>
+			{extra}
+		</div>
+	);
+}

@@ -1,0 +1,7 @@
+import { memo } from "react"
+
+import { CodeIndex, CodeIndexes, CodeIndexesRangeProps } from "@entities/code"
+
+const CodeIndexesRange = (props: CodeIndexesRangeProps) => <BODY CodeIndexesRange>
+
+export default memo(CodeIndexesRange)

@@ -1,0 +1,5 @@
+remove = ({ roomId, taskId, id, }: RemoveParams) => {
+	return instance
+		.delete(`comments/${roomId}/${taskId}/${id}/remove`)
+		.json<StandardResponse<boolean>>();
+}

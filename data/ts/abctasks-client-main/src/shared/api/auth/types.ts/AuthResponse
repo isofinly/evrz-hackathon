@@ -1,0 +1,1 @@
+interface AuthResponse extends Static<typeof authResponse> {}

@@ -1,0 +1,4 @@
+interface LoadingIndicatorProps extends CommonProps {
+	readonly size?: Size;
+	readonly text?: string | null;
+}

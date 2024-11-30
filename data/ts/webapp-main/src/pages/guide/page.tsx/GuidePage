@@ -1,0 +1,19 @@
+GuidePage = () => {
+  useBackRoute(routes.home)
+
+  const view = useUnit($view)
+
+  if (view === View.TechnicalIssue) {
+    return <ServiceNotWorkingPage />
+  }
+
+  return (
+    <BaseTemplate>
+      <Header title="Частые вопросы" />
+      {/*<REVIEW>Стили className должны быть модульными</REVIEW>  */}
+      <section className="grow py-2 flex flex-col gap-2">
+        <Content />
+      </section>
+    </BaseTemplate>
+  )
+}

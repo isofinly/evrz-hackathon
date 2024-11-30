@@ -1,0 +1,110 @@
+
+
+import { RouteParams } from 'atomic-router'
+import { Link, LinkProps } from 'atomic-router-react'
+import clsx from 'clsx'
+import { ButtonHTMLAttributes, FC, forwardRef, ReactNode } from 'react'
+import { Skeleton } from '../../feedback/skeleton'
+import styles from './styles.module.css'
+import { ButtonColor, ButtonSize, ButtonVariant } from './types'
+
+
+interface SharedProps <BODY SharedProps>
+
+const createDataset = ({
+  loading = false,
+  disabled = false,
+  size = 'md',
+  variant = 'solid',
+  color = 'primary',
+  fluid = false,
+}: SharedProps) => ({
+  'data-disabled': loading || disabled,
+  'data-loading': loading,
+  'data-size': size,
+  'data-color': color,
+  'data-variant': variant,
+  'data-fluid': fluid,
+})
+
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & SharedProps
+
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (props, forwardedRef) => {
+    const {
+      className,
+      children,
+      loading = false,
+      disabled = loading,
+      loadingText = children,
+      icon,
+      fluid,
+      variant,
+      size,
+      color,
+      ...rest
+    } = props
+
+    const dataset = createDataset(props)
+
+    return (
+      
+      <button
+        ref={forwardedRef}
+        className={clsx(styles.button, className)}
+        disabled={loading || disabled}
+        {...dataset}
+        {...rest}
+      >
+        {loading ? <LoadingIcon /> : icon}
+        {loading ? loadingText : children}
+      </button>
+    )
+  },
+)
+
+export type ButtonLinkProps<T extends RouteParams> = SharedProps & LinkProps<T>
+
+interface ButtonLinkForwarded extends FC<ButtonLinkProps<RouteParams>> <BODY ButtonLinkForwarded>
+
+export const ButtonLink: ButtonLinkForwarded = forwardRef<
+  HTMLAnchorElement,
+  ButtonLinkProps<RouteParams>
+>((props, forwardedRef) => {
+  const {
+    className,
+    children,
+    loading = false,
+    disabled = loading,
+    loadingText = children,
+    icon,
+    onClick,
+    fluid,
+    variant,
+    size,
+    color,
+    ...rest
+  } = props
+
+  const dataset = createDataset(props)
+
+  return (
+    <Link
+      ref={forwardedRef}
+      className={clsx(styles.button, className)}
+      onClick={(event) => {
+        if (disabled) return event.preventDefault()
+        onClick?.(event)
+      }}
+      {...dataset}
+      {...rest}
+    >
+      {loading ? <LoadingIcon /> : icon}
+      {loading ? loadingText : children}
+    </Link>
+  )
+})
+
+export const ButtonSkeleton = () => <BODY ButtonSkeleton>
+
+const LoadingIcon = () => <BODY LoadingIcon>

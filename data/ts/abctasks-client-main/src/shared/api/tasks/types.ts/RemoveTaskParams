@@ -1,0 +1,3 @@
+interface RemoveTaskParams extends InRoomParams {
+	readonly id: number;
+}

@@ -1,0 +1,5 @@
+remove = async ({ roomId, id, }: RemoveTaskParams) => {
+	return instance
+		.delete(`tasks/${roomId}/${id}/remove`)
+		.json<StandardResponse<boolean>>();
+}

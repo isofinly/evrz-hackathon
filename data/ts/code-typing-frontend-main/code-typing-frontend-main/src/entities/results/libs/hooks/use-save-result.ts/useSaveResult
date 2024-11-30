@@ -1,0 +1,14 @@
+useSaveResult = () => {
+    const errorHandler = useAxiosErrorToast()
+    const queryClient = useQueryClient()
+
+    return useMutation({
+        mutationFn: (body: SaveResultBody) => ResultsService.saveResult(body),
+        onError: errorHandler,
+        onSuccess: async () => {
+            await queryClient.invalidateQueries({
+                queryKey: [queryKeysEnum.savedResults]
+            })
+        }
+    })
+}

@@ -1,0 +1,7 @@
+interface LayoutProps
+
+	extends CommonProps,
+
+		Required<React.PropsWithChildren> {
+	readonly slots?: Slots<'header'>;
+}

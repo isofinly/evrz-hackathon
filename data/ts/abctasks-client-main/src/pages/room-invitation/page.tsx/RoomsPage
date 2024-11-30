@@ -1,0 +1,19 @@
+RoomsPage: React.FC<CommonProps> = (props) => {
+	const { className, } = props;
+	const { t, } = useTranslation('room-invitation');
+	const title = t('title');
+	usePageTitle(title);
+
+	return (
+		<Layout
+			className={cn(styles.layout, className)}
+			slots={{
+				header: <MainHeader />,
+			}}>
+			<Center>
+				<Loading />
+				<Result />
+			</Center>
+		</Layout>
+	);
+}

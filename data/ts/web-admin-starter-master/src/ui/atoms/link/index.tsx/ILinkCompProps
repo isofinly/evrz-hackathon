@@ -1,0 +1,6 @@
+interface ILinkCompProps {
+  children?: React.ReactNode | null
+  onClick?: () => void
+  className?: string
+  to: string
+}

@@ -1,0 +1,13 @@
+RoomsPage: React.FC<CommonProps> = (props) => {
+	const { className, } = props;
+	const { t, } = useTranslation('rooms');
+	const title = t('title');
+	usePageTitle(title);
+
+	return (
+		<RoomsLayout className={cn(styles.layout, className)}>
+			<RoomList />
+			<Popups popupMap={popupMap} />
+		</RoomsLayout>
+	);
+}

@@ -1,0 +1,1 @@
+interface UpdateTaskProps extends CommonProps, BasePopupProps {}

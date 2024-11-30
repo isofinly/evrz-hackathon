@@ -1,0 +1,4 @@
+interface ExpectListItemParams extends GetListItemParams {
+	readonly primaryColor: string;
+	readonly secondaryColor: string;
+}

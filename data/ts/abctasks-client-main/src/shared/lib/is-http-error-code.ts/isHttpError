@@ -1,0 +1,3 @@
+isHttpError = (error: Error): error is HTTPError => {
+	return 'request' in error;
+}

@@ -1,0 +1,10 @@
+TagCardActions: React.FC<{ id: number }> = (props) => {
+	const { id } = props;
+
+	return (
+		<div>
+			<OpenUpdateTagButton tagId={id} />
+			<RemoveTag tagId={id} />
+		</div>
+	);
+}

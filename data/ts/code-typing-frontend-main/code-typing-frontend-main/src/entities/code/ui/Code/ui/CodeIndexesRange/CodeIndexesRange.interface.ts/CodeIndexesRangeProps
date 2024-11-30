@@ -1,0 +1,4 @@
+interface CodeIndexesRangeProps extends CodeIndexesProps {
+    startIndex: number
+    length: number
+}

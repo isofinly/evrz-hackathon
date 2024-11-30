@@ -1,0 +1,17 @@
+RegistrationThanksPage: React.FC<CommonProps> = (props) => {
+	const { className, } = props;
+	const { t, } = useTranslation('activate');
+
+	const title = t('title');
+
+	usePageTitle(title);
+
+	return (
+		<AuthLayout className={className} classes={{ center: styles.container, }}>
+			<PageTitle title={title} />
+			<Loading />
+			<Success />
+			<Error />
+		</AuthLayout>
+	);
+}

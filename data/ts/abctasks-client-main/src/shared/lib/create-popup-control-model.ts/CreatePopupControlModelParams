@@ -1,0 +1,8 @@
+interface CreatePopupControlModelParams {
+	readonly name: string;
+	/**
+	 * Should popup be synced with query
+	 * @default true
+	 */
+	readonly sync?: boolean;
+}

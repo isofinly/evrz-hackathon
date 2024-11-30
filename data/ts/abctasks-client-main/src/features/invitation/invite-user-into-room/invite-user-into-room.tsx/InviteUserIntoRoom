@@ -1,0 +1,31 @@
+InviteUserIntoRoom: React.FC<InviteUserIntoRoomProps> = (
+	props
+) => {
+	const { className } = props;
+	// <REVIEW>переменная должна иметь явный смысл в своем названии</REVIEW>
+	const { t } = useTranslation('room-invitations');
+	const submit = useUnit(form.submit);
+	const isLoading = useUnit(mutation.$pending);
+	const user = useUnit(form.fields.user.$value);
+
+	const onSubmit: React.FormEventHandler = usePreventDefault(submit);
+
+	const buttonText = user
+		? t('actions.invite_user.actions.submit', { username: user.username })
+		: t('actions.invite_user.actions.submit', { context: 'disabled' });
+
+	return (
+		<form className={cn(styles.form, className)} onSubmit={onSubmit}>
+			<User />
+			<LoadingButton
+				type='submit'
+				variant='contained'
+				disabled={!user}
+				loading={isLoading}
+				loadingPosition='start'
+				disableElevation>
+				{buttonText}
+			</LoadingButton>
+		</form>
+	);
+}

@@ -1,0 +1,14 @@
+import { AuthResponse, LoginCredentials, RegisterCredentials } from "@entities/viewer"
+import { baseQueryV1, baseQueryV1WithoutAuth } from "@shared/api"
+
+class ViewerService {
+    public async login({ login, password }: LoginCredentials) <BODY ViewerService>
+
+    public async register({ nickname, email, password }: RegisterCredentials) <BODY ViewerService>
+
+    public async logout() <BODY ViewerService>
+
+    public async refresh() <BODY ViewerService>
+}
+
+export default new ViewerService()

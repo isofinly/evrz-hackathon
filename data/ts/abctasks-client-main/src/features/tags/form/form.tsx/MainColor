@@ -1,0 +1,20 @@
+MainColor: React.FC<FieldProps> = (props) => {
+	const { $form, } = props;
+	const { t, } = useTranslation('room-tags');
+	const label = t('actions.tag_form.fields.main_color');
+
+	const mainColor = useUnit($form.fields.mainColor);
+
+	return (
+		<Field
+			value={mainColor.value}
+			onChange={mainColor.onChange}
+			onBlur={mainColor.onBlur}
+			helperText={mainColor.errorText}
+			isValid={mainColor.isValid}
+			name='mainColor'
+			label={label}
+			type='color'
+		/>
+	);
+}

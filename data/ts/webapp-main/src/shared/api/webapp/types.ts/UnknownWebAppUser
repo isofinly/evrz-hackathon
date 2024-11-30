@@ -1,0 +1,4 @@
+type UnknownWebAppUser = Omit<ParsedTelegramUser, 'id'> & {
+  id: string
+  initialized: false
+}

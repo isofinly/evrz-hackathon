@@ -1,0 +1,5 @@
+
+import "../Styles/Snow.css";
+
+import Star from "../../../Common/Pictures/Home/Star.png";
+export const Snow = () => <BODY Snow>;

@@ -1,0 +1,4 @@
+interface ViewerState {
+    isAuthenticated: boolean
+    accessToken?: string
+}

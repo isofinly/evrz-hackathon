@@ -1,0 +1,3 @@
+interface TasksProgressProps extends CommonProps {
+	readonly disableBorder?: boolean;
+}

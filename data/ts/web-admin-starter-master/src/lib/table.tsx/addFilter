@@ -1,0 +1,9 @@
+function addFilter<T>(fields: (keyof T)[]) {
+  return {
+    onFilter: (value: string | number | boolean, record: T) => {
+      const normalize = (value: any): string => String(value).toLowerCase();
+      const elements = fields.map((item) => normalize(record[item]));
+      return elements.join(' ').includes(normalize(value));
+    },
+  };
+}

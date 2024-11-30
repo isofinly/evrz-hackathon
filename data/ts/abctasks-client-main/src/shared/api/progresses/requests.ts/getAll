@@ -1,0 +1,5 @@
+getAll = async ({ roomId, }: InRoomParams) => {
+	return instance
+		.get(`progress/${roomId}`)
+		.json<StandardResponse<Progress[]>>();
+}

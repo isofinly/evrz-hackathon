@@ -1,0 +1,10 @@
+App = () => {
+  return (
+    <RouterProvider router={router}>
+      <ErrorBoundary>
+        <Pages />
+        <NotificationStack />
+      </ErrorBoundary>
+    </RouterProvider>
+  )
+}

@@ -1,0 +1,3 @@
+interface IItemsByType {
+  type: string;
+}

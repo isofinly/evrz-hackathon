@@ -1,0 +1,3 @@
+type Tail<Arr extends readonly unknown[]> = Arr extends readonly [unknown, ...infer Rest]
+    ? Rest
+    : []

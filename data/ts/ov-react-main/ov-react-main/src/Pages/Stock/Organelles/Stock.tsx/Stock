@@ -1,0 +1,8 @@
+Stock = () => {
+  return (
+    <div className="Stock">
+      <BigPicture text={"ТОВАР В НАЛИЧИИ"} picture={BIG} />
+      <SwipperList />
+    </div>
+  );
+}

@@ -1,0 +1,11 @@
+getFormControls = (loc: Locator | Page, buttonText: string) => {
+	const name = loc.getByLabel('Name');
+	const description = loc.getByLabel('Description');
+	const button = loc.getByRole('button', { name: buttonText });
+
+	return {
+		name,
+		description,
+		button,
+	};
+}

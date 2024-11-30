@@ -1,0 +1,3 @@
+interface GetOneParams extends BaseCommentParams {
+	readonly id: number;
+}

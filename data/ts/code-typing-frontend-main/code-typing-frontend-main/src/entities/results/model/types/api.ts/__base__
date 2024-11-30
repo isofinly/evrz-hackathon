@@ -1,0 +1,9 @@
+import { IResultCode } from "@entities/results"
+
+export interface ResultFromApi extends Omit<IResultCode, "startTime" | "endTime" | "resultTime"> <BODY ResultFromApi>
+
+export interface ResultWithoutId extends Omit<ResultFromApi, "id" | "codeExampleUUID" | "userID"> <BODY ResultWithoutId>
+
+export type ResultsSortBy = keyof Pick<ResultFromApi, "endTime" | "symbolsPerMinute" | "accuracy">
+
+export interface ResultParams <BODY ResultParams>

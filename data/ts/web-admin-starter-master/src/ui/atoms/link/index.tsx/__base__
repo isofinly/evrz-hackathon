@@ -1,0 +1,7 @@
+import * as React from 'react'
+
+import { LinkWrap } from './styles'
+
+interface ILinkCompProps <BODY ILinkCompProps>
+
+export const Link: React.FC<ILinkCompProps> = ({ className, children, to, onClick }) => <BODY Link>

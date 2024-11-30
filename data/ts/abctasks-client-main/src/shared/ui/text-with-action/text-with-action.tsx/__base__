@@ -1,0 +1,16 @@
+
+
+
+
+import { Button, Typography } from '@mui/material';
+import cn from 'classnames';
+import * as React from 'react';
+
+import { CommonProps, VoidFunction } from '@/shared/types';
+
+import styles from './text-with-action.module.css';
+
+
+export interface TextWithActionProps extends CommonProps <BODY TextWithActionProps>
+
+export const TextWithAction: React.FC<TextWithActionProps> = (props) => <BODY TextWithAction>;

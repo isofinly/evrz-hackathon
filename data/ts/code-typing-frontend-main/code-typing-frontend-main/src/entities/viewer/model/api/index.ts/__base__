@@ -1,0 +1,6 @@
+
+export interface LoginCredentials <BODY LoginCredentials>
+
+export interface RegisterCredentials <BODY RegisterCredentials>
+
+export type AuthResponse = string

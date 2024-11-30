@@ -1,0 +1,13 @@
+
+
+type Props = {
+  name: string;
+  color?: string;
+  class?: string;
+  height?: string;
+  width?: string;
+};
+
+
+
+export default function ICON(props: Props): JSX.Element | null <BODY ICON>
