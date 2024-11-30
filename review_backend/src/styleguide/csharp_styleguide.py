@@ -1,4 +1,4 @@
-ts_styleguide_prompts = {
+csharp_styleguide_prompts = {
     "project_structure": """
     Имена файлов и директорий PascalCase, например MyFile.cs
     """,
