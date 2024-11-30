@@ -38,46 +38,52 @@ class ReviewStates(StatesGroup):
     current_page = State()
 
 
-def create_diff_message(diffs: list, page: int, total_pages: int) -> str:
-    """Create a formatted diff message for the current page."""
-    DIFFS_PER_PAGE = 2  # Show fewer diffs per page since they're larger
-    start_idx = (page - 1) * DIFFS_PER_PAGE
-    end_idx = start_idx + DIFFS_PER_PAGE
-    current_diffs = diffs[start_idx:end_idx]
+def create_review_message(reviews: list, page: int, total_pages: int) -> str:
+    """Create a formatted review message for the current page."""
+    REVIEWS_PER_PAGE = 3
+    start_idx = (page - 1) * REVIEWS_PER_PAGE
+    end_idx = start_idx + REVIEWS_PER_PAGE
+    current_reviews = reviews[start_idx:end_idx]
 
-    message_parts = [f"📝 Review Diffs (Page {page}/{total_pages})\n```diff"]
+    message_parts = [f"📝 Code Reviews (Page {page}/{total_pages})\n"]
 
-    for diff in current_diffs:
-        message_parts.append(f"\n# {diff['file']} (line {diff['line_number']})")
-        message_parts.append(f"# Review: {diff['review']}\n")
+    for review in current_reviews:
+        message_parts.extend(
+            [
+                f"\n📄 {review['file']} (line {review['line_number']})",
+                f"💡 Review: {review['review']}",
+                f"\nCurrent code:",
+                f"```\n{review['code']}\n```",
+            ]
+        )
 
-        # Split and format the original code block
-        original_lines = diff["original"].split("\n")
-        for line in original_lines:
-            if line.strip():  # Only add non-empty lines
-                message_parts.append(f"- {line.rstrip()}")
+        if review.get("suggested_code"):
+            message_parts.append(f"Suggested code:")
+            message_parts.append(f"```\n{review['suggested_code']}\n```")
 
-        message_parts.append(f"+ {diff['replacement']}\n")
+        message_parts.append("─" * 40)
 
-    message_parts.append("```")
+    message_parts.append(
+        "\nUse the buttons below to navigate pages or download the complete report."
+    )
     return "\n".join(message_parts)
 
 
 def create_pagination_keyboard(
-    current_page: int, total_pages: int, chat_id: str
+    current_page: int, total_pages: int, user_id: int
 ) -> InlineKeyboardMarkup:
-    """Create pagination keyboard."""
-    keyboard = InlineKeyboardMarkup()
+    """Create pagination keyboard with download button."""
+    keyboard = InlineKeyboardMarkup(row_width=5)
     buttons = []
 
     # First page
     if current_page > 1:
-        buttons.append(InlineKeyboardButton("⏮️", callback_data=f"page_{chat_id}_1"))
+        buttons.append(InlineKeyboardButton("⏮️", callback_data=f"page_{user_id}_1"))
 
     # Previous page
     if current_page > 1:
         buttons.append(
-            InlineKeyboardButton("◀️", callback_data=f"page_{chat_id}_{current_page-1}")
+            InlineKeyboardButton("◀️", callback_data=f"page_{user_id}_{current_page-1}")
         )
 
     # Current page indicator
@@ -88,16 +94,25 @@ def create_pagination_keyboard(
     # Next page
     if current_page < total_pages:
         buttons.append(
-            InlineKeyboardButton("▶️", callback_data=f"page_{chat_id}_{current_page+1}")
+            InlineKeyboardButton("▶️", callback_data=f"page_{user_id}_{current_page+1}")
         )
 
     # Last page
     if current_page < total_pages:
         buttons.append(
-            InlineKeyboardButton("⏭️", callback_data=f"page_{chat_id}_{total_pages}")
+            InlineKeyboardButton("⏭️", callback_data=f"page_{user_id}_{total_pages}")
         )
 
+    # Add navigation buttons row
     keyboard.add(*buttons)
+
+    # Add download button in new row
+    keyboard.add(
+        InlineKeyboardButton(
+            "📥 Download Full Report", callback_data=f"download_{user_id}_all"
+        )
+    )
+
     return keyboard
 
 
@@ -105,20 +120,23 @@ def create_pagination_keyboard(
 def handle_pagination(call):
     """Handle pagination button clicks."""
     try:
-        _, chat_id, page = call.data.split("_")
+        _, user_id, page = call.data.split("_")
         page = int(page)
+        user_id = int(user_id)
 
-        if chat_id not in review_results:
+        if str(user_id) not in review_results:
             bot.answer_callback_query(
                 call.id, "Review session expired. Please send the archive again."
             )
             return
 
-        diffs = review_results[chat_id]["diffs"]
-        total_pages = review_results[chat_id]["total_pages"]
+        reviews = review_results[str(user_id)]["reviews"]
+        total_pages = review_results[str(user_id)]["total_pages"]
 
-        message = create_diff_message(diffs, page, total_pages)
-        keyboard = create_pagination_keyboard(page, total_pages, chat_id)
+        message = create_review_message(reviews, page, total_pages)
+        keyboard = create_pagination_keyboard(
+            page, total_pages, user_id
+        )  # Now includes download button
 
         bot.edit_message_text(
             message,
@@ -127,12 +145,13 @@ def handle_pagination(call):
             reply_markup=keyboard,
             parse_mode="Markdown",
         )
-
         bot.answer_callback_query(call.id)
 
     except Exception as e:
         logger.error(f"Error handling pagination: {e}", exc_info=True)
-        bot.answer_callback_query(call.id, "An error occurred")
+        bot.answer_callback_query(
+            call.id, "❌ Failed to change page. Please try again."
+        )
 
 
 def is_supported_file(file_name: str) -> tuple[bool, str]:
@@ -189,103 +208,40 @@ def send_welcome(message):
     bot.reply_to(message, welcome_text)
 
 
-def create_diff_message_with_download(
-    diffs: list, page: int, total_pages: int, user_id: int
-) -> tuple[str, InlineKeyboardMarkup]:
-    """Create a formatted diff message with download button"""
-    message = create_diff_message(diffs, page, total_pages)
-
-    # Create pagination keyboard with download button
-    keyboard = InlineKeyboardMarkup(row_width=5)
-    buttons = []
-
-    # Pagination buttons
-    if page > 1:
-        buttons.extend(
-            [
-                InlineKeyboardButton("⏮️", callback_data=f"page_{user_id}_1"),
-                InlineKeyboardButton("◀️", callback_data=f"page_{user_id}_{page-1}"),
-            ]
-        )
-
-    buttons.append(InlineKeyboardButton(f"{page}/{total_pages}", callback_data="noop"))
-
-    if page < total_pages:
-        buttons.extend(
-            [
-                InlineKeyboardButton("▶️", callback_data=f"page_{user_id}_{page+1}"),
-                InlineKeyboardButton(
-                    "⏭️", callback_data=f"page_{user_id}_{total_pages}"
-                ),
-            ]
-        )
-
-    keyboard.add(*buttons)
-
-    # Add download button in new row
-    keyboard.add(
-        InlineKeyboardButton(
-            "📥 Download Report", callback_data=f"download_{user_id}_{page}"
-        )
-    )
-
-    return message, keyboard
-
-
 @bot.callback_query_handler(func=lambda call: call.data.startswith("download_"))
 def handle_download(call):
-    """Handle download button clicks"""
+    """Handle download button clicks."""
     try:
-        _, user_id, page = call.data.split("_")
+        _, user_id, _ = call.data.split("_")
         user_id = int(user_id)
-        page = int(page)
 
         if str(user_id) not in review_results:
             bot.answer_callback_query(
-                call.id, "Review session expired. Please send the file again."
+                call.id, "Review session expired. Please send the archive again."
             )
             return
 
-        diffs = review_results[str(user_id)]["diffs"]
-        total_pages = review_results[str(user_id)]["total_pages"]
+        # Get ALL reviews, not just current page
+        all_reviews = review_results[str(user_id)]["reviews"]
 
-        # Get diffs for current page
-        DIFFS_PER_PAGE = 2
-        start_idx = (page - 1) * DIFFS_PER_PAGE
-        end_idx = start_idx + DIFFS_PER_PAGE
-        current_diffs = diffs[start_idx:end_idx]
+        # Generate report with all reviews
+        object_name = storage.generate_review_report(all_reviews, user_id)
 
-        # Generate and upload diff report
-        try:
-            # Show progress message
-            progress_msg = bot.send_message(
-                call.message.chat.id, "📊 Generating PDF report..."
-            )
+        # Get download URL
+        download_url = storage.get_presigned_url("reports", object_name)
 
-            object_name = storage.generate_diff_report(current_diffs, user_id, page)
-            download_url = storage.get_presigned_url("reports", object_name)
-
-            # Update progress message with download link
-            bot.edit_message_text(
-                f"📥 Your report is ready!\n\nClick here to download:\n{download_url}",
-                chat_id=progress_msg.chat.id,
-                message_id=progress_msg.message_id,
-                disable_web_page_preview=True,
-            )
-            bot.answer_callback_query(call.id, "Report generated successfully!")
-
-        except Exception as e:
-            logger.error(f"Error generating diff report: {e}", exc_info=True)
-            bot.edit_message_text(
-                "❌ Failed to generate report. Please try again.",
-                chat_id=progress_msg.chat.id,
-                message_id=progress_msg.message_id,
-            )
-            bot.answer_callback_query(call.id, "Failed to generate report")
+        bot.answer_callback_query(call.id)
+        bot.send_message(
+            call.message.chat.id,
+            f"📥 [Download Complete Review Report]({download_url})",
+            parse_mode="Markdown",
+        )
 
     except Exception as e:
-        logger.error(f"Error handling download: {e}", exc_info=True)
-        bot.answer_callback_query(call.id, "An error occurred")
+        logger.error(f"Error generating review report: {e}", exc_info=True)
+        bot.answer_callback_query(
+            call.id, "❌ Failed to generate report. Please try again."
+        )
 
 
 @bot.message_handler(content_types=["document"])
@@ -355,6 +311,7 @@ def handle_document(message):
                     extract_dir = os.path.join(tmpdir, "extracted")
                     os.makedirs(extract_dir, exist_ok=True)
 
+                    logger.info(f"Attempting to extract {file_name} to {extract_dir}")
                     if not extract_archive(file_path, extract_dir):
                         bot.edit_message_text(
                             "❌ Failed to extract the archive. Please ensure it is not corrupted.",
@@ -363,27 +320,47 @@ def handle_document(message):
                         )
                         return
 
-                    # Update status
-                    bot.edit_message_text(
-                        "🔍 Analyzing files...",
-                        chat_id=status_message.chat.id,
-                        message_id=status_message.message_id,
+                    # Verify the extraction directory has content and find the root project directory
+                    extracted_items = list(Path(extract_dir).iterdir())
+                    if not extracted_items:
+                        bot.edit_message_text(
+                            "❌ The archive appears to be empty.",
+                            chat_id=status_message.chat.id,
+                            message_id=status_message.message_id,
+                        )
+                        return
+
+                    # If there's a single directory at the root, use that as project root
+                    project_root = (
+                        extracted_items[0]
+                        if len(extracted_items) == 1 and extracted_items[0].is_dir()
+                        else Path(extract_dir)
                     )
 
-                    # Use ProjectReviewer for archives
-                    project_reviewer = ProjectReviewer(
-                        Path(extract_dir), review_dir, max_workers=3
-                    )
-                    project_reviewer.review()
+                    try:
+                        project_reviewer = ProjectReviewer(
+                            project_path=project_root, result_path=review_dir
+                        )
+                        project_reviewer.review()
+                    except Exception as e:
+                        logger.error(f"Project review failed: {str(e)}", exc_info=True)
+                        bot.edit_message_text(
+                            "❌ Failed to process the archive contents. Please ensure the archive structure is correct.",
+                            chat_id=status_message.chat.id,
+                            message_id=status_message.message_id,
+                        )
+                        return
                 else:
                     # Use FileReviewer for single files
+                    result_file = review_dir / file_name
                     file_reviewer = FileReviewer(
-                        Path(file_path), review_dir / file_name
+                        file_path=Path(file_path),
+                        result_path=result_file
                     )
                     file_reviewer.review()
 
                 # Parse review tags from the output
-                diffs = parse_review_tags(review_dir)
+                reviews = parse_review_tags(review_dir)
 
                 # Update status
                 bot.edit_message_text(
@@ -392,20 +369,23 @@ def handle_document(message):
                     message_id=status_message.message_id,
                 )
 
-                if diffs:
+                if reviews:
                     # Store results for pagination
                     chat_id = str(message.chat.id)
-                    DIFFS_PER_PAGE = 2
-                    total_pages = (len(diffs) + DIFFS_PER_PAGE - 1) // DIFFS_PER_PAGE
+                    REVIEWS_PER_PAGE = 3
+                    total_pages = (
+                        len(reviews) + REVIEWS_PER_PAGE - 1
+                    ) // REVIEWS_PER_PAGE
 
                     review_results[chat_id] = {
-                        "diffs": diffs,
+                        "reviews": reviews,
                         "total_pages": total_pages,
                     }
 
                     # Send first page with download button
-                    message_text, keyboard = create_diff_message_with_download(
-                        diffs, 1, total_pages, message.from_user.id
+                    message_text = create_review_message(reviews, 1, total_pages)
+                    keyboard = create_pagination_keyboard(
+                        1, total_pages, message.from_user.id
                     )
 
                     bot.send_message(

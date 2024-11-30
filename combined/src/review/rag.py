@@ -32,40 +32,38 @@ class Data:
 
         self._init_review_collections()
 
-    def _init_review_collections(self):
-        review_path = self.path_to_data / "review"
-
-        for ext in review_path.glob("*"):
+    def _init_review_collections(self) -> None:
+        for ext in ["py", "ts", "tsx", "cs"]:
+            try:
+                # Try to get existing collection first
+                self.reviews[ext] = self.client.get_collection(
+                    name=f"{ext}_reviews",
+                    embedding_function=self.embedding_fn
+                )
+            except Exception:  # Collection doesn't exist
+                # Create new collection only if it doesn't exist
+                self.reviews[ext] = self.client.create_collection(
+                    name=f"{ext}_reviews",
+                    embedding_function=self.embedding_fn
+                )
             self._load_reviews(ext, self.client)
-            
 
-    def _load_reviews(self, ext_path: Path, client: Client):
-        ext = ext_path.stem
-        ext_path.resolve()
-
-        documents = []
-        metadata = []
-        embeddings = []
-        ids = []
-        for i, file_path in enumerate(ext_path.rglob("*.json")):
-            with open(file_path, "r") as f:
-                data = json.loads(f.read())
-                documents.append(data["query"])
-                metadata.append({
-                    "query": data["query"],
-                    "answer": data["answer"]
-                })
-                ids.append(f"{ext}_review_{i}")
-                embeddings.append(data["embedding"])
-        
-        self.reviews[ext] = self.client.create_collection(f"{ext}_reviews", embedding_function=self.embedding_fn)
-        self.reviews[ext].add(documents=documents, metadatas=metadata, ids=ids, embeddings=embeddings)
-        
-
-        
+    def _load_reviews(self, ext: str, client) -> None:
+        # Only load reviews if collection is empty
+        if len(self.reviews[ext].get()['ids']) == 0:
+            reviews_path = self.path_to_data / f"{ext}_reviews.json"
+            if reviews_path.exists():
+                with open(reviews_path, "r") as f:
+                    reviews = json.load(f)
+                    if reviews:  # Only add if there are reviews to add
+                        self.reviews[ext].add(
+                            documents=[r["query"] + "\n" + r["answer"] for r in reviews],
+                            metadatas=[{"type": "review"} for _ in reviews],
+                            ids=[str(i) for i in range(len(reviews))]
+                        )
 
     def get_review(self, code: str, extension: str, n_results: int = 3) -> list:
-        if extension == "tsx": 
+        if extension == "tsx":
             extension = "ts"
         review_collection = self.reviews[extension]
 

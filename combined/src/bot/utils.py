@@ -10,29 +10,43 @@ from src.review.review import FileReviewer
 from pathlib import Path
 
 
-def extract_archive(archive_path: str, extract_dir: str) -> bool:
-    """
-    Extract archive using appropriate extractor based on file type.
-    Returns True if extraction was successful.
-    """
+def extract_archive(file_path: str, extract_dir: str) -> bool:
+    """Extract archive files to the specified directory."""
     try:
-        file_lower = archive_path.lower()
+        # Create extraction directory if it doesn't exist
+        os.makedirs(extract_dir, exist_ok=True)
+        logger.info(f"Extracting {file_path} to {extract_dir}")
 
-        # Handle 7z files separately with py7zr
-        if file_lower.endswith(".7z"):
-            with py7zr.SevenZipFile(archive_path, mode="r") as z:
+        file_path_lower = file_path.lower()
+
+        if file_path_lower.endswith(".7z"):
+            # Use py7zr for .7z files
+            with py7zr.SevenZipFile(file_path, mode="r") as z:
+                z.extractall(path=extract_dir)
+        elif file_path_lower.endswith(".zip"):
+            import zipfile
+
+            with zipfile.ZipFile(file_path, "r") as z:
                 z.extractall(extract_dir)
-            return True
+        elif file_path_lower.endswith(".rar"):
+            import rarfile
 
-        # Handle other archive types with patool
-        elif any(file_lower.endswith(ext) for ext in [".zip", ".rar"]):
-            patoolib.extract_archive(archive_path, outdir=extract_dir)
-            return True
+            with rarfile.RarFile(file_path, "r") as z:
+                z.extractall(extract_dir)
 
-        return False
+        # Verify extraction was successful
+        extracted_contents = list(Path(extract_dir).rglob("*"))
+        if not extracted_contents:
+            logger.error(f"No files were extracted to {extract_dir}")
+            return False
+
+        logger.info(
+            f"Successfully extracted {len(extracted_contents)} items to {extract_dir}"
+        )
+        return True
 
     except Exception as e:
-        logger.error(f"Failed to extract archive {archive_path}: {e}", exc_info=True)
+        logger.error(f"Failed to extract archive: {str(e)}", exc_info=True)
         return False
 
 
@@ -195,10 +209,9 @@ def find_code_block(lines: list[str], start_idx: int) -> tuple[int, str]:
 
 def parse_review_tags(directory: str) -> list:
     """
-    Parses files for <REVIEW>content</REVIEW> tags and returns the diffs.
-    Uses FileReviewer for actual code review.
+    Parses files for <REVIEW>content</REVIEW> tags and returns the reviews with code context.
     """
-    diffs = []
+    reviews = []
     review_pattern = re.compile(
         r"(?:\/\/|\/\*|\#|\{\/\*|\{\#)?\s*<REVIEW>(.*?)<\/REVIEW>"
     )
@@ -206,82 +219,46 @@ def parse_review_tags(directory: str) -> list:
     def process_file(file_path: Path, base_dir: Path) -> None:
         try:
             rel_path = file_path.relative_to(base_dir)
+            with open(file_path, "r", encoding="utf-8") as f:
+                lines = f.readlines()
 
-            # Create temporary directory for review results
-            with tempfile.TemporaryDirectory() as tmpdir:
-                tmp_path = Path(tmpdir)
-                result_path = tmp_path / "reviewed_file"
+            for i, line in enumerate(lines):
+                match = review_pattern.search(line)
+                if match:
+                    review_content = match.group(1).strip()
+                    # Extract suggested code if present
+                    suggested_code = None
+                    if "`" in review_content:
+                        code_match = re.search(r"`(.*?)`", review_content)
+                        if code_match:
+                            suggested_code = code_match.group(1)
 
-                # Use FileReviewer to review the file
-                reviewer = FileReviewer(file_path, result_path)
-                reviewer.review()
+                    # Get the actual code line (next line after comment)
+                    code_line = lines[i + 1] if i + 1 < len(lines) else ""
 
-                # Read both original and reviewed files
-                with open(file_path, "r", encoding="utf-8") as f:
-                    original_lines = f.readlines()
-                with open(result_path, "r", encoding="utf-8") as f:
-                    reviewed_lines = f.readlines()
-
-                # Process each line looking for review tags
-                i = 0
-                while i < len(reviewed_lines):
-                    line = reviewed_lines[i]
-                    match = review_pattern.search(line)
-
-                    if match:
-                        review_content = match.group(1).strip()
-
-                        if i + 1 < len(original_lines):
-                            block_end, original_block = find_code_block(
-                                original_lines, i + 1
-                            )
-                            _, reviewed_block = find_code_block(reviewed_lines, i + 1)
-
-                            if original_block.strip():
-                                diffs.append(
-                                    {
-                                        "file": str(rel_path),
-                                        "line_number": i + 1,
-                                        "review": review_content,
-                                        "original": original_block.rstrip(),
-                                        "replacement": reviewed_block.rstrip(),
-                                    }
-                                )
-
-                            i = block_end
-                    i += 1
+                    reviews.append({
+                        "file": str(rel_path),
+                        "line_number": i + 2,  # +2 because we want to show the actual code line number
+                        "review": review_content,
+                        "code": code_line.rstrip(),
+                        "suggested_code": suggested_code
+                    })
 
         except Exception as e:
             logger.warning(f"Could not process file {file_path}: {e}")
 
-    # Convert input to Path object
+    # Process directory or single file
     directory_path = Path(directory)
-
-    # Check if directory is actually a file
     if directory_path.is_file():
         process_file(directory_path, directory_path.parent)
-        return diffs
+    else:
+        for file_path in directory_path.rglob("*"):
+            if file_path.is_file():
+                try:
+                    content = file_path.read_text(encoding="utf-8")
+                    if "<REVIEW>" in content:
+                        process_file(file_path, directory_path)
+                except Exception as e:
+                    logger.warning(f"Could not read file {file_path}: {e}")
 
-    # Walk through directory
-    for file_path in directory_path.rglob("*"):
-        if file_path.is_file():
-            try:
-                content = file_path.read_text(encoding="utf-8")
-                if "<REVIEW>" in content:
-                    process_file(file_path, directory_path)
-            except Exception as e:
-                logger.warning(f"Could not read file {file_path}: {e}")
-
-    return diffs
-
-
-# def generate_diff(file_path: str, line: str, line_number: int, review_comment: str) -> str:
-#     """
-#     Generates a diff string with the review comment and the line to be reviewed.
-#     """
-#     return (
-#         f"File: {file_path} (line {line_number})\n"
-#         f"Review: {review_comment}\n"
-#         f"- {line}\n"
-#         f"+ <<<REPLACEMENT NEEDED>>>"
-#     )
+    return reviews

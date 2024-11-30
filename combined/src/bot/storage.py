@@ -32,9 +32,9 @@ MINIO_SECURE = os.getenv("MINIO_SECURE", "false").lower() == "true"
 
 class MinioStorage:
     FONT_URLS = {
-        'DejaVuSans': 'https://github.com/lionel-/fontDejaVu/raw/master/inst/fonts/dejavu-fonts/ttf/DejaVuSans.ttf',
-        'DejaVuSans-Bold': 'https://github.com/lionel-/fontDejaVu/raw/master/inst/fonts/dejavu-fonts/ttf/DejaVuSans-Bold.ttf',
-        'DejaVuSansMono': 'https://github.com/lionel-/fontDejaVu/raw/master/inst/fonts/dejavu-fonts/ttf/DejaVuSansMono.ttf'
+        "DejaVuSans": "https://github.com/lionel-/fontDejaVu/raw/master/inst/fonts/dejavu-fonts/ttf/DejaVuSans.ttf",
+        "DejaVuSans-Bold": "https://github.com/lionel-/fontDejaVu/raw/master/inst/fonts/dejavu-fonts/ttf/DejaVuSans-Bold.ttf",
+        "DejaVuSansMono": "https://github.com/lionel-/fontDejaVu/raw/master/inst/fonts/dejavu-fonts/ttf/DejaVuSansMono.ttf",
     }
 
     def __init__(self):
@@ -50,7 +50,7 @@ class MinioStorage:
 
     def _setup_fonts_directory(self) -> Path:
         """Setup fonts directory in user's cache"""
-        cache_dir = Path(tempfile.gettempdir()) / 'telegram-review-bot' / 'fonts'
+        cache_dir = Path(tempfile.gettempdir()) / "telegram-review-bot" / "fonts"
         cache_dir.mkdir(parents=True, exist_ok=True)
         return cache_dir
 
@@ -64,7 +64,7 @@ class MinioStorage:
                 response = requests.get(url, timeout=10)
                 response.raise_for_status()
 
-                with open(font_path, 'wb') as f:
+                with open(font_path, "wb") as f:
                     f.write(response.content)
 
                 logger.info(f"Font {font_name} downloaded successfully")
@@ -89,8 +89,8 @@ class MinioStorage:
                 pdfmetrics.registerFont(TTFont(font_name, str(font_path)))
 
             # Add font mappings
-            addMapping('DejaVuSans', 0, 0, 'DejaVuSans')
-            addMapping('DejaVuSans', 1, 0, 'DejaVuSans-Bold')
+            addMapping("DejaVuSans", 0, 0, "DejaVuSans")
+            addMapping("DejaVuSans", 1, 0, "DejaVuSans-Bold")
 
             logger.info("Fonts registered successfully")
         except Exception as e:
@@ -129,218 +129,160 @@ class MinioStorage:
         except:
             lexer = TextLexer()
 
-        # Use a simpler formatter without HTML markup
+        # Use a formatter that outputs plain text with ANSI color codes
         formatter = HtmlFormatter(
-            style='monokai',
+            style="monokai",
             noclasses=True,
-            nowrap=True,  # Disable line wrapping
-            linenos=False  # Disable line numbers
+            nowrap=True,
+            linenos=False
         )
 
         try:
-            highlighted = highlight(code, lexer, formatter)
-
-            # Clean up any remaining HTML
-            highlighted = (html.unescape(highlighted)
-                         .replace('<div class="highlight">', '')
-                         .replace('</div>', '')
-                         .replace('<pre>', '')
-                         .replace('</pre>', '')
-                         .replace('<code>', '')
-                         .replace('</code>', '')
-                         .strip())
-
-            # Preserve indentation with non-breaking spaces
-            highlighted = highlighted.replace('    ', '\xa0\xa0\xa0\xa0')
-
-            return highlighted
+            # Just return the original code without highlighting for now
+            # This ensures we get readable code in the PDF
+            return code
         except Exception as e:
             logger.error(f"Error in syntax highlighting: {e}")
-            # Return original code if highlighting fails
             return code
 
-    def generate_diff_report(self, diffs: list, user_id: int, page: int) -> str:
-        """Generate a PDF diff report and upload it to MinIO"""
+    def generate_review_report(self, reviews: list, user_id: int) -> str:
+        """Generate a PDF review report with all reviews and upload it to MinIO"""
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        report_name = f"diff_report_{user_id}_{timestamp}_page{page}.pdf"
+        report_name = f"review_report_{user_id}_{timestamp}.pdf"
         pdf_path = f"/tmp/{report_name}"
 
         # Create PDF document with smaller margins
         doc = SimpleDocTemplate(
             pdf_path,
             pagesize=letter,
-            rightMargin=36,  # Reduced margins (0.5 inch)
+            rightMargin=36,
             leftMargin=36,
             topMargin=36,
-            bottomMargin=36
+            bottomMargin=36,
         )
 
-        # Styles
+        # Get styles
         styles = getSampleStyleSheet()
 
-        # Title style
+        # Style definitions (keeping the same styles as before)
         title_style = ParagraphStyle(
-            'CustomTitle',
-            parent=styles['Heading1'],
-            fontName='DejaVuSans-Bold',
+            "CustomTitle",
+            parent=styles["Heading1"],
+            fontName="DejaVuSans-Bold",
             fontSize=20,
             spaceAfter=30,
-            alignment=1  # Center alignment
+            alignment=1,
         )
 
-        # Section header style with proper Unicode handling
         heading_style = ParagraphStyle(
-            'CustomHeading',
-            parent=styles['Heading2'],
-            fontName='DejaVuSans-Bold',
+            "CustomHeading",
+            parent=styles["Heading2"],
+            fontName="DejaVuSans-Bold",
             fontSize=14,
-            textColor=colors.HexColor('#2c3e50'),
+            textColor=colors.HexColor("#2c3e50"),
             spaceBefore=20,
             spaceAfter=10,
-            encoding='utf-8'  # Add explicit encoding
+            encoding="utf-8",
         )
 
-        # File info style
-        file_info_style = ParagraphStyle(
-            'FileInfo',
-            parent=styles['Normal'],
-            fontName='DejaVuSans',
-            fontSize=10,
-            textColor=colors.HexColor('#7f8c8d'),  # Grey
-            leftIndent=20,
-            spaceBefore=5,
-            spaceAfter=5
-        )
-
-        # Normal text style with proper Unicode handling
         normal_style = ParagraphStyle(
-            'CustomNormal',
-            parent=styles['Normal'],
-            fontName='DejaVuSans',
+            "CustomNormal",
+            parent=styles["Normal"],
+            fontName="DejaVuSans",
             fontSize=11,
             leading=14,
             leftIndent=20,
-            encoding='utf-8'  # Add explicit encoding
+            encoding="utf-8",
         )
 
-        # Modified code block style
         code_style = ParagraphStyle(
-            'CodeBlock',
-            parent=styles['Code'],
-            fontName='DejaVuSansMono',  # Monospace font for code
+            "CodeBlock",
+            parent=styles["Code"],
+            fontName="DejaVuSansMono",
             fontSize=9,
             leading=12,
-            textColor=colors.HexColor('#2c3e50'),
-            backColor=colors.HexColor('#f5f6fa'),
-            borderColor=colors.HexColor('#dcdde1'),
+            textColor=colors.HexColor("#2c3e50"),
+            backColor=colors.HexColor("#f5f6fa"),
+            borderColor=colors.HexColor("#dcdde1"),
             borderWidth=1,
             borderPadding=10,
             spaceBefore=10,
             spaceAfter=20,
             leftIndent=40,
             rightIndent=40,
-            encoding='utf-8',
-            firstLineIndent=0  # Ensure no extra indentation on first line
+            encoding="utf-8",
+            firstLineIndent=0,
         )
 
         # Build PDF content
         elements = []
 
-        # Add title
-        elements.append(Paragraph(f"Code Review Report", title_style))
-        elements.append(Paragraph(f"Page {page}", file_info_style))
+        # Add title with total review count
+        elements.append(Paragraph(f"Code Review Report ({len(reviews)} reviews)", title_style))
         elements.append(Spacer(1, 0.2 * inch))
 
-        for diff in diffs:
-            # File information
-            elements.append(Paragraph(
-                f"» {diff['file']}",
-                heading_style
-            ))
-            elements.append(Paragraph(
-                f"Line: {diff['line_number']}",
-                normal_style
-            ))
+        # Group reviews by file for better organization
+        reviews_by_file = {}
+        for review in reviews:
+            file_path = review['file']
+            if file_path not in reviews_by_file:
+                reviews_by_file[file_path] = []
+            reviews_by_file[file_path].append(review)
 
-            # Review comment
-            elements.append(Paragraph(
-                "• Review Comment:",
-                heading_style
-            ))
-            elements.append(Paragraph(
-                diff['review'],
-                normal_style
-            ))
+        # Process reviews grouped by file
+        for file_path, file_reviews in reviews_by_file.items():
+            # Add file header
+            elements.append(Paragraph(f"File: {file_path}", heading_style))
+            elements.append(Spacer(1, 0.1 * inch))
 
-            # Original code section
-            elements.append(Paragraph(
-                "• Original Code:",
-                heading_style
-            ))
-            try:
-                original_code = diff["original"].strip()
-                original_code = html.unescape(original_code)
-                original_code = original_code.replace('\t', '    ')
-                original_code = original_code.replace('\r\n', '\n')
+            # Sort reviews by line number
+            file_reviews.sort(key=lambda x: x['line_number'])
 
-                if diff.get("language"):
-                    original_code = self._apply_syntax_highlighting(
-                        original_code,
-                        diff.get("language", "text")
-                    )
+            for review in file_reviews:
+                elements.append(Paragraph(f"Line {review['line_number']}", normal_style))
 
+                # Review comment
+                elements.append(Paragraph("• Review Comment:", heading_style))
+                elements.append(Paragraph(review["review"], normal_style))
+
+                # Current code section
+                elements.append(Paragraph("• Current Code:", heading_style))
+                try:
+                    current_code = review["code"].strip()
+                    current_code = html.unescape(current_code)
+                    current_code = current_code.replace("\t", "    ")
+                    elements.append(Preformatted(current_code, code_style))
+                except Exception as e:
+                    logger.error(f"Error processing code block: {e}")
+                    elements.append(Preformatted(review["code"], code_style))
+
+                # Suggested code section (if present)
+                if review.get('suggested_code'):
+                    elements.append(Paragraph("• Suggested Code:", heading_style))
+                    try:
+                        suggested_code = review["suggested_code"].strip()
+                        suggested_code = html.unescape(suggested_code)
+                        suggested_code = suggested_code.replace("\t", "    ")
+                        elements.append(Preformatted(suggested_code, code_style))
+                    except Exception as e:
+                        logger.error(f"Error processing suggested code block: {e}")
+                        elements.append(Preformatted(review["suggested_code"], code_style))
+
+                # Add separator between reviews
+                elements.append(Spacer(1, 0.2 * inch))
                 elements.append(
-                    Preformatted(
-                        original_code,
-                        code_style
+                    Paragraph(
+                        "\u2500" * 50,
+                        ParagraphStyle(
+                            "Separator",
+                            alignment=1,
+                            textColor=colors.HexColor("#dcdde1"),
+                            encoding="utf-8",
+                            fontName="DejaVuSans",
+                        ),
                     )
                 )
-            except Exception as e:
-                logger.error(f"Error processing original code block: {e}")
-                elements.append(Preformatted(diff["original"], code_style))
-
-            # Suggested replacement section
-            elements.append(Paragraph(
-                "• Suggested Replacement:",
-                heading_style
-            ))
-            try:
-                replacement_code = diff["replacement"].strip()
-                replacement_code = html.unescape(replacement_code)
-                replacement_code = replacement_code.replace('\t', '    ')
-                replacement_code = replacement_code.replace('\r\n', '\n')
-
-                if diff.get("language"):
-                    replacement_code = self._apply_syntax_highlighting(
-                        replacement_code,
-                        diff.get("language", "text")
-                    )
-
-                elements.append(
-                    Preformatted(
-                        replacement_code,
-                        code_style
-                    )
-                )
-            except Exception as e:
-                logger.error(f"Error processing replacement code block: {e}")
-                elements.append(Preformatted(diff["replacement"], code_style))
-
-            # Add separator
-            elements.append(Spacer(1, 0.3 * inch))
-            elements.append(
-                Paragraph(
-                    "\u2500" * 50,
-                    ParagraphStyle(
-                        'Separator',
-                        alignment=1,
-                        textColor=colors.HexColor('#dcdde1'),
-                        encoding='utf-8',
-                        fontName='DejaVuSans'
-                    )
-                )
-            )
-            elements.append(Spacer(1, 0.3 * inch))
+                elements.append(Spacer(1, 0.2 * inch))
 
         # Generate PDF
         try:
@@ -358,9 +300,8 @@ class MinioStorage:
             metadata={
                 "user_id": str(user_id),
                 "timestamp": timestamp,
-                "page": str(page),
-                "content_type": "application/pdf"
-            }
+                "content_type": "application/pdf",
+            },
         )
 
         # Clean up temporary file
