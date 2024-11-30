@@ -1,11 +1,12 @@
 import json
 import re
+import threading
 from tqdm import tqdm
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from pathlib import Path
 from utils import (
     get_file_extension,
-    code_from_chunk,
     merge_json_responses,
     get_styleguide_by_language,
     language_from_file_extension,
@@ -55,7 +56,7 @@ class FileReviewer:
             f.writelines(lines)
 
     def review(self) -> None:
-        print(f"Reviewing {self.file_path}")
+        # print(f"Reviewing {self.file_path}")
 
         base_chunks, declarations = parse_file(self.file_path)
         prompt_generator = PromptGenerator(self.extension)
@@ -71,8 +72,8 @@ class FileReviewer:
                 review_json.index("{") : review_json.rindex("}") + 1
             ]
             
-            print(review_json)
-            print()
+            # print(review_json)
+            # print()
 
             try:
                 json_responses.append(json.loads(review_json))
@@ -80,35 +81,61 @@ class FileReviewer:
                 print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!JSONDecodeError!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
         self._save_result(merge_json_responses(json_responses))
-        print(f"Saved result to {self.result_path}")
+        # print(f"Saved result to {self.result_path}")
 
 
 class ProjectReviewer:
-    def __init__(self, project_path: Path, result_path: Path) -> None:
+    def __init__(self, project_path: Path, result_path: Path, max_workers: int = 3) -> None:
         self.project_path = project_path
         self.result_path = result_path
         self.result_path.mkdir(parents=True, exist_ok=True)
+        self.max_workers = max_workers
+        self.print_lock = threading.Lock()
 
     def _review_structure(self) -> None:
         project_structure = parse_project_structure(self.project_path)
         # TODO: review project structure
         pass
+    
+    def _review_file(self, file: Path) -> None:
+        try:
+            relative_path = file.relative_to(self.project_path)
+            file_reviewer = FileReviewer(file, self.result_path / relative_path)
+            file_reviewer.review()
+        except Exception as e:
+            with self.print_lock:
+                print(f"Error reviewing {file}: {str(e)}")
 
     def review(self) -> None:
         src_path = self.project_path / "src"
         if not src_path.exists():
             raise FileNotFoundError(f"Source directory not found")
         
-        for file in tqdm(src_path.rglob("*")):
-            if not file.is_file() or get_file_extension(file) not in FILE_EXTENSIONS:
-                continue
-            relative_path = file.relative_to(self.project_path)
-            print(self.result_path / relative_path)
-            file_reviewer = FileReviewer(file, self.result_path / relative_path)
-            file_reviewer.review()
+        # Collect all files to review first
+        files_to_review = [
+            file for file in src_path.rglob("*")
+            if file.is_file() and get_file_extension(file) in FILE_EXTENSIONS
+        ]
+            
+        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+            future_to_file = {
+                executor.submit(self._review_file, file): file 
+                for file in files_to_review
+            }
+            
+            # Process completed reviews with progress bar
+            with tqdm(total=len(files_to_review)) as pbar:
+                for future in as_completed(future_to_file):
+                    file = future_to_file[future]
+                    try:
+                        future.result()  # This will raise any exceptions that occurred
+                    except Exception as e:
+                        with self.print_lock:
+                            print(f"Review failed for {file}: {str(e)}")
+                    pbar.update(1)
 
 
 if __name__ == "__main__":
-    # project_reviewer = ProjectReviewer(Path("./react-2/market-main"), Path("./react-2/REVIEW/market-main"))
-    project_reviewer = ProjectReviewer(Path("./TEST_PROJECT"), Path("./TEST_PROJECT/REVIEW"))
+    project_reviewer = ProjectReviewer(Path("./react-2/market-main"), Path("./react-2/REVIEW/market-main"))
+    # project_reviewer = ProjectReviewer(Path("./TEST_PROJECT"), Path("./TEST_PROJECT/REVIEW"))
     project_reviewer.review()
