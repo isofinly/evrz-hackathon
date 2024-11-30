@@ -25,9 +25,11 @@ FILE_EXTENSIONS = ["py", "cs", "ts", "tsx", "css", "scss"]
 
 DATA_PATH = Path(__file__).parent.parent.parent.parent / "data"
 
+DATA = Data(DATA_PATH)
+
 
 class FileReviewer:
-    def __init__(self, data, file_path: Path, result_path: Path) -> None:
+    def __init__(self, file_path: Path, result_path: Path) -> None:
         self.file_path = file_path
         self.result_path = result_path
 
@@ -40,7 +42,7 @@ class FileReviewer:
             language_from_file_extension(self.extension)
         )
 
-        self.prompt_generator = PromptGenerator(data, self.extension)
+        self.prompt_generator = PromptGenerator(DATA, self.extension)
 
     def _review_interface(self, base_chunks: str) -> str:
         # TODO: add prompt
@@ -62,7 +64,8 @@ class FileReviewer:
             f.writelines(lines)
 
     def review(self) -> None:
-        # print(f"Reviewing {self.file_path}")
+        print(f"Reviewing {self.file_path}")
+        print()
 
         base_chunks, declarations = parse_file(self.file_path)
         json_responses = []
@@ -93,7 +96,7 @@ class FileReviewer:
 
 class ProjectReviewer:
     def __init__(
-        self, project_path: Path, result_path: Path, max_workers: int = 3
+        self, project_path: Path, result_path: Path, max_workers: int = 5
     ) -> None:
         self.project_path = project_path
         self.result_path = result_path
@@ -101,7 +104,6 @@ class ProjectReviewer:
         self.max_workers = max_workers
         self.print_lock = threading.Lock()
 
-        self.data = Data(DATA_PATH)
 
     def _review_structure(self) -> None:
         project_structure = parse_project_structure(self.project_path)
@@ -118,26 +120,32 @@ class ProjectReviewer:
                 print(f"Error reviewing {file}: {str(e)}")
 
     def review(self) -> None:
-        src_path = self.project_path / "src"
-        if not src_path.exists():
-            raise FileNotFoundError(f"Source directory not found")
+        files_to_review = [
+            file for file in self.project_path.rglob("*")
+            if file.is_file() and get_file_extension(file) in FILE_EXTENSIONS
+        ]
+            
+        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+            future_to_file = {
+                executor.submit(self._review_file, file): file 
+                for file in files_to_review
+            }
+            
+            # Process completed reviews with progress bar
+            with tqdm(total=len(files_to_review)) as pbar:
+                for future in as_completed(future_to_file):
+                    file = future_to_file[future]
+                    try:
+                        future.result()  # This will raise any exceptions that occurred
+                    except Exception as e:
+                        with self.print_lock:
+                            print(f"Review failed for {file}: {str(e)}")
+                    pbar.update(1)
 
-        for file in tqdm(src_path.rglob("*")):
-            if not file.is_file() or get_file_extension(file) not in FILE_EXTENSIONS:
-                continue
-            relative_path = file.relative_to(self.project_path)
-            print(self.result_path / relative_path)
-            file_reviewer = FileReviewer(file, self.result_path / relative_path)
-            file_reviewer.review()
 
-
-# if __name__ == "__main__":
-#     # project_reviewer = ProjectReviewer(Path("./react-2/market-main"), Path("./react-2/REVIEW/market-main"))
-#     project_reviewer = ProjectReviewer(Path("./TEST_PROJECT"), Path("./TEST_PROJECT/REVIEW"))
-#     project_reviewer.review()
 def review2() -> None:
     project_reviewer = ProjectReviewer(
-        Path("./react-2/market-main"), Path("./react-2/REVIEW/market-main")
+        Path("../react-2/market-main"), Path("../react-2/REVIEW/market-main")
     )
     # project_reviewer = ProjectReviewer(Path("./TEST_PROJECT"), Path("./TEST_PROJECT/REVIEW"))
     project_reviewer.review()

@@ -5,7 +5,7 @@ from src.review.utils import (
 )
 from src.review.parsers.make_chunks import Chunk
 
-from rag import Data
+from src.review.rag import Data
 
 class PromptGenerator:
     def __init__(self, data: Data, file_extension: str):
@@ -18,14 +18,12 @@ class PromptGenerator:
         self.data = data
 
 
-
-
     def generate_system_prompt(self) -> str:
         return f"""
 Отвечай на русском языке.
 Ты – опытный инженер-программист и профессиональный код-ревьюер с глубокими знаниями {self.language}.
 Твоя задача – проанализировать предоставленный фрагмент кода, указать все ошибки, плохие практики, неэффективности и предложить улучшения.
-Импорты считаются корректными, их отсутствие не является ошибкой, так как они намеренно исключены из кода.
+ОТСУТСТВИЕ ИМПОРТОВ НЕ СЧИТАЙ ОШИБКОЙ.
 Ответ должен быть строго в формате JSON, где:
 - Ключ – номер первой строки перед проблемой.
 - Значение – комментарий ревьюера с лаконичным описанием проблемы и предложением улучшения.
@@ -47,36 +45,7 @@ class PromptGenerator:
         """
 
         examples = self.data.get_review(code, extension=self.file_extension)
-        print(examples)
-
-#         example_query_prompt = """
-# 1 import { Product } from "@/entities/CardsGallary/model/types/types";
-# 2
-# 3 import { Endpoints } from "@/shared/utils";
-# 4 import { createStore, createEffect } from "effector";
-# 5
-# 6 export const $filters = createStore<ProductFilters>({
-# 7   limit: 10,
-# 8   query: "",
-# 9   category: "all" as Category,
-# 10   skip: 0,
-# 11 });
-# 12
-# 13 type Props = {
-# 14   setLoading: (value: boolean) => void;
-# 15  
-# 16   filters: ProductFilters;
-# 17 };
-# """
-        
-#         example_answer_prompt = """
-# {
-#   "1": "Название модуля `CardsGallary` содержит опечатку. Вероятно, имелось в виду `CardsGallery`.",
-#   "6": "Название переменной `$filters` нарушает правило об использовании символа `$` в идентификаторах",
-#   "14": "Имена параметров в интерфейсе `Props` нарушают правило. Имя `setLoading` должно быть более описательным, например, `updateLoadingState`."
-# }
-
-# """
+        # print(examples)
 
         return {
             "user": [ex['query'] for ex in examples],
