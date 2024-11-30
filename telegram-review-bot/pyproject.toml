@@ -16,6 +16,10 @@ python-dotenv = "^1.0.0"
 rarfile = "^4.0"
 tqdm = "^4.66.1"
 minio = "^7.2.0"
+reportlab = "^4.0.8"
+pygments = "^2.17.2"
+fonttools = "^4.47.0"
+requests = "^2.31.0"
 
 [tool.poetry.scripts]
 telegram_review_bot = "src.bot:run_bot"
