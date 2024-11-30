@@ -1,3 +1,9 @@
+import sys
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).parent.parent.resolve()))
+print(sys.path[-1])
+
 from src.review.parsers.parser import parse_file
 from src.review.parsers.language import LANGUAGE
 from argparse import ArgumentParser
