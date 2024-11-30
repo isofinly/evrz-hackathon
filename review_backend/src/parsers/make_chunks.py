@@ -1,6 +1,10 @@
 from .language import LANGUAGE
 from tree_sitter import Parser
 
+import json
+
+from pathlib import Path
+
 
 DECLARATION = {
     "py": ["class_definition", "function_definition"],
@@ -66,14 +70,11 @@ def chunk_code(code: str, extension: str):
             node.type == "variable_declarator"
             and any([child.type == "arrow_function" for child in node.children])
         ):
-            identifier, declaration_chunk, body_chunk = chunk_declaration(
+            identifier, declaration_chunk = chunk_declaration(
                 node, base_chunk, extension
             )
-            declarations[str(identifier)] = {
-                "identifier": str(identifier),
-                "declaration": str(declaration_chunk),
-                "body": str(body_chunk),
-            }
+
+            declarations[str(identifier)] = declaration_chunk
 
         elif not node.children:
             base_chunk.consume(node.end_point)
@@ -83,19 +84,17 @@ def chunk_code(code: str, extension: str):
 
     chunk(tree.root_node)
 
-    return str(base_chunk), declarations
+    return base_chunk, declarations
 
 
 def chunk_declaration(node, base_chunk, extension):
     identifier = None
     declaration_chunk = base_chunk.fork()
-    body_chunk = None
 
 
     def chunk(node):
         nonlocal identifier
         nonlocal declaration_chunk
-        nonlocal body_chunk
         
         base_chunk.consume(node.start_point)
         declaration_chunk.consume(node.start_point)
@@ -109,12 +108,9 @@ def chunk_declaration(node, base_chunk, extension):
             return
         
         if node.type in STATEMENT[extension]:
-            body_chunk = declaration_chunk.fork()
             base_chunk.add_tag(f"<BODY {identifier}>")
-            declaration_chunk.add_tag(f"<BODY {identifier}>")
-            body_chunk.consume(node.end_point)
+            declaration_chunk.consume(node.end_point)
             base_chunk.skip(node.end_point)
-            declaration_chunk.skip(node.end_point)
 
             return
 
@@ -127,7 +123,7 @@ def chunk_declaration(node, base_chunk, extension):
 
     chunk(node)
 
-    return identifier, declaration_chunk, body_chunk
+    return identifier, declaration_chunk
 
 class Chunk:
     def __init__(self, code_lines, chunk_start=(0, 0)):
@@ -164,6 +160,21 @@ class Chunk:
 
     def __str__(self):
         return self._chunk_str
+    
+    def to_json(self, path: Path):
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with open(path, "w") as f:
+            f.write(json.dumps(
+                {
+                "start_line": self._chunk_start[0],
+                "code": self._chunk_str
+                }
+            ))
+
+
+    def get_start_line(self):
+      return self._chunk_start[0]
+        
     
 
 if __name__ == "__main__":
