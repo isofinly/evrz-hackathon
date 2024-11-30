@@ -34,6 +34,7 @@ torch = [
     { platform = "linux", version = "^2.1.0+cpu", source = "torch-cpu" },
 ]
 optimum = "*"
+onnx = "*"
 
 [[tool.poetry.source]]
 name = "PyPI"
