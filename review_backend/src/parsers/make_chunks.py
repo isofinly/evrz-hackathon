@@ -174,7 +174,6 @@ class Chunk:
 
     def get_start_line(self):
       return self._chunk_start[0]
-        
     
 
 if __name__ == "__main__":
@@ -257,6 +256,8 @@ export const SwipperList = () => {
 
     """, "tsx")
     
-    for chunk in declarations.values():
-        print(chunk['declaration'].replace(f"<BODY {chunk['identifier']}>", chunk['body']))
+    for chunk in declarations.items():
+        # print(chunk.get_start_line())
+        print(chunk)
+        # print(chunk['declaration'].replace(f"<BODY {chunk['identifier']}>", chunk['body']))
     

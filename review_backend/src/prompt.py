@@ -1,4 +1,9 @@
-from utils import language_from_file_extension, add_line_numbers
+from utils import (
+    language_from_file_extension,
+    add_line_numbers,
+    code_from_chunk
+)
+from parsers.make_chunks import Chunk
 
 
 class PromptGenerator:
@@ -13,11 +18,13 @@ class PromptGenerator:
 Отвечай на русском языке.
 Ты - высококвалифицированный инженер-программист на языке {self.language} и код-ревьюер.
 Твоя задача – просмотреть фрагмент кода и выявить все ошибки, плохие практики, неэффективности или возможные улучшения.
+Отсутствие импортов не является ошибкой, так как тебе передается код без них.
 Твой ответ должен быть написан в формате json. Ключ: одно число - номер первой строки над ошибкой, значение - комментарии ревьюера. Делай комментарии максимально короткими и точными.
+Не используй фигурные скобки внутри комментария.
 """
 
-    def generate_user_prompt(self, code: str) -> str:
-        return add_line_numbers(code)
+    def generate_user_prompt(self, chunk: Chunk) -> str:
+        return add_line_numbers(str(chunk), chunk.get_start_line())
 
     def generate_context(self, code: str) -> dict[str, list[str]]:
         """

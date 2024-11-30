@@ -1,5 +1,6 @@
 import json
 import re
+from tqdm import tqdm
 
 from pathlib import Path
 from utils import (
@@ -13,8 +14,8 @@ from prompt import PromptGenerator
 from parsers.parser import parse_file
 from parsers.project_parser import parse_project_structure
 
-# from api import get_response
-from gemma_api import get_response
+from api import get_response
+# from gemma_api import get_response
 
 
 FILE_EXTENSIONS = ["py", "cs", "ts", "tsx", "css", "scss"]
@@ -39,20 +40,18 @@ class FileReviewer:
         pass
 
     def _save_result(self, review_comments: dict) -> None:
+        with open(self.file_path, "r") as original:
+            lines = original.readlines()
+
+        for line_num, comment in review_comments.items():
+            match = re.match(r'^\d+', line_num)
+            line_idx = int(match.group() if match else '1') - 1
+            line_idx = min(line_idx, len(lines) - 1)
+            lines[line_idx] = (
+                f"{self.comment_sign} <REVIEW>{comment}</REVIEW>\n{lines[line_idx]}"
+            )
+
         with open(self.result_path, "w") as f:
-            with open(self.file_path, "r") as original:
-                lines = original.readlines()
-
-            for lines, comment in review_comments.items():
-                match = re.match(r'^\d+', lines)
-                line_num = match.group() if match else '0'
-                
-                line_idx = int(line_num) - 1
-                line_idx = min(line_idx, len(lines) - 1)
-                lines[line_idx] = (
-                    f"{self.comment_sign} <REVIEW>{comment}</REVIEW>\n{lines[line_idx]}"
-                )
-
             f.writelines(lines)
 
     def review(self) -> None:
@@ -63,19 +62,22 @@ class FileReviewer:
         json_responses = []
 
         for chunk in declarations.values():
-            code = code_from_chunk(chunk)
             system_prompt = prompt_generator.generate_system_prompt()
-            user_prompt = prompt_generator.generate_user_prompt(code)
-            context = prompt_generator.generate_context(code)
+            user_prompt = prompt_generator.generate_user_prompt(chunk)
+            context = prompt_generator.generate_context(str(chunk))
 
             review_json = get_response(system_prompt, user_prompt, context)
             review_json = review_json[
                 review_json.index("{") : review_json.rindex("}") + 1
             ]
+            
+            print(review_json)
+            print()
 
-            # print(review_json)
-
-            json_responses.append(json.loads(review_json))
+            try:
+                json_responses.append(json.loads(review_json))
+            except json.JSONDecodeError:
+                print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!JSONDecodeError!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
         self._save_result(merge_json_responses(json_responses))
         print(f"Saved result to {self.result_path}")
@@ -93,7 +95,11 @@ class ProjectReviewer:
         pass
 
     def review(self) -> None:
-        for file in self.project_path.rglob("*"):
+        src_path = self.project_path / "src"
+        if not src_path.exists():
+            raise FileNotFoundError(f"Source directory not found")
+        
+        for file in tqdm(src_path.rglob("*")):
             if not file.is_file() or get_file_extension(file) not in FILE_EXTENSIONS:
                 continue
             relative_path = file.relative_to(self.project_path)
@@ -103,5 +109,6 @@ class ProjectReviewer:
 
 
 if __name__ == "__main__":
-    project_reviewer = ProjectReviewer(Path("./react-2/abctasks-client-main1"), Path("./react-2/REVIEW/abctasks-client-main1"))
+    # project_reviewer = ProjectReviewer(Path("./react-2/market-main"), Path("./react-2/REVIEW/market-main"))
+    project_reviewer = ProjectReviewer(Path("./TEST_PROJECT"), Path("./TEST_PROJECT/REVIEW"))
     project_reviewer.review()

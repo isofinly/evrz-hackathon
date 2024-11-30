@@ -8,6 +8,7 @@ from styleguide.ts_styleguide import ts_styleguide_prompts
 def get_file_extension(file_path: Path) -> str:
     return file_path.suffix[1:]
 
+
 def language_from_file_extension(file_extension: str) -> str:
     return {
         "py": "python",
@@ -17,8 +18,8 @@ def language_from_file_extension(file_extension: str) -> str:
         "css": "css",
         "scss": "scss",
     }[file_extension]
-    
-    
+
+
 def file_extensions_from_language(language: str) -> list[str]:
     return {
         "python": ["py"],
@@ -31,8 +32,8 @@ def file_extensions_from_language(language: str) -> list[str]:
 
 def code_from_chunk(chunk: dict) -> str:
     return chunk["declaration"].replace(f"<BODY {chunk['identifier']}>", chunk["body"])
-    
-    
+
+
 def merge_json_responses(json_responses: list[dict]) -> str:
     result = {}
     for json_response in json_responses:
@@ -44,14 +45,16 @@ def merge_json_responses(json_responses: list[dict]) -> str:
     return result
 
 
-def add_line_numbers(code: str) -> str:
-    return "\n".join([f"{i+1} {line}" for i, line in enumerate(code.split("\n"))])
+def add_line_numbers(code: str, start_line: int) -> str:
+    return "\n".join(
+        [f"{start_line + i + 1} {line}" for i, line in enumerate(code.split("\n"))]
+    )
 
 
-def get_styleguide_by_language(language: str) -> str:
-    return {
+def get_styleguide_by_language(language: str) -> dict[str, str]:
+    styleguide_prompts = {
         "python": py_styleguide_prompts,
         "csharp": csharp_styleguide_prompts,
         "typescript": ts_styleguide_prompts,
-    }[language]
-    
+    }
+    return styleguide_prompts.get(language, {})
