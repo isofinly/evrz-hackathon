@@ -70,9 +70,9 @@ def chunk_code(code: str, extension: str):
                 node, base_chunk, extension
             )
             declarations[str(identifier)] = {
-                "identifier": identifier,
-                "declaration": declaration_chunk,
-                "body": body_chunk,
+                "identifier": str(identifier),
+                "declaration": str(declaration_chunk),
+                "body": str(body_chunk),
             }
 
         elif not node.children:
@@ -83,7 +83,7 @@ def chunk_code(code: str, extension: str):
 
     chunk(tree.root_node)
 
-    return base_chunk, declarations
+    return str(base_chunk), declarations
 
 
 def chunk_declaration(node, base_chunk, extension):
