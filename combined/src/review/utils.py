@@ -1,8 +1,8 @@
 from pathlib import Path
 from collections import defaultdict
-from styleguide.py_styleguide import py_styleguide_prompts
-from styleguide.csharp_styleguide import csharp_styleguide_prompts
-from styleguide.ts_styleguide import ts_styleguide_prompts
+from src.review.styleguide.py_styleguide import py_styleguide_prompts
+from src.review.styleguide.csharp_styleguide import csharp_styleguide_prompts
+from src.review.styleguide.ts_styleguide import ts_styleguide_prompts
 
 
 def get_file_extension(file_path: Path) -> str:

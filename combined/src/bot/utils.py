@@ -6,6 +6,8 @@ import logging
 import py7zr
 import shutil
 import tempfile
+from src.review.review import FileReviewer
+from pathlib import Path
 
 
 def extract_archive(archive_path: str, extract_dir: str) -> bool:
@@ -17,13 +19,13 @@ def extract_archive(archive_path: str, extract_dir: str) -> bool:
         file_lower = archive_path.lower()
 
         # Handle 7z files separately with py7zr
-        if file_lower.endswith('.7z'):
-            with py7zr.SevenZipFile(archive_path, mode='r') as z:
+        if file_lower.endswith(".7z"):
+            with py7zr.SevenZipFile(archive_path, mode="r") as z:
                 z.extractall(extract_dir)
             return True
 
         # Handle other archive types with patool
-        elif any(file_lower.endswith(ext) for ext in ['.zip', '.rar']):
+        elif any(file_lower.endswith(ext) for ext in [".zip", ".rar"]):
             patoolib.extract_archive(archive_path, outdir=extract_dir)
             return True
 
@@ -58,14 +60,14 @@ def find_block_end(lines: list[str], start_idx: int) -> int:
     stack = []
     # Opening and closing bracket pairs
     brackets = {
-        '{': '}',
-        '(': ')',
-        '[': ']',
-        'function': '}',  # For JavaScript/TypeScript functions
-        'class': '}',     # For class definitions
-        'if': '}',        # For if statements
-        'for': '}',       # For loops
-        'while': '}'      # For while loops
+        "{": "}",
+        "(": ")",
+        "[": "]",
+        "function": "}",  # For JavaScript/TypeScript functions
+        "class": "}",  # For class definitions
+        "if": "}",  # For if statements
+        "for": "}",  # For loops
+        "while": "}",  # For while loops
     }
 
     # Check if the line contains any opening brackets or keywords
@@ -125,8 +127,10 @@ def find_code_block(lines: list[str], start_idx: int) -> tuple[int, str]:
 
     # Check for special cases in the first line
     first_line_stripped = first_line.strip()
-    is_type_def = first_line_stripped.startswith('type ') or first_line_stripped.startswith('interface ')
-    is_export = first_line_stripped.startswith('export ')
+    is_type_def = first_line_stripped.startswith(
+        "type "
+    ) or first_line_stripped.startswith("interface ")
+    is_export = first_line_stripped.startswith("export ")
 
     while current_idx < len(lines):
         current_line = lines[current_idx]
@@ -143,30 +147,40 @@ def find_code_block(lines: list[str], start_idx: int) -> tuple[int, str]:
 
             # Stop conditions:
             # 1. Found another review tag
-            if '<REVIEW>' in current_line:
+            if "<REVIEW>" in current_line:
                 break
 
             # 2. Found end of type definition
-            if is_type_def and current_stripped.endswith(';'):
+            if is_type_def and current_stripped.endswith(";"):
                 block_lines.append(current_line)
                 break
 
             # 3. Found end of export statement
-            if is_export and current_stripped.endswith(';'):
+            if is_export and current_stripped.endswith(";"):
                 block_lines.append(current_line)
                 break
 
             # 4. Found closing brace at base indentation
-            if (current_stripped == '}' and current_indent <= base_indent):
+            if current_stripped == "}" and current_indent <= base_indent:
                 block_lines.append(current_line)
                 break
 
             # 5. Next line has same or less indentation and current block is complete
             if block_lines and current_indent <= base_indent:
                 # Check if current line starts a new block/statement
-                if any(current_stripped.startswith(keyword) for keyword in [
-                    'type', 'interface', 'export', 'function', 'class', 'const', 'let', 'var'
-                ]):
+                if any(
+                    current_stripped.startswith(keyword)
+                    for keyword in [
+                        "type",
+                        "interface",
+                        "export",
+                        "function",
+                        "class",
+                        "const",
+                        "let",
+                        "var",
+                    ]
+                ):
                     break
 
         block_lines.append(current_line)
@@ -176,107 +190,98 @@ def find_code_block(lines: list[str], start_idx: int) -> tuple[int, str]:
     if current_idx == len(lines) and block_lines:
         current_idx -= 1
 
-    return current_idx, ''.join(block_lines)
+    return current_idx, "".join(block_lines)
 
 
 def parse_review_tags(directory: str) -> list:
     """
     Parses files for <REVIEW>content</REVIEW> tags and returns the diffs.
+    Uses FileReviewer for actual code review.
     """
     diffs = []
     review_pattern = re.compile(
-        r'(?:\/\/|\/\*|\#|\{\/\*|\{\#)?\s*<REVIEW>(.*?)<\/REVIEW>'
+        r"(?:\/\/|\/\*|\#|\{\/\*|\{\#)?\s*<REVIEW>(.*?)<\/REVIEW>"
     )
 
-    # Define supported file extensions
-    text_extensions = {
-        # Web development
-        '.js', '.jsx', '.ts', '.tsx', '.vue', '.svelte',
-        '.html', '.htm', '.css', '.scss', '.sass', '.less',
-
-        # Backend languages
-        '.py', '.java', '.php', '.rb', '.go', '.rs',
-        '.cpp', '.c', '.h', '.cs', '.kt', '.scala',
-
-        # Configuration and data
-        '.json', '.yml', '.yaml', '.xml', '.toml',
-        '.ini', '.conf', '.config', '.env',
-
-        # Documentation and text
-        '.md', '.markdown', '.txt', '.rst',
-
-        # Shell and scripts
-        '.sh', '.bash', '.zsh', '.fish',
-
-        # Other development files
-        '.gradle', '.maven', '.gitignore', '.dockerignore',
-        'Dockerfile', 'Makefile', '.editorconfig'
-    }
-
-    def process_file(file_path: str, base_dir: str) -> None:
-        """Process a single file for review tags."""
+    def process_file(file_path: Path, base_dir: Path) -> None:
         try:
-            rel_path = os.path.relpath(file_path, base_dir)
-            with open(file_path, 'r', encoding='utf-8') as f:
-                lines = f.readlines()
+            rel_path = file_path.relative_to(base_dir)
 
-            i = 0
-            while i < len(lines):
-                line = lines[i]
-                match = review_pattern.search(line)
+            # Create temporary directory for review results
+            with tempfile.TemporaryDirectory() as tmpdir:
+                tmp_path = Path(tmpdir)
+                result_path = tmp_path / "reviewed_file"
 
-                if match:
-                    review_content = match.group(1).strip()
+                # Use FileReviewer to review the file
+                reviewer = FileReviewer(file_path, result_path)
+                reviewer.review()
 
-                    # Find the block starting from the next line
-                    if i + 1 < len(lines):
-                        block_end, block_content = find_code_block(lines, i + 1)
+                # Read both original and reviewed files
+                with open(file_path, "r", encoding="utf-8") as f:
+                    original_lines = f.readlines()
+                with open(result_path, "r", encoding="utf-8") as f:
+                    reviewed_lines = f.readlines()
 
-                        if block_content.strip():  # Only add if block is not empty
-                            # Remove trailing semicolon if it exists
-                            block_content = block_content.rstrip()
-                            if block_content.endswith(';'):
-                                block_content = block_content[:-1]
+                # Process each line looking for review tags
+                i = 0
+                while i < len(reviewed_lines):
+                    line = reviewed_lines[i]
+                    match = review_pattern.search(line)
 
-                            diffs.append({
-                                'file': rel_path,
-                                'line_number': i + 2,
-                                'review': review_content,
-                                'original': block_content,
-                                'replacement': "<<<REPLACEMENT BLOCK NEEDED>>>"
-                            })
+                    if match:
+                        review_content = match.group(1).strip()
 
-                        i = block_end  # Skip to end of block
+                        if i + 1 < len(original_lines):
+                            block_end, original_block = find_code_block(
+                                original_lines, i + 1
+                            )
+                            _, reviewed_block = find_code_block(reviewed_lines, i + 1)
 
-                i += 1
+                            if original_block.strip():
+                                diffs.append(
+                                    {
+                                        "file": str(rel_path),
+                                        "line_number": i + 1,
+                                        "review": review_content,
+                                        "original": original_block.rstrip(),
+                                        "replacement": reviewed_block.rstrip(),
+                                    }
+                                )
+
+                            i = block_end
+                    i += 1
 
         except Exception as e:
             logger.warning(f"Could not process file {file_path}: {e}")
 
+    # Convert input to Path object
+    directory_path = Path(directory)
+
     # Check if directory is actually a file
-    if os.path.isfile(directory):
-        process_file(directory, os.path.dirname(directory))
+    if directory_path.is_file():
+        process_file(directory_path, directory_path.parent)
         return diffs
 
     # Walk through directory
-    for root, _, files in os.walk(directory):
-        for file in files:
-            file_lower = file.lower()
-            # Check if file extension is supported or exact filename matches
-            if any(file_lower.endswith(ext) for ext in text_extensions) or file_lower in text_extensions:
-                file_path = os.path.join(root, file)
-                process_file(file_path, directory)
+    for file_path in directory_path.rglob("*"):
+        if file_path.is_file():
+            try:
+                content = file_path.read_text(encoding="utf-8")
+                if "<REVIEW>" in content:
+                    process_file(file_path, directory_path)
+            except Exception as e:
+                logger.warning(f"Could not read file {file_path}: {e}")
 
     return diffs
 
 
-def generate_diff(file_path: str, line: str, line_number: int, review_comment: str) -> str:
-    """
-    Generates a diff string with the review comment and the line to be reviewed.
-    """
-    return (
-        f"File: {file_path} (line {line_number})\n"
-        f"Review: {review_comment}\n"
-        f"- {line}\n"
-        f"+ <<<REPLACEMENT NEEDED>>>"
-    )
+# def generate_diff(file_path: str, line: str, line_number: int, review_comment: str) -> str:
+#     """
+#     Generates a diff string with the review comment and the line to be reviewed.
+#     """
+#     return (
+#         f"File: {file_path} (line {line_number})\n"
+#         f"Review: {review_comment}\n"
+#         f"- {line}\n"
+#         f"+ <<<REPLACEMENT NEEDED>>>"
+#     )

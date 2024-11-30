@@ -1,4 +1,4 @@
-from language import LANGUAGE
+from src.review.parsers.language import LANGUAGE
 from tree_sitter import Parser
 
 import json
@@ -53,9 +53,8 @@ STATEMENT = {
 
 
 def chunk_code(code: str, extension: str):
-
     tree = Parser(LANGUAGE[extension]).parse(bytes(code, "utf-8"))
-    
+
     code_lines = code.split("\n")
     base_chunk = Chunk(code_lines)
 
@@ -68,13 +67,17 @@ def chunk_code(code: str, extension: str):
         base_chunk.consume(node.start_point)
 
         if node.type in DECLARATION[extension]:
-          # Special handling for TypeScript arrow functions
-            if extension in ['ts', 'tsx'] and node.type == "variable_declarator":
+            # Special handling for TypeScript arrow functions
+            if extension in ["ts", "tsx"] and node.type == "variable_declarator":
                 if any([child.type == "arrow_function" for child in node.children]):
-                    identifier, declaration_chunk = chunk_declaration(node, base_chunk, extension)
+                    identifier, declaration_chunk = chunk_declaration(
+                        node, base_chunk, extension
+                    )
                     declarations[str(identifier)] = declaration_chunk
             else:
-                identifier, declaration_chunk = chunk_declaration(node, base_chunk, extension)
+                identifier, declaration_chunk = chunk_declaration(
+                    node, base_chunk, extension
+                )
                 declarations[str(identifier)] = declaration_chunk
 
         elif not node.children:
@@ -92,11 +95,10 @@ def chunk_declaration(node, base_chunk, extension):
     identifier = None
     declaration_chunk = base_chunk.fork()
 
-
     def chunk(node):
         nonlocal identifier
         nonlocal declaration_chunk
-        
+
         base_chunk.consume(node.start_point)
         declaration_chunk.consume(node.start_point)
 
@@ -107,7 +109,7 @@ def chunk_declaration(node, base_chunk, extension):
             declaration_chunk.consume(node.end_point)
 
             return
-        
+
         if node.type in STATEMENT[extension]:
             base_chunk.add_tag(f"<BODY {identifier}>")
             declaration_chunk.consume(node.end_point)
@@ -126,6 +128,7 @@ def chunk_declaration(node, base_chunk, extension):
 
     return identifier, declaration_chunk
 
+
 class Chunk:
     def __init__(self, code_lines, chunk_start=(0, 0)):
         self._code_lines = code_lines
@@ -135,12 +138,11 @@ class Chunk:
 
     def consume(self, until_point):
         if self._ptr[0] == until_point[0]:
-            self._chunk_str += (
-                self._code_lines[self._ptr[0]][self._ptr[1] : until_point[1]] + ("\n" if until_point[1] == len(self._code_lines[self._ptr[0]]) else "")
-            )
+            self._chunk_str += self._code_lines[self._ptr[0]][
+                self._ptr[1] : until_point[1]
+            ] + ("\n" if until_point[1] == len(self._code_lines[self._ptr[0]]) else "")
             self._ptr = until_point
             return
-        
 
         self._chunk_str += self._code_lines[self._ptr[0]][self._ptr[1] :] + "\n"
 
@@ -155,24 +157,21 @@ class Chunk:
 
     def fork(self):
         return Chunk(self._code_lines, self._ptr)
-    
+
     def skip(self, until_point):
         self._ptr = until_point
 
     def __str__(self):
         return self._chunk_str
-    
+
     def to_json(self, path: Path):
         path.parent.mkdir(parents=True, exist_ok=True)
         with open(path, "w") as f:
-            f.write(json.dumps(
-                {
-                "start_line": self._chunk_start[0],
-                "code": self._chunk_str
-                }
-            ))
-
+            f.write(
+                json.dumps(
+                    {"start_line": self._chunk_start[0], "code": self._chunk_str}
+                )
+            )
 
     def get_start_line(self):
-      return self._chunk_start[0]
-    
+        return self._chunk_start[0]

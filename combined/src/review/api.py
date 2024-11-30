@@ -1,7 +1,7 @@
 import os
 import requests
 
-from prompt import PromptGenerator
+from src.review.prompt import PromptGenerator
 
 
 MODEL_API_KEY = os.getenv("MODEL_API_KEY")
@@ -31,7 +31,7 @@ def get_response(
 
     if response.status_code == 200:
         return response.json()["choices"][0]["message"]["content"]
-    
+
     raise RuntimeError(response.json()["error"]["message"])
 
 
@@ -85,16 +85,15 @@ def main():
 46
 47 export default Root;
 """
-    
+
     system_prompt = PromptGenerator("tsx").generate_system_prompt()
     user_prompt = PromptGenerator("tsx").generate_user_prompt(code)
-    
+
     context = PromptGenerator("tsx").generate_context(code)
-    
+
     response = get_response(system_prompt, user_prompt, context)
     print(response)
 
 
 if __name__ == "__main__":
     main()
-    

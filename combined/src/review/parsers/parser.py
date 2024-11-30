@@ -1,15 +1,16 @@
-from .language import LANGUAGE
-from .make_chunks import chunk_code
+from src.review.parsers.language import LANGUAGE
+from src.review.parsers.make_chunks import chunk_code
 
 from pathlib import Path
 
 from typing import Tuple, Dict, Union
 
-def parse_file(file_path: Union[str, Path]) ->  Tuple[str, Dict]:
-    """
-        parse chunks of code from file
 
-        return base chunk and declarations
+def parse_file(file_path: Union[str, Path]) -> Tuple[str, Dict]:
+    """
+    parse chunks of code from file
+
+    return base chunk and declarations
     """
 
     if type(file_path) == str:
@@ -19,7 +20,7 @@ def parse_file(file_path: Union[str, Path]) ->  Tuple[str, Dict]:
 
     if exension not in LANGUAGE:
         return "", {}
-    
+
     with open(file_path, "r") as f:
         code = f.read()
 

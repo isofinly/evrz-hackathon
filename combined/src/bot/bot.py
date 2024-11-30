@@ -4,10 +4,10 @@ import tempfile
 import logging
 from dotenv import load_dotenv
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
-from src.utils import extract_archive, get_project_structure, parse_review_tags
+from src.bot.utils import extract_archive, get_project_structure, parse_review_tags
 from telebot.handler_backends import State, StatesGroup
 from telebot.storage import StateMemoryStorage
-from src.storage import MinioStorage
+from src.bot.storage import MinioStorage
 from datetime import datetime
 
 # Setup logging
@@ -187,7 +187,9 @@ def send_welcome(message):
     bot.reply_to(message, welcome_text)
 
 
-def create_diff_message_with_download(diffs: list, page: int, total_pages: int, user_id: int) -> tuple[str, InlineKeyboardMarkup]:
+def create_diff_message_with_download(
+    diffs: list, page: int, total_pages: int, user_id: int
+) -> tuple[str, InlineKeyboardMarkup]:
     """Create a formatted diff message with download button"""
     message = create_diff_message(diffs, page, total_pages)
 
@@ -197,23 +199,33 @@ def create_diff_message_with_download(diffs: list, page: int, total_pages: int, 
 
     # Pagination buttons
     if page > 1:
-        buttons.extend([
-            InlineKeyboardButton("⏮️", callback_data=f"page_{user_id}_1"),
-            InlineKeyboardButton("◀️", callback_data=f"page_{user_id}_{page-1}")
-        ])
+        buttons.extend(
+            [
+                InlineKeyboardButton("⏮️", callback_data=f"page_{user_id}_1"),
+                InlineKeyboardButton("◀️", callback_data=f"page_{user_id}_{page-1}"),
+            ]
+        )
 
     buttons.append(InlineKeyboardButton(f"{page}/{total_pages}", callback_data="noop"))
 
     if page < total_pages:
-        buttons.extend([
-            InlineKeyboardButton("▶️", callback_data=f"page_{user_id}_{page+1}"),
-            InlineKeyboardButton("⏭️", callback_data=f"page_{user_id}_{total_pages}")
-        ])
+        buttons.extend(
+            [
+                InlineKeyboardButton("▶️", callback_data=f"page_{user_id}_{page+1}"),
+                InlineKeyboardButton(
+                    "⏭️", callback_data=f"page_{user_id}_{total_pages}"
+                ),
+            ]
+        )
 
     keyboard.add(*buttons)
 
     # Add download button in new row
-    keyboard.add(InlineKeyboardButton("📥 Download Report", callback_data=f"download_{user_id}_{page}"))
+    keyboard.add(
+        InlineKeyboardButton(
+            "📥 Download Report", callback_data=f"download_{user_id}_{page}"
+        )
+    )
 
     return message, keyboard
 
@@ -228,8 +240,7 @@ def handle_download(call):
 
         if str(user_id) not in review_results:
             bot.answer_callback_query(
-                call.id,
-                "Review session expired. Please send the file again."
+                call.id, "Review session expired. Please send the file again."
             )
             return
 
@@ -245,20 +256,19 @@ def handle_download(call):
         # Generate and upload diff report
         try:
             object_name = storage.generate_diff_report(current_diffs, user_id, page)
-            download_url = storage.get_presigned_url('reports', object_name)
+            download_url = storage.get_presigned_url("reports", object_name)
 
             bot.answer_callback_query(call.id)
             bot.send_message(
                 call.message.chat.id,
                 f"📥 Download your diff report:\n{download_url}",
-                disable_web_page_preview=True
+                disable_web_page_preview=True,
             )
 
         except Exception as e:
             logger.error(f"Error generating diff report: {e}", exc_info=True)
             bot.answer_callback_query(
-                call.id,
-                "Failed to generate report. Please try again."
+                call.id, "Failed to generate report. Please try again."
             )
 
     except Exception as e:
@@ -306,14 +316,14 @@ def handle_document(message):
                 object_name = f"uploads/{message.from_user.id}/{file_name}"
                 storage.upload_file(
                     file_path,
-                    'uploads',
+                    "uploads",
                     object_name,
                     metadata={
-                        'user_id': str(message.from_user.id),
-                        'chat_id': str(message.chat.id),
-                        'file_name': file_name,
-                        'timestamp': datetime.now().isoformat()
-                    }
+                        "user_id": str(message.from_user.id),
+                        "chat_id": str(message.chat.id),
+                        "file_name": file_name,
+                        "timestamp": datetime.now().isoformat(),
+                    },
                 )
 
                 # Update status
@@ -388,7 +398,7 @@ def handle_document(message):
                         message.chat.id,
                         message_text,
                         reply_markup=keyboard,
-                        parse_mode="Markdown"
+                        parse_mode="Markdown",
                     )
                 else:
                     bot.send_message(
