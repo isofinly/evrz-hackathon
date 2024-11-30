@@ -54,7 +54,7 @@ def chunk_code(code: str, extension: str):
         nonlocal base_chunk
         nonlocal declarations
 
-        print(node.type)
+
 
         if node.type in IMPORT[extension]:
             base_chunk += (
