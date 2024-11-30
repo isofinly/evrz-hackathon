@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { Button } from \"@chakra-ui/react\"\n\n\nimport { DetailsKeyProps, ResultKey } from \"@entities/results\"\n\n\nexport const DetailsKey = (props: DetailsKeyProps) => <BODY DetailsKey>"}

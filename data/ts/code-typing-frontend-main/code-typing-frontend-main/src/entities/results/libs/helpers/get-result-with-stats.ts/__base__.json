@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { getResultId, getResultStats, IResult } from \"@entities/results\"\n\n\nexport interface GetResultWithStatsArgs <BODY GetResultWithStatsArgs>\n\nexport const getResultWithStats = ({\n\n    timeMillisecondsStart,\n\n    stopTimeMilliseconds,\n\n    text\n\n}: GetResultWithStatsArgs): IResult => <BODY getResultWithStats>"}

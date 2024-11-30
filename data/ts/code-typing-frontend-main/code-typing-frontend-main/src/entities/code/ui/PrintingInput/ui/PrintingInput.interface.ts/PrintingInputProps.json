@@ -1,1 +1,0 @@
-{"start_line": 2, "code": "interface PrintingInputProps extends InputProps {\n    isRightRow: boolean\n}"}

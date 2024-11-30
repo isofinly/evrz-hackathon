@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { Tag } from '../fixtures';\n\n\nexport const getTagsLabels = (tags: Tag[]): string[] => <BODY getTagsLabels>;\n"}

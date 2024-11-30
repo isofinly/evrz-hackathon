@@ -1,1 +1,0 @@
-{"start_line": 4, "code": "type Props = {\n\n  category: Category;\n\n  setCategory: (value: Category) => void;\n\n};\n"}

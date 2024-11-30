@@ -1,1 +1,0 @@
-{"start_line": 11, "code": "function sendEvent({ name, payload }: AnalyticsEvent) {\n  if (!initialized) throw new Error(\"Analytics is not initialized!\");\n\n  console.log(\n    `Sending event: ${name} with payload \"${JSON.stringify(payload)}\"`\n  );\n}"}

@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { IResultCode, SaveResultBody } from \"@entities/results\"\n\nimport { roundToFixed } from \"@shared/libs\"\n\n\nexport const mapResultToApiBody = (\n\n    result: IResultCode & { codeExampleUUID?: string }\n\n): SaveResultBody => <BODY mapResultToApiBody>"}

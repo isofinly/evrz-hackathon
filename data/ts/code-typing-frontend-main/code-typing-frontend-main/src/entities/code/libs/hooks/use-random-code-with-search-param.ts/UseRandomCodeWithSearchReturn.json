@@ -1,1 +1,0 @@
-{"start_line": 8, "code": "type UseRandomCodeWithSearchReturn = [\n\n    textContent: string | undefined,\n\n    options: UseRandomCodeWithSearchReturnOptions\n\n]\n"}

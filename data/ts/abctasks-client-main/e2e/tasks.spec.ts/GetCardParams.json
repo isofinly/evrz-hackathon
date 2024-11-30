@@ -1,1 +1,0 @@
-{"start_line": 30, "code": "interface GetCardParams {\n\treadonly parent: Locator | Page;\n\treadonly title: string;\n\treadonly description: string;\n\treadonly tags: string[];\n}"}

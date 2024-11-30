@@ -1,1 +1,0 @@
-{"start_line": 20, "code": "interface AuthResponse extends Static<typeof authResponse> {}\n"}

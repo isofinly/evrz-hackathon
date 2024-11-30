@@ -1,1 +1,0 @@
-{"start_line": 16, "code": "interface EditMenuProps extends CommonProps, React.PropsWithChildren {\n\treadonly size?: Size;\n\treadonly anchorPosition?: PopoverPosition;\n\treadonly anchorOrigin?: PopoverOrigin;\n\treadonly transformOrigin?: PopoverOrigin;\n}"}

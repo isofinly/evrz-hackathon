@@ -1,1 +1,0 @@
-{"start_line": 82, "code": "Question = ({ children }: { children: string }) => {\n  return (\n    <Typography.Heading className=\"mb-3\" size=\"base\" font=\"text\">\n      {children}\n    </Typography.Heading>\n  )\n}"}

@@ -1,1 +1,0 @@
-{"start_line": 1, "code": "transformCodeToRows = (text: string | null): string[] | undefined => {\n    return text?.split(\"\\n\").map(row => row.replace(/\\t/g, \"    \"))\n}"}

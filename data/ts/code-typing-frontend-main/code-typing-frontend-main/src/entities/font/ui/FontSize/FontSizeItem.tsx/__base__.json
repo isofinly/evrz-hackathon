@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { Text, Tooltip } from \"@chakra-ui/react\"\n\n\nimport { FontSizeItemProps } from \"@entities/font\"\n\n\nexport const FontSizeItem = (props: FontSizeItemProps) => <BODY FontSizeItem>"}

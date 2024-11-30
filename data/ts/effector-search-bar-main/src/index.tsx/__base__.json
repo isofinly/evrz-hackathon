@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import React from \"react\";\n\nimport { HashRouter } from \"react-router-dom\";\n\nimport ReactDOM from \"react-dom/client\";\n\nimport { App } from \"./app\";\n\n\nconst root = ReactDOM.createRoot(\n\n  document.getElementById(\"root\") as HTMLElement\n\n);\n\nroot.render(\n\n  <HashRouter>\n\n    <App />\n\n  </HashRouter>\n\n);\n"}

@@ -1,1 +1,0 @@
-{"start_line": 25, "code": "interface Consulate {\n  id: string\n  city: string\n  country: string\n  kdmidPath: string\n}"}

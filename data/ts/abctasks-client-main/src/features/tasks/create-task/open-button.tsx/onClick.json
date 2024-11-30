@@ -1,1 +1,0 @@
-{"start_line": 22, "code": "onClick = () => {\n\t\t\topen(columnStatus);\n\t\t}"}

@@ -1,1 +1,0 @@
-{"start_line": 6, "code": "type MenuDataProps = {\n\n  menuData: Array<MenuItemProps>;\n\n  defaultSelectedKeys?: Array<string>;\n\n  defaultOpenKeys?: Array<string>;\n\n}\n"}

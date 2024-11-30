@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { Flex } from \"@chakra-ui/react\"\n\n\nimport { GithubRepoItem } from \"@shared/ui/github\"\n\nimport { GithubRepoItemProps } from \"@shared/ui/github/types\"\n\nimport { motion } from \"framer-motion\"\n\n\nexport const Repos = () => <BODY Repos>"}

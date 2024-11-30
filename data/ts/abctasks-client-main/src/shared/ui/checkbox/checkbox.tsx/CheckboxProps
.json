@@ -1,1 +1,0 @@
-{"start_line": 13, "code": "interface CheckboxProps\n\n\textends CommonProps,\n\n\t\tPick<ConnectedField<any>, 'name' | 'onChange' | 'value'>,\n\n\t\tOmit<MUICheckboxProps, keyof ConnectedField<any>> {\n\treadonly label?: string | null;\n}"}

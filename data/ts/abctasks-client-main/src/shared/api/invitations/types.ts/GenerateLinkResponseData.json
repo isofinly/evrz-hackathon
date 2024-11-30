@@ -1,1 +1,0 @@
-{"start_line": 41, "code": "type GenerateLinkResponseData = Promise<StandardResponse<string>>;\n"}

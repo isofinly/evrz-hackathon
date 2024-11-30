@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { ChangeEventHandler, KeyboardEventHandler, RefObject } from \"react\"\n\n\nimport { UseTypingActionState } from \"@entities/code\"\n\n\nexport interface TypingCodeHandlersContextState extends UseTypingActionState <BODY TypingCodeHandlersContextState>"}

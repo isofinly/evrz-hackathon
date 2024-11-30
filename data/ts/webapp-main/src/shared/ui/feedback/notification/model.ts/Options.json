@@ -1,1 +1,0 @@
-{"start_line": 4, "code": "interface Options {\n  type: ToastType\n  message: string\n}"}

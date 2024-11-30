@@ -1,1 +1,0 @@
-{"start_line": 16, "code": "getOne = async ({ roomId, id, }: GetTagParams) => {\n\treturn instance.get(`tags/${roomId}/${id}`).json<StandardResponse<Tag>>();\n}"}

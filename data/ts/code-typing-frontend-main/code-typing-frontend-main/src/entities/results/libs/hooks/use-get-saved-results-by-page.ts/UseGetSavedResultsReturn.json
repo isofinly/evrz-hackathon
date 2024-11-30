@@ -1,1 +1,0 @@
-{"start_line": 7, "code": "type UseGetSavedResultsReturn = UseQueryResult<GetSavedResultsResponse> & {\n\n    totalPages: number\n\n}\n"}

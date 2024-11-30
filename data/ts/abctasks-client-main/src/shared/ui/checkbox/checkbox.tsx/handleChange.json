@@ -1,1 +1,0 @@
-{"start_line": 23, "code": "handleChange: React.ChangeEventHandler<HTMLInputElement> = (evt) => {\n\t\tonChange(evt.target.checked);\n\t}"}

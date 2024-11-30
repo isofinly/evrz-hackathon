@@ -1,1 +1,0 @@
-{"start_line": 6, "code": "function useBackAction(action: () => void) {\n  useEffect(() => {\n    const saved = actionRef.current\n    actionRef.current = action\n\n    return () => {\n      actionRef.current = saved\n    }\n  }, [action])\n}"}

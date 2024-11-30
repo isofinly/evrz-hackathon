@@ -1,1 +1,0 @@
-{"start_line": 21, "code": "interface TemplateTagListItemProps\n\n\textends CommonProps,\n\n\t\tTag,\n\n\t\tOmit<ListItemProps, keyof Tag | 'slots'> {\n\treadonly slots?: Slots<'actions'>;\n}"}

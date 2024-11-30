@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "interface FontSizeItemProps {\n    fontSize: number\n    name: string\n    fullName: string\n    onChangeFontSize: (fontSize: number) => void\n    isActive: boolean\n}"}

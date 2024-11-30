@@ -1,1 +1,0 @@
-{"start_line": 2, "code": "getTagsLabels = (tags: Tag[]): string[] => {\n\treturn tags.map((tag) => tag.name);\n}"}

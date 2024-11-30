@@ -1,1 +1,0 @@
-{"start_line": 5, "code": "interface TimeUntilStaleParams {\n  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n  query: Query<any, any, any>\n  timeout: number\n}"}

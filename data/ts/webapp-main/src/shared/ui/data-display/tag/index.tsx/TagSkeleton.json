@@ -1,1 +1,0 @@
-{"start_line": 40, "code": "TagSkeleton = ({ className, width = 120 }: SkeletonProps) => {\n  return (\n    <Skeleton type=\"block\" width={width} height={28} className={className} />\n  )\n}"}

@@ -1,1 +1,0 @@
-{"start_line": 8, "code": "type ModalProps = {\n\n  isVisible: boolean;\n\n  hideModal: () => void;\n\n  setActiveProduct: (product: Product | null) => void;\n\n  product: Product | null;\n\n  products: Product[];\n\n};\n"}

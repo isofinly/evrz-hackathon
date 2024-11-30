@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export {\n\n\tActivityActionPicture,\n\n\ttype ActivityActionPictureProps\n\n} from './activity-action-picture';\n"}

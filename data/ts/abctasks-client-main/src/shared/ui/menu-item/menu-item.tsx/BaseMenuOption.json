@@ -1,1 +1,0 @@
-{"start_line": 17, "code": "interface BaseMenuOption {\n\treadonly label: string;\n\treadonly icon?: React.ReactElement;\n}"}

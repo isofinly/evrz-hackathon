@@ -1,1 +1,0 @@
-{"start_line": 56, "code": "interface GetTaskParams extends InRoomParams {\n\treadonly id: number;\n}"}

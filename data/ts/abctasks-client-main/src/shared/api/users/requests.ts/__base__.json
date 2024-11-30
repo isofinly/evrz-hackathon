@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { StandardResponse } from '@/shared/types';\n\n\nimport { User } from '../auth';\n\nimport { instance, normalizeQuery } from '../request';\n\n\nimport { SearchUsersQuery } from './types';\n\n\nexport const searchUsers = async (query: SearchUsersQuery) => <BODY searchUsers>;\n"}

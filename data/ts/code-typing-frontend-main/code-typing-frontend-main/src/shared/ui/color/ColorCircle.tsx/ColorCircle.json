@@ -1,1 +1,0 @@
-{"start_line": 6, "code": "ColorCircle = (props: ColorCircleProps) => {\n    const { color } = props\n\n    return <Box bg={color} w={4} h={4} borderRadius=\"50%\" />\n}"}

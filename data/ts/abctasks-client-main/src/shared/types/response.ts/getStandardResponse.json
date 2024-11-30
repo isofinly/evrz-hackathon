@@ -1,1 +1,0 @@
-{"start_line": 2, "code": "getStandardResponse = <RT>(T: Runtype<RT>) => {\n\treturn Record({\n\t\tdata: T,\n\t\tstatusCode: Number,\n\t}).asReadonly();\n}"}

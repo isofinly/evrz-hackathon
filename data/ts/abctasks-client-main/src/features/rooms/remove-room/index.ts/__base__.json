@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export * as removeRoomModel from './model';\n\nexport { RemoveRoomMenuItem, type RemoveRoomMenuItemProps } from './menu-item';\n\nexport { ConfirmRemoveRoom, type ConfirmRemoveRoomProps } from './confirm';\n"}

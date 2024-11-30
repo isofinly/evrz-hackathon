@@ -1,1 +1,0 @@
-{"start_line": 35, "code": "interface RemoveParams extends BaseCommentParams {\n\treadonly id: number;\n}"}

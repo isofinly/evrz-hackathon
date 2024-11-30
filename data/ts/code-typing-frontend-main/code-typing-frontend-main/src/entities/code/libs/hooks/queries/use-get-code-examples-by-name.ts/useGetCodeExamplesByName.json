@@ -1,1 +1,0 @@
-{"start_line": 4, "code": "useGetCodeExamplesByName = (\n\n    name: string,\n\n    options?: Omit<UseQueryOptions<CodeExamplesByNameResponse>, \"queryKey\">\n\n) => {\n    return useQuery({\n        queryFn: () => CodeService.fetchCodeExamplesByName(name),\n        queryKey: [queryKeysEnum.codeExample, name],\n        ...options\n    })\n}"}

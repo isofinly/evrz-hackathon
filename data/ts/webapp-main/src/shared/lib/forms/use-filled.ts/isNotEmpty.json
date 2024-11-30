@@ -1,1 +1,0 @@
-{"start_line": 5, "code": "function isNotEmpty<T>(object: T, path?: string): boolean {\n  const value = get(object, path)\n  if (typeof value === 'object') return Object.values(value).some(Boolean)\n  return Boolean(value)\n}"}

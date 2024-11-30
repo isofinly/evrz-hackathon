@@ -1,1 +1,0 @@
-{"start_line": 7, "code": "interface CreatePopupControlModelParams {\n\treadonly name: string;\n\t/**\n\t * Should popup be synced with query\n\t * @default true\n\t */\n\treadonly sync?: boolean;\n}"}

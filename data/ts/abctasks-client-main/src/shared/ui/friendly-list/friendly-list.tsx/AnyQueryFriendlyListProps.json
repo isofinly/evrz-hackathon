@@ -1,1 +1,0 @@
-{"start_line": 49, "code": "interface AnyQueryFriendlyListProps<RawData, Item, Error>\n\n\textends BaseFriendlyListProps<Item, Error> {\n\treadonly $query: Query<any, RawData, Error, any>;\n\treadonly getData: (data: RawData) => Item[] | null;\n}"}

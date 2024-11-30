@@ -1,1 +1,0 @@
-{"start_line": 40, "code": "generateLink = async ({\n\n\troomId,\n\n}: GenerateLinkRequestParams): GenerateLinkResponseData => {\n\treturn instance.post(`invitations/invite/${roomId}/generate-link`).json();\n}"}

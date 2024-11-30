@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export enum searchParamsEnum {\n\n    resultId = \"result-id\",\n\n    languageName = \"language-name\",\n\n    size = \"size\",\n\n    page = \"page\",\n\n    direction = \"direction\",\n\n    sortBy = \"sort-by\"\n\n}\n"}

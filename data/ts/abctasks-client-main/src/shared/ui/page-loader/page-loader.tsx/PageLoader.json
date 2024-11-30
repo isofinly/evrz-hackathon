@@ -1,1 +1,0 @@
-{"start_line": 13, "code": "PageLoader: React.FC<PageLoaderProps> = (props) => {\n\tconst { className } = props;\n\n\tconst { t } = useTranslation('common');\n\n\tconst loadingText = t('loading');\n\n\treturn (\n\t\t<Center className={className} height='page'>\n\t\t\t<LoadingIndicator text={loadingText} />\n\t\t</Center>\n\t);\n}"}

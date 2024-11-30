@@ -1,1 +1,0 @@
-{"start_line": 25, "code": "interface FormOptions {\n\treadonly link: string;\n}"}

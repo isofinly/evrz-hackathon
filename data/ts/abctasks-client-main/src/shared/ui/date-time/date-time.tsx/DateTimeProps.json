@@ -1,1 +1,0 @@
-{"start_line": 10, "code": "interface DateTimeProps extends CommonProps {\n\treadonly date: string | number | Date;\n\treadonly format: string;\n}"}

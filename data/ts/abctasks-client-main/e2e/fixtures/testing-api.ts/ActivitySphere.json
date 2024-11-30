@@ -1,1 +1,0 @@
-{"start_line": 128, "code": "interface ActivitySphere {\n\treadonly id: number;\n\treadonly name: string;\n}"}

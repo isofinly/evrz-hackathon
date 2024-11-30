@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export {\n\n\tActivityListItem,\n\n\ttype ActivityListItemProps\n\n} from './activity-list-item';\n"}

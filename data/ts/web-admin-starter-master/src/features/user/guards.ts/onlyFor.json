@@ -1,1 +1,0 @@
-{"start_line": 12, "code": "function onlyFor(roles: Roles[]): Guard<UserSession> {\n  return (route, context) =>\n    context && context.role && roles.includes(context.role) ? route : null;\n}"}

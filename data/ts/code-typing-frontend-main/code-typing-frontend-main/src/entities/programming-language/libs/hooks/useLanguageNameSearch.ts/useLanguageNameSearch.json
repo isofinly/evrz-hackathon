@@ -1,1 +1,0 @@
-{"start_line": 4, "code": "useLanguageNameSearch = () => {\n    const [searchParams] = useSearchParams()\n\n    const languageName = searchParams.get(searchParamsEnum.languageName)\n\n    return languageName\n}"}

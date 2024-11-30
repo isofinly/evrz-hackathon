@@ -1,1 +1,0 @@
-{"start_line": 5, "code": "function App(): JSX.Element {\n\treturn (\n\t\t<>\n\t\t\t<Navbar />\n\t\t\t<Routing />\n\t\t</>\n\t)\n}"}

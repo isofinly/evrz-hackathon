@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { Flex } from \"@chakra-ui/react\"\n\n\nimport { PaginationItem, usePagination } from \"@shared/ui/pagination\"\n\n\nexport const PaginationItems = (props: { items: number[] }) => <BODY PaginationItems>"}

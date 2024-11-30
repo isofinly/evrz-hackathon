@@ -1,1 +1,0 @@
-{"start_line": 8, "code": "interface IconProps\n\n  extends Omit<SVGProps<SVGSVGElement>, 'name' | 'type'> {\n  name: IconName\n  size?: number | string\n}"}

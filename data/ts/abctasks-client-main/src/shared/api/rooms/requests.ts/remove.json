@@ -1,1 +1,0 @@
-{"start_line": 30, "code": "remove = async ({ roomId, }: InRoomParams) => {\n\treturn instance\n\t\t.delete(`rooms/${roomId}/remove`)\n\t\t.json<StandardResponse<boolean>>();\n}"}

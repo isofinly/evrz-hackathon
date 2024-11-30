@@ -1,1 +1,0 @@
-{"start_line": 6, "code": "type GenericTemplateProps = {\n\n  isAuthed: boolean;\n\n  isPending: boolean;\n\n}\n"}

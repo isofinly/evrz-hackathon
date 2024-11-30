@@ -1,1 +1,0 @@
-{"start_line": 21, "code": "interface MultiplePickerProps<T> {\n\treadonly onChange: (value: T[]) => unknown;\n\treadonly value: T[];\n\treadonly multiple: true;\n\treadonly limitTags?: number;\n}"}

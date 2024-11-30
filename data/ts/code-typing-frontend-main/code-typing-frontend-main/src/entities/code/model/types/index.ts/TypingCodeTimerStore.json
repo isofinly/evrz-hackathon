@@ -1,1 +1,0 @@
-{"start_line": 4, "code": "interface TypingCodeTimerStore {\n    timerStatus: TimerStatus\n    timeMillisecondsStart: number | null\n    timeMillisecondsEnd: number | null\n    timerSettings: TypingTimerSettings\n}"}

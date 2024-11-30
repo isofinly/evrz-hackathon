@@ -1,1 +1,0 @@
-{"start_line": 13, "code": "getUser = (): Promise<{ payload: UserSession }> =>\n\n  request({\n\n    method: 'get',\n\n    url: '/user/get-user',\n\n  })"}

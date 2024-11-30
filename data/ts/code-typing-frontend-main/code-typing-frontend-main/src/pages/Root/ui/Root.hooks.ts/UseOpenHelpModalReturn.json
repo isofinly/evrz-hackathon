@@ -1,1 +1,0 @@
-{"start_line": 6, "code": "type UseOpenHelpModalReturn = {\n\n    isOpenHelpModal: boolean\n\n    handleOpenHelpModal: () => void\n\n    handleCloseHelpModal: () => void\n\n}\n"}

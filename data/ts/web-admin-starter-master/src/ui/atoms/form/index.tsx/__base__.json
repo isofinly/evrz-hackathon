@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import * as React from 'react';\n\nimport { Event } from 'effector';\n\ntype MessageFormProps = {\n\n  handleSubmit: Event<void>;\n\n};\n\n\nexport const Form: React.FC<MessageFormProps> = ({\n\n  handleSubmit,\n\n  children,\n\n}) => <BODY Form>;\n"}

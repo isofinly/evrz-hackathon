@@ -1,1 +1,0 @@
-{"start_line": 61, "code": "interface RemoveInvitationRequestParams extends InRoomParams {\n\treadonly id: number;\n}"}

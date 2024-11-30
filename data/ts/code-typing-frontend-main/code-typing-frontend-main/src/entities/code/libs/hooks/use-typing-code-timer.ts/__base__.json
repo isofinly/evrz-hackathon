@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { useUnit } from \"effector-react\"\n\n\nimport {\n\n    $typingCodeTimerStore,\n\n    eventChangeTimerSettings,\n\n    eventResetTimer,\n\n    eventStartTimer,\n\n    eventStopTimer\n\n} from \"@entities/code\"\n\n\nexport const useTypingCodeTimer = () => <BODY useTypingCodeTimer>"}

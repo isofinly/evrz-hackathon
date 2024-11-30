@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { InputProps } from \"@chakra-ui/react\"\n\n\nexport interface PrintingInputProps extends InputProps <BODY PrintingInputProps>"}

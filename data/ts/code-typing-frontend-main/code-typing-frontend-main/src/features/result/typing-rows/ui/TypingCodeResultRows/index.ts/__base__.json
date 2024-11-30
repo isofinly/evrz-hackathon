@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export * from \"./TypingCodeResultRows.tsx\"\n\nexport * from \"./TypingCodeResultRows.interface.ts\"\n"}

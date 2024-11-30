@@ -1,1 +1,0 @@
-{"start_line": 30, "code": "type Slots<T extends string> = {\n\n\treadonly [K in T]?: ReactNode | null;\n\n};\n"}

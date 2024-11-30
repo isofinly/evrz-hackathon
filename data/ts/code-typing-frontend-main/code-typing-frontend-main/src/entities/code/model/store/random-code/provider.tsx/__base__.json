@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { ReactNode, useMemo } from \"react\"\n\n\nimport {\n\n    RandomCodeContext,\n\n    transformCodeToRows,\n\n    useRandomCodeWithSearchParam\n\n} from \"@entities/code\"\n\n\nexport const RandomCodeProvider = ({ children }: { children: ReactNode }) => <BODY RandomCodeProvider>"}

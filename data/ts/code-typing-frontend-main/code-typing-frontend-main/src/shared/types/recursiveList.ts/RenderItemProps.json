@@ -1,1 +1,0 @@
-{"start_line": 2, "code": "type RenderItemProps = {\n\n    onClick: () => void\n\n    item: RecursiveListItemType\n\n    ref: RefObject<HTMLDivElement> | undefined\n\n    isFocus: boolean\n\n}\n"}

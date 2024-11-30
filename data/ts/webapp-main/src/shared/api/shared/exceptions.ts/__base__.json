@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export type NetworkExceptionType = 'TooManyRequests' | 'NotFound' | 'Unknown'\n\n\nexport class NetworkException extends Error {\n\n  type: NetworkExceptionType\n\n\n  constructor(type: NetworkExceptionType) <BODY NetworkException>\n}\n"}

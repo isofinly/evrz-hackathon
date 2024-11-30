@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { useSearchParams } from \"react-router-dom\"\n\n\nimport { searchParamsEnum } from \"@shared/constants\"\n\n\nexport const useLanguageNameSearch = () => <BODY useLanguageNameSearch>"}

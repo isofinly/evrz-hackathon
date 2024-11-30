@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import styled from 'styled-components'\n\nimport { Layout, Button } from 'antd'\n\n\nconst { Header } = Layout\n\n\nexport const HeaderContainer = styled(Header)`\n\n\n  display: flex;\n  align-items: center;\n`\n\n\nexport const LogoutButton = styled(Button)`\n\n\n  margin-left: auto;\n`\n"}

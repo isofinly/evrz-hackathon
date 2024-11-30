@@ -1,1 +1,0 @@
-{"start_line": 3, "code": "type KeyboardShortcutsEvent = {\n\n    key: string\n\n    ctrlKey: boolean\n\n    shiftKey: boolean\n\n    altKey: boolean\n\n    metaKey: boolean\n\n}\n"}

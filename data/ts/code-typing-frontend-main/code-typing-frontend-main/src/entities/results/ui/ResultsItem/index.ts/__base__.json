@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export { ResultsItem } from \"./ResultsItem.tsx\"\n\nexport type { ResultsItemProps } from \"./ResultsItem.interface.ts\"\n\nexport { ResultListSkeleton } from \"./ResultListSkeleton.tsx\"\n"}

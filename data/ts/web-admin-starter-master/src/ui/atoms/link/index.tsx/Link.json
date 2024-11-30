@@ -1,1 +1,0 @@
-{"start_line": 11, "code": "Link: React.FC<ILinkCompProps> = ({ className, children, to, onClick }) => {\n  return (\n    <LinkWrap className={className} to={to} onClick={onClick}>\n      {children}\n    </LinkWrap>\n  )\n}"}

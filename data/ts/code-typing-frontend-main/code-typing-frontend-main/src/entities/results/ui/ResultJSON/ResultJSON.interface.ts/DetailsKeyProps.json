@@ -1,1 +1,0 @@
-{"start_line": 12, "code": "interface DetailsKeyProps extends Omit<ResultJSONProps, \"value\"> {\n    name: ResultDetails\n    onShowDetails: () => void\n    openDetails?: ResultDetails\n}"}

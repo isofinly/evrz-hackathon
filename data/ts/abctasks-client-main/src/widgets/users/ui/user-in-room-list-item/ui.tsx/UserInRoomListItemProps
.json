@@ -1,1 +1,0 @@
-{"start_line": 17, "code": "interface UserInRoomListItemProps\n\n\textends CommonProps,\n\n\t\tOmit<TemplateUserListItemProps, 'slots'> {\n\treadonly roomId: number;\n}"}

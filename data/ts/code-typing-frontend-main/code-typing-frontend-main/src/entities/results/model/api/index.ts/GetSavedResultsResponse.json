@@ -1,1 +1,0 @@
-{"start_line": 2, "code": "type GetSavedResultsResponse = {\n\n    content: ResultFromApi[]\n\n    totalPages: number\n\n    totalElements: number\n\n}\n"}

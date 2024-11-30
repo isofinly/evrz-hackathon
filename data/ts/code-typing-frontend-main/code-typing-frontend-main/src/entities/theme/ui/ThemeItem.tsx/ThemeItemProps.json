@@ -1,1 +1,0 @@
-{"start_line": 11, "code": "interface ThemeItemProps extends TileProps {\n    onChangeTheme: (theme: AppTheme) => void\n    currentTheme: AppTheme\n    theme: AppTheme\n}"}

@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export { OpenRoom, type OpenRoomProps } from './open-room';\n"}

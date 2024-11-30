@@ -1,1 +1,0 @@
-{"start_line": 27, "code": "interface Login {\n\treadonly tokens: Tokens;\n\treadonly user: User;\n}"}

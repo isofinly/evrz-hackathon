@@ -1,1 +1,0 @@
-{"start_line": 2, "code": "type Props = {\n\n  name: string;\n\n  color?: string;\n\n  class?: string;\n\n  height?: string;\n\n  width?: string;\n\n};\n"}

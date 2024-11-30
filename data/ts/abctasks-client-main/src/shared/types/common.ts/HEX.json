@@ -1,1 +1,0 @@
-{"start_line": 6, "code": "type HEX = Static<typeof hex>;\n"}

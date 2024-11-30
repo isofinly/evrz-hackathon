@@ -1,1 +1,0 @@
-{"start_line": 19, "code": "TagListItem: React.FC<TagListItemProps> = (props) => {\n\tconst { id } = props;\n\treturn (\n\t\t<TemplateTagListItem\n\t\t\t{...props}\n\t\t\tslots={{\n\t\t\t\tactions: <TagCardActions id={id} />,\n\t\t\t}}\n\t\t/>\n\t);\n}"}

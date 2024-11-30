@@ -1,1 +1,0 @@
-{"start_line": 19, "code": "type SubItemProps = {\n\n  title: string;\n\n  icon?: string;\n\n  to?: string;\n\n}\n"}

@@ -1,1 +1,0 @@
-{"start_line": 22, "code": "getActions = async () => {\n\treturn instance\n\t\t.get('activities/actions/all')\n\t\t.json<StandardResponse<ActivityAction[]>>();\n}"}

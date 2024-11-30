@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export { Show, type ShowProps } from './show';\n"}

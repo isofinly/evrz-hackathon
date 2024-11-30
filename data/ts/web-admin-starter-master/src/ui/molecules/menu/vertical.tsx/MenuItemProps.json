@@ -1,1 +1,0 @@
-{"start_line": 12, "code": "type MenuItemProps = {\n\n  title: string;\n\n  icon?: React.ReactNode;\n\n  to?: string;\n\n  data?: Array<SubItemProps>;\n\n}\n"}

@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export { TextWithAction, type TextWithActionProps } from './text-with-action';\n"}

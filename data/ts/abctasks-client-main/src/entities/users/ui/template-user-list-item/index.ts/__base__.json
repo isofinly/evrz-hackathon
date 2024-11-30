@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export {\n\n\tTemplateUserListItem,\n\n\ttype TemplateUserListItemProps\n\n} from './template-user-list-item';\n"}

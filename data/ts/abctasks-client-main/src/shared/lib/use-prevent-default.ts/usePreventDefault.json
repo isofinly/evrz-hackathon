@@ -1,1 +1,0 @@
-{"start_line": 7, "code": "usePreventDefault = <\n\n\tElement extends HTMLElement,\n\n\tEvent extends SyntheticEvent<Element>\n\n>(\n\n\tfn: VoidFunction\n\n) => {\n\treturn useCallback((evt: Event) => {\n\t\tevt.preventDefault();\n\t\tfn();\n\t}, []);\n}"}

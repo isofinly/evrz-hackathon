@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { IResult } from \"@entities/results\"\n\n\nexport interface GetResultStatsReturn <BODY GetResultStatsReturn>\n\nexport const getResultStats = (\n\n    currentResult: Omit<IResult, \"wordsPerMinuteString\" | \"charactersPerMinuteString\"> | null\n\n): GetResultStatsReturn => <BODY getResultStats>"}

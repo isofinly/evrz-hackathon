@@ -1,1 +1,0 @@
-{"start_line": 9, "code": "Routing: React.FC = () => {\n    const session = useStore($user);\n    const routes = renderRoutes(ROUTES, session);\n\n    return <Switch>\n        {routes.map((route) => (\n            <Route key={route.name} {...route} />\n        ))}\n    </Switch>\n}"}

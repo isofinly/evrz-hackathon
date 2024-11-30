@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import * as React from 'react'\n\n\nimport { LinkWrap } from './styles'\n\n\ninterface ILinkCompProps <BODY ILinkCompProps>\n\nexport const Link: React.FC<ILinkCompProps> = ({ className, children, to, onClick }) => <BODY Link>"}

@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import styled from 'styled-components';\n\n\nexport const Container = styled.section``;\n"}

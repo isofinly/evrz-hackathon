@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import * as React from 'react';\n\n\nimport { NavContainer, NavLink, NavMenu, NavItem } from './styles';\n\n\ntype MenuItem = {\n\n  path: string;\n\n  title: string;\n\n};\n\n\ntype MenuData = {\n\n  data: Array<MenuItem>;\n\n};\n\n\nexport const Nav: React.FC<MenuData> = ({ data }) => <BODY Nav>;\n"}

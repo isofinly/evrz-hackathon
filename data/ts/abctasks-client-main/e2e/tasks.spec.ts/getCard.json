@@ -1,1 +1,0 @@
-{"start_line": 37, "code": "getCard = (params: GetCardParams) => {\n\tconst { description, parent, tags, title } = params;\n\n\treturn parent\n\t\t.getByRole('article')\n\t\t.filter({ hasText: title })\n\t\t.filter({ hasText: description })\n\t\t.filter({ hasText: new RegExp(tags.join('|')) });\n}"}

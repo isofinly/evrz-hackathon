@@ -1,1 +1,0 @@
-{"start_line": 6, "code": "CustomTextTab = () => {\n    return (\n        <Tooltip label=\"Custom Texts (Alt+2)\">\n            <Box>\n                <AsideTab name={settingTabs.customText} cursor=\"pointer\">\n                    <Image src={customText} />\n                </AsideTab>\n            </Box>\n        </Tooltip>\n    )\n}"}

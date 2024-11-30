@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export { default as GithubService } from \"./Github.service.ts\"\n\nexport * from \"./libs\"\n\nexport * from \"./ui\"\n"}

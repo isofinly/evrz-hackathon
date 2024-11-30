@@ -1,1 +1,0 @@
-{"start_line": 7, "code": "interface LoadingWrapperProps extends CommonProps {\n\treadonly isLoading: boolean;\n\treadonly loadingIndicator: React.ReactElement;\n}"}

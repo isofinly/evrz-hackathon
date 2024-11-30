@@ -1,1 +1,0 @@
-{"start_line": 19, "code": "usePagination = () => {\n    const context = useContext(PaginationContext)\n    if (!context) throw new Error(\"Use pagination context within provider!\")\n    return context\n}"}

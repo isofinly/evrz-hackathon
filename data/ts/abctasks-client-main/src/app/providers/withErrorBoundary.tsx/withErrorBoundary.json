@@ -1,1 +1,0 @@
-{"start_line": 5, "code": "withErrorBoundary =\n\n\t(Component: React.ComponentType): React.ComponentType =>\n\n\t() => {\n\t\treturn (\n\t\t\t<ErrorBoundary>\n\t\t\t\t<Component />\n\t\t\t</ErrorBoundary>\n\t\t);\n\t}"}

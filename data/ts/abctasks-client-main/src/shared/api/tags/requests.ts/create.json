@@ -1,1 +1,0 @@
-{"start_line": 20, "code": "create = async ({ roomId, ...body }: CreateTagParams) => {\n\treturn instance\n\t\t.post(`tags/${roomId}/create`, { json: body, })\n\t\t.json<StandardResponse<Tag>>();\n}"}

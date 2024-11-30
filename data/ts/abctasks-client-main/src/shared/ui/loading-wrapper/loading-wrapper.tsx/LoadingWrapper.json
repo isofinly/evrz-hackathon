@@ -1,1 +1,0 @@
-{"start_line": 12, "code": "LoadingWrapper: React.FC<\n\n\tReact.PropsWithChildren<LoadingWrapperProps>\n\n> = (props) => {\n\tconst { className, isLoading, loadingIndicator, children } = props;\n\treturn (\n\t\t<div className={cn({ [styles.wrapper]: isLoading }, className)}>\n\t\t\t{isLoading ? loadingIndicator : children}\n\t\t</div>\n\t);\n}"}

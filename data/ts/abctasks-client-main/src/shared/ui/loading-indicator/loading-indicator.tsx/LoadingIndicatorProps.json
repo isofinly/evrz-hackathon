@@ -1,1 +1,0 @@
-{"start_line": 12, "code": "interface LoadingIndicatorProps extends CommonProps {\n\treadonly size?: Size;\n\treadonly text?: string | null;\n}"}

@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { Skeleton } from \"@chakra-ui/react\"\n\n\nexport const GithubRepoSkeleton = () => <BODY GithubRepoSkeleton>"}

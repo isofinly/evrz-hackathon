@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import {\n\n  FieldError,\n\n  FieldPath,\n\n  FieldValues,\n\n  get,\n\n  UseFormReturn,\n\n  useFormState,\n\n} from 'react-hook-form'\n\n\nexport function useError<\n\n  TValues extends FieldValues,\n\n  TPath extends FieldPath<TValues>,\n\n>(form: UseFormReturn<TValues>, path: TPath): FieldError | null <BODY useError>"}

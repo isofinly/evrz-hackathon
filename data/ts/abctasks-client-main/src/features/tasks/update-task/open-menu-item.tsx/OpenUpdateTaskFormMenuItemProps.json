@@ -1,1 +1,0 @@
-{"start_line": 10, "code": "interface OpenUpdateTaskFormMenuItemProps extends CommonProps {\n\treadonly taskId: number;\n}"}

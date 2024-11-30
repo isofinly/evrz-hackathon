@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { Image } from \"@chakra-ui/react\"\n\n\nimport { TileImageProps } from \"./Tile.interface.ts\"\n\n\nexport const TileImage = (props: TileImageProps) => <BODY TileImage>"}

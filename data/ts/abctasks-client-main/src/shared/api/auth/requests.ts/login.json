@@ -1,1 +1,0 @@
-{"start_line": 18, "code": "login = async (body: LoginParams) => {\n\treturn instance\n\t\t.post('auth/login', {\n\t\t\tjson: body,\n\t\t})\n\t\t.json<StandardResponse<AuthResponse>>();\n}"}

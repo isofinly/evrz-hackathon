@@ -1,1 +1,0 @@
-{"start_line": 76, "code": "interface ButtonLinkForwarded extends FC<ButtonLinkProps<RouteParams>> {\n  <T extends RouteParams>(\n    props: ButtonLinkProps<T>,\n  ): ReturnType<FC<ButtonLinkProps<T>>>\n}"}

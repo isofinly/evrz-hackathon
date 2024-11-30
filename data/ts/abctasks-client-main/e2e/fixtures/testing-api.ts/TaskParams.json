@@ -1,1 +1,0 @@
-{"start_line": 79, "code": "interface TaskParams {\n\treadonly id?: number;\n\treadonly room?: RoomParams;\n\treadonly tags?: TagParams[];\n\treadonly author?: UserParams;\n\treadonly title?: string;\n\treadonly description?: string;\n\treadonly status?: string;\n\treadonly createdAt?: string;\n\treadonly updatedAt?: string;\n}"}

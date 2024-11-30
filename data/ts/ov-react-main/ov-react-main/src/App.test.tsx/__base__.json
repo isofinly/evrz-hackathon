@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import React from 'react';\n\nimport { render, screen } from '@testing-library/react';\n\nimport App from './App';\n\n\ntest('renders learn react link', () => {\n\n  render(<App />);\n\n  const linkElement = screen.getByText(/learn react/i);\n\n  expect(linkElement).toBeInTheDocument();\n\n});\n"}

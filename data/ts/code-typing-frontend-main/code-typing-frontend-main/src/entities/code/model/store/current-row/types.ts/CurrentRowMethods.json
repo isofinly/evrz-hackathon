@@ -1,1 +1,0 @@
-{"start_line": 9, "code": "interface CurrentRowMethods {\n    nextRow: () => void\n    setTypingValue: (value: string) => void\n    setValueWithTab: (tabWidth?: number) => void\n    resetState: () => void\n}"}

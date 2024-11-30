@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export interface InRoomParams <BODY InRoomParams>\n\nexport interface PaginationParams <BODY PaginationParams>\n\nexport type SortDirection = 'asc' | 'desc';\n\n\nexport interface SortParams <BODY SortParams>\n\nexport interface DatesFiltersParams <BODY DatesFiltersParams>"}

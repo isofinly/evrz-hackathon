@@ -1,1 +1,0 @@
-{"start_line": 19, "code": "getOne = ({ roomId, taskId, id, }: GetOneParams) => {\n\treturn instance\n\t\t.get(`comments/${roomId}/${taskId}/${id}`)\n\t\t.json<StandardResponse<Comment>>();\n}"}

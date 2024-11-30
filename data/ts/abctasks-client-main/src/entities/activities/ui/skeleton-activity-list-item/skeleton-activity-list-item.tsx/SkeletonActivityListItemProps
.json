@@ -1,1 +1,0 @@
-{"start_line": 20, "code": "interface SkeletonActivityListItemProps\n\n\textends CommonProps,\n\n\t\tListItemProps {}\n"}

@@ -1,1 +1,0 @@
-{"start_line": 20, "code": "type Props = {\n\n  setLoading: (value: boolean) => void;\n\n  filters: ProductFilters;\n\n};\n"}

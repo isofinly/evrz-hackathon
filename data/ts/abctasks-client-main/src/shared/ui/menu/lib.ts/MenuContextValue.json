@@ -1,1 +1,0 @@
-{"start_line": 2, "code": "interface MenuContextValue {\n\treadonly onClose?: (...args: any[]) => any;\n}"}

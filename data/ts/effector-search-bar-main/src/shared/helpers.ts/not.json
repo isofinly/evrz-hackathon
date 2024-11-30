@@ -1,1 +1,0 @@
-{"start_line": 3, "code": "function not(value: boolean) {\n  return !value;\n}"}

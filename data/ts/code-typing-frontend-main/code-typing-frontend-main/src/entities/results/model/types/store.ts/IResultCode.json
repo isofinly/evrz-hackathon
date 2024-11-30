@@ -1,1 +1,0 @@
-{"start_line": 10, "code": "interface IResultCode {\n    symbolsPerMinute: null | number\n    startTime: Date | null\n    endTime: Date | null\n    symbolsPerSecond: number[]\n    text: string | null\n    resultTime: Date | null\n    errorsCount: number | null\n    accuracy: number | null\n}"}

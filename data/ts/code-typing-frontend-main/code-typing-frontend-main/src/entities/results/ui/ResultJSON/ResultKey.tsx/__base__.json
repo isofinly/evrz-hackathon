@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { useState } from \"react\"\n\n\nimport { Box, Text } from \"@chakra-ui/react\"\n\n\nimport { CodeRow } from \"@entities/code\"\n\nimport { ResultJSONProps } from \"@entities/results\"\n\n\nexport const ResultKey = (props: ResultJSONProps) => <BODY ResultKey>"}

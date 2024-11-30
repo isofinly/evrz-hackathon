@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export { InvitationList, type InvitationListProps } from './invitation-list';\n"}

@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export * from \"./Terminal.tsx\"\n\nexport * from \"./TerminalInput.tsx\"\n\nexport * from \"./TerminalItem.tsx\"\n\nexport * from \"./TerminalAnswer.tsx\"\n"}

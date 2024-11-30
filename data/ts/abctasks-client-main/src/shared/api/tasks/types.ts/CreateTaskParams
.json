@@ -1,1 +1,0 @@
-{"start_line": 60, "code": "interface CreateTaskParams\n\n\textends Pick<Task, 'roomId' | 'title' | 'status' | 'description'> {\n\treadonly tagIds: number[];\n}"}

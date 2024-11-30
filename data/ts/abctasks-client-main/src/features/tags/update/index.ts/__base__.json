@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export * as updateTagModel from './model';\n\nexport {\n\n\tOpenUpdateTagButton,\n\n\ttype OpenUpdateTagButtonProps\n\n} from './open-button';\n\nexport { UpdateTag, type UpdateTagProps } from './ui';\n"}

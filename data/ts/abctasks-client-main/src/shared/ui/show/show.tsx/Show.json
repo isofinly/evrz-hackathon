@@ -1,1 +1,0 @@
-{"start_line": 8, "code": "Show: React.FC<ShowProps> = (props) => {\n\tconst { show, children } = props;\n\n\tif (show) {\n\t\treturn children;\n\t}\n\n\treturn null;\n}"}

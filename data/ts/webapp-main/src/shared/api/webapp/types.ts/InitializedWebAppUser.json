@@ -1,1 +1,0 @@
-{"start_line": 12, "code": "type InitializedWebAppUser = Omit<ParsedTelegramUser, 'id'> & {\n\n  id: string\n\n  initialized: true\n\n  inDatabase: DatabaseUser\n\n}\n"}

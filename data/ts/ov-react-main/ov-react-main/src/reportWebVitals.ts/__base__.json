@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { ReportHandler } from 'web-vitals';\n\n\nconst reportWebVitals = (onPerfEntry?: ReportHandler) => <BODY reportWebVitals>;\n\n\nexport default reportWebVitals;\n"}

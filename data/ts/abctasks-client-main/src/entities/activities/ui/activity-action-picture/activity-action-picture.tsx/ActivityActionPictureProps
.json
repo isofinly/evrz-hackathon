@@ -1,1 +1,0 @@
-{"start_line": 21, "code": "interface ActivityActionPictureProps\n\n\textends CommonProps,\n\n\t\tActivityAction {}\n"}

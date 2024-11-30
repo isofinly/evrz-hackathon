@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { sleep } from './sleep'\n\n\ninterface Options<T> <BODY Options>\n\nexport async function retry<T>({\n\n  action,\n\n  interval = 2000,\n\n  delay = 0,\n\n  maxAttempts = 12,\n\n}: Options<T>): Promise<T> <BODY retry>"}

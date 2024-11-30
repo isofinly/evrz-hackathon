@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export {\n\n\tTemplateCommentCard,\n\n\ttype TemplateCommentCardProps\n\n} from './template-comment-card';\n"}

@@ -1,1 +1,0 @@
-{"start_line": 10, "code": "interface LayoutProps\n\n\textends CommonProps,\n\n\t\tRequired<React.PropsWithChildren> {\n\treadonly slots?: Slots<'header'>;\n}"}

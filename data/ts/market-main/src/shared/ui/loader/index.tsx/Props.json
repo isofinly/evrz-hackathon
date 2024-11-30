@@ -1,1 +1,0 @@
-{"start_line": 6, "code": "type Props = {\n\n  productsNumber: number;\n\n};\n"}

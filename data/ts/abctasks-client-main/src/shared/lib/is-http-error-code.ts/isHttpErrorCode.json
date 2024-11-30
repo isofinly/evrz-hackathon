@@ -1,1 +1,0 @@
-{"start_line": 8, "code": "isHttpErrorCode = (error: any, code: number): boolean => {\n\treturn isHttpError(error) && error.response.status === code;\n}"}

@@ -1,1 +1,0 @@
-{"start_line": 18, "code": "interface TerminalAnswerProps {\n    terminalValue: string\n    setTerminalValues: Dispatch<SetStateAction<string[]>>\n    answersWithComponent: AnswersWithComponent\n}"}

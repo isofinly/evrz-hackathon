@@ -1,1 +1,0 @@
-{"start_line": 32, "code": "loadThemeFromStorage = () => {\n    const id = localStorage.getItem(storageKeysEnum.theme)\n    if (id) {\n        const theme = themes.find(theme => theme.id === id)\n        if (theme) {\n            return theme\n        }\n    }\n    return themes[0]\n}"}

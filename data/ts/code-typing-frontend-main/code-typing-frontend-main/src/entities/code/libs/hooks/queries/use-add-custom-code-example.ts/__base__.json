@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { CodeService, CustomCodeExampleBody } from \"@entities/code\"\n\nimport { queryKeysEnum } from \"@shared/constants\"\n\nimport { useMutation, useQueryClient } from \"@tanstack/react-query\"\n\n\nexport const useAddCustomCodeExample = () => <BODY useAddCustomCodeExample>"}

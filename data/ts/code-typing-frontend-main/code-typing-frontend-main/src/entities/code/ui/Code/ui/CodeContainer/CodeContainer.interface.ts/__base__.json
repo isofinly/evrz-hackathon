@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { BoxProps } from \"@chakra-ui/react\"\n\n\nexport interface CodeContainerProps extends BoxProps <BODY CodeContainerProps>"}

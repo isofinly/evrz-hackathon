@@ -1,1 +1,0 @@
-{"start_line": 21, "code": "interface QueryModel<T> {\n\treadonly $value: Store<T>;\n\treadonly $isEmpty: Store<boolean>;\n\treadonly reset: Event<void>;\n\treadonly set: Event<T>;\n\n\t'@@unitShape': () => { value: Store<T>; set: Event<T> };\n}"}

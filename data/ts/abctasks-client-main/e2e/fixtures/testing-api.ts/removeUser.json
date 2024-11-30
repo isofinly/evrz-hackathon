@@ -1,1 +1,0 @@
-{"start_line": 215, "code": "removeUser = async (\n\n\tctx: BrowserContext,\n\n\tdata: UserParams = {}\n\n): Promise<boolean> => {\n\treturn request(ctx, '/user', {\n\t\tmethod: 'PUT',\n\t\tdata,\n\t});\n}"}

@@ -1,1 +1,0 @@
-{"start_line": 36, "code": "interface GetActivitiesInRoomParams\n\n\textends InRoomParams,\n\n\t\tPaginationParams,\n\n\t\tSortParams,\n\n\t\tDatesFiltersParams {\n\treadonly activistIds?: number[];\n\treadonly sphereIds?: number[];\n\treadonly actionIds?: number[];\n}"}

@@ -1,1 +1,0 @@
-{"start_line": 18, "code": "interface CreateAppointmentPayload {\n  consulateId: string\n  requestId: string\n  requestSecurityCode: string\n}"}

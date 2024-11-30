@@ -1,1 +1,0 @@
-{"start_line": 35, "code": "type GetInvitationViaTokenResponseData = Promise<\n\n\tStandardResponse<Invitation>\n\n>;\n"}

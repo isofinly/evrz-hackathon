@@ -1,1 +1,0 @@
-{"start_line": 4, "code": "useParam = <P extends object, K extends keyof P>(\n\n\troute: RouteInstance<P>,\n\n\tparam: K\n\n): P[K] => {\n\treturn useStoreMap({\n\t\tstore: route.$params,\n\t\tfn: (state, [key]) => {\n\t\t\treturn state[key];\n\t\t},\n\t\tkeys: [param],\n\t});\n}"}

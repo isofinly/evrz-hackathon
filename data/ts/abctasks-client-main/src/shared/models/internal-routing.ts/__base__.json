@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { createFlag } from '../lib';\n\n\nexport const $internalRoute = createFlag(false);\n"}

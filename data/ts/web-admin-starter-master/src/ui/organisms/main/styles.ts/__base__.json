@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import styled from 'styled-components';\n\nimport { Layout } from 'antd';\n\n\nconst { Content } = Layout;\n\n\nexport const MainContainer = styled(Content)`\n\n\n  background-color: #fff;\n  padding: 24px;\n  min-height: calc(100vh - 128px);\n`;\n"}

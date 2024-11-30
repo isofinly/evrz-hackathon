@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export enum AppRoutes {\n\n    home = \"/\",\n\n    all = \"*\"\n\n}\n"}

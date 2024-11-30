@@ -1,1 +1,0 @@
-{"start_line": 2, "code": "type Roles = 'USER' | 'CLIENT' | 'ADMIN';\n"}

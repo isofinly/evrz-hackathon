@@ -1,1 +1,0 @@
-{"start_line": 18, "code": "function formatInterval({ start, end }: Interval) {\n  if (isSameDay(start, end)) {\n    return `${formatDateTime(start)} \u2014 ${formatTime(end)}`;\n  }\n\n  return `${formatDateTime(start)} \u2014 ${formatDateTime(end)}`;\n}"}

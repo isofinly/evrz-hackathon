@@ -1,1 +1,0 @@
-{"start_line": 10, "code": "useMenuContext = () => {\n\tconst context = React.useContext(MenuContext);\n\n\tif (!context) {\n\t\tconsole.log('There is no MenuContext');\n\t\tthrow new Error('There is no MenuContext');\n\t}\n\n\treturn context;\n}"}

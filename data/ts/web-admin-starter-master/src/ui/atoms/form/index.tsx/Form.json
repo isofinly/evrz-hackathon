@@ -1,1 +1,0 @@
-{"start_line": 6, "code": "Form: React.FC<MessageFormProps> = ({\n\n  handleSubmit,\n\n  children,\n\n}) => {\n  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {\n    event.preventDefault();\n    if (handleSubmit) {\n      handleSubmit();\n    }\n  };\n\n  return <form onSubmit={onSubmit}>\n    {children}\n  </form>;\n}"}

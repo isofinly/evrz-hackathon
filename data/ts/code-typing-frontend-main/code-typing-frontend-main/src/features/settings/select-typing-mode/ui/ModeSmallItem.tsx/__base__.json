@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { ModeSmallItemProps } from \"@features/settings/select-typing-mode\"\n\nimport { Tile } from \"@shared/ui/tile\"\n\n\nexport const ModeSmallItem = (props: ModeSmallItemProps) => <BODY ModeSmallItem>"}

@@ -1,1 +1,0 @@
-{"start_line": 4, "code": "group = <T extends Record<string, any>, K extends keyof T>(\n\n\tarray: T[],\n\n\tkey: K\n\n): Grouped<T[K], T> => {\n\treturn array.reduce((grouped, item) => {\n\t\tconst value = item[key];\n\n\t\tif (!grouped[value]) {\n\t\t\tgrouped[value] = [];\n\t\t}\n\n\t\tgrouped[value].push(item);\n\n\t\treturn grouped;\n\t}, {} as Grouped<T[K], T>);\n}"}

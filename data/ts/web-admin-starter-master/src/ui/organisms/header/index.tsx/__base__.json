@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import * as React from 'react';\n\n\nimport { logOut } from 'features/user';\n\n\nimport { Nav } from 'ui/molecules';\n\nimport { Logo } from 'ui/atoms';\n\n\nimport { HeaderContainer, LogoutButton } from './styles';\n\n\nexport const Header = () => <BODY Header>;\n"}

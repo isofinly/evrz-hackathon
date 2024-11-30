@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export * from \"./paths.ts\"\n\nexport * from \"./routes-with-hoc.ts\"\n"}

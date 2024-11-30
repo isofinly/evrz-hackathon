@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { createRoute } from 'atomic-router'\n\n\nexport const home = createRoute()\n\nexport const appointments = createRoute()\n\nexport const appointmentCreate = createRoute()\n\nexport const faq = createRoute()\n\nexport const guide = createRoute()\n"}

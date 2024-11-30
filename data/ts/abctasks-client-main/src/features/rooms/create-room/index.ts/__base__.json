@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export * as createRoomModel from './model';\n\nexport { CreateRoom, type CreateRoomProps } from './create-room';\n\nexport { OpenCreateRoom, type OpenCreateRoomProps } from './open-create-room';\n"}

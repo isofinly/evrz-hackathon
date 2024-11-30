@@ -1,1 +1,0 @@
-{"start_line": 16, "code": "interface GetInvitationParams {\n\treadonly parent: Locator | Page;\n\treadonly username: string;\n}"}

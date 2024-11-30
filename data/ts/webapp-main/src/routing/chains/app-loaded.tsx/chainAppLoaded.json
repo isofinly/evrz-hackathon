@@ -1,1 +1,0 @@
-{"start_line": 5, "code": "function chainAppLoaded<T extends RouteParams>(route: RouteInstance<T>) {\n  return createChain(route, {\n    sources: [\n      {\n        query: $$user.query,\n        succeedIf: and($$user.query.$succeeded, $$user.$initialized),\n      },\n    ],\n  })\n}"}

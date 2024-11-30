@@ -1,1 +1,0 @@
-{"start_line": 36, "code": "type MenuOption<P extends object> = ButtonMenuOption | LinkMenuOption<P>;\n"}

@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export * from \"./get-result-id.ts\"\n\nexport * from \"./get-result-stats.ts\"\n\nexport * from \"./get-result-with-stats.ts\"\n\nexport * from \"./get-result-from-search.ts\"\n\nexport * from \"./map-result-to-search.ts\"\n"}

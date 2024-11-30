@@ -1,1 +1,0 @@
-{"start_line": 318, "code": "removeTask = async (\n\n\tctx: BrowserContext,\n\n\tdata: TaskParams = {}\n\n): Promise<boolean> => {\n\treturn request(ctx, '/task', {\n\t\tmethod: 'PUT',\n\t\tdata,\n\t});\n}"}

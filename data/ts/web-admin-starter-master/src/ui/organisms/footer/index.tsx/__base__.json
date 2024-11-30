@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import * as React from 'react'\n\n\nimport { FooterContainer } from './styles'\n\n\nconst todayYear = new Date().getFullYear()\n\n\nexport const Footer: React.FC = () => <FooterContainer>WEB \u00a9 2012 \u2013 {todayYear}</FooterContainer>"}

@@ -1,1 +1,0 @@
-{"start_line": 4, "code": "AsideTabPanel = (props: AsideTabPanelProps) => {\n    const { name, ...restProps } = props\n\n    const { currentTabName } = useAside()\n\n    if (name !== currentTabName) return null\n\n    return <Box w=\"200px\" p=\"10px\" {...restProps} />\n}"}

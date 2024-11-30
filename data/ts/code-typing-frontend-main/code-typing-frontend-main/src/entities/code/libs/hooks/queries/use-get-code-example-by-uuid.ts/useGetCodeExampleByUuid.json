@@ -1,1 +1,0 @@
-{"start_line": 4, "code": "useGetCodeExampleByUuid = (uuid: string) => {\n    return useQuery({\n        queryFn: async () => CodeService.fetchCodeExamplesByUUID(uuid),\n        queryKey: [queryKeysEnum.codeExample, uuid]\n    })\n}"}

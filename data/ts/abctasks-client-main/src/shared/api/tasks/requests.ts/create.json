@@ -1,1 +1,0 @@
-{"start_line": 25, "code": "create = async ({ roomId, ...body }: CreateTaskParams) => {\n\treturn instance\n\t\t.post(`tasks/${roomId}/create`, {\n\t\t\tjson: body,\n\t\t})\n\t\t.json<StandardResponse<Task>>();\n}"}

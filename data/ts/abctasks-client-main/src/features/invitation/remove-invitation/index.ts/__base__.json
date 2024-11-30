@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export * as removeInvitationModel from './model';\n\nexport {\n\n\tRemoveInvitation,\n\n\ttype RemoveInvitationProps\n\n} from './remove-invitation';\n\nexport {\n\n\tConfirmRemoveInvitation,\n\n\ttype ConfirmRemoveInvitationProps\n\n} from './confirm';\n"}

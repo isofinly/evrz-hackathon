@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { Typography } from '@mui/material';\n\nimport * as React from 'react';\n\n\nimport { MainLayout } from '@/widgets/page';\n\n\nimport { usePageTitle } from '@/shared/lib';\n\n\nimport styles from './styles.module.css';\n\n\nconst SettingsPage: React.FC = () => <BODY SettingsPage>;\n\n\nexport default SettingsPage;\n"}

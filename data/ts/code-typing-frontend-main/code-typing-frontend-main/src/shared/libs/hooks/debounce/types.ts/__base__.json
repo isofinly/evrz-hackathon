@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export type UnknownFunction = (...args: never[]) => void\n\n\nexport type UseDebounceReturnFunction<FunctionType extends UnknownFunction> = (\n\n    ...args: Parameters<FunctionType>\n\n) => void\n"}

@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import * as React from 'react';\n\n\nimport { Container } from './styles';\n\n\nexport const NotFound: React.FC = () => <Container>404. Not Found</Container>;\n"}

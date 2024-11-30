@@ -1,1 +1,0 @@
-{"start_line": 20, "code": "interface TemplateInvitationCardProps extends CommonProps {\n\treadonly slots: Required<Slots<'userAvatar' | 'inviterAvatar'>> &\n\t\tSlots<'actions'>;\n\treadonly inviterName: string;\n\treadonly username: string;\n\treadonly roomName: string;\n}"}

@@ -1,1 +1,0 @@
-{"start_line": 11, "code": "RoomsLayout: React.FC<RoomsLayoutProps> = (props) => {\n\tconst { className, children, } = props;\n\n\treturn (\n\t\t<Layout\n\t\t\tclassName={className}\n\t\t\tslots={{\n\t\t\t\theader: <RoomsHeader />,\n\t\t\t}}>\n\t\t\t{children}\n\t\t</Layout>\n\t);\n}"}

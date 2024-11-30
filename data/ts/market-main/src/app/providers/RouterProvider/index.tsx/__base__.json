@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { BrowserRouter } from \"react-router-dom\";\n\nimport { ThemeProvider } from '@/app/providers/ThemeProvider'\n\n\n\nexport const withRouter = (component: () => React.ReactNode) => () => (\n\n    <BrowserRouter>\n\n        <ThemeProvider>\n\n                {component()}\n\n        </ThemeProvider>\n\n    </BrowserRouter>\n\n);\n"}

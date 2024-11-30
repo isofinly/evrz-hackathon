@@ -1,1 +1,0 @@
-{"start_line": 6, "code": "useToggleColorScheme = () => {\n\tconst [scheme, changeScheme] = useUnit([\n\t\tcolorSchemeModel.$scheme,\n\t\tcolorSchemeModel.colorSchemeChanged,\n\t]);\n\n\treturn [scheme, changeScheme] as const;\n}"}

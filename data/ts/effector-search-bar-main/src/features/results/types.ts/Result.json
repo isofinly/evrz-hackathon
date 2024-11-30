@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "interface Result {\n  origin: string;\n  destination: string;\n  departure: Date;\n  arrival: Date;\n}"}

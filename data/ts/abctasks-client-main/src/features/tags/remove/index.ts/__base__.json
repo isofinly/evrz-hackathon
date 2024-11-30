@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export * as removeTagModel from './model';\n\nexport { RemoveTag, type RemoveTagProps } from './remove';\n\nexport { ConfirmRemoveTag, type ConfirmRemoveTagProps } from './confirm';\n"}

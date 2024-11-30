@@ -1,1 +1,0 @@
-{"start_line": 2, "code": "interface ResultsListProps {\n    results?: ResultFromApi[]\n}"}

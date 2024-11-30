@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import styled from 'styled-components'\n\nimport { Layout } from 'antd'\n\n\nconst { Footer } = Layout\n\n\nexport const FooterContainer = styled(Footer)`\n\n\n  background-color: #fff;\n  border-top: 1px solid var(--border-color);\n`\n"}

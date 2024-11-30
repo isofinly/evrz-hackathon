@@ -1,1 +1,0 @@
-{"start_line": 245, "code": "logout = async (ctx: BrowserContext): Promise<boolean> => {\n\treturn request(ctx, '/logout', {\n\t\tmethod: 'PUT',\n\t});\n}"}

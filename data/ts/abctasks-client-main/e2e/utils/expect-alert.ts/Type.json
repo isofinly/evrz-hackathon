@@ -1,1 +1,0 @@
-{"start_line": 2, "code": "type Type = 'success' | 'error' | 'info';\n"}

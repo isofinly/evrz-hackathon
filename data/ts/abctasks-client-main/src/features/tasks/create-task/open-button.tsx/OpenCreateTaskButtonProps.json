@@ -1,1 +1,0 @@
-{"start_line": 11, "code": "interface OpenCreateTaskButtonProps extends CommonProps {\n\treadonly columnStatus: TaskStatus;\n}"}

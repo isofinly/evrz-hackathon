@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { List, ListProps } from \"@chakra-ui/react\"\n\n\nexport const TabList = (props: ListProps) => <BODY TabList>"}

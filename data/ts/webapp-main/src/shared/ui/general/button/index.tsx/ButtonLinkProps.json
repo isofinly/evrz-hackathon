@@ -1,1 +1,0 @@
-{"start_line": 74, "code": "type ButtonLinkProps<T extends RouteParams> = SharedProps & LinkProps<T>\n"}

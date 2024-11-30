@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { Box, Image, Tooltip } from \"@chakra-ui/react\"\n\n\nimport timerIcon from \"@shared/assets/timer.svg\"\n\nimport { settingTabs } from \"@shared/constants\"\n\nimport { AsideTab } from \"@shared/ui/aside\"\n\n\nexport const TypingModeTab = () => <BODY TypingModeTab>"}

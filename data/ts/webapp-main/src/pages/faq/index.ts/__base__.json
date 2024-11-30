@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { routes } from '@routing/shared'\n\nimport { RouteRecord } from '@routing/shared/types'\n\nimport { FaqPage } from './page'\n\n\nexport const FaqRoute: RouteRecord = {\n\n  route: routes.faq,\n\n  view: FaqPage,\n\n}\n"}

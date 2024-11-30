@@ -1,1 +1,0 @@
-{"start_line": 7, "code": "interface AsideProps extends FlexProps {\n    currentTabName: AsideTabName | null\n    onChangeTabName?: (name: AsideTabName | null) => void\n}"}

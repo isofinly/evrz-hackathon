@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { ModeItemProps } from \"./ModeItem.interface.ts\"\n\nimport { Tile } from \"@shared/ui/tile\"\n\n\nexport const ModeItem = (props: ModeItemProps) => <BODY ModeItem>"}

@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export * from './routes';\n\nexport * from './const';\n\nexport * from './i18n';\n"}

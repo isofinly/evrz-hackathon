@@ -1,1 +1,0 @@
-{"start_line": 32, "code": "interface MemberParams {\n\treadonly room?: RoomParams;\n\treadonly user?: UserParams;\n\treadonly status?: 'activated' | 'removed';\n}"}

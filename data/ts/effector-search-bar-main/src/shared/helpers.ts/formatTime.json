@@ -1,1 +1,0 @@
-{"start_line": 13, "code": "function formatTime(date: Date | number) {\n  return format(date, 'HH:mm');\n}"}

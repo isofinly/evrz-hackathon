@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export {\n\n\tTemplateRoomCard,\n\n\ttype TemplateRoomCardProps\n\n} from './template-room-card';\n"}

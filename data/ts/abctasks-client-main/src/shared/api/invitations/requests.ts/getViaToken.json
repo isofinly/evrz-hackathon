@@ -1,1 +1,0 @@
-{"start_line": 25, "code": "getViaToken = async ({\n\n\ttoken,\n\n}: GetInvitationViaTokenRequestParams): GetInvitationViaTokenResponseData => {\n\treturn instance.get(`invitations/via/${token}`).json();\n}"}

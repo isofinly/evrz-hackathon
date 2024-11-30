@@ -1,1 +1,0 @@
-{"start_line": 17, "code": "PageTitle: React.FC<PageTitleProps> = (props) => {\n\tconst { extra, className, title } = props;\n\treturn (\n\t\t<div className={cn(styles.wrapper, className)}>\n\t\t\t<Typography className={styles.title} variant='h4' component='h1'>\n\t\t\t\t{title}\n\t\t\t</Typography>\n\t\t\t{extra}\n\t\t</div>\n\t);\n}"}

@@ -1,1 +1,0 @@
-{"start_line": 25, "code": "logIn = (): Promise<void> =>\n\n  request({\n\n    method: 'post',\n\n    url: '/user/login',\n\n  })"}

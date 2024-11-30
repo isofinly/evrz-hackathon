@@ -1,1 +1,0 @@
-{"start_line": 16, "code": "interface UsePrintingRowScrollOptions {\n    rowRef: RefObject<HTMLDivElement>\n    text: string\n    typingValue?: string | null\n}"}

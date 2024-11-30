@@ -1,1 +1,0 @@
-{"start_line": 10, "code": "interface SkeletonTagListItemProps extends CommonProps, ListItemProps {}\n"}

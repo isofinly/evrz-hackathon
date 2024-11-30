@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "type UseOpenCountReturn<T> = [\n\n    items: T[],\n\n    { handleOpenCount: () => void; openCount: number; isLastItem: boolean }\n\n]\n"}

@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { useMethods } from \"@shared/libs\"\n\n\nexport type TTypingStatus = \"printing\" | \"not-started\" | \"ended\"\n\n\nexport interface UseTypingActionState <BODY UseTypingActionState>\n\nexport const useTypingAction = () => <BODY useTypingAction>"}

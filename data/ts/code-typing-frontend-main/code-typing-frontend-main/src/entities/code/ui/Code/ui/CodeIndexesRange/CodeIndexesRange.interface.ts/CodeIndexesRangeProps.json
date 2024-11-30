@@ -1,1 +1,0 @@
-{"start_line": 2, "code": "interface CodeIndexesRangeProps extends CodeIndexesProps {\n    startIndex: number\n    length: number\n}"}

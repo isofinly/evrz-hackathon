@@ -1,1 +1,0 @@
-{"start_line": 22, "code": "withRouter =\n\n\t(Component: React.ComponentType): React.ComponentType =>\n\n\t() => {\n\t\treturn (\n\t\t\t<RouterProvider router={router}>\n\t\t\t\t<Component />\n\t\t\t</RouterProvider>\n\t\t);\n\t}"}

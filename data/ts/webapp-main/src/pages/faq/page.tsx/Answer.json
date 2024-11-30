@@ -1,1 +1,0 @@
-{"start_line": 90, "code": "Answer = ({ children }: { children: ReactNode }) => {\n  return (\n    <div className=\"p-4 bg-gray-200 rounded-tr-[16px] rounded-b-[16px]\">\n      <Typography.Paragraph color=\"primary\" lineHeight=\"base\">\n        {children}\n      </Typography.Paragraph>\n    </div>\n  )\n}"}

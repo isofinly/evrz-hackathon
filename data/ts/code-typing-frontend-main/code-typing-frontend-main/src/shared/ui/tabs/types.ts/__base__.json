@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { ListItemProps } from \"@chakra-ui/react\"\n\n\nexport interface TabItemProps extends ListItemProps <BODY TabItemProps>"}

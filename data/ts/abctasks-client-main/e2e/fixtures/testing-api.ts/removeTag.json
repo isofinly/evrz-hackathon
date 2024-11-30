@@ -1,1 +1,0 @@
-{"start_line": 298, "code": "removeTag = async (\n\n\tctx: BrowserContext,\n\n\tdata: TagParams = {}\n\n): Promise<boolean> => {\n\treturn request(ctx, '/tag', {\n\t\tmethod: 'PUT',\n\t\tdata,\n\t});\n}"}

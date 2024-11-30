@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { CodeExamplesResponse, CodeService } from \"@entities/code\"\n\nimport { queryKeysEnum } from \"@shared/constants\"\n\nimport { useQuery, UseQueryOptions } from \"@tanstack/react-query\"\n\n\nexport const useGetCodeExamples = (\n\n    options?: Omit<UseQueryOptions<CodeExamplesResponse>, \"queryKey\">\n\n) => <BODY useGetCodeExamples>"}

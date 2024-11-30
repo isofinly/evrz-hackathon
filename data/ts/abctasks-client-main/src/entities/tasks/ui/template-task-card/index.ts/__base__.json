@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export {\n\n\tTemplateTaskCard,\n\n\ttype TemplateTaskCardProps\n\n} from './template-task-card';\n"}

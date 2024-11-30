@@ -1,1 +1,0 @@
-{"start_line": 10, "code": "interface CenterProps extends CommonProps {\n\treadonly height?: Height;\n}"}

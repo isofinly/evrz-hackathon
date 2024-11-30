@@ -1,1 +1,0 @@
-{"start_line": 53, "code": "interface Price {\n  value: number\n}"}

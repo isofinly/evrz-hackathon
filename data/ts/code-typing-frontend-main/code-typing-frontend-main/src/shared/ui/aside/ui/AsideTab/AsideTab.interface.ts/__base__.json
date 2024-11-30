@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { BoxProps } from \"@chakra-ui/react\"\n\n\nimport { AsideTabName } from \"@shared/ui/aside\"\n\n\nexport interface AsideTabProps extends BoxProps <BODY AsideTabProps>"}

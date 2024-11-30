@@ -1,1 +1,0 @@
-{"start_line": 5, "code": "interface PaginationProps extends FlexProps {\n    page: number\n    onChangePage: (page: number) => void\n    totalPages: number\n    isDisabled?: boolean\n}"}

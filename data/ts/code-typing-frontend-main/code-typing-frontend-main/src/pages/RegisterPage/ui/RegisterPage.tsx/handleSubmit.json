@@ -1,1 +1,0 @@
-{"start_line": 24, "code": "handleSubmit = (values: Record<keyof RegisterCredentials, string>) => {\n        registerMutate(values)\n    }"}

@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export { TagLabel, type TagProps } from './tag-label';\n"}

@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { IconButton, Tooltip } from \"@chakra-ui/react\"\n\n\nimport { useTypingCodeHandlers } from \"@entities/code\"\n\nimport { NextIcon } from \"@shared/ui/icons\"\n\n\nexport const NewCodeButton = () => <BODY NewCodeButton>"}

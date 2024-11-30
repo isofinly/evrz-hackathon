@@ -1,1 +1,0 @@
-{"start_line": 19, "code": "interface DatePickerProps\n\n\textends CommonProps,\n\n\t\tPick<FieldProps, FieldKeys>,\n\n\t\tOmit<MUIDatePIckerProps<Dayjs>, FieldKeys | 'onChange'> {\n\treadonly onChange: (date: string | null) => void;\n}"}

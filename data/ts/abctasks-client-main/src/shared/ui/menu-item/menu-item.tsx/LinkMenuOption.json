@@ -1,1 +1,0 @@
-{"start_line": 29, "code": "interface LinkMenuOption<P extends object> extends BaseMenuOption {\n\treadonly onClick?: never;\n\treadonly to: RouteInstance<P>;\n\treadonly params: P;\n\treadonly query?: RouteQuery;\n}"}

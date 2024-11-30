@@ -1,1 +1,0 @@
-{"start_line": 10, "code": "interface FilterParams {\n  isFit(result: Result): boolean;\n}"}

@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { makeBaseQuery } from \"@shared/api/make-base-query\"\n\nimport axios from \"axios\"\n\n\nexport const githubInstance = axios.create({\n\n    baseURL: \"https://api.github.com/\"\n\n})\n\n\nexport const baseQueryGithub = makeBaseQuery(githubInstance)\n"}

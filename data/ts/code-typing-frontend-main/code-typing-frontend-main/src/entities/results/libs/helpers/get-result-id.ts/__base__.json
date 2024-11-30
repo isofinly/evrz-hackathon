@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export interface GetResultIdArgs <BODY GetResultIdArgs>\n\nexport const getResultId = ({ timeEndMilliseconds, timeStartMilliseconds }: GetResultIdArgs) =>\n\n    `${timeStartMilliseconds}-${timeEndMilliseconds}`\n"}

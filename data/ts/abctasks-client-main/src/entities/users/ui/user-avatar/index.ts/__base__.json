@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export { UserAvatar, type UserAvatarProps } from './user-avatar';\n"}

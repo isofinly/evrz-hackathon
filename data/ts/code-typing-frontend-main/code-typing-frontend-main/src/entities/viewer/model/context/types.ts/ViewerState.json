@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "interface ViewerState {\n    isAuthenticated: boolean\n    accessToken?: string\n}"}

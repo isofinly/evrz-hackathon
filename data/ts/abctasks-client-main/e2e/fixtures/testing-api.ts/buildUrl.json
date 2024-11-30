@@ -1,1 +1,0 @@
-{"start_line": 175, "code": "buildUrl = (endpoint: string): string => {\n\treturn `${process.env.API_HOST}/testing${endpoint}`;\n}"}

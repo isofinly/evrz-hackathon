@@ -1,1 +1,0 @@
-{"start_line": 26, "code": "type RequestProps = {\n\n  method?: string;\n\n  url: string;\n\n  body?: object;\n\n  file?: FormData;\n\n};\n"}

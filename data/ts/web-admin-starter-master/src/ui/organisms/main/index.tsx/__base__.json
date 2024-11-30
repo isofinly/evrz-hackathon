@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import * as React from 'react';\n\n\nimport { MainContainer } from './styles';\n\n\ntype MainProps = {\n\n  children: React.ReactNode;\n\n};\n\n\nexport const Main: React.FC<MainProps> = ({ children }) => (\n\n  <MainContainer>{children}</MainContainer>\n\n);\n"}

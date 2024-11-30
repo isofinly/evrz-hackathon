@@ -1,1 +1,0 @@
-{"start_line": 17, "code": "interface TaskFormProps extends CommonProps {\n\treadonly buttonText: string;\n\treadonly $form: Form<TaskFormValues>;\n\treadonly buttonDisabled?: boolean;\n\treadonly hideButton?: boolean;\n}"}

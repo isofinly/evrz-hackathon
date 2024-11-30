@@ -1,1 +1,0 @@
-{"start_line": 9, "code": "FaqPage = () => {\n  useBackRoute(routes.home)\n\n  return (\n    <BaseTemplate>\n      <Header title=\"\u0412\u043e\u043f\u0440\u043e\u0441\u044b \u0438 \u043e\u0442\u0432\u0435\u0442\u044b\" />\n      <Content />\n    </BaseTemplate>\n  )\n}"}

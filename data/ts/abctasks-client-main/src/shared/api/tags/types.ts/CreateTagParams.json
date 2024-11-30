@@ -1,1 +1,0 @@
-{"start_line": 18, "code": "interface CreateTagParams extends Omit<Tag, 'id'> {}\n"}

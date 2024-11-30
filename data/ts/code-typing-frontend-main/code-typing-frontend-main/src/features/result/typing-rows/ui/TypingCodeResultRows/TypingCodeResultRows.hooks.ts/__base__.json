@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { useEffect } from \"react\"\n\n\nimport { useRandomCode } from \"@entities/code\"\n\nimport { mapResultToApiBody, useResult, useSaveResult } from \"@entities/results\"\n\n\nexport const useSaveResultOnEnd = () => <BODY useSaveResultOnEnd>"}

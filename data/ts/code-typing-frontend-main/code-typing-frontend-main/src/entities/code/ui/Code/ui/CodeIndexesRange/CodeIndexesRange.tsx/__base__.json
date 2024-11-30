@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { memo } from \"react\"\n\n\nimport { CodeIndex, CodeIndexes, CodeIndexesRangeProps } from \"@entities/code\"\n\n\nconst CodeIndexesRange = (props: CodeIndexesRangeProps) => <BODY CodeIndexesRange>\n\nexport default memo(CodeIndexesRange)\n"}

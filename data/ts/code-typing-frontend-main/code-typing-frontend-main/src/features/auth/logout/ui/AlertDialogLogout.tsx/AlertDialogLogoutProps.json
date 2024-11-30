@@ -1,1 +1,0 @@
-{"start_line": 16, "code": "interface AlertDialogLogoutProps {\n    isOpen: boolean\n    onClose: () => void\n}"}

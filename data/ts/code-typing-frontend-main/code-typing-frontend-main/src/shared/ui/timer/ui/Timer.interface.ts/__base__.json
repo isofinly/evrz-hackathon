@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export interface TimerProps <BODY TimerProps>\n\nexport interface TimerItemProps <BODY TimerItemProps>"}

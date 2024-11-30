@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export * from \"./GithubUserSkeleton.tsx\"\n\nexport * from \"./GithubUserItem.tsx\"\n\nexport * from \"./GithubRepoItem.tsx\"\n\nexport * from \"./GithubRepoSkeleton.tsx\"\n"}

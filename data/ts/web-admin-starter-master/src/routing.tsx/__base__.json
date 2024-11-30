@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import * as React from 'react';\n\n\nimport { Route, Switch } from 'react-router-dom';\n\nimport { renderRoutes } from 'router-guards';\n\nimport { useStore } from 'effector-react';\n\n\nimport { $user } from 'features/user';\n\nimport { ROUTES } from 'pages/routes';\n\n\nexport const Routing: React.FC = () => <BODY Routing>;\n"}

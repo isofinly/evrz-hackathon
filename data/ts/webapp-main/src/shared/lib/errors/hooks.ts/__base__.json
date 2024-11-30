@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { useCallback, useState } from 'react'\n\n\n/*\n * Transfer error from outside render to ErrorBoundary\n */\nexport function useThrowRenderError() <BODY useThrowRenderError>"}

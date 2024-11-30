@@ -1,1 +1,0 @@
-{"start_line": 9, "code": "Logo: React.FC<LogoProps> = ({ to, icon }) => {\n  return (\n    <LogoContanter to={to}>\n      {icon} WEB\n    </LogoContanter>\n  )\n}"}

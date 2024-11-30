@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import * as React from 'react';\n\n\nimport { getUser } from './model';\n\n\nexport const useAuth = () => <BODY useAuth>;\n"}

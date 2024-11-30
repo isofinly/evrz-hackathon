@@ -1,1 +1,0 @@
-{"start_line": 59, "code": "type RejectInvitationResponseData = Promise<StandardResponse<boolean>>;\n"}

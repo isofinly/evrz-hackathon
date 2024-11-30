@@ -1,1 +1,0 @@
-{"start_line": 5, "code": "interface ParsedTelegramUser {\n  id: number\n  first_name: string\n  last_name: string\n  language_code: string\n}"}

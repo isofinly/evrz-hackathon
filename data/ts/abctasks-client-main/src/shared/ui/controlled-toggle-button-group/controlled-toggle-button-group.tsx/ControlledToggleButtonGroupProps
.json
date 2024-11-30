@@ -1,1 +1,0 @@
-{"start_line": 14, "code": "interface ControlledToggleButtonGroupProps\n\n\textends CommonProps,\n\n\t\tOmit<ToggleButtonGroupProps, 'onChange'> {\n\treadonly onChange: (value: any) => unknown;\n\treadonly label?: string;\n\treadonly error?: boolean;\n\treadonly helperText?: string;\n}"}

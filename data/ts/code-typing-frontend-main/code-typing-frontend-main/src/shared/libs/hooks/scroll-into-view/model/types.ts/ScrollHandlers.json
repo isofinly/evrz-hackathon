@@ -1,1 +1,0 @@
-{"start_line": 1, "code": "interface ScrollHandlers {\n    scrollIntoView: (behavior?: ScrollBehavior) => void\n    scrollTo: (options?: ScrollToOptions) => void\n}"}

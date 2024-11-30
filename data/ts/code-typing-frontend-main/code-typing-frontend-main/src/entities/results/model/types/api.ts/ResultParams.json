@@ -1,1 +1,0 @@
-{"start_line": 14, "code": "interface ResultParams {\n    page: number\n    size: number\n    direction: string\n    sortBy: ResultsSortBy\n}"}

@@ -1,1 +1,0 @@
-{"start_line": 281, "code": "removeMember = async (\n\n\tctx: BrowserContext,\n\n\tdata: MemberParams = {}\n\n): Promise<boolean> => {\n\treturn request(ctx, '/member', {\n\t\tmethod: 'PUT',\n\t\tdata,\n\t});\n}"}

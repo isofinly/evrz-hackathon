@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export const normalizeQuery = (\n\n\tobject: Record<string, any>\n\n): Record<string, string> => <BODY normalizeQuery>;\n"}

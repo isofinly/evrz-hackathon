@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { ResultParams } from \"@entities/results\"\n\n\nexport interface ResultsSortPanelProps <BODY ResultsSortPanelProps>"}

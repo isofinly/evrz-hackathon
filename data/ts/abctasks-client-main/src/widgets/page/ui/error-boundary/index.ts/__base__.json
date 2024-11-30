@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export { ErrorBoundary, type ErrorBoundaryProps } from './error-boundary';\n"}

@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export { FullWidthPopup, type FullWidthPopupProps } from './full-width-popup';\n"}

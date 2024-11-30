@@ -1,1 +1,0 @@
-{"start_line": 3, "code": "ServiceNotWorkingPage = () => {\n  return (\n    <BaseTemplate>\n      <ServiceNotWorking />\n    </BaseTemplate>\n  )\n}"}

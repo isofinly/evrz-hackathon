@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "const formatter = new Intl.NumberFormat('ru-RU', {\n\n  style: 'currency',\n\n  currency: 'RUB',\n\n  maximumFractionDigits: 0,\n\n})\n\n\nexport function formatRUB(number: number) <BODY formatRUB>"}

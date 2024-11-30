@@ -1,1 +1,0 @@
-{"start_line": 7, "code": "function useWatchEffect<T extends FieldValues>(\n\n  form: UseFormReturn<T>,\n\n  effect: WatchObserver<T>,\n\n) {\n  useEffect(() => {\n    const subscription = form.watch(effect)\n    return () => subscription.unsubscribe()\n    // eslint-disable-next-line react-hooks/exhaustive-deps\n  }, [])\n}"}

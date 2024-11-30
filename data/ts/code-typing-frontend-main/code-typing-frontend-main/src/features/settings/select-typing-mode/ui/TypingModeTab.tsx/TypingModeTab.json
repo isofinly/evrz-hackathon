@@ -1,1 +1,0 @@
-{"start_line": 6, "code": "TypingModeTab = () => {\n    return (\n        <Tooltip label=\"Select typing mode (Alt+3)\">\n            <Box>\n                <AsideTab name={settingTabs.typingMode}>\n                    <Image w=\"50px\" src={timerIcon} />\n                </AsideTab>\n            </Box>\n        </Tooltip>\n    )\n}"}

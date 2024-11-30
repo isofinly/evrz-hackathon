@@ -1,1 +1,0 @@
-{"start_line": 41, "code": "remove = ({ roomId, taskId, id, }: RemoveParams) => {\n\treturn instance\n\t\t.delete(`comments/${roomId}/${taskId}/${id}/remove`)\n\t\t.json<StandardResponse<boolean>>();\n}"}

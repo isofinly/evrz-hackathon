@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { Box, Text } from \"@chakra-ui/react\"\n\n\nimport { CommandsEnum } from \"@shared/ui/terminal/types\"\n\nimport { motion } from \"framer-motion\"\n\n\nexport const Help = () => <BODY Help>"}

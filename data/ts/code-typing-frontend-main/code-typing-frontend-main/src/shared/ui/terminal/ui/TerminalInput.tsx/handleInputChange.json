@@ -1,1 +1,0 @@
-{"start_line": 20, "code": "handleInputChange: ChangeEventHandler<HTMLInputElement> = e => {\n        setCursorPosition(e.target.selectionStart)\n        onChange && onChange(e)\n    }"}

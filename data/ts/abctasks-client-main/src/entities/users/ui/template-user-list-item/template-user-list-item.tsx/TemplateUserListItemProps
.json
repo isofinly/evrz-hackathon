@@ -1,1 +1,0 @@
-{"start_line": 24, "code": "interface TemplateUserListItemProps\n\n\textends CommonProps,\n\n\t\tUser,\n\n\t\tOmit<ListItemProps, keyof CommonProps | keyof User | 'slots'> {\n\treadonly slots?: Slots<'actions' | 'extra'>;\n}"}

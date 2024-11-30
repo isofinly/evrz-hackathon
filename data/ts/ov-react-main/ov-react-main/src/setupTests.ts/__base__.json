@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "// jest-dom adds custom jest matchers for asserting on DOM nodes.\n\n// allows you to do things like:\n\n// expect(element).toHaveTextContent(/react/i)\n\n// learn more: https://github.com/testing-library/jest-dom\n\nimport '@testing-library/jest-dom';\n"}

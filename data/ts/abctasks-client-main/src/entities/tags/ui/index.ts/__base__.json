@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export * from './tag-label';\n\nexport * from './skeleton-tag-label';\n\nexport * from './tag-picker';\n\nexport * from './template-tag-list-item';\n\nexport * from './skeleton-tag-list-item';\n"}

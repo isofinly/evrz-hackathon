@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { InRoomParams, StandardResponse } from '@/shared/types';\n\n\nimport { instance } from '../request';\n\n\nimport { Progress } from './types';\n\n\nexport const getAll = async ({ roomId, }: InRoomParams) => <BODY getAll>;\n"}

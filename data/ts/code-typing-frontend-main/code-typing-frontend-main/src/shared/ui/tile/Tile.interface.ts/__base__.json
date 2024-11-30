@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { FlexProps, ImageProps, TextProps } from \"@chakra-ui/react\"\n\n\nexport interface TileProps extends FlexProps <BODY TileProps>\n\nexport interface TileTextProps extends TextProps <BODY TileTextProps>\n\nexport interface TileImageProps extends ImageProps <BODY TileImageProps>"}

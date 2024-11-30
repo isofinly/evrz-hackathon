@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export * as registrationModel from './model';\n\nexport { RegistrationForm } from './ui';\n"}

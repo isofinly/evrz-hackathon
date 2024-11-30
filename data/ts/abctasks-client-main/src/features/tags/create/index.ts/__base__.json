@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export * as createTagModel from './model';\n\nexport { CreateTag, type CreateTagProps } from './form';\n\nexport { OpenCreateTagForm, type OpenCreateTagFormProps } from './open-button';\n"}

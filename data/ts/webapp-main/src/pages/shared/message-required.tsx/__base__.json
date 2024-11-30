@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { BaseTemplate } from '@templates/base'\n\nimport { MessageRequired } from '@widgets/message-required'\n\n\nexport const MessageRequiredPage = () => <BODY MessageRequiredPage>"}

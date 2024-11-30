@@ -1,1 +1,0 @@
-{"start_line": 6, "code": "type IconName = SpritesMap['sprite']\n"}

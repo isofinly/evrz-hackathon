@@ -1,1 +1,0 @@
-{"start_line": 42, "code": "logout = async () => {\n\treturn instance.delete('auth/logout').json<StandardResponse<boolean>>();\n}"}

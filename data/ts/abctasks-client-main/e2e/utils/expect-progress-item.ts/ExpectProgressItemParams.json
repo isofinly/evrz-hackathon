@@ -1,1 +1,0 @@
-{"start_line": 2, "code": "interface ExpectProgressItemParams {\n\treadonly parent: Locator | Page;\n\treadonly tagName: string;\n\treadonly done: number;\n\treadonly total: number;\n}"}

@@ -1,1 +1,0 @@
-{"start_line": 16, "code": "type GetUserResult = { payload: API.UserSession };\n"}

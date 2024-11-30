@@ -1,1 +1,0 @@
-{"start_line": 15, "code": "interface RoomFormProps extends CommonProps {\n\treadonly $form: Form<RoomFormValues>;\n\treadonly ariaLabelledby?: string;\n\treadonly hideButton?: boolean;\n\treadonly buttonText?: string;\n\treadonly disabled?: boolean;\n}"}

@@ -1,1 +1,0 @@
-{"start_line": 27, "code": "useCodeErrorsHandlers = () =>\n\n    useUnit({\n\n        incrementErrors: eventIncrementErrors,\n\n        setErrorsCount: eventSetErrorsCount,\n\n        setIsError: eventSetIsError\n\n    })\n"}

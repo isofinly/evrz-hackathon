@@ -1,1 +1,0 @@
-{"start_line": 2, "code": "type ResponseMeta = {\n\n  code: number;\n\n  url: string;\n\n  method: string;\n\n};\n"}

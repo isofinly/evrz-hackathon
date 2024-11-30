@@ -1,1 +1,0 @@
-{"start_line": 2, "code": "interface ModeItemProps extends TileProps {\n    isActive?: boolean\n}"}

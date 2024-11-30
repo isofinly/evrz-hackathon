@@ -1,1 +1,0 @@
-{"start_line": 21, "code": "interface MainPopupProps extends CommonProps, BasePopupProps {\n\treadonly onClose: VoidFunction;\n\treadonly title: string;\n\treadonly maxWidth?: Breakpoint;\n\treadonly DialogTitleProps?: DialogTitleProps;\n}"}

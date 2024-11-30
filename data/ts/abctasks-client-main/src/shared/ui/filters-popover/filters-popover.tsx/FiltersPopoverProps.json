@@ -1,1 +1,0 @@
-{"start_line": 18, "code": "interface FiltersPopoverProps extends CommonProps {\n\treadonly open: boolean;\n\treadonly children: React.ComponentType<RenderProps>;\n\treadonly onOpen: VoidFunction;\n\treadonly onClose: VoidFunction;\n\treadonly title: string;\n\treadonly icon: React.ReactElement;\n\treadonly slots?: FullWidthPopupProps['slots'];\n}"}

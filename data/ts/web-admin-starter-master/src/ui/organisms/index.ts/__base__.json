@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export { Header } from './header'\n\nexport { Footer } from './footer'\n\nexport { Main } from './main'\n"}

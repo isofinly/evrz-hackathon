@@ -1,1 +1,0 @@
-{"start_line": 27, "code": "ListItem = ({ className, children, ...rest }: ListItemProps) => {\n  return (\n    <li className={styles.listItem} {...rest}>\n      <Icon className=\"shrink-0 translate-y-[3px]\" name=\"checkmark-circle\" />\n      <span>{children}</span>\n    </li>\n  )\n}"}

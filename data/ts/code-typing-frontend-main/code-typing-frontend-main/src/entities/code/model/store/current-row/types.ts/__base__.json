@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export interface CurrentRowState <BODY CurrentRowState>\n\nexport interface CurrentRowMethods <BODY CurrentRowMethods>"}

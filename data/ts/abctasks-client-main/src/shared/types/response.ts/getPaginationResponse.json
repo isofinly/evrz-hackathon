@@ -1,1 +1,0 @@
-{"start_line": 14, "code": "getPaginationResponse = <RT>(T: Runtype<RT>) => {\n\treturn Record({\n\t\titems: Array(T),\n\t\ttotalCount: Number,\n\t\tlimit: Number,\n\t}).asReadonly();\n}"}

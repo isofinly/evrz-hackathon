@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export { default as PrintingRow } from \"./PrintingRow.tsx\"\n\nexport * from \"./PrintingRow.interface.ts\"\n\nexport * from \"./PrintingRow.hooks.ts\"\n"}

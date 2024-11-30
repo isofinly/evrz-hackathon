@@ -1,1 +1,0 @@
-{"start_line": 25, "code": "create = ({ roomId, taskId, ...body }: CreateParams) => {\n\treturn instance\n\t\t.post(`comments/${roomId}/${taskId}/create`, {\n\t\t\tjson: body,\n\t\t})\n\t\t.json<StandardResponse<Comment>>();\n}"}

@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export {\n\n\tSkeletonUserListItem,\n\n\ttype SkeletonUserListItemProps\n\n} from './skeleton-user-list-item';\n"}

@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { ISymbolsPerSecondChartItem } from \"@entities/results\"\n\n\nexport const symbolsPerSecondToChart = (\n\n    symbolsPerSecond: number[]\n\n): ISymbolsPerSecondChartItem[] => <BODY symbolsPerSecondToChart>"}

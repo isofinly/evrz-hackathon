@@ -1,1 +1,0 @@
-{"start_line": 27, "code": "type UseMethodsInit<State, Methods extends AnyMethodsMap<State>> =\n\n    | (() => UseMethodsOptions<State, Methods>)\n\n    | UseMethodsOptions<State, Methods>\n"}

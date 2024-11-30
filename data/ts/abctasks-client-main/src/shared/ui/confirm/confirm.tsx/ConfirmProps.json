@@ -1,1 +1,0 @@
-{"start_line": 15, "code": "interface ConfirmProps extends BasePopupProps, CommonProps {\n\treadonly title: string;\n\treadonly onClose: VoidFunction;\n\treadonly onAgree: VoidFunction;\n\treadonly onDisagree: VoidFunction;\n\treadonly agreeText: string;\n\treadonly disagreeText: string;\n\treadonly content: string;\n}"}

@@ -1,1 +1,0 @@
-{"start_line": 9, "code": "type MenuData = {\n\n  data: Array<MenuItem>;\n\n};\n"}

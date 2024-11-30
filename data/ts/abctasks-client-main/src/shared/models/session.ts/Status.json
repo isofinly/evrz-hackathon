@@ -1,1 +1,0 @@
-{"start_line": 27, "code": "type Status = 'initial' | 'pending' | 'authorized' | 'anonymous';\n"}

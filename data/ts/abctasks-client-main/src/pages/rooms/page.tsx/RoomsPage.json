@@ -1,1 +1,0 @@
-{"start_line": 24, "code": "RoomsPage: React.FC<CommonProps> = (props) => {\n\tconst { className, } = props;\n\tconst { t, } = useTranslation('rooms');\n\tconst title = t('title');\n\tusePageTitle(title);\n\n\treturn (\n\t\t<RoomsLayout className={cn(styles.layout, className)}>\n\t\t\t<RoomList />\n\t\t\t<Popups popupMap={popupMap} />\n\t\t</RoomsLayout>\n\t);\n}"}

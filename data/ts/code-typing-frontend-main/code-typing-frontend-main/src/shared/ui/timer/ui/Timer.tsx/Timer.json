@@ -1,1 +1,0 @@
-{"start_line": 4, "code": "Timer = (props: TimerProps) => {\n    const { time } = props\n\n    const date = new Date(time)\n\n    return (\n        <Box display=\"inline-flex\" gap={2}>\n            <TimerItem time={date.getMinutes()} postfix=\"m\" required={false} />\n            <TimerItem time={date.getSeconds()} postfix=\"s\" />\n        </Box>\n    )\n}"}

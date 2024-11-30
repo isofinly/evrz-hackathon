@@ -1,1 +1,0 @@
-{"start_line": 17, "code": "interface TemplateInvitationListItemProps\n\n\textends CommonProps,\n\n\t\tOmit<ListItemProps, 'slots'> {\n\treadonly slots: Required<Slots<'userAvatar'>> &\n\t\tSlots<'actions' | 'userAvatar'>;\n\treadonly inviterName: string;\n\treadonly username: string;\n}"}

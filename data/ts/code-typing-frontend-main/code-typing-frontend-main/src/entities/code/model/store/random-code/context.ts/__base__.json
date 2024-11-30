@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { createContext, useContext } from \"react\"\n\n\nimport { RandomCodeState } from \"@entities/code\"\n\n\nexport const RandomCodeContext = createContext<RandomCodeState>({} as RandomCodeState)\n\n\nexport const useRandomCode = () => useContext(RandomCodeContext)\n"}

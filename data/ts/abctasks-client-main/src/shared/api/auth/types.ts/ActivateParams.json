@@ -1,1 +1,0 @@
-{"start_line": 37, "code": "interface ActivateParams {\n\treadonly token: string;\n}"}

@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export * as inviteUserIntoRoomModel from './model';\n\nexport {\n\n\tInviteUserIntoRoom,\n\n\ttype InviteUserIntoRoomProps\n\n} from './invite-user-into-room';\n"}

@@ -1,1 +1,0 @@
-{"start_line": 14, "code": "Center: React.FC<React.PropsWithChildren<CenterProps>> = (\n\n\tprops\n\n) => {\n\tconst { className, children, height = 'auto' } = props;\n\n\tconst classes = cn(styles.center, styles[height], className);\n\n\treturn <div className={classes}>{children}</div>;\n}"}

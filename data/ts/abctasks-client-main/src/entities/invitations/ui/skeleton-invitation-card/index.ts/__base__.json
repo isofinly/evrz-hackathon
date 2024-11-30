@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export { SkeletonInvitationCard, type SkeletonInvitationCardProps } from './ui';\n"}

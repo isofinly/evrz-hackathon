@@ -1,1 +1,0 @@
-{"start_line": 46, "code": "interface GetLastActivitiesInRoomParams extends InRoomParams {\n\treadonly count: number;\n}"}

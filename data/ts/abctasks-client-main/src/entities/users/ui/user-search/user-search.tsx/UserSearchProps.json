@@ -1,1 +1,0 @@
-{"start_line": 17, "code": "interface UserSearchProps extends CommonProps, FieldProps {\n\treadonly onChange?: (user: User | null) => unknown;\n\treadonly value?: User | null;\n}"}

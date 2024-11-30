@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { ColorHues } from \"@chakra-ui/react\"\n\n\nimport { ColorTokens } from \"@shared/constants\"\n\n\nexport interface AppTheme <BODY AppTheme>"}

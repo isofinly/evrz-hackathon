@@ -1,1 +1,0 @@
-{"start_line": 6, "code": "QueryTools = (query: Query<any, any, any, any>) => ({\n\n  timeUntilStale: (timeout: number) =>\n\n    invoke(timeUntilStale, { query, timeout }),\n\n  errors: {\n\n    handleAll: (handlers?: ErrorHandlers) =>\n\n      invoke(handleAll, { query, handlers }),\n\n  },\n\n})\n"}

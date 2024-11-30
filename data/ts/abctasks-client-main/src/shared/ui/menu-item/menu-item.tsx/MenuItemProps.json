@@ -1,1 +1,0 @@
-{"start_line": 38, "code": "type MenuItemProps<P extends object> = CommonProps &\n\n\tMenuOption<P> &\n\n\tOmit<MUIMenuItemProps, keyof MenuOption<P>>;\n"}

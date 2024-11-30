@@ -1,1 +1,0 @@
-{"start_line": 10, "code": "type RemoveRoomMenuItemProps = CommonProps &\n\n\tOmit<MenuItemProps<object>, 'to' | 'params' | 'query' | 'label'> & {\n\n\t\treadonly roomId: number;\n\n\t};\n"}

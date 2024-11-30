@@ -1,1 +1,0 @@
-{"start_line": 1, "code": "getRandomNumber = (min: number, max: number) => {\n    min = Math.ceil(min)\n    max = Math.floor(max)\n    return Math.floor(Math.random() * (max - min + 1)) + min\n}"}

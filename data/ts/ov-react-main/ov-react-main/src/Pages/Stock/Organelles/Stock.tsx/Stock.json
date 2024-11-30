@@ -1,1 +1,0 @@
-{"start_line": 7, "code": "Stock = () => {\n  return (\n    <div className=\"Stock\">\n      <BigPicture text={\"\u0422\u041e\u0412\u0410\u0420 \u0412 \u041d\u0410\u041b\u0418\u0427\u0418\u0418\"} picture={BIG} />\n      <SwipperList />\n    </div>\n  );\n}"}

@@ -1,1 +1,0 @@
-{"start_line": 4, "code": "type LogoProps = {\n\n  to: string;\n\n  icon?: React.ReactNode;\n\n}\n"}

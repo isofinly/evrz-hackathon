@@ -1,1 +1,0 @@
-{"start_line": 31, "code": "handleChange: MUIDatePIckerProps<Dayjs>['onChange'] = (date) => {\n\t\t\tlet newDate: string | null;\n\n\t\t\ttry {\n\t\t\t\tnewDate = date?.toDate().toJSON() ?? null;\n\t\t\t} catch {\n\t\t\t\tnewDate = null;\n\t\t\t}\n\n\t\t\tonChange(newDate);\n\t\t}"}

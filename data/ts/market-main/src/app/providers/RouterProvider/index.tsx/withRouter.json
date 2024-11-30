@@ -1,1 +1,0 @@
-{"start_line": 4, "code": "withRouter = (component: () => React.ReactNode) => () => (\n\n    <BrowserRouter>\n\n        <ThemeProvider>\n\n                {component()}\n\n        </ThemeProvider>\n\n    </BrowserRouter>\n\n)"}

@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "interface Window {\n  ENV: {\n    NODE_ENV: 'development' | 'production'\n    CLIENT_VERSION: string\n    CLIENT_HIGHLIGHT_PROJECT_ID: string\n    CLIENT_API_URL: string\n    CLIENT_DEV_INIT_DATA: string\n  }\n}"}

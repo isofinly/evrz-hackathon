@@ -1,1 +1,0 @@
-{"start_line": 6, "code": "interface Props {\n  className?: string\n  gap?: 1 | 2\n  children: ReactNode\n}"}

@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export type ButtonVariant = 'solid' | 'outline'\n\nexport type ButtonSize = 'sm' | 'md'\n\nexport type ButtonColor = 'primary' | 'secondary'\n"}

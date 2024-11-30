@@ -1,1 +1,0 @@
-{"start_line": 51, "code": "type Appointment = AppointmentCommon & AppointmentByStatus\n"}

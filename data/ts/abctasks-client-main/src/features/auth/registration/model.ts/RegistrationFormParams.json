@@ -1,1 +1,0 @@
-{"start_line": 33, "code": "interface RegistrationFormParams extends RegistrationParams {\n\treadonly repeatPassword: string;\n}"}

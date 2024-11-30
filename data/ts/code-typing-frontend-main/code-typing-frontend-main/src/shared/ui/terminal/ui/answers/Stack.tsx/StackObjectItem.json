@@ -1,1 +1,0 @@
-{"start_line": 18, "code": "interface StackObjectItem {\n    name: string\n    icon: string\n    link: string\n}"}

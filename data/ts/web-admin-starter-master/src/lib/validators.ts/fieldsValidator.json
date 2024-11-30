@@ -1,1 +1,0 @@
-{"start_line": 20, "code": "fieldsValidator = <T>(\n\n  fields: (InputResult | GroupResult | FieldResult<T>)[],\n\n) => {\n  const allFields = fields.map(({ $error }) => $error);\n  return combine(allFields, (all) => all.every((value) => !value));\n}"}

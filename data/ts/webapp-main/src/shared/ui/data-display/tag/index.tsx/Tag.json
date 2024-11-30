@@ -1,1 +1,0 @@
-{"start_line": 19, "code": "Tag = ({\n\n  className,\n\n  color = 'gray',\n\n  icon,\n\n  children,\n\n}: TagProps) => {\n  return (\n    <div className={clsx(styles.tag, className)} data-color={color}>\n      {icon && <Icon name={icon} />}\n      <span className={styles.text}>{children}</span>\n    </div>\n  )\n}"}

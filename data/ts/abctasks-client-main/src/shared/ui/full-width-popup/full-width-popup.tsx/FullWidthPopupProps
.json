@@ -1,1 +1,0 @@
-{"start_line": 23, "code": "interface FullWidthPopupProps\n\n\textends BasePopupProps,\n\n\t\tReact.PropsWithChildren {\n\treadonly onClose: VoidFunction;\n\treadonly title: string;\n\treadonly DialogTitleProps?: DialogTitleProps;\n}"}

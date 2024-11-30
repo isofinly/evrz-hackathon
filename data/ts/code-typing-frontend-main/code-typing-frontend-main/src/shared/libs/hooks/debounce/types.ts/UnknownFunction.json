@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "type UnknownFunction = (...args: never[]) => void\n"}

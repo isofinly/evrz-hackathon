@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export * as deviceInfoModel from './model';\n\nexport * from './types';\n"}

@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { searchParamsEnum } from \"@shared/constants\"\n\n\nexport const getProgrammingLanguageLink = (name: string) =>\n\n    `?${searchParamsEnum.languageName}=${encodeURIComponent(name)}`\n"}

@@ -1,1 +1,0 @@
-{"start_line": 2, "code": "type Size = 'small' | 'medium' | 'large';\n"}

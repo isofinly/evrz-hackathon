@@ -1,1 +1,0 @@
-{"start_line": 56, "code": "rejectInvitation = async ({\n\n\tid,\n\n}: RejectInvitationRequestParams): RejectInvitationResponseData => {\n\treturn instance\n\t\t.put(`invitations/invite/reject`, {\n\t\t\tjson: { id, },\n\t\t})\n\t\t.json();\n}"}

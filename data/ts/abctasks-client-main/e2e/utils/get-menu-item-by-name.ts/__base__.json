@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { Locator, Page } from '@playwright/test';\n\n\nexport const getMenuItemByName = (\n\n\tparent: Page | Locator,\n\n\tname: string\n\n): Locator => <BODY getMenuItemByName>;\n"}

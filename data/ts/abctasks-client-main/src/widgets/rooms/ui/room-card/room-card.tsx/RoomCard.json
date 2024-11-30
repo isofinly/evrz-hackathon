@@ -1,1 +1,0 @@
-{"start_line": 17, "code": "RoomCard: React.FC<RoomCardProps> = (props) => {\n\tconst { id, canChange, } = props;\n\treturn (\n\t\t<TemplateRoomCard\n\t\t\t{...props}\n\t\t\tmenu={<CardMenu roomId={id} canChange={canChange} />}\n\t\t\tactions={<OpenRoom id={id} />}\n\t\t/>\n\t);\n}"}

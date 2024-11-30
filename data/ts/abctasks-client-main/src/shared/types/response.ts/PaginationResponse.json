@@ -1,1 +1,0 @@
-{"start_line": 22, "code": "interface PaginationResponse<T> {\n\treadonly items: T[];\n\treadonly totalCount: number;\n\treadonly limit: number;\n}"}

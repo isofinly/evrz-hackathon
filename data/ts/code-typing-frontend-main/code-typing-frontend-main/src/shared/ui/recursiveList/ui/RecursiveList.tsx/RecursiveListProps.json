@@ -1,1 +1,0 @@
-{"start_line": 9, "code": "type RecursiveListProps = {\n\n    openItems: RecursiveListItemType[]\n\n    setOpenItemNames: Dispatch<SetStateAction<string[]>>\n\n    itemFocusedIndex: number\n\n    itemFocusedRef: RefObject<HTMLDivElement>\n\n    containerRef: RefObject<HTMLDivElement>\n\n    onOpenNew?: () => void\n\n    searchValue: string\n\n}\n"}

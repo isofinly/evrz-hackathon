@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { RouteInstance, RouteParams } from 'atomic-router'\n\nimport { ComponentType } from 'react'\n\n\nexport interface RouteRecord<\n\n  Props = object,\n\n  Params extends RouteParams = object,\n\n> <BODY RouteRecord>"}

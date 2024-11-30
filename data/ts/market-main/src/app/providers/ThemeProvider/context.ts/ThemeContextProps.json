@@ -1,1 +1,0 @@
-{"start_line": 4, "code": "type ThemeContextProps = {\n\n  theme: Theme;\n\n  themeToggle: () => void;\n\n};\n"}

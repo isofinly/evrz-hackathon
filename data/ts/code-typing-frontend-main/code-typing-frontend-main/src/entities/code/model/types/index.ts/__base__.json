@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { TimerDirection } from \"@shared/ui/timer\"\n\n\nexport type TimerStatus = \"stopped\" | \"started\"\n\n\nexport interface TypingCodeTimerStore <BODY TypingCodeTimerStore>\n\nexport type TypingTimerSettings = {\n\n    direction: TimerDirection\n\n    startSeconds: number\n\n}\n"}

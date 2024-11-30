@@ -1,1 +1,0 @@
-{"start_line": 6, "code": "ChangeFontTab = () => (\n\n    <Tooltip label=\"Font Settings (Alt+5)\">\n\n        <Box>\n\n            <AsideTab name={settingTabs.font}>\n\n                <Image w=\"50px\" src={fontIcon} />\n\n            </AsideTab>\n\n        </Box>\n\n    </Tooltip>\n\n)\n"}

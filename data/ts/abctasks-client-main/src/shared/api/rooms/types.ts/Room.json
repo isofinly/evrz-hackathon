@@ -1,1 +1,0 @@
-{"start_line": 12, "code": "interface Room extends Static<typeof room> {}\n"}

@@ -1,1 +1,0 @@
-{"start_line": 71, "code": "interface RemoveTaskParams extends InRoomParams {\n\treadonly id: number;\n}"}

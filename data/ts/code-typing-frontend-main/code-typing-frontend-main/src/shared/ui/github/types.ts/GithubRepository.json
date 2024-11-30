@@ -1,1 +1,0 @@
-{"start_line": 16, "code": "interface GithubRepository {\n    name: string\n    html_url: string\n    topics?: string[]\n}"}

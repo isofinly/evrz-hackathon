@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { ResultsSortBy } from \"@entities/results\"\n\n\nexport const fieldsSortBy: { title: string; value: ResultsSortBy }[] = [\n\n    { title: \"spm\", value: \"symbolsPerMinute\" },\n\n    { title: \"accuracy\", value: \"accuracy\" },\n\n    { title: \"end time\", value: \"endTime\" }\n\n]\n"}

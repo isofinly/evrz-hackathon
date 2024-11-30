@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { Flex, TabPanel } from \"@chakra-ui/react\"\n\n\nimport { useUnit } from \"effector-react\"\n\n\nimport { ThemeItem } from \"@entities/theme\"\n\nimport { $currentTheme, themes, useChangeTheme } from \"@features/settings/theme\"\n\n\nexport const ChangeThemeTabPanel = () => <BODY ChangeThemeTabPanel>"}

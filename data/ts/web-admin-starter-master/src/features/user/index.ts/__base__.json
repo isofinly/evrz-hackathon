@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "export { $user, $isUserPending, getUser, logIn, logOut } from './model';\n\n\nexport { onlyAnon, onlyUsers, onlyFor } from './guards';\n\n\nexport { useAuth } from './hooks';\n"}

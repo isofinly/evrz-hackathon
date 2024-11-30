@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { Stack, Text } from \"@chakra-ui/react\"\n\n\nimport { ResultsItem, ResultsListProps } from \"@entities/results\"\n\n\nexport const ResultsList = ({ results }: ResultsListProps) => <BODY ResultsList>"}

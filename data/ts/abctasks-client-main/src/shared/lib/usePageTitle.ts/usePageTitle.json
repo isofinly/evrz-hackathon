@@ -1,1 +1,0 @@
-{"start_line": 3, "code": "usePageTitle = (title: string) => {\n\tReact.useLayoutEffect(() => {\n\t\tconst lastTitle = title;\n\n\t\tdocument.title = title;\n\n\t\treturn () => {\n\t\t\tdocument.title = lastTitle;\n\t\t};\n\t}, [title]);\n}"}

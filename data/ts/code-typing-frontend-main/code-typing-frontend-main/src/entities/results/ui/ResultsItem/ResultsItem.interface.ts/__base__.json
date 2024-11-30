@@ -1,1 +1,0 @@
-{"start_line": 0, "code": "import { ResultFromApi } from \"@entities/results\"\n\n\nexport interface ResultsItemProps extends ResultFromApi <BODY ResultsItemProps>"}
