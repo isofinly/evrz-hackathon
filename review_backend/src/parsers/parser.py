@@ -3,9 +3,9 @@ from make_chunks import chunk_code
 
 from pathlib import Path
 
-from typing import Tuple, Dict
+from typing import Tuple, Dict, Union
 
-def parse_file(file_path: str | Path) ->  Tuple[str, Dict]:
+def parse_file(file_path: Union[str, Path]) ->  Tuple[str, Dict]:
     """
         parse chunks of code from file
 

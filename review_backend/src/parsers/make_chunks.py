@@ -1,4 +1,4 @@
-from parsers.language import LANGUAGE
+from language import LANGUAGE
 from tree_sitter import Parser
 
 
@@ -134,3 +134,56 @@ def concatenate_lines(code_lines, start_point, end_point):
     if len(code_lines[end_point[0]]) == end_point[1]:
         string += "\n"
     return string + " "
+
+
+if __name__ == "__main__":
+    base_chunk, declarations = chunk_code("""
+import { Suspense } from "react";
+
+import { Flex } from "@chakra-ui/react";
+
+import { Outlet, useLocation } from "react-router-dom";
+
+import { paths } from "@pages/routes";
+import {
+  CodeLoading,
+  CodeLoadingProgress,
+  CodeLoadingTitle,
+} from "@shared/ui/loading";
+import { Footer } from "@widgets/Footer";
+import { Header } from "@widgets/Header";
+
+const Root = () => {
+  const location = useLocation();
+
+  return (
+    <Flex
+      direction="column"
+      h={location.pathname === paths.typingCodePage ? "100vh" : "auto"}
+      minH="100vh"
+    >
+      <Header />
+
+      <Flex as="main" flex="1" overflow="hidden" py="1px">
+        <Suspense
+          fallback={
+            <CodeLoading>
+              <CodeLoadingTitle />
+              <CodeLoadingProgress />
+            </CodeLoading>
+          }
+        >
+          <Outlet />
+        </Suspense>
+      </Flex>
+
+      <Footer />
+    </Flex>
+  );
+};
+
+export default Root;                                          
+""", "ts")
+    print(type(base_chunk))
+    # print(declarations)
+    

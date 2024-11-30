@@ -1,7 +1,7 @@
 from pathlib import Path
+from typing import Union
 
-
-def parse_project_structure(root_path: str | Path) -> str:
+def parse_project_structure(root_path: Union[str, Path]) -> str:
     """
     Parse project directory structure and return formatted string representation.
 
