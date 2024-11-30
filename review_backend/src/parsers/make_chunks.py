@@ -1,4 +1,4 @@
-from .language import LANGUAGE
+from language import LANGUAGE
 from tree_sitter import Parser
 
 import json
@@ -19,12 +19,14 @@ DECLARATION = {
         "function_declaration",
         "interface_declaration",
         "type_alias_declaration",
+        "variable_declarator",
     ],
     "tsx": [
         "class_declaration",
         "function_declaration",
         "interface_declaration",
         "type_alias_declaration",
+        "variable_declarator",
     ],
 }
 
@@ -65,16 +67,15 @@ def chunk_code(code: str, extension: str):
 
         base_chunk.consume(node.start_point)
 
-
-        if node.type in DECLARATION[extension] or (
-            node.type == "variable_declarator"
-            and any([child.type == "arrow_function" for child in node.children])
-        ):
-            identifier, declaration_chunk = chunk_declaration(
-                node, base_chunk, extension
-            )
-
-            declarations[str(identifier)] = declaration_chunk
+        if node.type in DECLARATION[extension]:
+          # Special handling for TypeScript arrow functions
+            if extension in ['ts', 'tsx'] and node.type == "variable_declarator":
+                if any([child.type == "arrow_function" for child in node.children]):
+                    identifier, declaration_chunk = chunk_declaration(node, base_chunk, extension)
+                    declarations[str(identifier)] = declaration_chunk
+            else:
+                identifier, declaration_chunk = chunk_declaration(node, base_chunk, extension)
+                declarations[str(identifier)] = declaration_chunk
 
         elif not node.children:
             base_chunk.consume(node.end_point)
@@ -174,90 +175,4 @@ class Chunk:
 
     def get_start_line(self):
       return self._chunk_start[0]
-    
-
-if __name__ == "__main__":
-    base_chunks, declarations = chunk_code("""
-import { Keyboard, Mousewheel, Navigation, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import "../Styles/Swipper.css";
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
-import { useStore } from "effector-react";
-import {
-  $checkAmazing,
-  $checkStock,
-  setcheckAmazing,
-  setcheckStock,
-} from "../Logics/hooks";
-
-import { Link } from "react-router-dom";
-import { SwipperAmazingList } from "../../../Common/SwipperAmazing/Organelles/SwipperAmazing";
-
-export const SwipperList = () => {
-  const checkStock = useStore($checkStock);
-  const checkAmazing = useStore($checkAmazing);
-
-  const StockObjects = [
-    {
-      picture: Picture_1,
-      name: "Fake Gen Jersey",
-      price: "3000",
-    },
-    { picture: Picture_2, name: "Evil Jersey", price: "3500" },
-    { picture: Picture_3, name: "Angel Hood", price: "5500" },
-    { picture: Picture_4, name: "Over Stars Scarfe", price: "2200" },
-  ];
-
-  return (
-    <div className="Stock__SwipperList">
-      {checkAmazing ? <SwipperAmazingList /> : null}
-      <div className="Stock__SwipperList__Swipper">
-        <Swiper
-          navigation={true}
-          pagination={true}
-          mousewheel={true}
-          keyboard={true}
-          modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-          className="mySwiper"
-          onRealIndexChange={(swiper: any) => {
-            setcheckStock(swiper.activeIndex);
-          }}
-          onClick={() => {
-            setcheckAmazing(true);
-          }}
-        >
-          {StockObjects.map((e, index) => (
-            <SwiperSlide key={index}>
-              <img src={e.picture} alt={e.name} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
-        <div className="Stock__SwipperList__Info">
-          <div className="Stock__SwipperList__Info__Name">
-            {StockObjects.map((e, i) => (i === checkStock ? e.name : null))}
-          </div>
-          <div className="Stock__SwipperList__Info__Price">
-            {StockObjects.map((e, i) =>
-              i === checkStock ? `${e.price} Руб.` : null
-            )}
-          </div>
-        </div>
-        <Link to={"/Basket"}>Купить</Link>
-      </div>
-    </div>
-  );
-};
-
-    """, "tsx")
-    
-    for chunk in declarations.items():
-        # print(chunk.get_start_line())
-        print(chunk)
-        # print(chunk['declaration'].replace(f"<BODY {chunk['identifier']}>", chunk['body']))
     
