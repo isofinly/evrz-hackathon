@@ -1,0 +1,1 @@
+type RejectInvitationResponseData = Promise<StandardResponse<boolean>>;

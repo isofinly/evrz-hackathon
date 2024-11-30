@@ -1,0 +1,7 @@
+MessageRequiredPage = () => {
+  return (
+    <BaseTemplate>
+      <MessageRequired />
+    </BaseTemplate>
+  )
+}

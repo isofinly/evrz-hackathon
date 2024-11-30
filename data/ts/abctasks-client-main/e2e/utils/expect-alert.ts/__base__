@@ -1,0 +1,15 @@
+import { Locator, Page, expect } from '@playwright/test';
+
+type Type = 'success' | 'error' | 'info';
+
+export interface ExpectAlertParams <BODY ExpectAlertParams>
+
+const colors: Record<Type, string> = {
+	success: 'rgb(46, 125, 50)',
+	error: 'rgb(211, 47, 47)',
+	info: 'rgb(2, 136, 209)',
+};
+
+export const expectAlert = async (
+	params: ExpectAlertParams
+): Promise<Locator> => <BODY expectAlert>;

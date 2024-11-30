@@ -1,0 +1,15 @@
+
+
+
+import React from "react";
+
+import { ListItem, ListItemText } from "@mui/material";
+import { formatInterval } from "../../shared";
+import { Result } from "./types";
+
+export function ListItemCustom({
+  origin,
+  destination,
+  departure,
+  arrival,
+}: Result) <BODY ListItemCustom>

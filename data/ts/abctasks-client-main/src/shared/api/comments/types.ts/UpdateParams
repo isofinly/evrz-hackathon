@@ -1,0 +1,4 @@
+interface UpdateParams extends BaseCommentParams {
+	readonly id: number;
+	readonly content: string;
+}

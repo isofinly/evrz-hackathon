@@ -1,0 +1,1 @@
+type UnknownFunction = (...args: never[]) => void

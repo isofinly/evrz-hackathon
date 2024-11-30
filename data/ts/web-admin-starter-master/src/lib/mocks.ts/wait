@@ -1,0 +1,9 @@
+function wait<R, T>(data: R): Promise<T> {
+  return new Promise((resolve) => {
+    setTimeout(
+      resolve,
+      Math.floor(Math.random() * 500) + 300,
+      JSON.stringify(data),
+    );
+  });
+}

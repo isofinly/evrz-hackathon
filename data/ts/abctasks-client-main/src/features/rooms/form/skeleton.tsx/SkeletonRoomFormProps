@@ -1,0 +1,1 @@
+interface SkeletonRoomFormProps extends CommonProps {}

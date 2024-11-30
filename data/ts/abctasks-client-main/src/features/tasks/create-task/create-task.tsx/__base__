@@ -1,0 +1,17 @@
+import { Button } from '@mui/material';
+import { useUnit } from 'effector-react';
+import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { deviceInfoModel } from '@/shared/models';
+import { BasePopupProps, CommonProps } from '@/shared/types';
+import { FullWidthPopup, MainPopup } from '@/shared/ui';
+
+import { TaskForm } from '../form';
+
+import styles from './create-task.module.css';
+import { popupControls, form, mutation } from './model';
+
+export interface CreateTaskProps extends CommonProps, BasePopupProps <BODY CreateTaskProps>
+
+export const CreateTask: React.FC<CreateTaskProps> = (props) => <BODY CreateTask>;

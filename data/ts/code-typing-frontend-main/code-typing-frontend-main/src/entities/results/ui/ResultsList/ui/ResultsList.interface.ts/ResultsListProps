@@ -1,0 +1,3 @@
+interface ResultsListProps {
+    results?: ResultFromApi[]
+}

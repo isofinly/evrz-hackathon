@@ -1,0 +1,66 @@
+RecursiveList = (props: RecursiveListProps) => {
+    const {
+        openItems,
+        setOpenItemNames,
+        itemFocusedIndex,
+        itemFocusedRef,
+        containerRef,
+        onOpenNew,
+        searchValue
+    } = props
+
+    const handleOpenNew = (newOpen: RecursiveListItemType) => {
+        if (!newOpen.children) return
+        if (newOpen.parents) {
+            setOpenItemNames([...newOpen.parents, newOpen.name])
+        } else {
+            setOpenItemNames(prev => [...prev, newOpen.name])
+        }
+        onOpenNew && onOpenNew()
+    }
+
+    return (
+         {/* <REVIEW>стили передавать через параметры className или style</REVIEW> */}
+        <Box
+            display="flex"
+            flexDir="column"
+            gap="5px"
+            ref={containerRef}
+            overflow="auto"
+            pr={1}
+            mt={3}
+        >
+            {openItems && openItems.length ? (
+                openItems?.map((item, index) => (
+                    <Fragment key={item.name}>
+                        {item.renderItem ? (
+                            item.renderItem({
+                                onClick: () =>
+                                    item.action ? item.action : () => handleOpenNew(item),
+                                item: item,
+                                ref: index === itemFocusedIndex ? itemFocusedRef : undefined,
+                                isFocus: index === itemFocusedIndex
+                            })
+                        ) : (
+                            <TileItemHelplist
+                                as="button"
+                                onClick={() => (item.action ? item.action() : handleOpenNew(item))}
+                                isFocus={index === itemFocusedIndex}
+                                ref={index === itemFocusedIndex ? itemFocusedRef : undefined}
+                            >
+                                <TileText>
+                                    {` ${item.name} ${item.parents?.length ? "-" : ""} `}
+                                    <em>{item.parents?.join(" > ")}</em>
+                                </TileText>
+                            </TileItemHelplist>
+                        )}
+                    </Fragment>
+                ))
+            ) : searchValue === ":q" ? (
+                <Text>Press enter to close</Text>
+            ) : (
+                <Text>Not found item</Text>
+            )}
+        </Box>
+    )
+}

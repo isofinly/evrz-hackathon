@@ -1,0 +1,5 @@
+import { Box } from "@chakra-ui/react"
+
+import { AsideTabPanelsProps, useAside } from "@shared/ui/aside"
+
+export const AsideTabPanels = (props: AsideTabPanelsProps) => <BODY AsideTabPanels>

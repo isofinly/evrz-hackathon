@@ -1,0 +1,5 @@
+type SubItemProps = {
+  title: string;
+  icon?: string;
+  to?: string;
+}

@@ -1,0 +1,21 @@
+RejectInvitationButton: React.FC<RejectInvitationButtonProps> = (
+	props
+) => {
+	const { id, className } = props;
+
+	// <REVIEW>переменная должна иметь явный смысл в своем названии</REVIEW>
+	const { t } = useTranslation('room-invitation');
+	const approve = useUnit(mutation);
+
+	const onClick = () => {
+		approve.start({ id });
+	};
+
+	const text = t('actions.reject.actions.button');
+
+	return (
+		<Button className={className} color='error' onClick={onClick}>
+			{text}
+		</Button>
+	);
+}

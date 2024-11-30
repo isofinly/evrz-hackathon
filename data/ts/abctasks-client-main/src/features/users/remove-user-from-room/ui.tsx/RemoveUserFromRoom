@@ -1,0 +1,21 @@
+RemoveUserFromRoom: React.FC<RemoveUserFromRoomProps> = (
+	props
+) => {
+	const { userId, className, } = props;
+	const { t, } = useTranslation('room-users');
+	const open = useUnit(openConfirm);
+
+	const openText = t('actions.remove_user.actions.open');
+
+	const onClick = () => {
+		open(userId);
+	};
+
+	return (
+		<Tooltip title={openText}>
+			<IconButton className={className} onClick={onClick}>
+				<DeleteIcon />
+			</IconButton>
+		</Tooltip>
+	);
+}

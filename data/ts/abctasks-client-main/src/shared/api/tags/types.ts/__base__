@@ -1,0 +1,23 @@
+import { Record, Number, String, Static } from 'runtypes';
+
+import { hex, InRoomParams } from '@/shared/types';
+
+export const tag = Record({
+	id: Number,
+	roomId: Number,
+	name: String,
+	mainColor: hex,
+	secondColor: hex,
+});
+
+export interface Tag extends Static<typeof tag> <BODY Tag>
+
+export interface GetTagParams extends InRoomParams <BODY GetTagParams>
+
+export interface CreateTagParams extends Omit<Tag, 'id'> <BODY CreateTagParams>
+
+export interface UpdateTagParams
+	extends Partial<Omit<CreateTagParams, 'roomId'>>,
+		InRoomParams <BODY UpdateTagParams>
+
+export interface RemoveTagParams extends InRoomParams <BODY RemoveTagParams>

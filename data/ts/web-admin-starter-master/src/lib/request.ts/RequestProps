@@ -1,0 +1,6 @@
+type RequestProps = {
+  method?: string;
+  url: string;
+  body?: object;
+  file?: FormData;
+};

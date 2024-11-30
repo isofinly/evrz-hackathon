@@ -1,0 +1,18 @@
+import { ChangeEventHandler, KeyboardEvent, ReactNode, useEffect, useRef } from "react"
+
+import {
+    TypingCodeHandlersContext,
+    useCodeErrors,
+    useCodeErrorsHandlers,
+    useCurrentRow,
+    useCurrentRowHandlers,
+    useRandomCode,
+    useTypingAction
+} from "@entities/code"
+import { useTypingCodeTimer } from "@entities/code/libs/hooks/use-typing-code-timer.ts"
+import { useResult } from "@entities/results"
+import { keyboardShortcuts } from "@shared/libs"
+import { useScrollIntoView } from "@shared/libs/hooks/scroll-into-view"
+import { useTick } from "@shared/libs/hooks/tick"
+
+export const TypingCodeHandlersProvider = ({ children }: { children: ReactNode }) => <BODY TypingCodeHandlersProvider>

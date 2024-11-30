@@ -1,0 +1,2 @@
+getResultId = ({ timeEndMilliseconds, timeStartMilliseconds }: GetResultIdArgs) =>
+    `${timeStartMilliseconds}-${timeEndMilliseconds}`

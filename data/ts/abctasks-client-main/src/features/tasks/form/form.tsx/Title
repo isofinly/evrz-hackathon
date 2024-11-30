@@ -1,0 +1,20 @@
+Title: React.FC<FieldProps> = (props) => {
+	const { $form, } = props;
+	const { t, } = useTranslation('tasks');
+	const label = t('actions.task_form.fields.title');
+
+	const title = useUnit($form.fields.title);
+
+	return (
+		<Field
+			className={styles.field}
+			value={title.value}
+			onChange={title.onChange}
+			onBlur={title.onBlur}
+			helperText={title.errorText}
+			isValid={title.isValid}
+			name='title'
+			label={label}
+		/>
+	);
+}

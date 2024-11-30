@@ -1,0 +1,3 @@
+interface ApproveInvitationRequestParams {
+	readonly id: number;
+}

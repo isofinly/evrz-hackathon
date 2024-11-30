@@ -1,0 +1,3 @@
+interface AddUserFormValues {
+	readonly user: User | null;
+}

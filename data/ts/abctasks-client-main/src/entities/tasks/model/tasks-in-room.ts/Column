@@ -1,0 +1,5 @@
+interface Column {
+	readonly tasks: Task[];
+	readonly status: TaskStatus;
+	readonly hasActions: boolean;
+}

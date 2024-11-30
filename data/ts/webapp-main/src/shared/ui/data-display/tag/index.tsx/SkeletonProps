@@ -1,0 +1,4 @@
+interface SkeletonProps {
+  className?: string
+  width?: number | string
+}

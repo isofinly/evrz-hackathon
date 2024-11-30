@@ -1,0 +1,3 @@
+interface AddUserRoomParams extends InRoomParams {
+	readonly userId: number;
+}

@@ -1,0 +1,7 @@
+getPaginationResponse = <RT>(T: Runtype<RT>) => {
+	return Record({
+		items: Array(T),
+		totalCount: Number,
+		limit: Number,
+	}).asReadonly();
+}

@@ -1,0 +1,7 @@
+registration = async (body: RegistrationParams) => {
+	return instance
+		.post('auth/registration', {
+			json: body,
+		})
+		.json<StandardResponse<User>>();
+}

@@ -1,0 +1,19 @@
+import { useUnit } from 'effector-react';
+import * as React from 'react';
+
+import {
+	ApproveInvitationButton,
+	RejectInvitationButton,
+} from '@/features/invitation';
+
+import { TemplateInvitationCard } from '@/entities/invitations';
+import { UserAvatar } from '@/entities/users';
+
+import { Room, User } from '@/shared/api';
+import { sessionModel } from '@/shared/models';
+import { CommonProps } from '@/shared/types';
+
+
+export interface InvitationCardProps extends CommonProps <BODY InvitationCardProps>
+
+export const InvitationCard: React.FC<InvitationCardProps> = (props) => <BODY InvitationCard>;

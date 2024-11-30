@@ -1,0 +1,6 @@
+type Props = InputProps & {
+  label?: string
+  filled?: boolean
+  error?: string
+  icon?: ReactNode
+}

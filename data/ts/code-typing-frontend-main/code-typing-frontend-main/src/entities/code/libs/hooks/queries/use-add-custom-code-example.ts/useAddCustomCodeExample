@@ -1,0 +1,12 @@
+useAddCustomCodeExample = () => {
+    const queryClient = useQueryClient()
+
+    return useMutation({
+        mutationFn: (body: CustomCodeExampleBody) => CodeService.addCustomCodeExample(body),
+        onSettled: async () => {
+            await queryClient.invalidateQueries({
+                queryKey: [queryKeysEnum.codeExample]
+            })
+        }
+    })
+}

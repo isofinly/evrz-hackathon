@@ -1,0 +1,7 @@
+activate = async (query: ActivateParams) => {
+	return instance
+		.put('auth/registration/activate', {
+			searchParams: new URLSearchParams(normalizeQuery(query)),
+		})
+		.json<StandardResponse<boolean>>();
+}

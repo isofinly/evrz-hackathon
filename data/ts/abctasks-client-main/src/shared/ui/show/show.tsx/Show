@@ -1,0 +1,9 @@
+Show: React.FC<ShowProps> = (props) => {
+	const { show, children } = props;
+
+	if (show) {
+		return children;
+	}
+
+	return null;
+}

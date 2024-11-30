@@ -1,0 +1,13 @@
+TemplateCommentCard: React.FC<TemplateCommentCardProps> = (
+	props
+) => {
+	const { content, className } = props;
+
+	return (
+		<Card className={className}>
+			<CardContent>
+				<Typography>{content}</Typography>
+			</CardContent>
+		</Card>
+	);
+}

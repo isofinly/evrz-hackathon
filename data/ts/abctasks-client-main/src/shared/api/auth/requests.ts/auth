@@ -1,0 +1,5 @@
+auth = async () => {
+	return instance
+		.get('auth', { credentials: 'include', })
+		.json<StandardResponse<AuthResponse>>();
+}

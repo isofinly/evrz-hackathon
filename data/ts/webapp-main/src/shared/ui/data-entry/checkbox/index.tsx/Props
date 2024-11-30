@@ -1,0 +1,4 @@
+type Props = InputProps & {
+  label: ReactNode
+  error?: string | null
+}

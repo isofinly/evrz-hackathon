@@ -1,0 +1,5 @@
+interface InfoSection {
+    title: string
+    paragraphs?: string[]
+    contentElement?: ReactNode
+}

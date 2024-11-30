@@ -1,0 +1,9 @@
+useTypingCodeTimer = () => {
+    return useUnit({
+        timer: $typingCodeTimerStore,
+        startTimer: eventStartTimer,
+        stopTimer: eventStopTimer,
+        resetTimer: eventResetTimer,
+        changeTimerSetting: eventChangeTimerSettings
+    })
+}

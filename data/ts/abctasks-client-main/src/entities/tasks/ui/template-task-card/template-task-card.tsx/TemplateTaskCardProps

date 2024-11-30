@@ -1,0 +1,9 @@
+interface TemplateTaskCardProps
+
+	extends CommonProps,
+
+		Pick<Task, 'title' | 'description' | 'createdAt' | 'status' | 'id'>,
+
+		Omit<CardProps, keyof Task> {
+	readonly slots: Slots<'actions' | 'tags' | 'userAvatar'>;
+}

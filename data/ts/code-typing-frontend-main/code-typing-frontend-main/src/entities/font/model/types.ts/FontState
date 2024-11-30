@@ -1,0 +1,4 @@
+interface FontState {
+    fontFamily: FontFamilies
+    typingFontSize: number
+}

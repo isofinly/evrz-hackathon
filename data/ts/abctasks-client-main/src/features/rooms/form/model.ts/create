@@ -1,0 +1,14 @@
+create = () => {
+	return createForm<RoomFormValues>({
+		fields: {
+			name: {
+				init: '',
+				rules: [createRuleFromSchema('name', schemas.name)],
+			},
+			description: {
+				init: '',
+				rules: [createRuleFromSchema('description', schemas.description)],
+			},
+		},
+	});
+}

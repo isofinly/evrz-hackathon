@@ -1,0 +1,6 @@
+interface ButtonMenuOption extends BaseMenuOption {
+	readonly onClick?: React.MouseEventHandler<HTMLButtonElement>;
+	readonly to?: never;
+	readonly params?: never;
+	readonly query?: never;
+}

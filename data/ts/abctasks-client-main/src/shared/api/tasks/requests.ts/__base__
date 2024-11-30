@@ -1,0 +1,22 @@
+import { StandardResponse } from '@/shared/types';
+
+import { instance, normalizeQuery } from '../request';
+
+import {
+	GetTaskParams,
+	CreateTaskParams,
+	UpdateTaskParams,
+	RemoveTaskParams,
+	Task,
+	GetTasksParams
+} from './types';
+
+export const getAll = async ({ roomId, ...query }: GetTasksParams) => <BODY getAll>;
+
+export const getOne = async ({ roomId, id, }: GetTaskParams) => <BODY getOne>;
+
+export const create = async ({ roomId, ...body }: CreateTaskParams) => <BODY create>;
+
+export const update = async ({ id, roomId, ...body }: UpdateTaskParams) => <BODY update>;
+
+export const remove = async ({ roomId, id, }: RemoveTaskParams) => <BODY remove>;

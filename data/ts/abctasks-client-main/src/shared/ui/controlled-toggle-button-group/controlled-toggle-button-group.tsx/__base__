@@ -1,0 +1,21 @@
+
+
+
+import {
+	FormControl,
+	FormLabel,
+	ToggleButtonGroup,
+	FormHelperText,
+	ToggleButtonGroupProps,
+} from '@mui/material';
+import * as React from 'react';
+
+import { CommonProps } from '@/shared/types';
+
+export interface ControlledToggleButtonGroupProps
+	extends CommonProps,
+		Omit<ToggleButtonGroupProps, 'onChange'> <BODY ControlledToggleButtonGroupProps>
+
+export const ControlledToggleButtonGroup: React.FC<
+	ControlledToggleButtonGroupProps
+> = (props) => <BODY ControlledToggleButtonGroup>;

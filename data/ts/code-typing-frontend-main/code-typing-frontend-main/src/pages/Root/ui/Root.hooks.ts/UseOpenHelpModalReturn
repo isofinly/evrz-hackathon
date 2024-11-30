@@ -1,0 +1,5 @@
+type UseOpenHelpModalReturn = {
+    isOpenHelpModal: boolean
+    handleOpenHelpModal: () => void
+    handleCloseHelpModal: () => void
+}

@@ -1,0 +1,19 @@
+
+
+
+
+import { Button } from '@mui/material';
+import { useUnit } from 'effector-react';
+import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { CommonProps } from '@/shared/types';
+
+import { mutation } from './model';
+
+
+export interface RejectInvitationButtonProps extends CommonProps <BODY RejectInvitationButtonProps>
+
+export const RejectInvitationButton: React.FC<RejectInvitationButtonProps> = (
+	props
+) => <BODY RejectInvitationButton>;

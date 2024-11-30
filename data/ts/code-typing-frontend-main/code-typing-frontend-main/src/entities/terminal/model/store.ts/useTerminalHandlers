@@ -1,0 +1,6 @@
+useTerminalHandlers = () =>
+    useUnit({
+        toggleTerminal: eventToggleTerminal,
+        openTerminal: eventOpenTerminal,
+        closeTerminal: eventCloseTerminal
+    })

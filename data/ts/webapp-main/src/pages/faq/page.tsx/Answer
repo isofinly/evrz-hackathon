@@ -1,0 +1,9 @@
+Answer = ({ children }: { children: ReactNode }) => {
+  return (
+    <div className="p-4 bg-gray-200 rounded-tr-[16px] rounded-b-[16px]">
+      <Typography.Paragraph color="primary" lineHeight="base">
+        {children}
+      </Typography.Paragraph>
+    </div>
+  )
+}

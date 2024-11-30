@@ -1,0 +1,1 @@
+type Type = 'success' | 'error' | 'info';

@@ -1,0 +1,7 @@
+interface Item {
+  picture: string;
+  name: string;
+  price: string;
+  salePrice: string;
+  sale: boolean;
+}

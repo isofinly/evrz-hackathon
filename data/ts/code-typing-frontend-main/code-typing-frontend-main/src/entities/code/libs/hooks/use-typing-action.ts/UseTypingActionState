@@ -1,0 +1,6 @@
+interface UseTypingActionState {
+    status: TTypingStatus
+    isPrinting: boolean
+    isNotStarted: boolean
+    isEnded: boolean
+}

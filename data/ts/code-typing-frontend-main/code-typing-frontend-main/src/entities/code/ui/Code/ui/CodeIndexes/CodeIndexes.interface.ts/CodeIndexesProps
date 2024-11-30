@@ -1,0 +1,1 @@
+interface CodeIndexesProps extends GridProps {}

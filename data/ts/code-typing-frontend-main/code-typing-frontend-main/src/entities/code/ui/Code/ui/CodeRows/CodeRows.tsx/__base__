@@ -1,0 +1,9 @@
+import { memo } from "react"
+
+import { Grid } from "@chakra-ui/react"
+
+import { CodeRowsProps } from "@entities/code"
+
+const CodeRows = (props: CodeRowsProps) => <BODY CodeRows>
+
+export default memo(CodeRows)

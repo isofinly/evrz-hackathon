@@ -1,0 +1,13 @@
+RoomLayout: React.FC<RoomLayoutProps> = (props) => {
+	const { className, children, } = props;
+
+	return (
+		<Layout
+			className={cn(styles.layout, className)}
+			slots={{
+				header: <RoomHeader />,
+			}}>
+			<React.Suspense fallback={<PageLoader />}>{children}</React.Suspense>
+		</Layout>
+	);
+}

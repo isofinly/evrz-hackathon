@@ -1,0 +1,15 @@
+
+
+
+
+import { Avatar, Card, CardContent, CardHeader, Skeleton } from '@mui/material';
+import * as React from 'react';
+
+import { CommonProps } from '@/shared/types';
+
+
+export interface SkeletonInvitationCardProps extends CommonProps <BODY SkeletonInvitationCardProps>
+
+export const SkeletonInvitationCard: React.FC<SkeletonInvitationCardProps> = (
+	props
+) => <BODY SkeletonInvitationCard>;

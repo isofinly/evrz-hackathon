@@ -1,0 +1,1 @@
+type InputProps = InputHTMLAttributes<HTMLInputElement>

@@ -1,0 +1,12 @@
+import { useEffect, useState } from "react";
+import "../Styles/ItemsByType.css";
+import Shirt_1 from "../../../Common/Pictures/ItemsByType/Shirts/1.jpg";
+import Shirt_2 from "../../../Common/Pictures/ItemsByType/Shirts/2.jpg";
+import Shirt_3 from "../../../Common/Pictures/ItemsByType/Shirts/3.jpg";
+import Shirt_4 from "../../../Common/Pictures/ItemsByType/Shirts/4.jpg";
+import Shirt_5 from "../../../Common/Pictures/ItemsByType/Shirts/5.jpg";
+import { ListItem } from "../Atoms/ListItem";
+
+export interface IItems <BODY IItems>
+
+export const Items = (params: IItems) => <BODY Items>;

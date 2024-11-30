@@ -1,0 +1,1 @@
+interface Comment extends Static<typeof comment> {}

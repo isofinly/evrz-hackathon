@@ -1,0 +1,3 @@
+interface RemoveInvitationProps extends CommonProps {
+	readonly id: number;
+}

@@ -1,0 +1,5 @@
+interface UpdateRoomParams
+
+	extends Partial<CreateRoomParams>,
+
+		InRoomParams {}

@@ -1,0 +1,3 @@
+interface RegistrationFormParams extends RegistrationParams {
+	readonly repeatPassword: string;
+}

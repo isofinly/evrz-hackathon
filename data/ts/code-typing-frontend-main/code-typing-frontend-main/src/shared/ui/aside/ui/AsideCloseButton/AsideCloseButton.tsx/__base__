@@ -1,0 +1,8 @@
+
+
+
+import { Button, Tooltip } from "@chakra-ui/react"
+
+import { AsideCloseButtonProps, useAside } from "@shared/ui/aside"
+
+export const AsideCloseButton = (props: AsideCloseButtonProps) => <BODY AsideCloseButton>

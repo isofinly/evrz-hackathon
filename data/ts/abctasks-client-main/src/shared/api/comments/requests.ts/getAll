@@ -1,0 +1,5 @@
+getAll = ({ roomId, taskId, }: BaseCommentParams) => {
+	return instance
+		.get(`comments/${roomId}/${taskId}`)
+		.json<StandardResponse<Comment[]>>();
+}

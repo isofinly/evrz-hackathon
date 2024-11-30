@@ -1,0 +1,22 @@
+
+
+import { PickerProps } from '../types';
+
+export const preparePickerHandler = <
+	O extends Record<string, any>,
+	K extends keyof O,
+	T extends O[K]
+>(
+	params: Pick<PickerProps<T>, 'multiple' | 'onChange'>,
+	key: K
+) => <BODY preparePickerHandler>;
+
+export const preparePickerSelectedValue = <
+	O extends Record<string, any>,
+	K extends keyof O,
+	T extends O[K]
+>(
+	params: Pick<PickerProps<T>, 'multiple' | 'value'>,
+	data: O[],
+	key: K
+) => <BODY preparePickerSelectedValue>;

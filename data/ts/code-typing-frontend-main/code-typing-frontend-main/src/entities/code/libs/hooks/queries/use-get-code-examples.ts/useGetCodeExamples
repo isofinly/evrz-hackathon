@@ -1,0 +1,9 @@
+useGetCodeExamples = (
+    options?: Omit<UseQueryOptions<CodeExamplesResponse>, "queryKey">
+) => {
+    return useQuery({
+        queryFn: () => CodeService.fetchCodeExamples(),
+        queryKey: [queryKeysEnum.codeExample],
+        ...options
+    })
+}

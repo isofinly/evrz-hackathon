@@ -1,0 +1,11 @@
+SettingsPage: React.FC = () => {
+	usePageTitle('Settings');
+
+	return (
+		<MainLayout>
+			<div className={styles.header}>
+				<Typography component='h2'>Settings</Typography>
+			</div>
+		</MainLayout>
+	);
+}

@@ -1,0 +1,2 @@
+
+export const convertMillisecondsAndDateToTime = (dateToConvert: number | Date): string => <BODY convertMillisecondsAndDateToTime>

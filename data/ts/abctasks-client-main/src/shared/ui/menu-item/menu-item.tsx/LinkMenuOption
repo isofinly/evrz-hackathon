@@ -1,0 +1,6 @@
+interface LinkMenuOption<P extends object> extends BaseMenuOption {
+	readonly onClick?: never;
+	readonly to: RouteInstance<P>;
+	readonly params: P;
+	readonly query?: RouteQuery;
+}

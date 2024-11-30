@@ -1,0 +1,1 @@
+type MenuOption<P extends object> = ButtonMenuOption | LinkMenuOption<P>;

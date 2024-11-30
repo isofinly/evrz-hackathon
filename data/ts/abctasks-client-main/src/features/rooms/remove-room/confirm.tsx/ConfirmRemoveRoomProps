@@ -1,0 +1,1 @@
+interface ConfirmRemoveRoomProps extends CommonProps, BasePopupProps {}

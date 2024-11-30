@@ -1,0 +1,8 @@
+interface ControlledToggleButtonGroupProps
+	extends CommonProps,
+		Omit<ToggleButtonGroupProps, 'onChange'> {
+	readonly onChange: (value: any) => unknown;
+	readonly label?: string;
+	readonly error?: boolean;
+	readonly helperText?: string;
+}

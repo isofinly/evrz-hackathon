@@ -1,0 +1,5 @@
+
+import { Button, InlineCode, ResultCard } from '@shared/ui'
+import { Fragment } from 'react'
+
+export const MessageRequired = () => <BODY MessageRequired>

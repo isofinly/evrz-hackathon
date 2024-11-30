@@ -1,0 +1,81 @@
+Content = () => {
+  const appointments = useUnit($$appointments.query)
+
+  if (appointments.pending)
+    return (
+      <Container>
+        {/*<REVIEW>Стили className должны быть модульными</REVIEW>  */}
+        <h2 className="font-bold font-interface text-[20px] leading-none px-4 pt-2 mb-4">
+          <Skeleton type="inline" width={170} />
+        </h2>
+        {/*<REVIEW>Стили className должны быть модульными</REVIEW>  */}
+        <div className="flex flex-col gap-2">
+          <AppointmentCardSkeleton />
+          <AppointmentCardSkeleton />
+        </div>
+      </Container>
+    )
+
+  if (appointments.data.length === 0)
+    return (
+      <ResultCard
+        title="Записей нет"
+        description={[
+          <Fragment key={1}>
+            После покупки записи здесь можно будет отслеживать текущее место в
+            очереди и примерное количество дней до получения слота
+          </Fragment>,
+        ]}
+        actions={
+          <ButtonLink to={routes.appointmentCreate} fluid={true}>
+            Записаться в консульство
+          </ButtonLink>
+        }
+      />
+    )
+
+  const byLocation = appointments.data!.reduce<Record<string, Appointment[]>>(
+    (acc, appointment) => {
+      const { country, city } = appointment.consulate
+      const location = `${country}, ${city}`
+
+      {/*<REVIEW>Исключение не должны быть</REVIEW>*/}
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+      const current = acc[location] ?? []
+      acc[location] = current.concat(appointment)
+
+      return acc
+    },
+    {},
+  )
+
+  const appointmentsJsx = Object.entries(byLocation).map(
+    ([location, appointments]) => {
+      return (
+        <Container key={location}>
+          {/*<REVIEW>Стили className должны быть модульными</REVIEW>  */}
+          <h2 className="font-bold font-interface text-[20px] leading-none px-4 pt-2 mb-4">
+            {location}
+          </h2>
+          {/*<REVIEW>Стили className должны быть модульными</REVIEW>  */}
+          <div className="flex flex-col gap-2">
+            {appointments.map((appointment) => (
+              <AppointmentCard key={appointment.id} appointment={appointment} />
+            ))}
+          </div>
+        </Container>
+      )
+    },
+  )
+
+  return (
+    <>
+      {appointmentsJsx}
+      <StickyActions>
+        <ButtonLink to={routes.appointmentCreate} fluid={true}>
+          Добавить запись
+        </ButtonLink>
+      </StickyActions>
+    </>
+  )
+}

@@ -1,0 +1,16 @@
+GenerateInvitationLink: React.FC<GenerateInvitationLinkProps> = (
+	props
+) => {
+	const { className, roomId } = props;
+
+	useGate(Gate, { roomId });
+
+	return (
+		<Form className={className} variant='elevation' elevation={0}>
+			<div className={styles.container}>
+				<InvitationLink />
+				<CopyButton />
+			</div>
+		</Form>
+	);
+}

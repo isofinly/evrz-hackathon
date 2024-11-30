@@ -1,0 +1,4 @@
+interface DateTimeProps extends CommonProps {
+	readonly date: string | number | Date;
+	readonly format: string;
+}

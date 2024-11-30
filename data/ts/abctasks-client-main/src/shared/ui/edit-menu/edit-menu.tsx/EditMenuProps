@@ -1,0 +1,6 @@
+interface EditMenuProps extends CommonProps, React.PropsWithChildren {
+	readonly size?: Size;
+	readonly anchorPosition?: PopoverPosition;
+	readonly anchorOrigin?: PopoverOrigin;
+	readonly transformOrigin?: PopoverOrigin;
+}

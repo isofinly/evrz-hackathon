@@ -1,0 +1,17 @@
+useLogout = () => {
+    const toast = useToast()
+
+    const { logoutViewer } = useViewer()
+    return useMutation({
+        mutationFn: () => ViewerService.logout(),
+        onSettled: async () => {
+            logoutViewer()
+        },
+        onSuccess: () => {
+            toast({
+                title: "Logout successful",
+                status: "success"
+            })
+        }
+    })
+}

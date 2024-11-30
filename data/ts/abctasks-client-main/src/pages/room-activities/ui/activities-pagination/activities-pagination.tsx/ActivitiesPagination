@@ -1,0 +1,29 @@
+ActivitiesPagination: React.FC<ActivitiesPaginationProps> = (
+	props
+) => {
+	const { className, } = props;
+
+	const pageQuery = useUnit(page);
+	const hasItems = useUnit(activitiesInRoomModel.$hasItems);
+	const pageCount = useUnit(activitiesInRoomModel.$pageCount);
+
+	return hasItems ? (
+		<Pagination
+			className={className}
+			count={pageCount}
+			page={+pageQuery.value}
+			onChange={(_, page) => {
+				window.scrollTo({
+					left: 0,
+					top: 0,
+				});
+				pageQuery.set(page.toString());
+			}}
+			color='primary'
+			size='large'
+			renderItem={(item) => {
+				return <PaginationItem {...item} role='link' />;
+			}}
+		/>
+	) : null;
+}

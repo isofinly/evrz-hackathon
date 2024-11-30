@@ -1,0 +1,10 @@
+Routing: React.FC = () => {
+    const session = useStore($user);
+    const routes = renderRoutes(ROUTES, session);
+
+    return <Switch>
+        {routes.map((route) => (
+            <Route key={route.name} {...route} />
+        ))}
+    </Switch>
+}

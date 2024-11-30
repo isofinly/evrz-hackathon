@@ -1,0 +1,10 @@
+useGetCodeExamplesByName = (
+    name: string,
+    options?: Omit<UseQueryOptions<CodeExamplesByNameResponse>, "queryKey">
+) => {
+    return useQuery({
+        queryFn: () => CodeService.fetchCodeExamplesByName(name),
+        queryKey: [queryKeysEnum.codeExample, name],
+        ...options
+    })
+}

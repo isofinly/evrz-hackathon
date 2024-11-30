@@ -1,0 +1,6 @@
+interface TextWithActionProps extends CommonProps {
+	readonly text: string;
+	readonly onClick: VoidFunction;
+	readonly actionText: string;
+	readonly icon?: React.ReactElement | null;
+}

@@ -1,0 +1,4 @@
+import { useCallback, useState } from 'react'
+
+
+export function useThrowRenderError() <BODY useThrowRenderError>

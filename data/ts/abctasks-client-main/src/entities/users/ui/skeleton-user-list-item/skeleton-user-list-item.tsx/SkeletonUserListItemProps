@@ -1,0 +1,1 @@
+interface SkeletonUserListItemProps extends CommonProps, ListItemProps {}

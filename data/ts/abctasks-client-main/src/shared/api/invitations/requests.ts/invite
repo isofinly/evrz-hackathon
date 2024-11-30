@@ -1,0 +1,8 @@
+invite = async ({
+	roomId,
+	userId,
+}: InviteUserRequestParams): InviteUserResponseData => {
+	return instance
+		.post(`invitations/invite/${roomId}`, { json: { userId, }, })
+		.json();
+}

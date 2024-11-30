@@ -1,0 +1,36 @@
+
+
+import clsx from 'clsx'
+import { HTMLAttributes } from 'react'
+import styles from './styles.module.css'
+
+{
+interface HeadingProps extends HTMLAttributes<HTMLDivElement> <BODY HeadingProps>
+
+const Heading = ({
+  as: Element = 'h2',
+  className,
+  style,
+  font = 'interface',
+  size = 'base',
+  children,
+  ...rest
+}: HeadingProps) => <BODY Heading>
+
+{
+interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> <BODY ParagraphProps>
+
+const Paragraph = ({
+  className,
+  style,
+  size = 'sm',
+  color = 'secondary',
+  lineHeight = 'tight',
+  children,
+  ...rest
+}: ParagraphProps) => <BODY Paragraph>
+
+export const Typography = {
+  Heading,
+  Paragraph,
+}

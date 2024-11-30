@@ -1,0 +1,23 @@
+InvitationListItem: React.FC<InvitationListItemProps> = (
+	props
+) => {
+	const { id, username, email, photo, ...rest } = props;
+	const canChange = useUnit(roomModel.$canChange);
+
+	const actions = canChange ? <RemoveInvitation id={id} /> : null;
+
+	const userAvatar = (
+		<UserAvatar username={username} email={email} photo={photo} />
+	);
+
+	return (
+		<TemplateInvitationListItem
+			{...rest}
+			username={username}
+			slots={{
+				userAvatar,
+				actions,
+			}}
+		/>
+	);
+}

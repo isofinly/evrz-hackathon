@@ -1,0 +1,10 @@
+function useBackAction(action: () => void) {
+  useEffect(() => {
+    const saved = actionRef.current
+    actionRef.current = action
+
+    return () => {
+      actionRef.current = saved
+    }
+  }, [action])
+}

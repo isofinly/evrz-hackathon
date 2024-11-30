@@ -1,0 +1,8 @@
+CardMenu: React.FC<CardMenuProps> = (props) => {
+	return (
+		<EditMenu>
+			<OpenUpdateTaskFormMenuItem {...props} />
+			<RemoveTaskMenuItem {...props} />
+		</EditMenu>
+	);
+}

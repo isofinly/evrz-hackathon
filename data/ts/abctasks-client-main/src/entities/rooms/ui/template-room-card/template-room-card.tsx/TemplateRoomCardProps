@@ -1,0 +1,4 @@
+interface TemplateRoomCardProps extends CommonProps, Room {
+	readonly menu: React.ReactElement | null;
+	readonly actions: React.ReactElement | null;
+}

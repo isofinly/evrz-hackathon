@@ -1,0 +1,9 @@
+import { useEffect } from "react"
+
+import { UsePrintingRowScrollOptions } from "@entities/code"
+
+export const usePrintingRowHorizontalScroll = ({
+    rowRef,
+    typingValue,
+    text
+}: UsePrintingRowScrollOptions) => <BODY usePrintingRowHorizontalScroll>

@@ -1,0 +1,4 @@
+interface ISymbolsPerSecondChartItem {
+    name: string
+    spm: number
+}

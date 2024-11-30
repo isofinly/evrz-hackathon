@@ -1,0 +1,10 @@
+function chainAppLoaded<T extends RouteParams>(route: RouteInstance<T>) {
+  return createChain(route, {
+    sources: [
+      {
+        query: $$user.query,
+        succeedIf: and($$user.query.$succeeded, $$user.$initialized),
+      },
+    ],
+  })
+}

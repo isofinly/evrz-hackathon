@@ -1,0 +1,5 @@
+interface GetResultWithStatsArgs {
+    stopTimeMilliseconds: number
+    timeMillisecondsStart: number
+    text: string
+}

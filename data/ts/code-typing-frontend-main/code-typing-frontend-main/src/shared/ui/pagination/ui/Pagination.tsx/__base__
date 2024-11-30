@@ -1,0 +1,17 @@
+
+
+import { createContext, useContext } from "react"
+
+
+import { Flex } from "@chakra-ui/react"
+
+import { PaginationProps } from "@shared/ui/pagination"
+
+
+export interface PaginationState <BODY PaginationState>
+
+const PaginationContext = createContext<PaginationState | null>(null)
+
+export const usePagination = () => <BODY usePagination>
+
+export const Pagination = (props: PaginationProps) => <BODY Pagination>

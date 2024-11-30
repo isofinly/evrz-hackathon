@@ -1,0 +1,8 @@
+interface IBigPicture {
+  text: string;
+  picture: string;
+  size?: string;
+  littleTitle?: string;
+  newStyle?: boolean;
+  //<REVIEW>Добавьте комментарии к полям интерфейса для улучшения понимания их назначения.</REVIEW>
+}

@@ -1,0 +1,13 @@
+import { baseQueryGithub } from "@shared/api/base-query-github.ts"
+import { GithubRepository, GithubUser } from "@shared/ui/github/types"
+
+class GithubService {
+    public async getUserByUsername(username: string): Promise<GithubUser> <BODY GithubService>
+
+    public async getReposByOwnerAndRepoName(
+        owner: string,
+        repoName: string
+    ): Promise<GithubRepository> <BODY GithubService>
+}
+
+export default new GithubService()

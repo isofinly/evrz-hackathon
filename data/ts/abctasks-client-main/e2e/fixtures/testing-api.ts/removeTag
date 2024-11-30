@@ -1,0 +1,9 @@
+removeTag = async (
+	ctx: BrowserContext,
+	data: TagParams = {}
+): Promise<boolean> => {
+	return request(ctx, '/tag', {
+		method: 'PUT',
+		data,
+	});
+}

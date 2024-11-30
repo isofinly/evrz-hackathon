@@ -1,0 +1,9 @@
+
+
+
+import { useToast } from "@chakra-ui/react"
+
+import { useViewer, ViewerService } from "@entities/viewer"
+import { useMutation } from "@tanstack/react-query"
+
+export const useLogout = () => <BODY useLogout>

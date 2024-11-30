@@ -1,0 +1,3 @@
+interface RemoveUserFromRoomProps extends CommonProps {
+	readonly userId: number;
+}

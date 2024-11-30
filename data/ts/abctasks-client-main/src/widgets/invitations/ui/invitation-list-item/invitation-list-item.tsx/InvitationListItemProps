@@ -1,0 +1,7 @@
+interface InvitationListItemProps
+	extends CommonProps,
+		Omit<TemplateInvitationListItemProps, 'slots' | 'id'> {
+	readonly id: number;
+	readonly email: string;
+	readonly photo: string | null;
+}

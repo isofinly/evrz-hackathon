@@ -1,0 +1,5 @@
+type GetSavedResultsResponse = {
+    content: ResultFromApi[]
+    totalPages: number
+    totalElements: number
+}

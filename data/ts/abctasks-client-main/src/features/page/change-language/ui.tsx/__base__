@@ -1,0 +1,33 @@
+
+
+
+import {
+	SelectProps as MUISelectProps,
+	MenuItem,
+	TextField,
+} from '@mui/material';
+import { useUnit } from 'effector-react';
+import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { deviceInfoModel, i18nModel } from '@/shared/models';
+
+const languages = ['ru', 'en'];
+
+export const ChangeLanguage: React.FC = () => <BODY ChangeLanguage>;
+
+const SelectProps: MUISelectProps = {
+	MenuProps: {
+		MenuListProps: {
+			disablePadding: true,
+		},
+		anchorOrigin: {
+			horizontal: 'right',
+			vertical: 'bottom',
+		},
+		transformOrigin: {
+			horizontal: 'right',
+			vertical: 'top',
+		},
+	},
+};

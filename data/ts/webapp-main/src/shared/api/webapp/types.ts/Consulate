@@ -1,0 +1,6 @@
+interface Consulate {
+  id: string
+  city: string
+  country: string
+  kdmidPath: string
+}

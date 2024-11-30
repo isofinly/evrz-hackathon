@@ -1,0 +1,3 @@
+interface DetailsCodeProps {
+    uuid: string
+}

@@ -1,0 +1,17 @@
+
+
+import clsx from 'clsx'
+import toast, {
+  Renderable,
+  Toast,
+  ToastType,
+  ValueFunction,
+} from 'react-hot-toast'
+import { Icon, Typography } from '../../index'
+import css from './styles.module.css'
+
+function mapTypeToIcon(type: ToastType) <BODY mapTypeToIcon>
+
+export const createNotificationComponent =
+  (type: ToastType, message: string): ValueFunction<Renderable, Toast> =>
+  ({ id, visible }) => <BODY createNotificationComponent>

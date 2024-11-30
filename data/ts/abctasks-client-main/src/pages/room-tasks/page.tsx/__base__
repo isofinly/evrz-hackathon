@@ -1,0 +1,34 @@
+import cn from 'classnames';
+import { useUnit } from 'effector-react';
+import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { Popups, PopupsProps } from '@/widgets/page';
+
+import {
+	ConfirmRemoveTask,
+	CreateTask,
+	TasksFilters,
+	UpdateTask
+} from '@/features/tasks';
+
+import { roomModel } from '@/entities/rooms';
+
+import { popupsMap } from '@/shared/configs';
+import { usePageTitle } from '@/shared/lib';
+import { deviceInfoModel } from '@/shared/models';
+import { CommonProps } from '@/shared/types';
+import { SectionHeader, Show } from '@/shared/ui';
+
+import styles from './page.module.css';
+import { Tasks, Aside, MobileAside } from './ui';
+
+const popupMap: PopupsProps['popupMap'] = {
+	[popupsMap.createTask]: CreateTask,
+	[popupsMap.updateTask]: UpdateTask,
+	[popupsMap.removeTask]: ConfirmRemoveTask,
+};
+
+const TasksPage: React.FC<CommonProps> = (props) => <BODY TasksPage>;
+
+export default TasksPage;

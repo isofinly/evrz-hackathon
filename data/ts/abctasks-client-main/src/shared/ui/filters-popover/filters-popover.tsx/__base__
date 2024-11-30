@@ -1,0 +1,18 @@
+
+
+
+
+import { Tooltip, IconButton, Popover, Typography } from '@mui/material';
+import { useUnit } from 'effector-react';
+import * as React from 'react';
+
+import { deviceInfoModel } from '@/shared/models';
+import { CommonProps, VoidFunction } from '@/shared/types';
+
+import { FullWidthPopup, FullWidthPopupProps } from '../full-width-popup';
+
+interface RenderProps <BODY RenderProps>
+
+export interface FiltersPopoverProps extends CommonProps <BODY FiltersPopoverProps>
+
+export const FiltersPopover: React.FC<FiltersPopoverProps> = (props) => <BODY FiltersPopover>;

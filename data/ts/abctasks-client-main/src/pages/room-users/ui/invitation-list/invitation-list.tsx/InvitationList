@@ -1,0 +1,28 @@
+InvitationList: React.FC<InvitationListProps> = (props) => {
+	const { className, } = props;
+	const { t, } = useTranslation('room-invitations');
+
+	const emptyText = t('list.empty_text');
+
+	return (
+		<FriendlyList<Invitation[], InvitationListItemProps, any>
+			className={className}
+			$query={invitationsModel.query}
+			getData={(invitation) =>
+				invitation.map((invitation) => ({
+					id: invitation.id,
+					email: invitation.user!.email,
+					username: invitation.user!.username,
+					photo: invitation.user!.photo,
+					inviterName: invitation.inviter.username,
+				}))
+			}
+			getKey={(item) => item.id}
+			skeletonsCount={25}
+			ErrorComponent={Error}
+			ItemComponent={InvitationListItem}
+			SkeletonComponent={SkeletonInvitationListItem}
+			emptyText={emptyText}
+		/>
+	);
+}

@@ -1,0 +1,3 @@
+interface ResultsItemProps extends ResultFromApi {
+    resultIndex: number
+}

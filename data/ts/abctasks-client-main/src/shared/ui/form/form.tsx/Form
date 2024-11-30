@@ -1,0 +1,9 @@
+Form: React.FC<PaperProps<'form'>> = (props) => {
+	const { className, children, ...rest } = props;
+
+	return (
+		<Paper className={cn(styles.form, className)} {...rest} component='form'>
+			{children}
+		</Paper>
+	);
+}

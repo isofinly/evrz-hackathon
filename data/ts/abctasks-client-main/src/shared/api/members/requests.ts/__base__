@@ -1,0 +1,12 @@
+import { InRoomParams, StandardResponse } from '@/shared/types';
+
+import { User } from '../auth';
+import { instance } from '../request';
+
+import { RemoveUserParams } from './types';
+
+export const getAll = async ({ roomId, }: InRoomParams) => <BODY getAll>;
+
+export const exit = async ({ roomId, }: InRoomParams) => <BODY exit>;
+
+export const remove = async ({ roomId, userId, }: RemoveUserParams) => <BODY remove>;

@@ -1,0 +1,6 @@
+interface StatusSelectProps
+	extends CommonProps,
+		Omit<FieldProps, 'select'> {
+	readonly hasEmptyOption?: boolean;
+	readonly emptyOptionText?: string;
+}

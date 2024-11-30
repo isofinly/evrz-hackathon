@@ -1,0 +1,12 @@
+
+
+import { createEvent, createStore, sample } from 'effector';
+import { not } from 'patronum';
+
+import { popupsModel } from '@/shared/models';
+
+export interface CreatePopupControlModelParams <BODY CreatePopupControlModelParams>
+
+export const createPopupControlModel = (
+	params: CreatePopupControlModelParams
+) => <BODY createPopupControlModel>;

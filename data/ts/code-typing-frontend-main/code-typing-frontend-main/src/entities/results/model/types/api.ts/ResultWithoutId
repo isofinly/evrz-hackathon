@@ -1,0 +1,1 @@
+interface ResultWithoutId extends Omit<ResultFromApi, "id" | "codeExampleUUID" | "userID"> {}

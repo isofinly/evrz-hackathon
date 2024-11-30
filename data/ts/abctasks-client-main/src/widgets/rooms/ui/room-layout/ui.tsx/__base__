@@ -1,0 +1,13 @@
+import cn from 'classnames';
+import * as React from 'react';
+
+import { CommonProps } from '@/shared/types';
+import { Layout, PageLoader } from '@/shared/ui';
+
+import { RoomHeader } from '../room-header';
+
+import styles from './ui.module.css';
+
+export interface RoomLayoutProps extends CommonProps, React.PropsWithChildren <BODY RoomLayoutProps>
+
+export const RoomLayout: React.FC<RoomLayoutProps> = (props) => <BODY RoomLayout>;

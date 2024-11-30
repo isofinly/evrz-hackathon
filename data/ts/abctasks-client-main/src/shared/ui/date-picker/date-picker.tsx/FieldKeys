@@ -1,0 +1,1 @@
+type FieldKeys = 'value' | 'onBlur' | 'name' | 'isValid' | 'helperText';

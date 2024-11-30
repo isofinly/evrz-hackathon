@@ -1,0 +1,22 @@
+Error: React.FC = () => {
+	const { t, } = useTranslation('activities');
+
+	const roomId = useParam(routes.room.tasks, 'id');
+	const start = useUnit(query.start);
+
+	const onRetry = React.useCallback(() => {
+		start({ roomId, });
+	}, [roomId]);
+
+	const actionText = t('actions.retry', { ns: 'common', });
+	const text = t('actions.retry_actions.text');
+
+	return (
+		<TextWithAction
+			actionText={actionText}
+			text={text}
+			onClick={onRetry}
+			icon={<ReplayIcon />}
+		/>
+	);
+}

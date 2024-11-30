@@ -1,0 +1,3 @@
+interface MainLayoutProps
+	extends CommonProps,
+		Required<React.PropsWithChildren> {}

@@ -1,0 +1,6 @@
+interface GetCardParams {
+	readonly parent: Locator | Page;
+	readonly title: string;
+	readonly description: string;
+	readonly tags: string[];
+}

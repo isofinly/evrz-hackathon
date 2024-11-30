@@ -1,0 +1,25 @@
+AppointmentCreatePage = () => {
+  const view = useUnit($view)
+
+  // <REVIEW>Данная функция является hooc и должна находиться по пути "/src/Hocks/{название файла}"</REVIEW> 
+  const form = useForm<FormValues>({
+    mode: 'onChange',
+    defaultValues: {
+      requestId: '',
+      requestSecurityCode: '',
+    },
+    shouldFocusError: false,
+  })
+
+  {/*<REVIEW>Условный оператор должен иметь фигурные скобки</REVIEW>  */}
+  if (view === View.TechnicalIssue) return <ServiceNotWorkingPage />
+  {/*<REVIEW>Условный оператор должен иметь фигурные скобки</REVIEW>  */}
+  if (view === View.ConsulateStep) return <ConsulateStep />
+  {/*<REVIEW>Условный оператор должен иметь фигурные скобки</REVIEW>  */}
+  if (view === View.RequestInfoStep) return <RequestInfoStep form={form} />
+  {/*<REVIEW>Условный оператор должен иметь фигурные скобки</REVIEW>  */}
+  if (view === View.Confirmation) return <Confirmation />
+  {/*<REVIEW>Условный оператор должен иметь фигурные скобки</REVIEW>  */}
+  if (view === View.Done) return <Done />
+  return null
+}

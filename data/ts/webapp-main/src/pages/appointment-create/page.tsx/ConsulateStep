@@ -1,0 +1,74 @@
+ConsulateStep = () => {
+  const fromHome = useUnit($fromHome)
+  useBackRoute(fromHome ? routes.home : routes.appointments)
+
+  const selectedConsulateId = useUnit($selectedConsulateId)
+
+  const consulates = useUnit(consulatesQuery)
+
+  if (consulates.pending) {
+    const skeleton = <Skeleton type="block" height={56} radius={16} />
+
+    return (
+      <BaseTemplate>
+        <Header title="Выберите консульство" />
+        {/*<REVIEW>Стили className должны быть модульными</REVIEW>  */}
+        <Container className="my-2 flex flex-col gap-2">
+          {skeleton}
+          {skeleton}
+          {skeleton}
+        </Container>
+      </BaseTemplate>
+    )
+  }
+
+  if (consulates.data.length === 0) {
+    return (
+      <BaseTemplate>
+        <ResultCard
+          title="Запись недоступна"
+          description={[
+            <Fragment key={1}>
+              На данный момент возможность создавать новые записи отключена. Но
+              это никак не&nbsp;влияет на&nbsp;активные записи - они
+              обрабатываются в&nbsp;прежнем режиме.
+            </Fragment>,
+          ]}
+          actions={
+            <Fragment>
+              <ButtonLink to="/">Вернуться на главную</ButtonLink>
+            </Fragment>
+          }
+        />
+      </BaseTemplate>
+    )
+  }
+
+  return (
+    <BaseTemplate>
+      <Header title="Выберите консульство" />
+      {/*<REVIEW>Стили className должны быть модульными</REVIEW>  */}
+      <Container className="my-2 flex flex-col gap-2">
+        {consulates.data.map((consulate) => {
+          return (
+            <button
+              key={consulate.id}
+              className={styles.consulateOption}
+              onClick={() => consulateSelected(consulate.id)}
+              data-selected={consulate.id === selectedConsulateId}
+            >
+              {consulate.country}, {consulate.city}
+            </button>
+          )
+        })}
+      </Container>
+      {selectedConsulateId && (
+        <StickyActions>
+          <Button onClick={goToRequestInfoStep} fluid={true}>
+            Продолжить
+          </Button>
+        </StickyActions>
+      )}
+    </BaseTemplate>
+  )
+}

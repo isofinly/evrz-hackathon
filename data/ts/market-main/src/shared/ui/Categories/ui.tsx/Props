@@ -1,0 +1,4 @@
+type Props = {
+  category: Category;
+  setCategory: (value: Category) => void;
+};

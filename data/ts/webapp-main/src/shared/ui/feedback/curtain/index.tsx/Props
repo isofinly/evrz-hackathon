@@ -1,0 +1,5 @@
+interface Props {
+  isOpen: boolean
+  onClose: () => void
+  children: ReactNode
+}

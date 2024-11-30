@@ -1,0 +1,4 @@
+interface DatabaseUser {
+  id: string
+  telegramId: string
+}

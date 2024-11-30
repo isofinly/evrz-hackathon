@@ -1,0 +1,17 @@
+interface FieldProps
+
+	extends CommonProps,
+
+		Partial<
+
+			Pick<
+
+				ConnectedField<any>,
+
+				'isValid' | 'name' | 'onChange' | 'onBlur' | 'value'
+
+			>
+
+		>,
+
+		Omit<TextFieldProps, keyof ConnectedField<any>> {}

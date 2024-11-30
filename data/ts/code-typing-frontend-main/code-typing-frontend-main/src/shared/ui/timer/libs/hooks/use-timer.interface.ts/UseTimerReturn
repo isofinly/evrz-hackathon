@@ -1,0 +1,7 @@
+interface UseTimerReturn {
+    start: () => void
+    reset: () => void
+    stop: () => void
+    timeMs: number
+    onStop: () => void
+}

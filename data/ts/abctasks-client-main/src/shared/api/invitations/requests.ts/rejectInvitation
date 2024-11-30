@@ -1,0 +1,9 @@
+rejectInvitation = async ({
+	id,
+}: RejectInvitationRequestParams): RejectInvitationResponseData => {
+	return instance
+		.put(`invitations/invite/reject`, {
+			json: { id, },
+		})
+		.json();
+}

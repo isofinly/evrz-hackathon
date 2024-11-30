@@ -1,0 +1,13 @@
+
+
+import React from "react";
+
+import { Container } from "@mui/material";
+import {
+  onlyConvenientFlightsFilter,
+  onlyFastFlightsFilter,
+  noOvernightFlightsFilter,
+} from "./filters";
+import { FilterCheckbox } from "./FilterCheckbox";
+
+export function FiltersBar() <BODY FiltersBar>

@@ -1,0 +1,88 @@
+import { createQuery } from '@farfetched/core';
+import { runtypeContract } from '@farfetched/runtypes';
+import {
+	RouteInstance,
+	RouteParams,
+	RouteParamsAndQuery,
+	chainRoute,
+} from 'atomic-router';
+import {
+	combine,
+	sample,
+	createEvent,
+	createStore,
+	createEffect,
+	Event,
+} from 'effector';
+import { equals } from 'patronum';
+
+import { User, AuthResponse, authResponse, authApi } from '@/shared/api';
+import { dataExtractor } from '@/shared/lib';
+import {
+	ChainedParams,
+	StandardResponse,
+	getStandardResponse,
+} from '@/shared/types';
+
+
+type Status = 'initial' | 'pending' | 'authorized' | 'anonymous';
+
+
+export const $user = createStore<User | null>(null);
+
+export const $status = createStore<Status>('initial');
+export const $isAuth = $status.map((status) => status === 'authorized');
+
+export const setUser = createEvent<User | null>();
+
+
+const handlerFx = createEffect(authApi.auth);
+
+
+
+export const query = createQuery<
+	void,
+	StandardResponse<AuthResponse>,
+	Error,
+	StandardResponse<AuthResponse>,
+	AuthResponse
+>({
+	effect: handlerFx,
+	contract: runtypeContract(getStandardResponse(authResponse)),
+	mapData: dataExtractor,
+});
+
+sample({
+	clock: query.start,
+	filter: equals($status, 'initial'),
+	fn: () => 'pending' as const,
+	target: $status,
+});
+
+sample({
+	clock: query.finished.success,
+	fn: () => 'authorized' as const,
+	target: $status,
+});
+
+sample({
+	clock: query.finished.failure,
+	fn: () => 'anonymous' as const,
+	target: $status,
+});
+
+sample({
+	clock: query.finished.success,
+	fn: ({ result }) => result.user,
+	target: $user,
+});
+
+export const chainAuthorized = <Params extends RouteParams>(
+	route: RouteInstance<Params>,
+	options?: ChainedParams
+): RouteInstance<Params> => <BODY chainAuthorized>;
+
+export const chainAnonymous = <Params extends RouteParams>(
+	route: RouteInstance<Params>,
+	options?: ChainedParams
+): RouteInstance<Params> => <BODY chainAnonymous>;

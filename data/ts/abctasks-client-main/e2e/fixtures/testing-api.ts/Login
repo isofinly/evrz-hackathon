@@ -1,0 +1,4 @@
+interface Login {
+	readonly tokens: Tokens;
+	readonly user: User;
+}

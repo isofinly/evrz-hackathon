@@ -1,0 +1,195 @@
+import { BrowserContext, test as base } from '@playwright/test';
+
+export interface UserParams <BODY UserParams>
+
+export interface User <BODY User>
+
+export interface LoginParams extends UserParams <BODY LoginParams>
+
+export interface Tokens <BODY Tokens>
+
+export interface Login <BODY Login>
+
+export interface MemberParams <BODY MemberParams>
+
+export interface Member <BODY Member>
+
+export interface RoomParams <BODY RoomParams>
+
+export interface Room <BODY Room>
+
+export interface TagParams <BODY TagParams>
+
+export interface Tag <BODY Tag>
+
+export interface TaskParams <BODY TaskParams>
+
+export interface Task <BODY Task>
+
+export interface InvitationParams <BODY InvitationParams>
+
+export interface Invitation <BODY Invitation>
+
+export interface ActivityParams <BODY ActivityParams>
+
+interface ActivitySphere <BODY ActivitySphere>
+
+interface ActivityAction <BODY ActivityAction>
+
+export interface Activity <BODY Activity>
+
+export interface TestingApiFixture <BODY TestingApiFixture>
+
+const buildUrl = (endpoint: string): string => <BODY buildUrl>;
+
+const createRequest = <Func extends (ctx: BrowserContext, data: any) => any>(
+	ctx: BrowserContext,
+	func: Func
+) => <BODY createRequest>;
+
+const request = async <T>(
+	ctx: BrowserContext,
+	endpoint: string,
+	init: Parameters<BrowserContext['request']['fetch']>[1] = {}
+): Promise<T> => <BODY request>;
+
+const user = async (
+	ctx: BrowserContext,
+	data: UserParams = {}
+): Promise<User> => <BODY user>;
+
+const removeUser = async (
+	ctx: BrowserContext,
+	data: UserParams = {}
+): Promise<boolean> => <BODY removeUser>;
+
+const auth = async (
+	ctx: BrowserContext,
+	data: UserParams = {}
+): Promise<Login> => <BODY auth>;
+
+const activateAccountLink = async (
+	ctx: BrowserContext,
+	data: UserParams = {}
+): Promise<string> => <BODY activateAccountLink>;
+
+const logout = async (ctx: BrowserContext): Promise<boolean> => <BODY logout>;
+
+const room = async (
+	ctx: BrowserContext,
+	data: RoomParams = {}
+): Promise<Room> => <BODY room>;
+
+const removeRoom = async (
+	ctx: BrowserContext,
+	data: RoomParams = {}
+): Promise<boolean> => <BODY removeRoom>;
+
+const member = async (
+	ctx: BrowserContext,
+	data: MemberParams = {}
+): Promise<Member> => <BODY member>;
+
+const removeMember = async (
+	ctx: BrowserContext,
+	data: MemberParams = {}
+): Promise<boolean> => <BODY removeMember>;
+
+const tag = async (ctx: BrowserContext, data: TagParams = {}): Promise<Tag> => <BODY tag>;
+
+const removeTag = async (
+	ctx: BrowserContext,
+	data: TagParams = {}
+): Promise<boolean> => <BODY removeTag>;
+
+const task = async (
+	ctx: BrowserContext,
+	data: TaskParams = {}
+): Promise<Task> => <BODY task>;
+
+const removeTask = async (
+	ctx: BrowserContext,
+	data: TaskParams = {}
+): Promise<boolean> => <BODY removeTask>;
+
+const invitation = async (
+	ctx: BrowserContext,
+	data: InvitationParams = {}
+): Promise<Invitation> => <BODY invitation>;
+
+const removeInvitation = async (
+	ctx: BrowserContext,
+	data: InvitationParams = {}
+): Promise<boolean> => <BODY removeInvitation>;
+
+const invitationLink = async (
+	ctx: BrowserContext,
+	data: InvitationParams = {}
+): Promise<string> => <BODY invitationLink>;
+
+const activity = async (
+	ctx: BrowserContext,
+	data: ActivityParams = {}
+): Promise<Activity> => <BODY activity>;
+
+const removeActivity = async (
+	ctx: BrowserContext,
+	data: ActivityParams = {}
+): Promise<boolean> => <BODY removeActivity>;
+
+export const test = base.extend<TestingApiFixture>({
+	user: async ({ context }, use) => {
+		await use(createRequest(context, user));
+	},
+	removeUser: async ({ context }, use) => {
+		await use(createRequest(context, removeUser));
+	},
+	auth: async ({ context }, use) => {
+		await use(createRequest(context, auth));
+	},
+	activateAccountLink: async ({ context }, use) => {
+		await use(createRequest(context, activateAccountLink));
+	},
+	logout: async ({ context }, use) => {
+		await use(createRequest(context, logout));
+	},
+	room: async ({ context }, use) => {
+		await use(createRequest(context, room));
+	},
+	removeRoom: async ({ context }, use) => {
+		await use(createRequest(context, removeRoom));
+	},
+	member: async ({ context }, use) => {
+		await use(createRequest(context, member));
+	},
+	removeMember: async ({ context }, use) => {
+		await use(createRequest(context, removeMember));
+	},
+	tag: async ({ context }, use) => {
+		await use(createRequest(context, tag));
+	},
+	removeTag: async ({ context }, use) => {
+		await use(createRequest(context, removeTag));
+	},
+	task: async ({ context }, use) => {
+		await use(createRequest(context, task));
+	},
+	removeTask: async ({ context }, use) => {
+		await use(createRequest(context, removeTask));
+	},
+	invitation: async ({ context }, use) => {
+		await use(createRequest(context, invitation));
+	},
+	removeInvitation: async ({ context }, use) => {
+		await use(createRequest(context, removeInvitation));
+	},
+	invitationLink: async ({ context }, use) => {
+		await use(createRequest(context, invitationLink));
+	},
+	activity: async ({ context }, use) => {
+		await use(createRequest(context, activity));
+	},
+	removeActivity: async ({ context }, use) => {
+		await use(createRequest(context, removeActivity));
+	},
+});

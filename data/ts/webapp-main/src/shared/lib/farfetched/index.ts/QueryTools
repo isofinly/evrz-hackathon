@@ -1,0 +1,8 @@
+QueryTools = (query: Query<any, any, any, any>) => ({
+  timeUntilStale: (timeout: number) =>
+    invoke(timeUntilStale, { query, timeout }),
+  errors: {
+    handleAll: (handlers?: ErrorHandlers) =>
+      invoke(handleAll, { query, handlers }),
+  },
+})

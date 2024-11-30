@@ -1,0 +1,25 @@
+UsersPage: React.FC<UsersPageProps> = (props) => {
+	const { className, } = props;
+	const { t, } = useTranslation('room-users');
+	const canChange = useUnit(roomModel.$canChange);
+
+	const title = t('title');
+	const invitationsTitle = t('title', { ns: 'room-invitations', });
+	const actions = canChange ? <CreateInvitationButton /> : null;
+
+	usePageTitle(title);
+
+	return (
+		<Container className={cn(styles.wrapper, className)}>
+			<div className={styles.group}>
+				<SectionHeader title={title} actions={actions} />
+				<UserList />
+			</div>
+			<div className={styles.group}>
+				<SectionHeader title={invitationsTitle} />
+				<InvitationList />
+			</div>
+			<Popups popupMap={popupMap} />
+		</Container>
+	);
+}

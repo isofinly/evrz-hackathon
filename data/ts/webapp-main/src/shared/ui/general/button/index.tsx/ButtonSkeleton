@@ -1,0 +1,3 @@
+ButtonSkeleton = () => {
+  return <Skeleton type="block" height={56} radius={16} />
+}

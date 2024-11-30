@@ -1,0 +1,17 @@
+import { Button } from '@mui/material';
+import { useUnit } from 'effector-react';
+import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { roomModel } from '@/entities/rooms';
+
+import { deviceInfoModel } from '@/shared/models';
+import { BasePopupProps } from '@/shared/types';
+import { FullWidthPopup, MainPopup } from '@/shared/ui';
+
+import { SkeletonRoomForm, RoomForm } from '../form';
+
+import { popupControls, mutation, form } from './model';
+import styles from './update-room.module.css';
+
+export const UpdateRoom: React.FC<BasePopupProps> = (props) => <BODY UpdateRoom>;

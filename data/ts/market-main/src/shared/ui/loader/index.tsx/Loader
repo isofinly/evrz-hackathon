@@ -1,0 +1,15 @@
+function Loader({ productsNumber }: Props): JSX.Element {
+  const items: number[] = Array.from(
+    { length: productsNumber },
+    (_: unknown, index: number) => index
+  );
+
+  //<REVIEW>Fragment в данном случае не имеет смысла, его стоит убрать</REVIEW>
+  return (
+    <>
+      {items.map((item: number) => (
+        <span key={item} className={styles.Loader}></span>
+      ))}
+    </>
+  );
+}

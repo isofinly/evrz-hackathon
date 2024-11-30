@@ -1,0 +1,26 @@
+MainHeader: React.FC<MainHeaderProps> = (props) => {
+	const { className, slots } = props;
+
+	return (
+		<TemplateHeader
+			className={className}
+			slots={{
+				...slots,
+				left: (
+					<>
+						<AppMenu />
+						{slots?.left}
+					</>
+				),
+				right: (
+					<>
+						{slots?.right}
+						<ChangeLanguage />
+						<AdaptiveColorSchemeToggler />
+						<ProfileMenu />
+					</>
+				),
+			}}
+		/>
+	);
+}

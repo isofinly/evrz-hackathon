@@ -1,0 +1,21 @@
+import { InRoomParams, StandardResponse } from '@/shared/types';
+
+import { instance } from '../request';
+
+import {
+	GetTagParams,
+	CreateTagParams,
+	UpdateTagParams,
+	RemoveTagParams,
+	Tag
+} from './types';
+
+export const getAll = async (params: InRoomParams) => <BODY getAll>;
+
+export const getOne = async ({ roomId, id, }: GetTagParams) => <BODY getOne>;
+
+export const create = async ({ roomId, ...body }: CreateTagParams) => <BODY create>;
+
+export const update = async ({ id, roomId, ...body }: UpdateTagParams) => <BODY update>;
+
+export const remove = async ({ roomId, id, }: RemoveTagParams) => <BODY remove>;

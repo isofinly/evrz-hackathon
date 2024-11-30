@@ -1,0 +1,16 @@
+AdaptiveColorSchemeToggler: React.FC<
+	AdaptiveColorSchemeTogglerProps
+> = (props) => {
+	const [isMobile, isTableVertical] = useUnit([
+		deviceInfoModel.$isMobile,
+		deviceInfoModel.$isTabletVertical,
+	]);
+
+	const isMobileToggler = isMobile || isTableVertical;
+
+	if (isMobileToggler) {
+		return <MobileColorSchemeToggler {...props} />;
+	}
+
+	return <DesktopColorschemeToggler {...props} />;
+}

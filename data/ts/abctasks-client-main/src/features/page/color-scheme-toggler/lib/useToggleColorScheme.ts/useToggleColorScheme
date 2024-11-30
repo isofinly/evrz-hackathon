@@ -1,0 +1,8 @@
+useToggleColorScheme = () => {
+	const [scheme, changeScheme] = useUnit([
+		colorSchemeModel.$scheme,
+		colorSchemeModel.colorSchemeChanged,
+	]);
+
+	return [scheme, changeScheme] as const;
+}

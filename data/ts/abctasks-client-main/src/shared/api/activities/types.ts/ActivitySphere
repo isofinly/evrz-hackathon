@@ -1,0 +1,1 @@
+interface ActivitySphere extends Static<typeof activitySphere> {}

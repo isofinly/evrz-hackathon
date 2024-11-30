@@ -1,0 +1,11 @@
+import { Skeleton, Stack } from '@mui/material';
+import cn from 'classnames';
+import * as React from 'react';
+
+import { CommonProps } from '@/shared/types';
+
+import styles from './skeleton.module.css';
+
+export interface SkeletonRoomFormProps extends CommonProps <BODY SkeletonRoomFormProps>
+
+export const SkeletonRoomForm: React.FC<SkeletonRoomFormProps> = (props) => <BODY SkeletonRoomForm>;

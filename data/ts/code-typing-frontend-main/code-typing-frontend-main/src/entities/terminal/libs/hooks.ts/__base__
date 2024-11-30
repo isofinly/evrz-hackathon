@@ -1,0 +1,6 @@
+import { useEffect } from "react"
+
+import { useTerminalHandlers } from "@entities/terminal"
+import { keyboardShortcuts } from "@shared/libs"
+
+export const useTerminalKeyDown = () => <BODY useTerminalKeyDown>

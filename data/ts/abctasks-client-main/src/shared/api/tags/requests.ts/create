@@ -1,0 +1,5 @@
+create = async ({ roomId, ...body }: CreateTagParams) => {
+	return instance
+		.post(`tags/${roomId}/create`, { json: body, })
+		.json<StandardResponse<Tag>>();
+}

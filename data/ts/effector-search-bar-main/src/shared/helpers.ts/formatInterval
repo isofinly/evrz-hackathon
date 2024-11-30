@@ -1,0 +1,7 @@
+function formatInterval({ start, end }: Interval) {
+  if (isSameDay(start, end)) {
+    return `${formatDateTime(start)} — ${formatTime(end)}`;
+  }
+
+  return `${formatDateTime(start)} — ${formatDateTime(end)}`;
+}

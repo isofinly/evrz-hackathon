@@ -1,0 +1,12 @@
+import { useEffect, useState } from "react"
+
+import { GetSavedResultsResponse, ResultParams, ResultsService } from "@entities/results"
+import { useViewer } from "@entities/viewer"
+import { queryKeysEnum } from "@shared/constants"
+import { useQuery, UseQueryResult } from "@tanstack/react-query"
+
+export type UseGetSavedResultsReturn = UseQueryResult<GetSavedResultsResponse> & {
+    totalPages: number
+}
+
+export const useGetSavedResultsByPage = (params: ResultParams): UseGetSavedResultsReturn => <BODY useGetSavedResultsByPage>

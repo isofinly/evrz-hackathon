@@ -1,0 +1,5 @@
+interface CreateAppointmentPayload {
+  consulateId: string
+  requestId: string
+  requestSecurityCode: string
+}

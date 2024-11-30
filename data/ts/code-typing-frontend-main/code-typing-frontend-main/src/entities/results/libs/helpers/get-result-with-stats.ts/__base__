@@ -1,0 +1,9 @@
+import { getResultId, getResultStats, IResult } from "@entities/results"
+
+export interface GetResultWithStatsArgs <BODY GetResultWithStatsArgs>
+
+export const getResultWithStats = ({
+    timeMillisecondsStart,
+    stopTimeMilliseconds,
+    text
+}: GetResultWithStatsArgs): IResult => <BODY getResultWithStats>

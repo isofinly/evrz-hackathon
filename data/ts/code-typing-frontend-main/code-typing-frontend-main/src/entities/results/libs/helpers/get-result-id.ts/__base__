@@ -1,0 +1,4 @@
+export interface GetResultIdArgs <BODY GetResultIdArgs>
+
+export const getResultId = ({ timeEndMilliseconds, timeStartMilliseconds }: GetResultIdArgs) =>
+    `${timeStartMilliseconds}-${timeEndMilliseconds}`

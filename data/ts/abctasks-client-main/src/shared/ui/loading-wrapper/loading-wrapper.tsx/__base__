@@ -1,0 +1,12 @@
+import cn from 'classnames';
+import * as React from 'react';
+
+import { CommonProps } from '@/shared/types';
+
+import styles from './loading-wrapper.module.css';
+
+export interface LoadingWrapperProps extends CommonProps <BODY LoadingWrapperProps>
+
+export const LoadingWrapper: React.FC<
+	React.PropsWithChildren<LoadingWrapperProps>
+> = (props) => <BODY LoadingWrapper>;

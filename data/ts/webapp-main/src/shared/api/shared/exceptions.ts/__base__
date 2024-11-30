@@ -1,0 +1,7 @@
+export type NetworkExceptionType = 'TooManyRequests' | 'NotFound' | 'Unknown'
+
+export class NetworkException extends Error {
+  type: NetworkExceptionType
+
+  constructor(type: NetworkExceptionType) <BODY NetworkException>
+}

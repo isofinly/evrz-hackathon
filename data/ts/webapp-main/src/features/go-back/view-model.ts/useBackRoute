@@ -1,0 +1,10 @@
+function useBackRoute(route: RouteInstance<RouteParams>) {
+  const navigate = useUnit(route.navigate)
+
+  const action = useCallback(
+    () => navigate({ params: {}, query: {} }),
+    [navigate],
+  )
+
+  useBackAction(action)
+}

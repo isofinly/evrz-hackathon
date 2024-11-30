@@ -1,0 +1,14 @@
+
+
+import { Fragment } from "react"
+
+
+import { Flex } from "@chakra-ui/react"
+
+import { AppTheme } from "@features/settings/theme"
+import { ColorCircle } from "@shared/ui/color"
+import { Tile, TileProps, TileText } from "@shared/ui/tile"
+
+export interface ThemeItemProps extends TileProps <BODY ThemeItemProps>
+
+export const ThemeItem = (props: ThemeItemProps) => <BODY ThemeItem>

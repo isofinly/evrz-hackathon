@@ -1,0 +1,44 @@
+request = async ({
+  url,
+  method = 'get',
+  body,
+  file,
+//<REVIEW>По стандартам разработки - использование any стоит избегать. Вместо этого - протипизируйте дженерик</REVIEW>
+}: RequestProps): Promise<any> => {
+  const fetchUrl = SERVER_ENDPOINT + url;
+
+  const headers = {
+    ...(!file && { 'Content-Type': 'application/json' }),
+    Accept: 'application/json',
+  };
+
+  const fetchOptions = {
+    headers,
+    method,
+    ...(body && { body: JSON.stringify(body) }),
+    ...(file && { body: attachFormData(file) }),
+  };
+
+  const response = await fetch(fetchUrl, fetchOptions);
+
+  const meta = {
+    code: response.status,
+    url,
+    method,
+  };
+
+  let result = {};
+
+  if (response.headers.get('Content-Type')?.includes('application/json')) {
+    result = await response.json();
+  }
+
+  const resBody: FailResponse | SuccessResponse = {
+    payload: result,
+    ...meta,
+  };
+
+  if (response.ok) return resBody;
+
+  throw resBody;
+}

@@ -1,0 +1,1 @@
+interface RoomFormValues extends Pick<Room, 'description' | 'name'> {}

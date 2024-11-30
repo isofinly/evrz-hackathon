@@ -1,0 +1,56 @@
+CreateInvitation: React.FC<CreateInvitationProps> = (props) => {
+	const [tab, setTab] = React.useState('invite_user');
+	const { t } = useTranslation('room-invitations');
+	const roomId = useParam(routes.room.users, 'id');
+
+	const close = useUnit(createInvitationModel.popupControls.close);
+
+	const [isVertical, isMobile] = useUnit([
+		deviceInfoModel.$isTabletVertical,
+		deviceInfoModel.$isMobile,
+	]);
+
+	const fullscreenPopup = isVertical || isMobile;
+
+	const translation = t('actions', { returnObjects: true }) as Record<
+		string,
+		any
+	>;
+
+	const { title } = translation[tab];
+
+	const onChange = React.useCallback((_evt: unknown, value: string) => {
+		setTab(value);
+	}, []);
+
+	const Popup = fullscreenPopup ? FullWidthPopup : MainPopup;
+
+	return (
+		<Popup {...props} title={title} onClose={close}>
+			<TabContext value={tab}>
+				<TabList onChange={onChange} variant='fullWidth' scrollButtons='auto'>
+					<Tab
+						icon={<AddLinkIcon />}
+						iconPosition='start'
+						label={
+							fullscreenPopup ? null : translation.generate_link.title_short
+						}
+						value='generate_link'
+					/>
+					<Tab
+						icon={<PersonAddIcon />}
+						iconPosition='start'
+						label={fullscreenPopup ? null : translation.invite_user.title_short}
+						value='invite_user'
+					/>
+				</TabList>
+				<TabPanel className={styles.tab} value='generate_link'>
+					<GenerateInvitationLink roomId={roomId} />
+				</TabPanel>
+				<TabPanel className={styles.tab} value='invite_user'>
+					<InviteUserIntoRoom />
+				</TabPanel>
+			</TabContext>
+		</Popup>
+	);
+}

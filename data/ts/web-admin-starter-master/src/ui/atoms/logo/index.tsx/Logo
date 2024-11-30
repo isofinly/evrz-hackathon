@@ -1,0 +1,7 @@
+Logo: React.FC<LogoProps> = ({ to, icon }) => {
+  return (
+    <LogoContanter to={to}>
+      {icon} WEB
+    </LogoContanter>
+  )
+}

@@ -1,0 +1,23 @@
+Description: React.FC<FieldProps> = (props) => {
+	const { $form, } = props;
+
+	const { t, } = useTranslation('tasks');
+	const label = t('actions.task_form.fields.description');
+
+	const description = useUnit($form.fields.description);
+
+	return (
+		<Field
+			className={styles.field}
+			value={description.value}
+			onChange={description.onChange}
+			onBlur={description.onBlur}
+			helperText={description.errorText}
+			isValid={description.isValid}
+			name='description'
+			label={label}
+			minRows={5}
+			multiline
+		/>
+	);
+}

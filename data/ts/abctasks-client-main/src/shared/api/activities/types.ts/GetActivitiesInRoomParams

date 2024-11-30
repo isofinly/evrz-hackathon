@@ -1,0 +1,13 @@
+interface GetActivitiesInRoomParams
+
+	extends InRoomParams,
+
+		PaginationParams,
+
+		SortParams,
+
+		DatesFiltersParams {
+	readonly activistIds?: number[];
+	readonly sphereIds?: number[];
+	readonly actionIds?: number[];
+}

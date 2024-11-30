@@ -1,0 +1,6 @@
+calculateRowStartIndent = (row?: string) => {
+    if (!row) return 0
+
+    const startIndexText = row.search(/\S/g)
+    return startIndexText === -1 ? 0 : startIndexText
+}

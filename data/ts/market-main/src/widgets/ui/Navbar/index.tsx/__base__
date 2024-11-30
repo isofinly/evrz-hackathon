@@ -1,0 +1,13 @@
+import { useContext } from "react";
+import styles from "./styles.module.scss";
+import { ThemeContext } from "@/app/providers/ThemeProvider";
+import ICON from "@/shared/ui/Icons";
+import clsx from "clsx";
+import { Link } from "react-router-dom";
+import { AppRoutes } from "@/shared/routes";
+import { Theme } from "@/app/providers/ThemeProvider";
+
+
+const Navbar = (): JSX.Element => <BODY Navbar>;
+
+export default Navbar;

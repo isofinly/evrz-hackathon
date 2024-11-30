@@ -1,0 +1,13 @@
+type DefaultFieldProps = {
+  store: InputResult;
+  config: {
+    label?: string;
+    required?: boolean;
+    type?: string;
+    name?: string;
+    placeholder?: string;
+    prefix?: React.ReactNode | string;
+    suffix?: React.ReactNode | string;
+    size?: 'large' | 'small';
+  };
+};

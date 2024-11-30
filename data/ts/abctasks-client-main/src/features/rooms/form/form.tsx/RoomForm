@@ -1,0 +1,24 @@
+RoomForm: React.FC<RoomFormProps> = (props) => {
+	const { className, buttonText, $form, disabled, hideButton, ariaLabelledby, } =
+		props;
+	const submit = useUnit($form.submit);
+
+	const onSubmit = usePreventDefault(submit);
+
+	return (
+		<Stack
+			className={cn(styles.form, className)}
+			spacing={1}
+			onSubmit={onSubmit}
+			aria-labelledby={ariaLabelledby}
+			component='form'>
+			<Name $form={$form} />
+			<Description $form={$form} />
+			<Show show={!hideButton}>
+				<Button className={styles.button} disabled={disabled} type='submit'>
+					{buttonText}
+				</Button>
+			</Show>
+		</Stack>
+	);
+}

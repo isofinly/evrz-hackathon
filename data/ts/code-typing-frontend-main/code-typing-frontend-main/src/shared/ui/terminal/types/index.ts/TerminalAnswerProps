@@ -1,0 +1,5 @@
+interface TerminalAnswerProps {
+    terminalValue: string
+    setTerminalValues: Dispatch<SetStateAction<string[]>>
+    answersWithComponent: AnswersWithComponent
+}

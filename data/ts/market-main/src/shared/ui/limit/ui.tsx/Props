@@ -1,0 +1,4 @@
+type Props = {
+  setLimit: (value: number) => void;
+  limit: number;
+};

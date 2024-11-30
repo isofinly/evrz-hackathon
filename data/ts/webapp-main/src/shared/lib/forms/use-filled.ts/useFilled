@@ -1,0 +1,24 @@
+function useFilled<
+  TValues extends FieldValues,
+  TPath extends FieldPath<TValues>,
+>(form: UseFormReturn<TValues>, path: TPath): boolean {
+  const [defaultFilled] = useState(() =>
+    isNotEmpty(form.formState.defaultValues, path),
+  )
+
+  const filledRef = useRef<boolean>(defaultFilled)
+  const forceUpdate = useForceUpdate()
+
+  useWatchEffect(form, (values, info) => {
+    if (!info.name?.startsWith(path)) return
+
+    const isEmpty = isNotEmpty(values, path)
+
+    if (isEmpty !== filledRef.current) {
+      filledRef.current = isEmpty
+      forceUpdate()
+    }
+  })
+
+  return filledRef.current
+}

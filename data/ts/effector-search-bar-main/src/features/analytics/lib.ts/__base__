@@ -1,0 +1,9 @@
+import { AnalyticsEvent } from "./types";
+
+let initialized = false;
+
+
+export async function initializeAnalytics() <BODY initializeAnalytics>
+
+
+export function sendEvent({ name, payload }: AnalyticsEvent) <BODY sendEvent>

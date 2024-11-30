@@ -1,0 +1,3 @@
+interface RemoveTagProps extends CommonProps {
+	readonly tagId: number;
+}

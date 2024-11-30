@@ -1,0 +1,56 @@
+ProfileMenu: React.FC<CommonProps> = ({ className }) => {
+	// <REVIEW>переменная должна иметь явный смысл в своем названии</REVIEW>
+	const { t } = useTranslation('common');
+	const user = useUnit(sessionModel.$user);
+	const [isOpen, { toggle }] = useToggle(false);
+	const [reference, setReference] = React.useState<HTMLElement | null>(null);
+	const logout = useUnit(mutation);
+
+	if (!user) {
+		return null;
+	}
+
+	const items = t('profile_menu.items', { returnObjects: true }) as Record<
+		string,
+		string
+	>;
+
+	// <REVIEW>является констнтой и нужно вынести в constants.ts на одном уровне с контейнером</REVIEW>
+	const options: MenuOption<object>[] = [
+		{
+			label: items.settings,
+			onClick: console.log,
+			icon: <SettingsIcon />,
+		},
+		{
+			label: items.logout,
+			onClick: logout.start,
+			icon: <LogoutIcon />,
+		},
+	];
+
+	const { username, photo, email } = user;
+
+	const title = t('profile_menu.title', { username });
+
+	return (
+		<div className={className}>
+			<Tooltip title={title}>
+				<IconButton onClick={toggle} ref={setReference}>
+					<UserAvatar
+						username={username}
+						email={email}
+						photo={photo}
+						disableTooltip
+					/>
+				</IconButton>
+			</Tooltip>
+
+			<Menu anchorEl={reference} open={isOpen} onClose={toggle}>
+				{options.map((option) => (
+					<MenuItem {...option} key={option.label} />
+				))}
+			</Menu>
+		</div>
+	);
+}

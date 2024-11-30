@@ -1,0 +1,3 @@
+interface FieldProps {
+	readonly $form: Form<RoomFormValues>;
+}

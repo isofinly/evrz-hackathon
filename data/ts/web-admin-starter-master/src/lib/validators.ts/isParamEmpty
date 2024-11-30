@@ -1,0 +1,3 @@
+function isParamEmpty() {
+  return undefined;
+}

@@ -1,0 +1,3 @@
+CodeRows = (props: CodeRowsProps) => {
+    return <Grid autoRows="40px" {...props} />
+}

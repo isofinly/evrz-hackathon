@@ -1,0 +1,5 @@
+remove = async ({ roomId, userId, }: RemoveUserParams) => {
+	return instance
+		.delete(`members/${roomId}/remove/${userId}`)
+		.json<StandardResponse<boolean>>();
+}

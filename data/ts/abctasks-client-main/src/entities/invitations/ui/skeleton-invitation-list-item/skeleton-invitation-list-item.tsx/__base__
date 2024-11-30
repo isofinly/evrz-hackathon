@@ -1,0 +1,27 @@
+
+
+
+
+import {
+	Avatar,
+	ListItem,
+	ListItemAvatar,
+	ListItemProps,
+	ListItemText,
+	Skeleton,
+} from '@mui/material';
+import cn from 'classnames';
+import * as React from 'react';
+
+import { CommonProps } from '@/shared/types';
+
+import styles from './skeleton-invitation-list-item.module.css';
+
+
+export interface SkeletonInvitationListItemProps
+	extends CommonProps,
+		ListItemProps <BODY SkeletonInvitationListItemProps>
+
+export const SkeletonInvitationListItem: React.FC<
+	SkeletonInvitationListItemProps
+> = (props) => <BODY SkeletonInvitationListItem>;

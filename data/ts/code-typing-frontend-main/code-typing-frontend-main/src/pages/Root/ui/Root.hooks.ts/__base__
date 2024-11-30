@@ -1,0 +1,13 @@
+import { useState } from "react"
+import { useEffect } from "react"
+
+import { keyboardShortcuts } from "@shared/libs"
+
+{
+export type UseOpenHelpModalReturn = {
+    isOpenHelpModal: boolean
+    handleOpenHelpModal: () => void
+    handleCloseHelpModal: () => void
+}
+
+export const useOpenHelpModal = () => <BODY useOpenHelpModal>

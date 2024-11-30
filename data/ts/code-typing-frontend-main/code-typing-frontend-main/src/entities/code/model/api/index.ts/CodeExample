@@ -1,0 +1,4 @@
+interface CodeExample {
+    UUID: string
+    content: string
+}

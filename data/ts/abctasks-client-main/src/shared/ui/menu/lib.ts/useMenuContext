@@ -1,0 +1,10 @@
+useMenuContext = () => {
+	const context = React.useContext(MenuContext);
+
+	if (!context) {
+		console.log('There is no MenuContext');
+		throw new Error('There is no MenuContext');
+	}
+
+	return context;
+}

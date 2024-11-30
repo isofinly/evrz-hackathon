@@ -1,0 +1,6 @@
+useGetCodeExampleByUuid = (uuid: string) => {
+    return useQuery({
+        queryFn: async () => CodeService.fetchCodeExamplesByUUID(uuid),
+        queryKey: [queryKeysEnum.codeExample, uuid]
+    })
+}

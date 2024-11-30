@@ -1,0 +1,14 @@
+import { combine } from 'effector';
+import { InputResult, GroupResult, FieldResult } from 'effector-form';
+
+export const loginValidator = (login: string) => <BODY loginValidator>;
+
+export const passValidator = (password: string) => <BODY passValidator>;
+
+export const fieldsValidator = <T>(
+  fields: (InputResult | GroupResult | FieldResult<T>)[],
+) => <BODY fieldsValidator>;
+
+export function isObjectEmpty(obj: object) <BODY isObjectEmpty>
+
+export function isParamEmpty() <BODY isParamEmpty>

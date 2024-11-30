@@ -1,0 +1,20 @@
+RequestSecurityCode = ({ form }: PropsWithForm) => {
+  const input = form.register('requestSecurityCode', {
+    validate: (value) => {
+      if (value) return true
+      return 'Нужно заполнить'
+    },
+  })
+
+  const filled = useFilled(form, 'requestSecurityCode')
+  const error = useError(form, 'requestSecurityCode')
+
+  return (
+    <Input
+      placeholder="Защитный код"
+      filled={filled}
+      error={error?.message}
+      {...input}
+    />
+  )
+}

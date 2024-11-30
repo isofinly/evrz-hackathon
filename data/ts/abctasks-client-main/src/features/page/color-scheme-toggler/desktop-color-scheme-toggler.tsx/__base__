@@ -1,0 +1,18 @@
+
+
+
+import { ToggleButton, ToggleButtonGroup, Tooltip } from '@mui/material';
+import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { colorSchemeModel } from '@/shared/models';
+import { CommonProps } from '@/shared/types';
+
+import { ICONS_MAP, SCHEMES } from './config';
+import { useToggleColorScheme } from './lib';
+
+export interface DesktopColorSchemeTogglerProps extends CommonProps <BODY DesktopColorSchemeTogglerProps>
+
+export const DesktopColorschemeToggler: React.FC<
+	DesktopColorSchemeTogglerProps
+> = (props) => <BODY DesktopColorschemeToggler>;

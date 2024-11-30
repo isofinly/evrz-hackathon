@@ -1,0 +1,3 @@
+interface SkeletonTaskCardProps extends CommonProps {
+	readonly contentLinesCount?: number;
+}

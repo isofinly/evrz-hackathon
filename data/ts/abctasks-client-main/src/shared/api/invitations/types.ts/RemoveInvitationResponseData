@@ -1,0 +1,1 @@
+type RemoveInvitationResponseData = Promise<StandardResponse<boolean>>;

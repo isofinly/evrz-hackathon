@@ -1,0 +1,4 @@
+interface MenuProps
+	extends CommonProps,
+		React.PropsWithChildren,
+		MUIMenuProps {}

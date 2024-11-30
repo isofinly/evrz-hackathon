@@ -1,0 +1,10 @@
+import { sleep } from './sleep'
+
+interface Options<T> <BODY Options>
+
+export async function retry<T>({
+  action,
+  interval = 2000,
+  delay = 0,
+  maxAttempts = 12,
+}: Options<T>): Promise<T> <BODY retry>

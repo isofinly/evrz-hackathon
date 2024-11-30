@@ -1,0 +1,4 @@
+interface GetTasksParams extends InRoomParams, DatesFiltersParams {
+	readonly authorIds?: number[];
+	readonly tagIds?: number[];
+}

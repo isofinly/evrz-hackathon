@@ -1,0 +1,12 @@
+PurchaseButton = () => {
+  return (
+    <ButtonLink
+      to={routes.appointmentCreate}
+      query={{ fromHome: true }}
+      fluid={true}
+      onClick={closeStickyPurchaseCurtain}
+    >
+      Записаться в консульство
+    </ButtonLink>
+  )
+}

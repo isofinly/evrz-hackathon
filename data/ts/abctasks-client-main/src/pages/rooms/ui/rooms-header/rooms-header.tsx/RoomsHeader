@@ -1,0 +1,19 @@
+RoomsHeader: React.FC<CommonProps> = (props) => {
+	const { className, } = props;
+	const { t, } = useTranslation('rooms');
+	const title = t('title');
+
+	return (
+		<MainHeader
+			className={cn(styles.bar, className)}
+			slots={{
+				left: (
+					<Typography className={styles.title} variant='h5' component='h1'>
+						{title}
+					</Typography>
+				),
+				right: <OpenCreateRoom />,
+			}}
+		/>
+	);
+}

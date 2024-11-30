@@ -1,0 +1,13 @@
+MainLayout: React.FC<MainLayoutProps> = (props) => {
+	const { className, children } = props;
+
+	return (
+		<Layout
+			className={className}
+			slots={{
+				header: <MainHeader />,
+			}}>
+			{children}
+		</Layout>
+	);
+}

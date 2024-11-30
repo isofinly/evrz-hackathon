@@ -1,0 +1,4 @@
+handleInputChange: ChangeEventHandler<HTMLInputElement> = e => {
+        setCursorPosition(e.target.selectionStart)
+        onChange && onChange(e)
+    }

@@ -1,0 +1,27 @@
+function mapTypeToIcon(type: ToastType) {
+  if (type === 'error')
+    return (
+      <Icon
+        name="cross-circle"
+        className={clsx(css.icon, 'text-failure')}
+        size={32}
+      />
+    )
+
+  if (type === 'success')
+    return (
+      <Icon
+        name="checkmark-circle"
+        className={clsx(css.icon, 'text-[#21C02E]')}
+        size={32}
+      />
+    )
+
+  return (
+    <Icon
+      name="time-circle"
+      className={clsx(css.icon, 'text-blue-900')}
+      size={32}
+    />
+  )
+}

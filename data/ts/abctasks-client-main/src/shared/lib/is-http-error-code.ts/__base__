@@ -1,0 +1,7 @@
+
+
+import { HTTPError } from 'ky';
+
+export const isHttpError = (error: Error): error is HTTPError => <BODY isHttpError>;
+
+export const isHttpErrorCode = (error: any, code: number): boolean => <BODY isHttpErrorCode>;

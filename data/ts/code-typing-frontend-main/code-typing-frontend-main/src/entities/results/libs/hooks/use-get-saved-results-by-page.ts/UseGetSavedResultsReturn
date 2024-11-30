@@ -1,0 +1,3 @@
+type UseGetSavedResultsReturn = UseQueryResult<GetSavedResultsResponse> & {
+    totalPages: number
+}

@@ -1,0 +1,5 @@
+getAll = async ({
+	roomId,
+}: GetAllInvitationsRequestParams): GetAllInvitationsResponseData => {
+	return instance.get(`invitations/${roomId}`).json();
+}

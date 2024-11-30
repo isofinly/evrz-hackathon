@@ -1,0 +1,5 @@
+interface StackObjectItem {
+    name: string
+    icon: string
+    link: string
+}

@@ -1,0 +1,6 @@
+import { IResultCode, SaveResultBody } from "@entities/results"
+import { roundToFixed } from "@shared/libs"
+
+export const mapResultToApiBody = (
+    result: IResultCode & { codeExampleUUID?: string }
+): SaveResultBody => <BODY mapResultToApiBody>

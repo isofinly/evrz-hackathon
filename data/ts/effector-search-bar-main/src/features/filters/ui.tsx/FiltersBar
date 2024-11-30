@@ -1,0 +1,18 @@
+function FiltersBar() {
+  return (
+    <Container
+    {/*<REVIEW>Стили должны передаваться через ClassName</REVIEW>*/}
+      sx={{ display: "flex", justifyContent: "center", mt: 1, gap: 1 }}
+    >
+      <FilterCheckbox
+        filter={noOvernightFlightsFilter}
+        label="Без ночных перелетов"
+      />
+      <FilterCheckbox
+        filter={onlyConvenientFlightsFilter}
+        label="Только удобные"
+      />
+      <FilterCheckbox filter={onlyFastFlightsFilter} label="Только быстрые" />
+    </Container>
+  );
+}

@@ -1,0 +1,5 @@
+getUser = (): Promise<{ payload: UserSession }> =>
+  request({
+    method: 'get',
+    url: '/user/get-user',
+  })

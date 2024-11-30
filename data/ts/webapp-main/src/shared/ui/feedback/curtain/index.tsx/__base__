@@ -1,0 +1,12 @@
+
+
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+import { ReactNode, useLayoutEffect, useRef } from 'react'
+import { Icon } from '../../general/icon'
+import { Container } from '../../layout/container'
+import styles from './styles.module.css'
+
+
+interface Props <BODY Props>
+
+export const Curtain = ({ isOpen, onClose, children }: Props) => <BODY Curtain>

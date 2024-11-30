@@ -1,0 +1,3 @@
+interface ShowProps extends Required<React.PropsWithChildren> {
+	readonly show: boolean;
+}

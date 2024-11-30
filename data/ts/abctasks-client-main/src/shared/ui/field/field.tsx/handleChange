@@ -1,0 +1,3 @@
+handleChange: React.ChangeEventHandler<HTMLInputElement> = (evt) => {
+		onChange?.(evt.target.value);
+	}

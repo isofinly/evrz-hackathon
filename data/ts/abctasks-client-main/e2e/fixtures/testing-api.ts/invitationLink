@@ -1,0 +1,9 @@
+invitationLink = async (
+	ctx: BrowserContext,
+	data: InvitationParams = {}
+): Promise<string> => {
+	return request(ctx, '/invitation-link', {
+		method: 'POST',
+		data,
+	});
+}

@@ -1,0 +1,3 @@
+function formatRUB(number: number) {
+  return formatter.format(number)
+}

@@ -1,0 +1,4 @@
+interface TagListItemProps
+	extends CommonProps,
+		Tag,
+		Omit<ListItemProps, keyof Tag> {}

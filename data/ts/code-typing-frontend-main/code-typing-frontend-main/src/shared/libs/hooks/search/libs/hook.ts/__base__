@@ -1,0 +1,15 @@
+
+
+import { useMemo } from "react"
+
+export const useSearch = <Item extends object, Value>(
+    items: Item[] | undefined,
+    value: Value,
+    valueSelector: (item: Item) => Value
+): Item[] => <BODY useSearch>
+
+export const searchFunction = <Item extends object, Value>(
+    items: Item[] | undefined,
+    value: Value,
+    valueSelector: (item: Item) => Value
+): Item[] => <BODY searchFunction>

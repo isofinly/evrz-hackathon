@@ -1,0 +1,10 @@
+import { GetSavedResultsResponse, ResultParams, SaveResultBody } from "@entities/results"
+import { baseQueryV1 } from "@shared/api"
+
+class ResultsService {
+    async fetchSavedResults(params: ResultParams) <BODY ResultsService>
+
+    async saveResult(body: SaveResultBody) <BODY ResultsService>
+}
+
+export default new ResultsService()

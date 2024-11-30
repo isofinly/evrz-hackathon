@@ -1,0 +1,10 @@
+LoadingWrapper: React.FC<
+	React.PropsWithChildren<LoadingWrapperProps>
+> = (props) => {
+	const { className, isLoading, loadingIndicator, children } = props;
+	return (
+		<div className={cn({ [styles.wrapper]: isLoading }, className)}>
+			{isLoading ? loadingIndicator : children}
+		</div>
+	);
+}

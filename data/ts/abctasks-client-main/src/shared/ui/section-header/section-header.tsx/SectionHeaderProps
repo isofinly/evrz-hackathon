@@ -1,0 +1,4 @@
+interface SectionHeaderProps extends CommonProps {
+	readonly title: string;
+	readonly actions?: React.ReactElement | null;
+}

@@ -1,0 +1,17 @@
+Aside = (props: AsideProps) => {
+    const { onChangeTabName, currentTabName, children, ...restProps } = props
+
+    return (
+        // <REVIEW>в компоненту нужно передавтаь стили в виде className или style</REVIEW>
+        <Flex as="aside" direction="column" bg="asideBg" {...restProps}>
+            <AsideContext.Provider
+                value={{
+                    onChangeTabName: onChangeTabName ?? null,
+                    currentTabName: currentTabName
+                }}
+            >
+                {children}
+            </AsideContext.Provider>
+        </Flex>
+    )
+}

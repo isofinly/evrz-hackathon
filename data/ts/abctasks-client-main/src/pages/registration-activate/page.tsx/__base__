@@ -1,0 +1,26 @@
+import { Typography, Link as MUILink, CircularProgress } from '@mui/material';
+import { Link } from 'atomic-router-react';
+import { useUnit } from 'effector-react';
+import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { AuthLayout } from '@/widgets/page';
+
+import { activateAccountModel } from '@/features/auth';
+
+import { routes } from '@/shared/configs';
+import { usePageTitle } from '@/shared/lib';
+import { CommonProps } from '@/shared/types';
+import { Center, PageTitle } from '@/shared/ui';
+
+import styles from './page.module.css';
+
+const RegistrationThanksPage: React.FC<CommonProps> = (props) => <BODY RegistrationThanksPage>;
+
+const Loading: React.FC = () => <BODY Loading>;
+
+const Success: React.FC = () => <BODY Success>;
+
+const Error: React.FC = () => <BODY Error>;
+
+export default RegistrationThanksPage;

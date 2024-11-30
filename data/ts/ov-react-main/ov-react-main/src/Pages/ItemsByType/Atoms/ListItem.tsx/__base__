@@ -1,0 +1,3 @@
+import '../Styles/ListItem.css'
+export interface Item <BODY Item>
+export const ListItem = (params: Item) => <BODY ListItem>;

@@ -1,0 +1,5 @@
+interface AnyQueryFriendlyListProps<RawData, Item, Error>
+	extends BaseFriendlyListProps<Item, Error> {
+	readonly $query: Query<any, RawData, Error, any>;
+	readonly getData: (data: RawData) => Item[] | null;
+}

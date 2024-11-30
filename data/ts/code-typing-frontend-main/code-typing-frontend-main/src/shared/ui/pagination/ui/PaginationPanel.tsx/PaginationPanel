@@ -1,0 +1,3 @@
+PaginationPanel = (props: FlexProps) => {
+    return <Flex borderRadius="30px" overflow="hidden" {...props} />
+}

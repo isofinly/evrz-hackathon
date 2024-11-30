@@ -1,0 +1,29 @@
+Name: React.FC<FieldProps> = (props) => {
+	const { $form, } = props;
+	const { t, } = useTranslation('rooms');
+	const name = useUnit($form.fields.name);
+	const { errorText, } = name;
+
+	const label = t('actions.room_form.fields.name');
+	const error = t(
+		[`actions.room_form.errors.name.${errorText}`, 'common:errors.default'],
+		{
+			min_symbols_count: MIN_LENGTH,
+			max_symbols_count: MAX_SHORT_LENGTH,
+		}
+	);
+	const errorHelperText = name.isValid ? null : error;
+
+	return (
+		<Field
+			value={name.value}
+			onChange={name.onChange}
+			onBlur={name.onBlur}
+			helperText={errorHelperText}
+			isValid={name.isValid}
+			name='name'
+			label={label}
+			multiline
+		/>
+	);
+}

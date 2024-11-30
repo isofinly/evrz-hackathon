@@ -1,0 +1,7 @@
+create = async ({ roomId, ...body }: CreateTaskParams) => {
+	return instance
+		.post(`tasks/${roomId}/create`, {
+			json: body,
+		})
+		.json<StandardResponse<Task>>();
+}

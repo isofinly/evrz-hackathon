@@ -1,0 +1,18 @@
+AppStatusPage = () => {
+  const user = useUnit($$user.query)
+
+  if (user.pending) {
+    // <REVIEW>Стили которые не зависят от переменной должны передаваться в className</REVIEW>
+    return <Loader style={{ height: 'var(--tg-viewport-stable-height)' }} />
+  }
+
+  if (user.error) {
+    return <ServiceNotWorkingPage />
+  }
+
+  if (!user.data?.initialized) {
+    return <MessageRequiredPage />
+  }
+
+  return null
+}

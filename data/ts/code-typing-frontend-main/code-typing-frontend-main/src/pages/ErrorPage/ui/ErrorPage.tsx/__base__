@@ -1,0 +1,10 @@
+{
+
+
+import { Flex, Text } from "@chakra-ui/react"
+
+import { isRouteErrorResponse, useRouteError } from "react-router-dom"
+
+const ErrorPage = () => <BODY ErrorPage>
+
+export default ErrorPage

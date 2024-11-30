@@ -1,0 +1,6 @@
+interface GroupedByStatusTasks {
+	readonly ready: Task[];
+	readonly in_progress: Task[];
+	readonly needReview: Task[];
+	readonly done: Task[];
+}

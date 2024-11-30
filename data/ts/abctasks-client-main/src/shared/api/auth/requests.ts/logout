@@ -1,0 +1,3 @@
+logout = async () => {
+	return instance.delete('auth/logout').json<StandardResponse<boolean>>();
+}

@@ -1,0 +1,1 @@
+useTypingCodeHandlers = () => useContext(TypingCodeHandlersContext)

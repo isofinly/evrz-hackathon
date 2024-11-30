@@ -1,0 +1,8 @@
+
+
+
+import { Flex, FlexProps } from "@chakra-ui/react"
+
+import { PaginationItemProps } from "@shared/ui/pagination"
+
+export const PaginationItem = (props: PaginationItemProps) => <BODY PaginationItem>

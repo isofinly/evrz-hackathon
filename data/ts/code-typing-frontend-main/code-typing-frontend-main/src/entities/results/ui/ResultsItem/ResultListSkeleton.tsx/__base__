@@ -1,0 +1,3 @@
+import { Skeleton, Stack } from "@chakra-ui/react"
+
+export const ResultListSkeleton = () => <BODY ResultListSkeleton>

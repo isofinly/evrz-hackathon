@@ -1,0 +1,3 @@
+isHttpErrorCode = (error: any, code: number): boolean => {
+	return isHttpError(error) && error.response.status === code;
+}

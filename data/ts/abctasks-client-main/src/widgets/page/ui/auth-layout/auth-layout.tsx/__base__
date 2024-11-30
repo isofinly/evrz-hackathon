@@ -1,0 +1,16 @@
+
+
+
+import * as React from 'react';
+
+import { Classes, CommonProps } from '@/shared/types';
+import { Center, Layout } from '@/shared/ui';
+
+import { AuthHeader } from '../auth-header';
+
+
+export interface AuthLayoutProps extends CommonProps <BODY AuthLayoutProps>
+
+export const AuthLayout: React.FC<React.PropsWithChildren<AuthLayoutProps>> = (
+	props
+) => <BODY AuthLayout>;

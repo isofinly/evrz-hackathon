@@ -1,0 +1,14 @@
+
+
+
+import * as React from 'react';
+
+import { AdaptiveColorSchemeToggler, ChangeLanguage } from '@/features/page';
+
+import { CommonProps } from '@/shared/types';
+import { TemplateHeader } from '@/shared/ui';
+
+
+export interface AuthHeaderProps extends CommonProps <BODY AuthHeaderProps>
+
+export const AuthHeader: React.FC<AuthHeaderProps> = (props) => <BODY AuthHeader>;

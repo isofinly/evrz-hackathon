@@ -1,0 +1,3 @@
+interface RejectInvitationRequestParams {
+	readonly id: number;
+}

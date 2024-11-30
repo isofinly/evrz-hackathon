@@ -1,0 +1,6 @@
+
+import "../Styles/AboutProduct.css";
+
+import Picture_1 from "../../../Common/Pictures/AboutProduct/1.jpg";
+
+export const AboutProduct = () => <BODY AboutProduct>;

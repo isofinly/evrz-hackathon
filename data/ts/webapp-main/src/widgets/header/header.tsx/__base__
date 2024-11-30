@@ -1,0 +1,10 @@
+
+import { $$goBack } from '@features/go-back'
+import { Button, Container, Icon } from '@shared/ui'
+import { useEffect, useRef } from 'react'
+import styles from './styles.module.css'
+
+
+interface Props <BODY Props>
+
+export const Header = ({ title }: Props) => <BODY Header>

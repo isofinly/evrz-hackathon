@@ -1,0 +1,4 @@
+interface PaginationItemProps extends FlexProps {
+    isActive?: boolean
+    isDisabled?: boolean
+}

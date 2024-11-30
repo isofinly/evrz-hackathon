@@ -1,0 +1,14 @@
+withGlobalStyles =
+	(Component: React.ComponentType): React.ComponentType =>
+	() => {
+		return (
+			<CssVarsProvider theme={theme}>
+				<LocalizationProvider dateAdapter={AdapterDayjs}>
+					<StyledEngineProvider injectFirst>
+						<CssBaseline />
+						<Component />
+					</StyledEngineProvider>
+				</LocalizationProvider>
+			</CssVarsProvider>
+		);
+	}

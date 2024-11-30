@@ -1,0 +1,8 @@
+
+
+import { createPortal } from "react-dom"
+
+
+import { Flex, FlexProps } from "@chakra-ui/react"
+
+export const CustomModalBackdrop = (props: FlexProps) => <BODY CustomModalBackdrop>

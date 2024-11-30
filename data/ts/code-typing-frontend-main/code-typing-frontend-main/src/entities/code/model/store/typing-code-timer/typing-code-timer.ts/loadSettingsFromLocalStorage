@@ -1,0 +1,24 @@
+loadSettingsFromLocalStorage = (): TypingTimerSettings => {
+    const timerDirection = localStorage.getItem(storageKeysEnum.timerDirection)
+    const startSeconds = localStorage.getItem(storageKeysEnum.timerStartSeconds)
+
+    const initSettings: TypingTimerSettings = {
+        direction: "down",
+        startSeconds: counterDownVariants[1]
+    }
+
+    if (timerDirection && startSeconds) {
+        if (timerDirection === "up") {
+            initSettings.direction = "up"
+            initSettings.startSeconds = 0
+        } else if (
+            timerDirection === "down" &&
+            counterDownVariants.includes(Number(startSeconds))
+        ) {
+            initSettings.direction = "down"
+            initSettings.startSeconds = Number(startSeconds)
+        }
+    }
+
+    return initSettings
+}

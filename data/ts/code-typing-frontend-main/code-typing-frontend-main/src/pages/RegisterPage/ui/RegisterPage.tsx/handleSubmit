@@ -1,0 +1,3 @@
+handleSubmit = (values: Record<keyof RegisterCredentials, string>) => {
+        registerMutate(values)
+    }

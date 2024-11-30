@@ -1,0 +1,10 @@
+getAll = async ({
+	roomId,
+	...query
+}: GetActivitiesInRoomParams) => {
+	return instance
+		.get(`activities/${roomId}`, {
+			searchParams: new URLSearchParams(normalizeQuery(query)),
+		})
+		.json<StandardResponse<PaginationResponse<Activity>>>();
+}

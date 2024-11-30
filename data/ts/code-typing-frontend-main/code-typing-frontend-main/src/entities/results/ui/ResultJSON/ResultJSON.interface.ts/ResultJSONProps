@@ -1,0 +1,5 @@
+interface ResultJSONProps extends BoxProps {
+    jsonKey: string
+    value: ReactNode
+    details?: string
+}

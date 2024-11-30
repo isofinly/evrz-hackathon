@@ -1,0 +1,11 @@
+usePreventDefault = <
+	Element extends HTMLElement,
+	Event extends SyntheticEvent<Element>
+>(
+	fn: VoidFunction
+) => {
+	return useCallback((evt: Event) => {
+		evt.preventDefault();
+		fn();
+	}, []);
+}

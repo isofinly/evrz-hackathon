@@ -1,0 +1,3 @@
+interface InRoomParams {
+	readonly roomId: number;
+}

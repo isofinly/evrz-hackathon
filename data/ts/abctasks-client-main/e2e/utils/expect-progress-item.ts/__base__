@@ -1,0 +1,7 @@
+import { Locator, Page, expect } from '@playwright/test';
+
+export interface ExpectProgressItemParams <BODY ExpectProgressItemParams>
+
+export const expectProgressItem = async (
+	params: ExpectProgressItemParams
+): Promise<Locator> => <BODY expectProgressItem>;

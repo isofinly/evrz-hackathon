@@ -1,0 +1,18 @@
+interface BaseFriendlyListProps<
+	Item,
+	Error,
+	ListItemOmittedProps = Omit<ListItemProps, keyof Item>
+> extends CommonProps {
+	readonly skeletonsCount: number;
+	readonly ItemComponent: React.ComponentType<
+		ListItemOmittedProps & Item & CommonProps
+	>;
+	readonly SkeletonComponent: React.ComponentType<ListItemOmittedProps>;
+	readonly ErrorComponent: React.ComponentType<{ readonly error: Error }>;
+	readonly emptyText: string;
+	readonly getKey: (item: Item) => React.Key | null;
+	readonly slots?: Slots<'before' | 'after'>;
+	readonly classes?: Classes<'list'>;
+	readonly disableBorder?: boolean;
+	readonly rootProps?: Omit<PaperProps, 'className'>;
+}

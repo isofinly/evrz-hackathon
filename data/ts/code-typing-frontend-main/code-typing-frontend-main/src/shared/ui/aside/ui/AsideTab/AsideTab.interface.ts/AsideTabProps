@@ -1,0 +1,4 @@
+interface AsideTabProps extends BoxProps {
+    name?: AsideTabName
+    isActive?: boolean
+}

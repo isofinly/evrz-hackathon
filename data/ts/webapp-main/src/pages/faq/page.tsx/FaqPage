@@ -1,0 +1,10 @@
+FaqPage = () => {
+  useBackRoute(routes.home)
+
+  return (
+    <BaseTemplate>
+      <Header title="Вопросы и ответы" />
+      <Content />
+    </BaseTemplate>
+  )
+}

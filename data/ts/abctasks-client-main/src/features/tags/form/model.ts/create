@@ -1,0 +1,18 @@
+create = () => {
+	return createForm<TagFormValues>({
+		fields: {
+			name: {
+				init: 'Name',
+				rules: [createRuleFromSchema('name', schemas.name)],
+			},
+			mainColor: {
+				init: '#ffffff',
+				rules: [createRuleFromSchema('mainColor', schemas.mainColor)],
+			},
+			secondColor: {
+				init: '#000000',
+				rules: [createRuleFromSchema('secondColor', schemas.secondColor)],
+			},
+		},
+	});
+}

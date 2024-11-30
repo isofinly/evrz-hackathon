@@ -1,0 +1,4 @@
+interface FilterCheckboxProps {
+  filter: Filter;
+  label: string;
+}

@@ -1,0 +1,4 @@
+function addFilterOptions(items: string[]) {
+  const filters = items.map((item: string) => ({ text: item, value: item }));
+  return { filters };
+}

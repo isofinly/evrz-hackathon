@@ -1,0 +1,10 @@
+import { RouteInstance, RouteParams } from 'atomic-router'
+import { useUnit } from 'effector-react'
+import { useCallback, useEffect } from 'react'
+import { actionRef } from './model'
+
+
+export function useBackAction(action: () => void) <BODY useBackAction>
+
+
+export function useBackRoute(route: RouteInstance<RouteParams>) <BODY useBackRoute>

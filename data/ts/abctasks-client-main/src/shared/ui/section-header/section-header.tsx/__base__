@@ -1,0 +1,15 @@
+
+
+
+
+import { Typography } from '@mui/material';
+import cn from 'classnames';
+import * as React from 'react';
+
+import { CommonProps } from '@/shared/types';
+
+import styles from './section-header.module.css';
+
+export interface SectionHeaderProps extends CommonProps <BODY SectionHeaderProps>
+
+export const SectionHeader: React.FC<SectionHeaderProps> = (props) => <BODY SectionHeader>;

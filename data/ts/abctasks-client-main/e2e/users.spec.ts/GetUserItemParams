@@ -1,0 +1,4 @@
+interface GetUserItemParams {
+	readonly parent: Locator | Page;
+	readonly username: string;
+}

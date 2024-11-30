@@ -1,0 +1,18 @@
+useNewCodeMouseDown = () => {
+    const { handleNewText, inputRef } = useTypingCodeHandlers()
+
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            keyboardShortcuts<KeyboardEvent>({
+                "!Ctrl+Alt+Enter": () => {
+                    handleNewText()
+                    inputRef?.current?.focus()
+                }
+            })(e)
+        }
+
+        window.addEventListener("keydown", handleKeyDown)
+
+        return () => window.removeEventListener("keydown", handleKeyDown)
+    }, [handleNewText, inputRef])
+}

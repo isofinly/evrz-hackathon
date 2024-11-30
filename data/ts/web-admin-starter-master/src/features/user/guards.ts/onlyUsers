@@ -1,0 +1,3 @@
+function onlyUsers(): Guard<UserSession> {
+  return (route, context) => (context && context.role ? route : null);
+}

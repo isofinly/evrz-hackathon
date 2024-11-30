@@ -1,0 +1,8 @@
+parseBoolean = (item: string, defaultValue: boolean) => {
+    try {
+        const itemParse = JSON.parse(item)
+        return typeof itemParse === "boolean" ? itemParse : defaultValue
+    } catch (e) {
+        return defaultValue
+    }
+}

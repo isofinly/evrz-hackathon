@@ -1,0 +1,4 @@
+interface ActivityAction {
+	readonly id: number;
+	readonly name: string;
+}

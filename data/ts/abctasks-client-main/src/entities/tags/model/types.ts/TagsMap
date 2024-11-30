@@ -1,0 +1,3 @@
+interface TagsMap {
+	[id: number]: Tag | undefined;
+}

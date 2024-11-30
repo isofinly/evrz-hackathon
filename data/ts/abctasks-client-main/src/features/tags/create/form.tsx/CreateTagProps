@@ -1,0 +1,1 @@
+interface CreateTagProps extends CommonProps, BasePopupProps {}

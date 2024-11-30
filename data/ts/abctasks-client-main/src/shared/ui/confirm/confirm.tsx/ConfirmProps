@@ -1,0 +1,9 @@
+interface ConfirmProps extends BasePopupProps, CommonProps {
+	readonly title: string;
+	readonly onClose: VoidFunction;
+	readonly onAgree: VoidFunction;
+	readonly onDisagree: VoidFunction;
+	readonly agreeText: string;
+	readonly disagreeText: string;
+	readonly content: string;
+}

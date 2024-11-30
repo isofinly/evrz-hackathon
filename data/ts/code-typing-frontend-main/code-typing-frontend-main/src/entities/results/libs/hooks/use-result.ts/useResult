@@ -1,0 +1,9 @@
+useResult = () => {
+    return useUnit({
+        result: $resultStore,
+        startResult: eventStartResult,
+        endResult: eventEndResult,
+        tickResult: eventTick,
+        clearResult: eventClearResult
+    })
+}

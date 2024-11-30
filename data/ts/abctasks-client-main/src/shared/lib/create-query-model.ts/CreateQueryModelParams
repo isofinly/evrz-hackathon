@@ -1,0 +1,6 @@
+interface CreateQueryModelParams<T> {
+	readonly name: string;
+	readonly defaultValue: T;
+	readonly route?: RouteInstance<any>;
+	readonly clock?: Event<any> | Effect<any, any>;
+}

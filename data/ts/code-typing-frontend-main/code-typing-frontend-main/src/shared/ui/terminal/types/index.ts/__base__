@@ -1,0 +1,34 @@
+import {
+    ChangeEventHandler,
+    ComponentType,
+    Dispatch,
+    KeyboardEventHandler,
+    MouseEventHandler,
+    RefObject,
+    SetStateAction
+} from "react"
+
+import { InputProps } from "@chakra-ui/react"
+
+export interface TerminalInputProps extends InputProps <BODY TerminalInputProps>
+
+export interface TerminalAnswerProps <BODY TerminalAnswerProps>
+
+export type AnswersKeys = keyof typeof CommandsEnum
+
+export type AnswersWithComponent = Partial<Record<AnswersKeys, ComponentType<TerminalAnswerProps>>>
+export type AnswersWithFunction = Partial<Record<AnswersKeys, () => void>>
+
+export interface TerminalProps <BODY TerminalProps>
+
+export enum CommandsEnum {
+    info = "info",
+    devs = "devs",
+    stack = "stack",
+    repos = "repos",
+    exit = "exit",
+    clear = "clear",
+    help = "help"
+}
+
+export interface UseTerminalReturn <BODY UseTerminalReturn>

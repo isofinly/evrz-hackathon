@@ -1,0 +1,7 @@
+import { IResult } from "@entities/results"
+
+export interface GetResultStatsReturn <BODY GetResultStatsReturn>
+
+export const getResultStats = (
+    currentResult: Omit<IResult, "wordsPerMinuteString" | "charactersPerMinuteString"> | null
+): GetResultStatsReturn => <BODY getResultStats>

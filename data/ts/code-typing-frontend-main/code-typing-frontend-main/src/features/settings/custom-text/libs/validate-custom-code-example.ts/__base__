@@ -1,0 +1,6 @@
+import { CustomCodeExampleBody } from "@entities/code"
+
+export const validateCustomCodeExample = ({
+    content,
+    programmingLanguageUUID
+}: CustomCodeExampleBody): string[] => <BODY validateCustomCodeExample>

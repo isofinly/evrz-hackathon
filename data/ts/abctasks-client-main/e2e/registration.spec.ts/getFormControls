@@ -1,0 +1,15 @@
+getFormControls = (page: Page) => {
+	const email = page.getByLabel('Email');
+	const username = page.getByLabel('Username');
+	const password = page.getByLabel('Password', { exact: true });
+	const repeatPassword = page.getByLabel('Repeat password');
+	const button = page.getByRole('button', { name: 'Registration' });
+
+	return {
+		email,
+		username,
+		password,
+		repeatPassword,
+		button,
+	};
+}

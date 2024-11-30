@@ -1,0 +1,3 @@
+interface ModeItemProps extends TileProps {
+    isActive?: boolean
+}

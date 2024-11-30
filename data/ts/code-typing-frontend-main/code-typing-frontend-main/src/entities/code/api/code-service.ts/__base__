@@ -1,0 +1,28 @@
+import {
+    CodeExampleByUUID,
+    CodeExamplesByNameResponse,
+    CodeExamplesResponse,
+    CustomCodeExampleBody,
+    ProgrammingLanguageResponse
+} from "@entities/code"
+import { baseQueryV1 } from "@shared/api"
+
+
+class CodeService {
+    // <REVIEW>данная функция должна пользоваться в других местах проекта, функция должна быть экспортируемая export async fetchProgrammingLanguages() {}</REVIEW>
+    async fetchProgrammingLanguages() <BODY CodeService>
+
+    // <REVIEW>данная функция должна пользоваться в других местах проекта, функция должна быть экспортируемая export async fetchCodeExamples() {}</REVIEW>
+    async fetchCodeExamples() <BODY CodeService>
+
+    // <REVIEW>данная функция должна пользоваться в других местах проекта, функция должна быть экспортируемая export async fetchCodeExamplesByName(name: string) {}</REVIEW>
+    async fetchCodeExamplesByName(name: string) <BODY CodeService>
+
+    // <REVIEW>данная функция должна пользоваться в других местах проекта, функция должна быть экспортируемая export async fetchCodeExamplesByUUID(uuid: string) {}</REVIEW>
+    async fetchCodeExamplesByUUID(uuid: string) <BODY CodeService>
+
+    // <REVIEW>данная функция должна пользоваться в других местах проекта, функция должна быть экспортируемая export async addCustomCodeExample(body: CustomCodeExampleBody) {}</REVIEW>
+    async addCustomCodeExample(body: CustomCodeExampleBody) <BODY CodeService>
+}
+
+export default new CodeService()

@@ -1,0 +1,28 @@
+
+
+import { Appointment, AppointmentStatus } from '@shared/api/webapp/types'
+import { Container, Skeleton, Tag, TagSkeleton, Typography } from '@shared/ui'
+import plural from 'plural-ru'
+
+
+interface Props <BODY Props>
+
+export const AppointmentCard = ({ appointment }: Props) => <BODY AppointmentCard>
+
+      {appointment.status === AppointmentStatus.Done && (
+        {
+        <ul className="mt-4 -mb-4 -mx-4 border-neutral-900 border-opacity-[10%] border-t-[1px] text-sm">
+          {
+          <li className="px-4 py-3 flex justify-between gap-3">
+            {
+            <span className="opacity-60">Дата:</span>
+            <span>{appointment.date}</span>
+          </li>
+        </ul>
+      )}
+    </Container>
+  )
+}
+
+
+export const AppointmentCardSkeleton = () => <BODY AppointmentCardSkeleton>

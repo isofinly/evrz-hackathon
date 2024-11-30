@@ -1,0 +1,34 @@
+Navbar = (): JSX.Element => {
+  const { theme, themeToggle } = useContext(ThemeContext);
+
+  return (
+    <header className={styles.Header}>
+      <nav className={styles.Navbar}>
+        <Link
+          to={AppRoutes.home}
+          className={clsx(styles.Logo, {
+            [styles.LogoDark]: theme === Theme.DARK,
+          })}
+        >
+          Market
+        </Link>
+        <button
+          title={theme === Theme.DARK ? "Dark mode" : "Light mode"}
+          className={styles.ThemeButton}
+          onClick={themeToggle}
+        >
+          <ICON
+            name={
+              theme === Theme.DARK
+                ? "moon-ellipsis-solid"
+                : "sun-ellipsis-solid"
+            }
+            height="28"
+            width="59"
+            color="none"
+          />
+        </button>
+      </nav>
+    </header>
+  );
+}

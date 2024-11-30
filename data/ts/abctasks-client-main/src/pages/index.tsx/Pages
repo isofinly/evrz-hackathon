@@ -1,0 +1,3 @@
+Pages = () => {
+	return <Routes />;
+}

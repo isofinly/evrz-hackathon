@@ -1,0 +1,8 @@
+mapQuery = (query: RouteQuery) => {
+	return {
+		authorIds: query[getParams.userId],
+		tagIds: query[getParams.userId],
+		before: query[getParams.before],
+		after: query[getParams.after],
+	};
+}

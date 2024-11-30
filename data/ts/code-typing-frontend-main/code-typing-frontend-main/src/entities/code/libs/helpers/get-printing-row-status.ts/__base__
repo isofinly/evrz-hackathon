@@ -1,0 +1,7 @@
+import { PrintingRowStatus } from "@entities/code"
+
+
+export const getPrintingRowStatus = (
+    rowIndex: number,
+    currentRowIndex: number
+): PrintingRowStatus => <BODY getPrintingRowStatus>

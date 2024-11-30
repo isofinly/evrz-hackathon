@@ -1,0 +1,5 @@
+getUserItem = (params: GetUserItemParams) => {
+	const { parent, username } = params;
+
+	return parent.getByRole('listitem').filter({ hasText: username });
+}
