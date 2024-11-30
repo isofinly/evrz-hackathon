@@ -32,6 +32,13 @@ class FileReviewer:
     def __init__(self, file_path: Path, result_path: Path) -> None:
         self.file_path = file_path
         self.result_path = result_path
+        
+        try:
+            # Find the 'src' part in the path and get everything after it
+            src_index = file_path.parts.index('src')
+            self.relative_path = Path(*file_path.parts[src_index:])
+        except ValueError:
+            self.relative_path = file_path
 
         self.result_path.parent.mkdir(parents=True, exist_ok=True)
         self.result_path.touch(exist_ok=True)
@@ -72,7 +79,7 @@ class FileReviewer:
 
         for chunk in declarations.values():
             system_prompt = self.prompt_generator.generate_system_prompt()
-            user_prompt = self.prompt_generator.generate_user_prompt(chunk)
+            user_prompt = self.prompt_generator.generate_user_prompt(chunk, self.relative_path)
             context = self.prompt_generator.generate_context(str(chunk))
 
             review_json = get_response(system_prompt, user_prompt, context)
@@ -96,7 +103,7 @@ class FileReviewer:
 
 class ProjectReviewer:
     def __init__(
-        self, project_path: Path, result_path: Path, max_workers: int = 5
+        self, project_path: Path, result_path: Path, max_workers: int = 3
     ) -> None:
         self.project_path = project_path
         self.result_path = result_path
@@ -144,8 +151,11 @@ class ProjectReviewer:
 
 
 def review2() -> None:
+    # project_reviewer = ProjectReviewer(
+    #     Path("../react-2/market-main"), Path("../react-2/REVIEW/market-main")
+    # )
     project_reviewer = ProjectReviewer(
-        Path("../react-2/market-main"), Path("../react-2/REVIEW/market-main")
+        Path("../react-2/effector-search-bar-main"), Path("../react-2/REVIEW/effector-search-bar-main")
     )
     # project_reviewer = ProjectReviewer(Path("./TEST_PROJECT"), Path("./TEST_PROJECT/REVIEW"))
     project_reviewer.review()

@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from src.review.utils import (
     language_from_file_extension,
     add_line_numbers,
@@ -23,10 +25,11 @@ class PromptGenerator:
 Отвечай на русском языке.
 Ты – опытный инженер-программист и профессиональный код-ревьюер с глубокими знаниями {self.language}.
 Твоя задача – проанализировать предоставленный фрагмент кода, указать все ошибки, плохие практики, неэффективности и предложить улучшения.
+Над фрагментом кода, которой тебе предстоит проверить, находится путь к файлу относительно корня проекта.
 ОТСУТСТВИЕ ИМПОРТОВ НЕ СЧИТАЙ ОШИБКОЙ.
 Ответ должен быть строго в формате JSON, где:
 - Ключ – номер первой строки перед проблемой.
-- Значение – комментарий ревьюера с лаконичным описанием проблемы и предложением улучшения.
+- Значение – комментарий ревьюера с кратким описанием проблемы и предложением возможного ее решения.
 
 **Требования к комментариям:**
 - Используй короткие и точные формулировки.
@@ -34,8 +37,9 @@ class PromptGenerator:
 - Не повторяй комментарии для одинаковых ошибок.
 """
 
-    def generate_user_prompt(self, chunk: Chunk) -> str:
-        return add_line_numbers(str(chunk), chunk.get_start_line())
+    def generate_user_prompt(self, chunk: Chunk, relative_path: Path) -> str:
+        code = add_line_numbers(str(chunk), chunk.get_start_line())
+        return f"{relative_path}\n{code}"
 
     def generate_context(self, code: str) -> dict[str, list[str]]:
         """
@@ -44,7 +48,7 @@ class PromptGenerator:
         - "assistant" -- list of previous assistant messages
         """
 
-        examples = self.data.get_review(code, extension=self.file_extension)
+        examples = self.data.get_review(code, extension=self.file_extension, n_results=7)
         # print(examples)
 
         return {

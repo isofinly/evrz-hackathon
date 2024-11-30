@@ -27,7 +27,7 @@ def get_response(
         "model": "mistral-nemo-instruct-2407",
         "messages": messages,
         "max_tokens": 1024,
-        "temperature": 0.1,
+        "temperature": 0.3,
     }
 
     response = requests.post(URL, headers=headers, json=data)
