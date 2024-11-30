@@ -1,0 +1,1 @@
+{"start_line": 19, "code": "getAll = async ({\n\n\troomId,\n\n}: GetAllInvitationsRequestParams): GetAllInvitationsResponseData => {\n\treturn instance.get(`invitations/${roomId}`).json();\n}"}

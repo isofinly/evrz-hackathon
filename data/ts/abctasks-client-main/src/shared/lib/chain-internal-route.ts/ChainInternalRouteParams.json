@@ -1,0 +1,1 @@
+{"start_line": 14, "code": "interface ChainInternalRouteParams extends ChainedParams {\n\treadonly isInternal: Store<boolean>;\n}"}

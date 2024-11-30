@@ -1,0 +1,1 @@
+{"start_line": 22, "code": "type TaskStatus = Static<typeof taskStatus>;\n"}

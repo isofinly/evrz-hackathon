@@ -1,0 +1,1 @@
+{"start_line": 29, "code": "interface TerminalProps {\n    onClose: () => void\n    isOpen: boolean\n}"}

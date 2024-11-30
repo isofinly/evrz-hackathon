@@ -1,0 +1,1 @@
+{"start_line": 2, "code": "interface ResultsItemProps extends ResultFromApi {\n    resultIndex: number\n}"}

@@ -1,0 +1,1 @@
+{"start_line": 7, "code": "type Props = {\n\n  query: string;\n\n  setQuery: (value: string) => void;\n\n};\n"}

@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export { App } from './app'\n\nexport { appStarted } from './model'\n"}

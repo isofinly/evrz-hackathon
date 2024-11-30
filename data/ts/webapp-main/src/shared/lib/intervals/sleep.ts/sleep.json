@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "function sleep(ms: number): Promise<void> {\n  return new Promise((resolve) => {\n    setTimeout(resolve, ms)\n  })\n}"}

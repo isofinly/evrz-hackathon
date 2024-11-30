@@ -1,7 +1,0 @@
-
-import React from "react";
-import { Checkbox, FormControlLabel } from "@mui/material";
-import { FilterCheckboxProps } from "./types";
-import { useStore } from "effector-react";
-
-export function FilterCheckbox({ label, filter }: FilterCheckboxProps) <BODY FilterCheckbox>

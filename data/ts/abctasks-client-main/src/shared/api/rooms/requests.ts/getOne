@@ -1,3 +1,0 @@
-getOne = async ({ roomId, }: InRoomParams) => {
-	return instance.get(`rooms/${roomId}`).json<StandardResponse<Room>>();
-}

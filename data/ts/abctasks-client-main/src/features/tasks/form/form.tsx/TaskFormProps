@@ -1,6 +1,0 @@
-interface TaskFormProps extends CommonProps {
-	readonly buttonText: string;
-	readonly $form: Form<TaskFormValues>;
-	readonly buttonDisabled?: boolean;
-	readonly hideButton?: boolean;
-}

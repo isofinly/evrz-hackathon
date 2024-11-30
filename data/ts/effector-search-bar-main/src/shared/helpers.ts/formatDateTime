@@ -1,3 +1,0 @@
-function formatDateTime(date: Date | number) {
-  return format(date, 'yyyy.MM.dd HH:mm');
-}

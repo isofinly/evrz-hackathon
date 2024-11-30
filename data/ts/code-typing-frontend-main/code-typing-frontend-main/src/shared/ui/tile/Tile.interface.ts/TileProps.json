@@ -1,0 +1,1 @@
+{"start_line": 2, "code": "interface TileProps extends FlexProps {\n    isActive?: boolean\n}"}

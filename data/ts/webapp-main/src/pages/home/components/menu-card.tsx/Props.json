@@ -1,0 +1,1 @@
+{"start_line": 24, "code": "interface Props {\n  className?: string\n  text: string\n  image: string\n  skeleton?: boolean\n  action: Action\n}"}

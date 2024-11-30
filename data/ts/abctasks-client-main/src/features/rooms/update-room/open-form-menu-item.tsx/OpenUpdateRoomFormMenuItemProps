@@ -1,4 +1,0 @@
-type OpenUpdateRoomFormMenuItemProps = CommonProps &
-	Omit<MenuItemProps<object>, 'to' | 'params' | 'query' | 'label'> & {
-		readonly roomId: number;
-	};

@@ -1,8 +1,0 @@
-function App(): JSX.Element {
-	return (
-		<>
-			<Navbar />
-			<Routing />
-		</>
-	)
-}

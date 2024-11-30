@@ -1,0 +1,1 @@
+{"start_line": 1, "code": "interface Item {\n  picture: string;\n  name: string;\n  price: string;\n  salePrice: string;\n  sale: boolean;\n}"}

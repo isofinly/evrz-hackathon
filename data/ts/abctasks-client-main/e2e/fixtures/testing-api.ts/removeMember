@@ -1,9 +1,0 @@
-removeMember = async (
-	ctx: BrowserContext,
-	data: MemberParams = {}
-): Promise<boolean> => {
-	return request(ctx, '/member', {
-		method: 'PUT',
-		data,
-	});
-}

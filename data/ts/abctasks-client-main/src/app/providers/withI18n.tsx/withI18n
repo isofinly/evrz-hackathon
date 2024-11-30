@@ -1,9 +1,0 @@
-withI18n =
-	(Component: React.ComponentType): React.ComponentType =>
-	() => {
-		return (
-			<I18nextProvider i18n={i18n}>
-				<Component />
-			</I18nextProvider>
-		);
-	}

@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { createSnackbarStackModel } from 'effector-mui-snacks';\n\n\nexport const notifications = createSnackbarStackModel({\n\n\tmaxCount: 3,\n\n\ttimeout: 3000,\n\n\tvariant: 'filled',\n\n\tclosable: true,\n\n\tposition: {\n\n\t\thorizontal: 'left',\n\n\t\tvertical: 'bottom',\n\n\t},\n\n});\n\n\nexport const { $items, create, } = notifications;\n"}

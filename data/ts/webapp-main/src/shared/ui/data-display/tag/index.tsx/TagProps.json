@@ -1,0 +1,1 @@
+{"start_line": 12, "code": "interface TagProps {\n  className?: string\n  color?: TagColor\n  icon?: IconName\n  children: ReactNode\n}"}

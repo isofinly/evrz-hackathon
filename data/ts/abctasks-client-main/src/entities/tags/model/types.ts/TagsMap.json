@@ -1,0 +1,1 @@
+{"start_line": 2, "code": "interface TagsMap {\n\t[id: number]: Tag | undefined;\n}"}

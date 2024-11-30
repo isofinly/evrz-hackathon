@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "// eslint-disable-next-line import/no-mutable-exports\n\nexport const base = import.meta.env.VITE_API_HOST ?? '';\n\n\nexport const api = `${base}/api`;\n"}

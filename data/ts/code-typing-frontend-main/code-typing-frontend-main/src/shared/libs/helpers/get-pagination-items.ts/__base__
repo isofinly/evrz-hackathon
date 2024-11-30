@@ -1,6 +1,0 @@
-
-export const getPaginationItems = (
-    totalPages: number,
-    page: number,
-    size: number = 5
-): number[] => <BODY getPaginationItems>

@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import  Navbar  from '@/widgets/ui/Navbar';\n\nimport Routing from '@/pages';\n\nimport \"./styles/index.scss\";\n\n\n\nfunction App(): JSX.Element <BODY App>\nexport default App;\n"}

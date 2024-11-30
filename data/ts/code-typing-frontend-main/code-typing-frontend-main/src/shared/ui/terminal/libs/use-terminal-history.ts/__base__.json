@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { Dispatch, SetStateAction, useEffect, useState } from \"react\"\n\n\nimport { CommandsEnum } from \"@shared/ui/terminal/types\"\n\n\nexport const useTerminalHistory = (\n\n    terminalCommands: string[],\n\n    onChangeValue: Dispatch<SetStateAction<string>>\n\n) => <BODY useTerminalHistory>"}

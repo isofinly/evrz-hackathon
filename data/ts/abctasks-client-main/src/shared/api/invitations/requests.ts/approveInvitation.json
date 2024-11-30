@@ -1,0 +1,1 @@
+{"start_line": 46, "code": "approveInvitation = async ({\n\n\tid,\n\n}: ApproveInvitationRequestParams): ApproveInvitationResponseData => {\n\treturn instance\n\t\t.put(`invitations/invite/approve`, {\n\t\t\tjson: { id, },\n\t\t})\n\t\t.json();\n}"}

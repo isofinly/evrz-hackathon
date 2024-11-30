@@ -1,0 +1,1 @@
+{"start_line": 6, "code": "interface TaskFormValues\n\n\textends Pick<Task, 'title' | 'description' | 'status'> {\n\treadonly tagIds: number[];\n}"}

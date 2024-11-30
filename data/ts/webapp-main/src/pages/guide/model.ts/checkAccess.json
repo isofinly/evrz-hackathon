@@ -1,0 +1,1 @@
+{"start_line": 14, "code": "function checkAccess(appointments: Appointment[]) {\n  return appointments.some((appointment) => {\n    return appointment.status !== AppointmentStatus.NotPayed\n  })\n}"}

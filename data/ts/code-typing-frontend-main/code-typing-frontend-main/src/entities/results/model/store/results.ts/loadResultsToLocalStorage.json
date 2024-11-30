@@ -1,0 +1,1 @@
+{"start_line": 7, "code": "loadResultsToLocalStorage = (state: TResultStore | null) => {\n    if (!state) return\n\n    localStorage.setItem(storageKeysEnum.results, JSON.stringify(state))\n}"}

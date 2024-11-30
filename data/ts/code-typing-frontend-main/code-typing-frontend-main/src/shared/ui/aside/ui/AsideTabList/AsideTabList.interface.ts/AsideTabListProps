@@ -1,3 +1,0 @@
-interface AsideTabListProps extends BoxProps {
-    children: ReactNode
-}

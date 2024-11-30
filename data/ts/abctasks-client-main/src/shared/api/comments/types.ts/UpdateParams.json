@@ -1,0 +1,1 @@
+{"start_line": 30, "code": "interface UpdateParams extends BaseCommentParams {\n\treadonly id: number;\n\treadonly content: string;\n}"}

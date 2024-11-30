@@ -1,4 +1,0 @@
-interface SortParams {
-	readonly by?: string | null;
-	readonly type?: SortDirection | null;
-}

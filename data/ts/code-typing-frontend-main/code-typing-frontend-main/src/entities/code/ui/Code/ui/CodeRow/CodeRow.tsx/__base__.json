@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { Flex } from \"@chakra-ui/react\"\n\n\nimport { CodeRowProps } from \"@entities/code\"\n\n\nconst CodeRow = (props: CodeRowProps) => <BODY CodeRow>\n\nexport default CodeRow\n"}

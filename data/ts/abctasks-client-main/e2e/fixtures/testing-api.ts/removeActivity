@@ -1,9 +1,0 @@
-removeActivity = async (
-	ctx: BrowserContext,
-	data: ActivityParams = {}
-): Promise<boolean> => {
-	return request(ctx, '/activity', {
-		method: 'PUT',
-		data,
-	});
-}

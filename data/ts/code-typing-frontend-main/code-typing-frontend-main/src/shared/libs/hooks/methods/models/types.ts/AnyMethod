@@ -1,1 +1,0 @@
-type AnyMethod = (state: any, payload?: any) => any

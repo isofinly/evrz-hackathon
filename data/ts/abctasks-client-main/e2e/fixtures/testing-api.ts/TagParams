@@ -1,7 +1,0 @@
-interface TagParams {
-	readonly id?: number;
-	readonly room?: RoomParams;
-	readonly name?: string;
-	readonly mainColor?: string;
-	readonly secondColor?: string;
-}

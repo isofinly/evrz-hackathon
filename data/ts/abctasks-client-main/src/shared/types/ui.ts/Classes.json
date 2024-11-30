@@ -1,0 +1,1 @@
+{"start_line": 34, "code": "type Classes<T extends string> = {\n\n\treadonly [K in T]?: string;\n\n};\n"}

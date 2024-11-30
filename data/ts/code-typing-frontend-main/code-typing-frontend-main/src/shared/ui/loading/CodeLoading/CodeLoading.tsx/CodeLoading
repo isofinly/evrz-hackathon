@@ -1,3 +1,0 @@
-CodeLoading: FC<CodeLoadingProps> = props => {
-    return <Flex w="100%" justify="space-between" {...props} />
-}

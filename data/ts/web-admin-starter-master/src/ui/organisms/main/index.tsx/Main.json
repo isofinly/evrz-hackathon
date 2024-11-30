@@ -1,0 +1,1 @@
+{"start_line": 8, "code": "Main: React.FC<MainProps> = ({ children }) => (\n\n  <MainContainer>{children}</MainContainer>\n\n)"}

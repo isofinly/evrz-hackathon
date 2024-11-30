@@ -1,4 +1,0 @@
-type ThemeContextProps = {
-  theme: Theme;
-  themeToggle: () => void;
-};

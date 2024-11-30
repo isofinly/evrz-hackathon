@@ -1,3 +1,0 @@
-import { Flex, Skeleton } from "@chakra-ui/react"
-
-export const GithubUserSkeleton = () => <BODY GithubUserSkeleton>

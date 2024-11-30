@@ -1,3 +1,0 @@
-getAll = async (params: InRoomParams) => {
-	return instance.get(`tags/${params.roomId}`).json<StandardResponse<Tag[]>>();
-}

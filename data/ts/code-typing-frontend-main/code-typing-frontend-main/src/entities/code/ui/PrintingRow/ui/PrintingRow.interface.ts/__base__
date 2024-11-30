@@ -1,9 +1,0 @@
-import { ReactElement, RefObject } from "react"
-
-import { TextProps } from "@chakra-ui/react"
-
-export type PrintingRowStatus = "default" | "active" | "printed"
-
-export interface PrintingRowProps <BODY PrintingRowProps>
-
-export interface UsePrintingRowScrollOptions <BODY UsePrintingRowScrollOptions>

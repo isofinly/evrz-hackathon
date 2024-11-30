@@ -1,3 +1,0 @@
-type Mocks = {
-  [key: string]: (body: string) => object;
-};

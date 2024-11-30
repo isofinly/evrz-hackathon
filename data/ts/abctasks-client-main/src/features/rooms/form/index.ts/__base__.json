@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export * as roomFormModel from './model';\n\nexport { RoomForm, type RoomFormProps } from './form';\n\nexport { SkeletonRoomForm, type SkeletonRoomFormProps } from './skeleton';\n"}

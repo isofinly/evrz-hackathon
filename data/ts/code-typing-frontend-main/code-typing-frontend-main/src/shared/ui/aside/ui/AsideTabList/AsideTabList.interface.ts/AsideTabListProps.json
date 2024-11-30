@@ -1,0 +1,1 @@
+{"start_line": 4, "code": "interface AsideTabListProps extends BoxProps {\n    children: ReactNode\n}"}

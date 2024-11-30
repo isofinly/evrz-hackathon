@@ -1,7 +1,0 @@
-type Props = {
-  name: string;
-  color?: string;
-  class?: string;
-  height?: string;
-  width?: string;
-};

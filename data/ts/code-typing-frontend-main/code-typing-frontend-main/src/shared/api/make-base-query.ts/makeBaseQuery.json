@@ -1,0 +1,1 @@
+{"start_line": 2, "code": "makeBaseQuery =\n\n    (instance: AxiosInstance) =>\n\n    <R>(config: AxiosRequestConfig | string) => {\n        if (typeof config === \"string\")\n            return instance<R>({\n                url: config\n            })\n        return instance<R>(config)\n    }"}

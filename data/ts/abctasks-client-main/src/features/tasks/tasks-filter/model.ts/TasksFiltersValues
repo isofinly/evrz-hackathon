@@ -1,1 +1,0 @@
-interface TasksFiltersValues extends Required<Omit<GetTasksParams, 'roomId'>> {}

@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { Flex, Image, Link, Text } from \"@chakra-ui/react\"\n\n\nimport { GithubUserSkeleton, useGetGithubUser } from \"@shared/ui/github\"\n\nimport { GithubUserItemProps } from \"@shared/ui/github/types\"\n\nimport { motion } from \"framer-motion\"\n\n\nexport const GithubUserItem = (props: GithubUserItemProps) => <BODY GithubUserItem>"}

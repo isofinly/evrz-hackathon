@@ -1,3 +1,0 @@
-interface AuthLayoutProps extends CommonProps {
-	readonly classes?: Classes<'header' | 'center'>;
-}

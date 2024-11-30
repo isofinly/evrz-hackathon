@@ -1,0 +1,1 @@
+{"start_line": 31, "code": "invite = async ({\n\n\troomId,\n\n\tuserId,\n\n}: InviteUserRequestParams): InviteUserResponseData => {\n\treturn instance\n\t\t.post(`invitations/invite/${roomId}`, { json: { userId, }, })\n\t\t.json();\n}"}

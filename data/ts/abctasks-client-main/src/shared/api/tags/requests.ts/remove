@@ -1,5 +1,0 @@
-remove = async ({ roomId, id, }: RemoveTagParams) => {
-	return instance
-		.delete(`tags/${roomId}/${id}/remove`)
-		.json<StandardResponse<boolean>>();
-}

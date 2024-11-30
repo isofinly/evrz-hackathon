@@ -1,8 +1,0 @@
-interface TemplateInvitationListItemProps
-	extends CommonProps,
-		Omit<ListItemProps, 'slots'> {
-	readonly slots: Required<Slots<'userAvatar'>> &
-		Slots<'actions' | 'userAvatar'>;
-	readonly inviterName: string;
-	readonly username: string;
-}

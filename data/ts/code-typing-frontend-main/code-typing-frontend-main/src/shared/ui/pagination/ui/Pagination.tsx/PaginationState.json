@@ -1,0 +1,1 @@
+{"start_line": 10, "code": "interface PaginationState {\n    page: number\n    onChangePage: (page: number) => void\n    totalPages: number\n    isDisabled?: boolean\n}"}

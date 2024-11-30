@@ -1,0 +1,1 @@
+{"start_line": 6, "code": "CodeIndex = ({ index }: CodeIndexProps) => {\n    return (\n        <Flex align=\"center\">\n            <Text color={\"main.300\"} fontWeight=\"bold\" fontSize=\"20px\">\n                {index}\n            </Text>\n        </Flex>\n    )\n}"}

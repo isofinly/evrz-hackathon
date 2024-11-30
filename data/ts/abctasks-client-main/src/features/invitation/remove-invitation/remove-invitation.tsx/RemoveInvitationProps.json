@@ -1,0 +1,1 @@
+{"start_line": 16, "code": "interface RemoveInvitationProps extends CommonProps {\n\treadonly id: number;\n}"}

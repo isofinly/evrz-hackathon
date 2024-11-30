@@ -1,7 +1,0 @@
-type ModalProps = {
-  isVisible: boolean;
-  hideModal: () => void;
-  setActiveProduct: (product: Product | null) => void;
-  product: Product | null;
-  products: Product[];
-};

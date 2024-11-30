@@ -1,4 +1,0 @@
-SettingsIcon = (props: IconProps) => {
-    // <REVIEW>в компоненту нужно передавтаь стили в виде className или style</REVIEW>
-    return <Image w="20px" h="20px" src={settingsIcon} alt="terminal icon" {...props} />
-}

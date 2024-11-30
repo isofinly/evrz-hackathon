@@ -1,6 +1,0 @@
-interface ExpectAlertParams {
-	readonly parent: Page | Locator;
-	readonly type: Type;
-	readonly message: string;
-	readonly title?: string;
-}

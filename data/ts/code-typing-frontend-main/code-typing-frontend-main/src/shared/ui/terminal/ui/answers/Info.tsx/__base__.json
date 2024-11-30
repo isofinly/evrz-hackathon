@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { Flex, Heading, Text } from \"@chakra-ui/react\"\n\n\nimport { sections } from \"./Info.constants\"\n\nimport { motion } from \"framer-motion\"\n\n\nexport const Info = () => <BODY Info>"}

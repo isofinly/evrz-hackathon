@@ -1,0 +1,1 @@
+{"start_line": 6, "code": "CodeContainer = (props: CodeContainerProps) => {\n    return <Grid templateColumns=\"80px 1fr\" gap=\"10px\" overflow=\"hidden\" {...props} />\n}"}

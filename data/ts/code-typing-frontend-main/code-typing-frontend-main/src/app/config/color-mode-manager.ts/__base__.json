@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "// <REVIEW></REVIEW>\n\nimport { ColorModeProviderProps } from \"@chakra-ui/system\"\n\n\nexport const colorModeManager: ColorModeProviderProps[\"colorModeManager\"] = {\n\n    get() {\n\n        return \"dark\"\n\n    },\n\n    set() {\n\n        return \"dark\"\n\n    },\n\n    type: \"localStorage\"\n\n}\n"}

@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { Text } from \"@chakra-ui/react\"\n\n\nimport { TimerItemProps } from \"@shared/ui/timer\"\n\n\nexport const TimerItem = ({ time, postfix, required = true }: TimerItemProps) => <BODY TimerItem>"}

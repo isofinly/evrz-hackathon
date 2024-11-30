@@ -1,1 +1,0 @@
-type Filter = ReturnType<typeof createFilter>;

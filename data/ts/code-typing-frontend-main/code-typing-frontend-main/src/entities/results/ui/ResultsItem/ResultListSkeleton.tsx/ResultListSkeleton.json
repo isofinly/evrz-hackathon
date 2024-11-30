@@ -1,0 +1,1 @@
+{"start_line": 2, "code": "ResultListSkeleton = () => {\n    return (\n        <Stack spacing={5}>\n            {Array.from({ length: 5 }).map((_, index) => (\n                <Skeleton w=\"100%\" h=\"2.5em\" borderRadius=\"md\" key={index} />\n            ))}\n        </Stack>\n    )\n}"}

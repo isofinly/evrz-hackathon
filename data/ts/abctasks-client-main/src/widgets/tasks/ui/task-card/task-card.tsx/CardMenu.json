@@ -1,0 +1,1 @@
+{"start_line": 71, "code": "CardMenu: React.FC<CardMenuProps> = (props) => {\n\treturn (\n\t\t<EditMenu>\n\t\t\t<OpenUpdateTaskFormMenuItem {...props} />\n\t\t\t<RemoveTaskMenuItem {...props} />\n\t\t</EditMenu>\n\t);\n}"}

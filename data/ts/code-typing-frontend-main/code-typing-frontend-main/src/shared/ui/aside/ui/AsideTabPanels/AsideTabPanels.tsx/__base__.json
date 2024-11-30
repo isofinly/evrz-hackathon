@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { Box } from \"@chakra-ui/react\"\n\n\nimport { AsideTabPanelsProps, useAside } from \"@shared/ui/aside\"\n\n\nexport const AsideTabPanels = (props: AsideTabPanelsProps) => <BODY AsideTabPanels>"}

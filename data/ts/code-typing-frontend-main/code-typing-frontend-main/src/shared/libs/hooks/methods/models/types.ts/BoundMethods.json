@@ -1,0 +1,1 @@
+{"start_line": 36, "code": "type BoundMethods<Methods extends AnyMethodsMap<any>> = {\n\n    [Key in keyof Methods]: BoundMethod<Methods[Key]>\n\n}\n"}

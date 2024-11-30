@@ -1,4 +1,0 @@
-interface GetInvitationParams {
-	readonly parent: Locator | Page;
-	readonly username: string;
-}

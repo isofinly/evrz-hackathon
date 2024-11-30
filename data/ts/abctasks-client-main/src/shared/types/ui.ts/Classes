@@ -1,3 +1,0 @@
-type Classes<T extends string> = {
-	readonly [K in T]?: string;
-};

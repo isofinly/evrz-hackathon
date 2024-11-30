@@ -1,0 +1,1 @@
+{"start_line": 12, "code": "interface TerminalInputProps extends InputProps {\n    value: string\n    isError?: boolean\n    isSuccess?: boolean\n}"}

@@ -1,0 +1,1 @@
+{"start_line": 9, "code": "type Action =\n\n  | {\n\n      type: 'link'\n\n      to: RouteInstance<RouteParams>\n\n    }\n\n  | {\n\n      type: 'external-link'\n\n      href: string\n\n    }\n\n  | {\n\n      type: 'button'\n\n      onClick: () => void\n\n    }\n"}

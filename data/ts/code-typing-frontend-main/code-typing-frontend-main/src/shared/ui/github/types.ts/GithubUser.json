@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "interface GithubUser {\n    avatar_url: string\n    html_url: string\n    login: string\n    bio: string\n}"}

@@ -1,3 +1,0 @@
-TileImage = (props: TileImageProps) => {
-    return <Image w="25px" {...props} />
-}

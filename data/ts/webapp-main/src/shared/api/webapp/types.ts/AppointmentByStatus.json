@@ -1,0 +1,1 @@
+{"start_line": 41, "code": "type AppointmentByStatus =\n\n  | { status: AppointmentStatus.Done; date: string; doneAt: string }\n\n  | { status: AppointmentStatus.NotPayed }\n\n  | { status: AppointmentStatus.Refunded }\n\n  | {\n\n      status: AppointmentStatus.InQueue\n\n      queueNumber: number\n\n      daysRemaining: number\n\n    }\n"}

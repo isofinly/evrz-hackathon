@@ -1,0 +1,1 @@
+{"start_line": 20, "code": "onClick = () => {\n\t\t\topen(taskId);\n\t\t}"}

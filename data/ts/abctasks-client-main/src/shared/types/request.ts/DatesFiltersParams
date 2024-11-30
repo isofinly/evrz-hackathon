@@ -1,4 +1,0 @@
-interface DatesFiltersParams {
-	readonly before?: string | null;
-	readonly after?: string | null;
-}

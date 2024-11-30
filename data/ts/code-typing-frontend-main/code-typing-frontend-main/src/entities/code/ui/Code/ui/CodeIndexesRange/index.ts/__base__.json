@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export { default as CodeIndexesRange } from \"./CodeIndexesRange.tsx\"\n\nexport * from \"./CodeIndexesRange.interface.ts\"\n"}

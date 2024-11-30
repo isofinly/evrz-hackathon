@@ -1,9 +1,0 @@
-removeUser = async (
-	ctx: BrowserContext,
-	data: UserParams = {}
-): Promise<boolean> => {
-	return request(ctx, '/user', {
-		method: 'PUT',
-		data,
-	});
-}

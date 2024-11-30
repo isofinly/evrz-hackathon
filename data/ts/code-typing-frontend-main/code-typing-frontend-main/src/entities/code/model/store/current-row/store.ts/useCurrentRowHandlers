@@ -1,7 +1,0 @@
-useCurrentRowHandlers = () =>
-    useUnit({
-        nextRow: eventNextRow,
-        setTypingValue: eventSetTypingValue,
-        setValueWithTab: eventSetValueWithTab,
-        resetState: eventResetState
-    })

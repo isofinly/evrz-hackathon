@@ -1,5 +1,0 @@
-import { Button } from "@chakra-ui/react"
-
-import { DetailsKeyProps, ResultKey } from "@entities/results"
-
-export const DetailsKey = (props: DetailsKeyProps) => <BODY DetailsKey>

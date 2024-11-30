@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { ReactElement } from \"react\"\n\n\nimport { ProgrammingLanguage } from \"@entities/code\"\n\n\nexport interface ProgrammingLanguagesListProps <BODY ProgrammingLanguagesListProps>\n\nexport interface RenderProgrammingLanguageProps extends ProgrammingLanguage <BODY RenderProgrammingLanguageProps>"}

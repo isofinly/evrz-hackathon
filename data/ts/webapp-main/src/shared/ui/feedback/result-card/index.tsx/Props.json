@@ -1,0 +1,1 @@
+{"start_line": 10, "code": "interface Props {\n  title: ReactNode\n  description: ReactNode[]\n  actions?: ReactNode\n}"}

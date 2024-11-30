@@ -1,0 +1,1 @@
+{"start_line": 18, "code": "interface DetailsKeyItem {\n    name: ResultDetails\n    jsonKey: string\n}"}

@@ -1,7 +1,0 @@
-login = async (body: LoginParams) => {
-	return instance
-		.post('auth/login', {
-			json: body,
-		})
-		.json<StandardResponse<AuthResponse>>();
-}

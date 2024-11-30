@@ -1,0 +1,1 @@
+{"start_line": 2, "code": "type TimerStatus = \"stopped\" | \"started\"\n"}

@@ -1,9 +1,0 @@
-import * as React from 'react';
-
-export interface MenuContextValue <BODY MenuContextValue>
-
-const MenuContext = React.createContext<MenuContextValue | null>(null);
-
-export const MenuProvider = MenuContext.Provider;
-
-export const useMenuContext = () => <BODY useMenuContext>;

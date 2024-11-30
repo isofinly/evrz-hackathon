@@ -1,0 +1,1 @@
+{"start_line": 10, "code": "SkeletonRoomForm: React.FC<SkeletonRoomFormProps> = (props) => {\n\tconst { className, } = props;\n\n\treturn (\n\t\t<Stack className={cn(styles.form, className)} spacing={1}>\n\t\t\t<Skeleton height='3em' />\n\t\t\t<Skeleton height='3em' />\n\t\t\t<Skeleton height='3em' />\n\t\t</Stack>\n\t);\n}"}

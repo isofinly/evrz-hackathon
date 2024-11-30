@@ -1,5 +1,0 @@
-interface CreateTaskParams
-
-	extends Pick<Task, 'roomId' | 'title' | 'status' | 'description'> {
-	readonly tagIds: number[];
-}

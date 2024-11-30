@@ -1,0 +1,1 @@
+{"start_line": 11, "code": "type TypingTimerSettings = {\n\n    direction: TimerDirection\n\n    startSeconds: number\n\n}\n"}

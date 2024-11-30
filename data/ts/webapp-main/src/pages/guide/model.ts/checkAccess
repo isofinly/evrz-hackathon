@@ -1,5 +1,0 @@
-function checkAccess(appointments: Appointment[]) {
-  return appointments.some((appointment) => {
-    return appointment.status !== AppointmentStatus.NotPayed
-  })
-}

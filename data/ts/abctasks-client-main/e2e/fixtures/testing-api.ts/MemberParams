@@ -1,5 +1,0 @@
-interface MemberParams {
-	readonly room?: RoomParams;
-	readonly user?: UserParams;
-	readonly status?: 'activated' | 'removed';
-}

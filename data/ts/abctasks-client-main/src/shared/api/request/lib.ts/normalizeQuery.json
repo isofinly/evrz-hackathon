@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "normalizeQuery = (\n\n\tobject: Record<string, any>\n\n): Record<string, string> => {\n\tconst entries = Object.entries(object);\n\n\treturn entries.reduce((object, [key, value]) => {\n\t\tif (value === undefined || value === null) {\n\t\t\treturn object;\n\t\t}\n\n\t\tobject[key] = value;\n\t\treturn object;\n\t}, {} as Record<string, string>);\n}"}

@@ -1,5 +1,0 @@
-interface AnalyticsErrorPayload {
-  requestName: string
-  params: Record<string, string>
-  error: Error
-}

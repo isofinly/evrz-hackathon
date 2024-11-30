@@ -1,7 +1,0 @@
-getInvitationCard = (parent: Page | Locator): Locator => {
-	/**
-	 * @todo
-	 * Add more safe selector
-	 */
-	return parent.locator('main > div > div');
-}

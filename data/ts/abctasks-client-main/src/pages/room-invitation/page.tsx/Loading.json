@@ -1,0 +1,1 @@
+{"start_line": 39, "code": "Loading: React.FC = () => {\n\tconst loaded = useUnit(invitationViaTokenModel.$loaded);\n\n\tif (loaded) {\n\t\treturn null;\n\t}\n\n\treturn <SkeletonInvitationCard />;\n}"}

@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export * from \"./LinkCode.tsx\"\n\nexport * from \"./LinkCode.interface.ts\"\n"}

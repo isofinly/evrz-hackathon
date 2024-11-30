@@ -1,0 +1,1 @@
+{"start_line": 10, "code": "interface ConfirmRemoveRoomProps extends CommonProps, BasePopupProps {}\n"}

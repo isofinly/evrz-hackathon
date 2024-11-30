@@ -1,0 +1,1 @@
+{"start_line": 14, "code": "interface TagListItemProps\n\n\textends CommonProps,\n\n\t\tTag,\n\n\t\tOmit<ListItemProps, keyof Tag> {}\n"}

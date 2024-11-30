@@ -1,9 +1,0 @@
-CodeIndex = ({ index }: CodeIndexProps) => {
-    return (
-        <Flex align="center">
-            <Text color={"main.300"} fontWeight="bold" fontSize="20px">
-                {index}
-            </Text>
-        </Flex>
-    )
-}

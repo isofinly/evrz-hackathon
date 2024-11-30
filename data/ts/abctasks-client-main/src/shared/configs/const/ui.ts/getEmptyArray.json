@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "getEmptyArray = (length: number) => {\n\treturn Array(length).fill('');\n}"}

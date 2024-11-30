@@ -1,0 +1,1 @@
+{"start_line": 14, "code": "interface CreateQueryModelParams<T> {\n\treadonly name: string;\n\treadonly defaultValue: T;\n\treadonly route?: RouteInstance<any>;\n\treadonly clock?: Event<any> | Effect<any, any>;\n}"}

@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { useUnit } from \"effector-react\"\n\n\nimport {\n\n    $resultStore,\n\n    eventClearResult,\n\n    eventEndResult,\n\n    eventStartResult,\n\n    eventTick\n\n} from \"@entities/results\"\n\n\nexport const useResult = () => <BODY useResult>"}

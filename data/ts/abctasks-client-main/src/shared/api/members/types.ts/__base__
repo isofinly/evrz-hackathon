@@ -1,7 +1,0 @@
-import { InRoomParams } from '@/shared/types';
-
-export interface AddUserRoomParams extends InRoomParams <BODY AddUserRoomParams>
-
-export interface InviteByHashParams extends InRoomParams <BODY InviteByHashParams>
-
-export interface RemoveUserParams extends InRoomParams <BODY RemoveUserParams>

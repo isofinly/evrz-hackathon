@@ -1,3 +1,0 @@
-type MenuItemProps<P extends object> = CommonProps &
-	MenuOption<P> &
-	Omit<MUIMenuItemProps, keyof MenuOption<P>>;

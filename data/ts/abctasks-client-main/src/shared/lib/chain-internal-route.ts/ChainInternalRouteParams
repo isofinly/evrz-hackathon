@@ -1,3 +1,0 @@
-interface ChainInternalRouteParams extends ChainedParams {
-	readonly isInternal: Store<boolean>;
-}

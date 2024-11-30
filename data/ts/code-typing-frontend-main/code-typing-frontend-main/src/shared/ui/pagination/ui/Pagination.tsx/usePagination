@@ -1,5 +1,0 @@
-usePagination = () => {
-    const context = useContext(PaginationContext)
-    if (!context) throw new Error("Use pagination context within provider!")
-    return context
-}

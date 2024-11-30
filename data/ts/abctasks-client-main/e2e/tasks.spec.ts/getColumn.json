@@ -1,0 +1,1 @@
+{"start_line": 10, "code": "getColumn = (locator: Locator | Page, type: string) => {\n\treturn locator.getByRole('region').filter({ hasText: type });\n}"}

@@ -1,0 +1,1 @@
+{"start_line": 15, "code": "interface UpdateRoomParams\n\n\textends Partial<CreateRoomParams>,\n\n\t\tInRoomParams {}\n"}

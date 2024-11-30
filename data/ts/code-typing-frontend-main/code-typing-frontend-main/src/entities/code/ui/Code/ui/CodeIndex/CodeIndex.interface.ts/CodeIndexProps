@@ -1,3 +1,0 @@
-interface CodeIndexProps {
-    index: number
-}

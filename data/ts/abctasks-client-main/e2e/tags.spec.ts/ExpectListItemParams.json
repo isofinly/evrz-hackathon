@@ -1,0 +1,1 @@
+{"start_line": 30, "code": "interface ExpectListItemParams extends GetListItemParams {\n\treadonly primaryColor: string;\n\treadonly secondaryColor: string;\n}"}

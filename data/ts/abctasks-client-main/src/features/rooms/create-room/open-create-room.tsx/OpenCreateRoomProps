@@ -1,1 +1,0 @@
-interface OpenCreateRoomProps extends CommonProps {}

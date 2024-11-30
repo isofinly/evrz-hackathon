@@ -1,3 +1,0 @@
-interface ActivityActionPictureProps
-	extends CommonProps,
-		ActivityAction {}

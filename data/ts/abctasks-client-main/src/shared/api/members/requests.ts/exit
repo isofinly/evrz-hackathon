@@ -1,5 +1,0 @@
-exit = async ({ roomId, }: InRoomParams) => {
-	return instance
-		.delete(`members/${roomId}/exit`)
-		.json<StandardResponse<boolean>>();
-}

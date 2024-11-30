@@ -1,9 +1,0 @@
-activateAccountLink = async (
-	ctx: BrowserContext,
-	data: UserParams = {}
-): Promise<string> => {
-	return request(ctx, '/activate-link', {
-		method: 'POST',
-		data,
-	});
-}

@@ -1,5 +1,0 @@
-interface UseRandomCodeWithSearchReturnOptions {
-    isPending: boolean
-    newText: () => void
-    id: string | undefined
-}

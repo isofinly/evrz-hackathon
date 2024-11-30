@@ -1,3 +1,0 @@
-interface FormOptions {
-	readonly link: string;
-}

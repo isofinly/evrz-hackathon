@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { Route,  Routes } from \"react-router-dom\";\n\nimport { AppRoutes } from \"@/shared/routes\";\n\nimport HomePage from \"./home\";\n\nimport NotFoundPage from \"./notFound\";\n\n\n const Routing = ():JSX.Element => <BODY Routing>;\n\n\nexport default Routing;"}

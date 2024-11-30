@@ -1,3 +1,0 @@
-type Grouped<K extends string | number, T> = {
-	[Key in K]: T[];
-};

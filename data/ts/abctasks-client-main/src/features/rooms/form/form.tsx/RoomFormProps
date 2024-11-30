@@ -1,7 +1,0 @@
-interface RoomFormProps extends CommonProps {
-	readonly $form: Form<RoomFormValues>;
-	readonly ariaLabelledby?: string;
-	readonly hideButton?: boolean;
-	readonly buttonText?: string;
-	readonly disabled?: boolean;
-}

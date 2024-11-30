@@ -1,5 +1,0 @@
-TagSkeleton = ({ className, width = 120 }: SkeletonProps) => {
-  return (
-    <Skeleton type="block" width={width} height={28} className={className} />
-  )
-}

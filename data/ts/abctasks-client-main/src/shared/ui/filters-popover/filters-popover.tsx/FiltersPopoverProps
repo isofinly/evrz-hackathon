@@ -1,9 +1,0 @@
-interface FiltersPopoverProps extends CommonProps {
-	readonly open: boolean;
-	readonly children: React.ComponentType<RenderProps>;
-	readonly onOpen: VoidFunction;
-	readonly onClose: VoidFunction;
-	readonly title: string;
-	readonly icon: React.ReactElement;
-	readonly slots?: FullWidthPopupProps['slots'];
-}

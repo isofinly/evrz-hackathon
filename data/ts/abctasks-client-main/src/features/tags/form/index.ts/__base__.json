@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export * as tagFormModel from './model';\n\nexport { TagForm, type TagFormProps } from './form';\n\nexport { SkeletonTagForm, type SkeletonTagFormProps } from './skeleton';\n"}

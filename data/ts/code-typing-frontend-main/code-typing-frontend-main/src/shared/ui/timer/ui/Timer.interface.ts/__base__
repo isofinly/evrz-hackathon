@@ -1,3 +1,0 @@
-export interface TimerProps <BODY TimerProps>
-
-export interface TimerItemProps <BODY TimerItemProps>

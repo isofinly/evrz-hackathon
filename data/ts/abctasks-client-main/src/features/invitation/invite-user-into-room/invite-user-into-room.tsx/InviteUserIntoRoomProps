@@ -1,1 +1,0 @@
-interface InviteUserIntoRoomProps extends CommonProps {}

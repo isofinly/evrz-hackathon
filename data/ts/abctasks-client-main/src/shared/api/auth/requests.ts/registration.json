@@ -1,0 +1,1 @@
+{"start_line": 26, "code": "registration = async (body: RegistrationParams) => {\n\treturn instance\n\t\t.post('auth/registration', {\n\t\t\tjson: body,\n\t\t})\n\t\t.json<StandardResponse<User>>();\n}"}

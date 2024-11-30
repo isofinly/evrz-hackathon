@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import * as React from 'react';\n\nimport ReactDOM from 'react-dom/client';\n\n\nimport { appModel } from '@/shared/models';\n\n\nimport { App } from '@/app';\n\n\nconst container = document.getElementById('root') as HTMLElement;\n\n\nappModel.started();\n\n\nconst root = ReactDOM.createRoot(container);\n\nroot.render(<App />);\n"}

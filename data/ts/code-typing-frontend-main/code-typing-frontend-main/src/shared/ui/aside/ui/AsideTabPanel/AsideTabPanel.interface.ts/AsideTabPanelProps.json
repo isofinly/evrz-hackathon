@@ -1,0 +1,1 @@
+{"start_line": 4, "code": "interface AsideTabPanelProps extends BoxProps {\n    name: AsideTabName\n}"}

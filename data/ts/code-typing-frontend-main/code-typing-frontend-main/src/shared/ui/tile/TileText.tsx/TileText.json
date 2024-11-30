@@ -1,0 +1,1 @@
+{"start_line": 4, "code": "TileText = (props: TileTextProps) => {\n    return <Text fontSize=\"15px\" {...props} />\n}"}

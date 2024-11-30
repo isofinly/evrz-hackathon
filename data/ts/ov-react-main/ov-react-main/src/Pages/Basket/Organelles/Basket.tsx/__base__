@@ -1,7 +1,0 @@
-import { BigPicture } from "../../../Common/BigPicture/Organelles/BigPicture";
-
-import "../Styles/Basket.css";
-
-import Picture from "../../../Common/Pictures/Basket/Basket.jpg";
-
-export const Basket = () => <BODY Basket>;

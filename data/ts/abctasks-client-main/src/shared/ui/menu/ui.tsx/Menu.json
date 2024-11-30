@@ -1,0 +1,1 @@
+{"start_line": 15, "code": "Menu: React.FC<MenuProps> = (props) => {\n\tconst { onClose, children, ...rest } = props;\n\n\treturn (\n\t\t<MUIMenu {...rest} onClose={onClose}>\n\t\t\t<MenuProvider value={{ onClose }}>{children}</MenuProvider>\n\t\t</MUIMenu>\n\t);\n}"}

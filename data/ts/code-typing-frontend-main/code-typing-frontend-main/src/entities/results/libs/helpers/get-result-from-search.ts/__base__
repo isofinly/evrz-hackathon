@@ -1,4 +1,0 @@
-import { ResultParams, ResultsSortBy } from "@entities/results"
-import { searchParamsEnum } from "@shared/constants"
-
-export const getResultFromSearch = (searchParams: URLSearchParams): ResultParams => <BODY getResultFromSearch>

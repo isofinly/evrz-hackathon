@@ -1,0 +1,1 @@
+{"start_line": 5, "code": "routesWithHOC = (\n\n    hoc: (children: ReactNode) => ReactNode,\n\n    routes: RouteObject[]\n\n): RouteObject[] => {\n    return routes.map(route => {\n        return {\n            ...route,\n            element: hoc(route.element)\n        }\n    })\n}"}

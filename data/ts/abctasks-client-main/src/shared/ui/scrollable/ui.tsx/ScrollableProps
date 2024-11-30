@@ -1,3 +1,0 @@
-type ScrollableProps<Component extends React.ElementType> =
-	BaseScrollableProps<Component> &
-		Omit<React.ComponentProps<Component>, keyof BaseScrollableProps<Component>>;

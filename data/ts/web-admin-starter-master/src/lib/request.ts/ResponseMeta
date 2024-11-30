@@ -1,5 +1,0 @@
-type ResponseMeta = {
-  code: number;
-  url: string;
-  method: string;
-};

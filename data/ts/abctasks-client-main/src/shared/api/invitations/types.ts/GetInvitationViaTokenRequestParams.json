@@ -1,0 +1,1 @@
+{"start_line": 31, "code": "interface GetInvitationViaTokenRequestParams {\n\treadonly token: string;\n}"}

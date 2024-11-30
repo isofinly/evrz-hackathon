@@ -1,5 +1,0 @@
-import {  useState, ReactNode } from 'react';
-import { ThemeContext } from './context';
-import { Theme } from '.';
-
-export const ThemeProvider = ({ children }: { children: ReactNode }) => <BODY ThemeProvider>;

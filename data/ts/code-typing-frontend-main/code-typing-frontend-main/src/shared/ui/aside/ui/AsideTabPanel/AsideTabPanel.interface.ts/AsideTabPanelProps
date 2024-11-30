@@ -1,3 +1,0 @@
-interface AsideTabPanelProps extends BoxProps {
-    name: AsideTabName
-}

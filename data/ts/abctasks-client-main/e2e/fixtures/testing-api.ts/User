@@ -1,9 +1,0 @@
-user = async (
-	ctx: BrowserContext,
-	data: UserParams = {}
-): Promise<User> => {
-	return request(ctx, '/user', {
-		method: 'POST',
-		data,
-	});
-}

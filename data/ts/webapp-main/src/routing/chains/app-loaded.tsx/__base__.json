@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { $$user } from '@entities/user'\n\nimport { RouteInstance, RouteParams } from 'atomic-router'\n\nimport { and } from 'patronum'\n\nimport { createChain } from '../shared/create-chain'\n\n\nexport function chainAppLoaded<T extends RouteParams>(route: RouteInstance<T>) <BODY chainAppLoaded>"}

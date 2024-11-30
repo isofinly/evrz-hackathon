@@ -1,3 +1,0 @@
-interface FilterParams {
-  isFit(result: Result): boolean;
-}

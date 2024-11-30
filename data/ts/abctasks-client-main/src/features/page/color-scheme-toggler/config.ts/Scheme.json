@@ -1,0 +1,1 @@
+{"start_line": 16, "code": "interface Scheme {\n\treadonly value: colorSchemeModel.ColorScheme;\n\treadonly icon: React.ComponentType;\n}"}

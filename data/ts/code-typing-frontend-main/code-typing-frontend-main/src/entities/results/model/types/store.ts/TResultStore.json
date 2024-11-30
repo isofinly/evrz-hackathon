@@ -1,0 +1,1 @@
+{"start_line": 21, "code": "type TResultStore = IResult[]\n"}

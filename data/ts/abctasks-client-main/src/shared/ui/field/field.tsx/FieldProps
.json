@@ -1,0 +1,1 @@
+{"start_line": 10, "code": "interface FieldProps\n\n\textends CommonProps,\n\n\t\tPartial<\n\n\t\t\tPick<\n\n\t\t\t\tConnectedField<any>,\n\n\t\t\t\t'isValid' | 'name' | 'onChange' | 'onBlur' | 'value'\n\n\t\t\t>\n\n\t\t>,\n\n\t\tOmit<TextFieldProps, keyof ConnectedField<any>> {}\n"}

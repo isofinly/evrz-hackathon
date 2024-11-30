@@ -1,0 +1,1 @@
+{"start_line": 66, "code": "fetchMocks = async (\n\n  url: string,\n\n  { method, body }: FetchProps,\n\n): Promise<any> => {\n  const mockMethod = `${method} ${url}`;\n\n  const answer = apiMock[mockMethod](body);\n\n  console.group(`REQUEST MOCK: ${mockMethod}`);\n  console.info(`answer:`, answer);\n  console.groupEnd();\n\n  return await wait(answer);\n}"}

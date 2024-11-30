@@ -1,3 +1,0 @@
-interface OpenCreateTaskButtonProps extends CommonProps {
-	readonly columnStatus: TaskStatus;
-}

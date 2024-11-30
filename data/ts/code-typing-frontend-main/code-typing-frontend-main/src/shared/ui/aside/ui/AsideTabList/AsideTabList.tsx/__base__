@@ -1,5 +1,0 @@
-import { Box } from "@chakra-ui/react"
-
-import { AsideTabListProps } from "@shared/ui/aside"
-
-export const AsideTabList = (props: AsideTabListProps) => <BODY AsideTabList>

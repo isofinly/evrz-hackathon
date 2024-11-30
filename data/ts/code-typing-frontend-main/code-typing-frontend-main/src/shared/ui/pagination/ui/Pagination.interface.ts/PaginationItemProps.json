@@ -1,0 +1,1 @@
+{"start_line": 12, "code": "interface PaginationItemProps extends FlexProps {\n    isActive?: boolean\n    isDisabled?: boolean\n}"}

@@ -1,3 +1,0 @@
-interface SuccessResponse extends ResponseMeta {
-  payload: object;
-}

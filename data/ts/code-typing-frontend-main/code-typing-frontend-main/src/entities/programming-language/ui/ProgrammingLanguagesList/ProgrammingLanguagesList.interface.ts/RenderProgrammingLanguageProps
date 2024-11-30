@@ -1,5 +1,0 @@
-interface RenderProgrammingLanguageProps extends ProgrammingLanguage {
-    to: string
-    onClick?: () => void
-    key?: string
-}

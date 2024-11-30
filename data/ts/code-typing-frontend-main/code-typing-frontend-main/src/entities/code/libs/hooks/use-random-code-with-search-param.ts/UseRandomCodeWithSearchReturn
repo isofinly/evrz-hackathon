@@ -1,4 +1,0 @@
-type UseRandomCodeWithSearchReturn = [
-    textContent: string | undefined,
-    options: UseRandomCodeWithSearchReturnOptions
-]

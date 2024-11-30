@@ -1,0 +1,1 @@
+{"start_line": 5, "code": "calculateRowStartIndent = (row?: string) => {\n    if (!row) return 0\n\n    const startIndexText = row.search(/\\S/g)\n    return startIndexText === -1 ? 0 : startIndexText\n}"}

@@ -1,5 +1,0 @@
-interface ExpectActivityItemParams {
-	readonly parent: Page | Locator;
-	readonly content: string;
-	readonly type: ActivityItemType;
-}

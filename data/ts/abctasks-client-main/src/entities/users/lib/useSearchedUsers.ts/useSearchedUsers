@@ -1,3 +1,0 @@
-useSearchedUsers = () => {
-	return useUnit(searchUserModel.query);
-}

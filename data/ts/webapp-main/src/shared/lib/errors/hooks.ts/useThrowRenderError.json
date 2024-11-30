@@ -1,0 +1,1 @@
+{"start_line": 5, "code": "function useThrowRenderError() {\n  const [error, setError] = useState<unknown>(null)\n\n  if (error) {\n    throw error\n  }\n\n  return useCallback((error: unknown) => {\n    setError(error)\n  }, [])\n}"}

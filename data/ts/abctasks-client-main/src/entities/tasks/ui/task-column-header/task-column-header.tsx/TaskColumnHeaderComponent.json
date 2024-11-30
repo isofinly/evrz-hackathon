@@ -1,0 +1,1 @@
+{"start_line": 13, "code": "interface TaskColumnHeaderComponent extends CommonProps {\n\treadonly id?: string;\n\treadonly slots?: Slots<'actions'>;\n}"}

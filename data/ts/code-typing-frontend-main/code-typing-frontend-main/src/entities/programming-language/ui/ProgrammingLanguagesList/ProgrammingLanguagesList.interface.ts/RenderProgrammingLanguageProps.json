@@ -1,0 +1,1 @@
+{"start_line": 9, "code": "interface RenderProgrammingLanguageProps extends ProgrammingLanguage {\n    to: string\n    onClick?: () => void\n    key?: string\n}"}

@@ -1,5 +1,0 @@
-useAuth = () => {
-  React.useEffect(() => {
-    getUser();
-  }, []);
-}

@@ -1,0 +1,1 @@
+{"start_line": 2, "code": "GithubRepoSkeleton = () => {\n    return <Skeleton h=\"20px\" w=\"100%\" maxW=\"300px\" borderRadius=\"10px\" />\n}"}

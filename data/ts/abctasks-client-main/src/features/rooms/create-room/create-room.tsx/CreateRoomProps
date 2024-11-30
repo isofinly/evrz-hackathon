@@ -1,1 +1,0 @@
-interface CreateRoomProps extends CommonProps, BasePopupProps {}

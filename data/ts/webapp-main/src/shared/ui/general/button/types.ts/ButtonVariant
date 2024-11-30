@@ -1,1 +1,0 @@
-type ButtonVariant = 'solid' | 'outline'

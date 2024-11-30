@@ -1,3 +1,0 @@
-useActivitiesInRoom = () => {
-	return useUnit(activitiesInRoomModel.query);
-}

@@ -1,3 +1,0 @@
-type GetInvitationViaTokenResponseData = Promise<
-	StandardResponse<Invitation>
->;

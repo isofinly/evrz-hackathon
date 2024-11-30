@@ -1,3 +1,0 @@
-type FriendlyListProps<RawData, Item, Error> =
-	| ArrayQueryFriendlyListProps<Item, Error>
-	| AnyQueryFriendlyListProps<RawData, Item, Error>;

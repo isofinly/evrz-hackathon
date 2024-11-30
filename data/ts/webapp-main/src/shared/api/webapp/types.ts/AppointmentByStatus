@@ -1,9 +1,0 @@
-type AppointmentByStatus =
-  | { status: AppointmentStatus.Done; date: string; doneAt: string }
-  | { status: AppointmentStatus.NotPayed }
-  | { status: AppointmentStatus.Refunded }
-  | {
-      status: AppointmentStatus.InQueue
-      queueNumber: number
-      daysRemaining: number
-    }

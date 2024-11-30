@@ -1,0 +1,1 @@
+{"start_line": 8, "code": "interface TileImageProps extends ImageProps {}\n"}

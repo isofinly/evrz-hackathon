@@ -1,0 +1,1 @@
+{"start_line": 65, "code": "type RemoveInvitationResponseData = Promise<StandardResponse<boolean>>;\n"}

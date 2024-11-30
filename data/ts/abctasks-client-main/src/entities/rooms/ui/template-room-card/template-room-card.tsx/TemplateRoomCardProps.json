@@ -1,0 +1,1 @@
+{"start_line": 23, "code": "interface TemplateRoomCardProps extends CommonProps, Room {\n\treadonly menu: React.ReactElement | null;\n\treadonly actions: React.ReactElement | null;\n}"}

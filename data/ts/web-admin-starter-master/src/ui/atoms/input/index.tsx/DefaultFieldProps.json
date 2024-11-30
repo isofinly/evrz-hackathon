@@ -1,0 +1,1 @@
+{"start_line": 5, "code": "type DefaultFieldProps = {\n\n  store: InputResult;\n\n  config: {\n\n    label?: string;\n\n    required?: boolean;\n\n    type?: string;\n\n    name?: string;\n\n    placeholder?: string;\n\n    prefix?: React.ReactNode | string;\n\n    suffix?: React.ReactNode | string;\n\n    size?: 'large' | 'small';\n\n  };\n\n};\n"}

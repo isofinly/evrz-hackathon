@@ -1,6 +1,0 @@
-MutationTools = (mutation: Mutation<any, any, any>) => ({
-  errors: {
-    handleAll: (handlers?: ErrorHandlers) =>
-      invoke(handleAll, { mutation, handlers }),
-  },
-})

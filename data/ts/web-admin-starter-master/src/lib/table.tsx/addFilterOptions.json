@@ -1,0 +1,1 @@
+{"start_line": 85, "code": "function addFilterOptions(items: string[]) {\n  const filters = items.map((item: string) => ({ text: item, value: item }));\n  return { filters };\n}"}

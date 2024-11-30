@@ -1,5 +1,0 @@
-
-
-import { createEvent, createStore, sample } from 'effector';
-
-export const createFlag = (defaultValue = false) => <BODY createFlag>;

@@ -1,0 +1,1 @@
+{"start_line": 26, "code": "parseBoolean = (item: string, defaultValue: boolean) => {\n    try {\n        const itemParse = JSON.parse(item)\n        return typeof itemParse === \"boolean\" ? itemParse : defaultValue\n    } catch (e) {\n        return defaultValue\n    }\n}"}

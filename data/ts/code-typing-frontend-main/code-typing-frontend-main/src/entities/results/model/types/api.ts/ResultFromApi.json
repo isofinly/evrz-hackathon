@@ -1,0 +1,1 @@
+{"start_line": 2, "code": "interface ResultFromApi extends Omit<IResultCode, \"startTime\" | \"endTime\" | \"resultTime\"> {\n    id: string\n    codeExampleUUID: string\n    userID: string\n    startTime: string\n    endTime: string\n}"}

@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { FlexProps } from \"@chakra-ui/react\"\n\n\nexport interface CodeRowProps extends FlexProps <BODY CodeRowProps>"}

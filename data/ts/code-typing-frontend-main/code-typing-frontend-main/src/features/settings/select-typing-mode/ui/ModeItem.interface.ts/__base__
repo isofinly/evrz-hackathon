@@ -1,5 +1,0 @@
-import { TileProps } from "@shared/ui/tile"
-
-export interface ModeItemProps extends TileProps <BODY ModeItemProps>
-
-export interface ModeSmallItemProps extends TileProps <BODY ModeSmallItemProps>

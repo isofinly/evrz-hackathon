@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export enum ColorTokens {\n\n    headerBg = \"headerBg\",\n\n    footerBg = \"footerBg\",\n\n    printingTextActive = \"printingTextActive\",\n\n    printingTextDisabled = \"printingTextDisabled\",\n\n    asideBg = \"asideBg\"\n\n}\n"}

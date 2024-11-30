@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import {  useState, ReactNode } from 'react';\n\nimport { ThemeContext } from './context';\n\nimport { Theme } from '.';\n\n\nexport const ThemeProvider = ({ children }: { children: ReactNode }) => <BODY ThemeProvider>;\n"}

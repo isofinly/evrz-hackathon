@@ -1,0 +1,1 @@
+{"start_line": 38, "code": "type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & SharedProps\n"}

@@ -1,0 +1,1 @@
+{"start_line": 6, "code": "interface Props {\n  className?: string\n  type: 'block' | 'inline'\n  width?: number | string\n  maxWidth?: number | string\n  height?: number | string\n  radius?: number | string\n}"}

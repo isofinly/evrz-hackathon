@@ -1,0 +1,1 @@
+{"start_line": 19, "code": "logOut = (): Promise<void> =>\n\n  request({\n\n    method: 'get',\n\n    url: '/user/logout',\n\n  })"}

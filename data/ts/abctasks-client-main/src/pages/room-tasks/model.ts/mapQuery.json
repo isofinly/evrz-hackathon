@@ -1,0 +1,1 @@
+{"start_line": 76, "code": "mapQuery = (query: RouteQuery) => {\n\treturn {\n\t\tauthorIds: query[getParams.userId],\n\t\ttagIds: query[getParams.userId],\n\t\tbefore: query[getParams.before],\n\t\tafter: query[getParams.after],\n\t};\n}"}

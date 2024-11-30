@@ -1,0 +1,1 @@
+{"start_line": 2, "code": "interface GetResultStatsReturn {\n    charactersPerMinuteString: string\n    wordsPerMinuteString: string\n}"}

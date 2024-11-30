@@ -1,0 +1,1 @@
+{"start_line": 7, "code": "type SaveResultBody = ResultWithoutId | ResultFromApi\n"}

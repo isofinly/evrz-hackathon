@@ -1,3 +1,0 @@
-import { ResultParams } from "@entities/results"
-
-export interface ResultsSortPanelProps <BODY ResultsSortPanelProps>

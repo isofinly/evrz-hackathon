@@ -1,7 +1,0 @@
-interface FullWidthPopupProps
-	extends BasePopupProps,
-		React.PropsWithChildren {
-	readonly onClose: VoidFunction;
-	readonly title: string;
-	readonly DialogTitleProps?: DialogTitleProps;
-}

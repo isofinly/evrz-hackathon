@@ -1,4 +1,0 @@
-interface LinkCodeProps extends TextProps {
-    title: string
-    path: string
-}

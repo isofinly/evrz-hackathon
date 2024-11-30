@@ -1,6 +1,0 @@
-import { ResultParams } from "@entities/results"
-import { searchParamsEnum } from "@shared/constants"
-
-export const mapResultToSearch = (
-    resultParams: Record<keyof ResultParams, unknown>
-): URLSearchParams => <BODY mapResultToSearch>

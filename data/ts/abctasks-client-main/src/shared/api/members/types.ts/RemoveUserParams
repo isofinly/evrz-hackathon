@@ -1,3 +1,0 @@
-interface RemoveUserParams extends InRoomParams {
-	readonly userId: number;
-}

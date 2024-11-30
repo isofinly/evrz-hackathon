@@ -1,5 +1,0 @@
-
-
-import { useEffect, useRef, useState } from "react"
-
-export const useTick = (callback: (tick: number) => void, intervalMs = 1000) => <BODY useTick>

@@ -1,3 +1,0 @@
-useActivitySpheres = () => {
-	return useUnit(activitySpheresModel.query);
-}

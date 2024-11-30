@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export * as updateRoomModel from './model';\n\nexport { UpdateRoom } from './update-room';\n\nexport {\n\n\tOpenUpdateRoomFormMenuItem,\n\n\ttype OpenUpdateRoomFormMenuItemProps\n\n} from './open-form-menu-item';\n"}

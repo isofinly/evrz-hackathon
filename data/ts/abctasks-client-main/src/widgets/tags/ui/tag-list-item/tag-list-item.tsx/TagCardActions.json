@@ -1,0 +1,1 @@
+{"start_line": 31, "code": "TagCardActions: React.FC<{ id: number }> = (props) => {\n\tconst { id } = props;\n\n\treturn (\n\t\t<div>\n\t\t\t<OpenUpdateTagButton tagId={id} />\n\t\t\t<RemoveTag tagId={id} />\n\t\t</div>\n\t);\n}"}

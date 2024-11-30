@@ -1,0 +1,1 @@
+{"start_line": 13, "code": "interface TextWithActionProps extends CommonProps {\n\treadonly text: string;\n\treadonly onClick: VoidFunction;\n\treadonly actionText: string;\n\treadonly icon?: React.ReactElement | null;\n}"}

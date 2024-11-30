@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { useEffect } from \"react\"\n\n\nimport { useTerminalHandlers } from \"@entities/terminal\"\n\nimport { keyboardShortcuts } from \"@shared/libs\"\n\n\nexport const useTerminalKeyDown = () => <BODY useTerminalKeyDown>"}

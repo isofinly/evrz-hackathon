@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { ListItem } from \"@chakra-ui/react\"\n\n\nimport { TabItemProps } from \"@shared/ui/tabs\"\n\n\nexport const TabItem = (props: TabItemProps) => <BODY TabItem>"}

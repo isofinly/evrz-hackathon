@@ -1,0 +1,1 @@
+{"start_line": 6, "code": "function formatRUB(number: number) {\n  return formatter.format(number)\n}"}

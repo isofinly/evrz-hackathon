@@ -1,1 +1,0 @@
-interface AdaptiveColorSchemeTogglerProps extends CommonProps {}

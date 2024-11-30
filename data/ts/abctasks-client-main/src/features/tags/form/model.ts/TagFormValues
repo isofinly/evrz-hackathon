@@ -1,1 +1,0 @@
-interface TagFormValues extends Omit<Tag, 'id' | 'roomId'> {}

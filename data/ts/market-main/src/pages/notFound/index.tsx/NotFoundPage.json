@@ -1,0 +1,1 @@
+{"start_line": 4, "code": "NotFoundPage: React.FC = (): JSX.Element => {\n    return (\n        <main className={styles.NotFoundPage}>\n            <div className={styles.Card}>\n                <h1>Page not found!</h1>\n            </div>\n        </main>\n    )\n}"}

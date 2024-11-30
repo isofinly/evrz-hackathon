@@ -1,6 +1,0 @@
-interface ResultParams {
-    page: number
-    size: number
-    direction: string
-    sortBy: ResultsSortBy
-}

@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export * as roomsModel from './rooms';\n\nexport * as roomModel from './room';\n"}

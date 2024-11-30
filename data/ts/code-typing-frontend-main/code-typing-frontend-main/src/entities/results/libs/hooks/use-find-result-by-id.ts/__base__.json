@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { useMemo } from \"react\"\n\n\nimport { useUnit } from \"effector-react\"\n\n\nimport { $resultsStore, IResult } from \"@entities/results\"\n\n\nexport interface UseFindResultByIdReturn <BODY UseFindResultByIdReturn>\n\nexport const useFindResultById = (resultId: string | null): UseFindResultByIdReturn | null => <BODY useFindResultById>"}

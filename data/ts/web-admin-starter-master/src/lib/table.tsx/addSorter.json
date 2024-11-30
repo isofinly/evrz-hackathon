@@ -1,0 +1,1 @@
+{"start_line": 75, "code": "function addSorter<T>(field: keyof T) {\n  return {\n    sorter: (a: T, b: T) => {\n      if (a[field] > b[field]) return 1;\n      if (a[field] < b[field]) return -1;\n      return 0;\n    },\n  };\n}"}

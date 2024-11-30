@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import React from 'react'\n\nimport ReactDOM from 'react-dom/client'\n\nimport App from '@/app';\n\n\nReactDOM.createRoot(document.getElementById('__app') as HTMLDivElement).render(\n\n\t<React.StrictMode>\n\n\t\t<App />\n\n\t</React.StrictMode>,\n\n)\n"}

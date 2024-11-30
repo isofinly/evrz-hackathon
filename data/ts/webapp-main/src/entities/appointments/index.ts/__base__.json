@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import * as $$appointments from './model'\n\n\nexport { $$appointments }\n\n\nexport * from './ui/appointment-card'\n"}

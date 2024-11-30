@@ -1,4 +1,0 @@
-function onlyFor(roles: Roles[]): Guard<UserSession> {
-  return (route, context) =>
-    context && context.role && roles.includes(context.role) ? route : null;
-}

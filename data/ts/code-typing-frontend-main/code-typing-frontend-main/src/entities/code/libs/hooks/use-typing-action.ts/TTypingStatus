@@ -1,1 +1,0 @@
-type TTypingStatus = "printing" | "not-started" | "ended"

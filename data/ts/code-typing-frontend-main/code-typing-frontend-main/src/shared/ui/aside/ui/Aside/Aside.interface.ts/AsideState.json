@@ -1,0 +1,1 @@
+{"start_line": 12, "code": "interface AsideState {\n    currentTabName: AsideTabName | null\n    onChangeTabName: ((index: AsideTabName | null) => void) | null\n}"}

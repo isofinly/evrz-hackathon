@@ -1,9 +1,0 @@
-approveInvitation = async ({
-	id,
-}: ApproveInvitationRequestParams): ApproveInvitationResponseData => {
-	return instance
-		.put(`invitations/invite/approve`, {
-			json: { id, },
-		})
-		.json();
-}

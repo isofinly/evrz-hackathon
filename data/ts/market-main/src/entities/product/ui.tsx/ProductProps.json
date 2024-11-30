@@ -1,0 +1,1 @@
+{"start_line": 7, "code": "type ProductProps = {\n\n  product: Product;\n\n  theme: Theme;\n\n  setProduct: (product: Product) => void;\n\n};\n"}

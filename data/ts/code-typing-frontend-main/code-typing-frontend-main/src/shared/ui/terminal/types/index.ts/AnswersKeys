@@ -1,1 +1,0 @@
-type AnswersKeys = keyof typeof CommandsEnum

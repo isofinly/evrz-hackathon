@@ -1,0 +1,1 @@
+{"start_line": 1, "code": "type ButtonSize = 'sm' | 'md'\n"}

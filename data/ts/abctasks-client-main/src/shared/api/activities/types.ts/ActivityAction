@@ -1,1 +1,0 @@
-interface ActivityAction extends Static<typeof activityAction> {}

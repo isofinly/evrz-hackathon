@@ -1,4 +1,0 @@
-interface RemoveTaskMenuItemProps extends CommonProps {
-	readonly roomId: number;
-	readonly taskId: number;
-}

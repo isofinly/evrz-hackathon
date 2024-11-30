@@ -1,0 +1,1 @@
+{"start_line": 4, "code": "interface PaginationParams {\n\treadonly page?: number;\n\treadonly count?: number;\n}"}

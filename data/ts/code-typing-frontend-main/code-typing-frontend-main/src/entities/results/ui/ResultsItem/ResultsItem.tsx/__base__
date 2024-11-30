@@ -1,8 +1,0 @@
-import { MouseEventHandler, useState } from "react"
-
-import { Button, Flex, Text, Tooltip } from "@chakra-ui/react"
-
-import { ResultJSON, ResultsItemProps } from "@entities/results"
-import { formatterDate } from "@shared/constants"
-
-export const ResultsItem = (props: ResultsItemProps) => <BODY ResultsItem>

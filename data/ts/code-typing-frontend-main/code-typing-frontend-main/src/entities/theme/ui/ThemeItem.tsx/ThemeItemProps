@@ -1,5 +1,0 @@
-interface ThemeItemProps extends TileProps {
-    onChangeTheme: (theme: AppTheme) => void
-    currentTheme: AppTheme
-    theme: AppTheme
-}

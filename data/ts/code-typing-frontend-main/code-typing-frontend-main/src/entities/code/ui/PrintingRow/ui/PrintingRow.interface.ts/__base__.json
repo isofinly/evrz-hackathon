@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { ReactElement, RefObject } from \"react\"\n\n\nimport { TextProps } from \"@chakra-ui/react\"\n\n\nexport type PrintingRowStatus = \"default\" | \"active\" | \"printed\"\n\n\nexport interface PrintingRowProps <BODY PrintingRowProps>\n\nexport interface UsePrintingRowScrollOptions <BODY UsePrintingRowScrollOptions>"}

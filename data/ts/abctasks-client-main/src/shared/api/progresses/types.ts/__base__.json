@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { Number, Record, Static } from 'runtypes';\n\n\nimport { tag } from '../tags';\n\n\nexport const progress = Record({\n\n\ttag,\n\n\tdonecount: Number,\n\n\ttotalcount: Number,\n\n}).asReadonly();\n\n\nexport interface Progress extends Static<typeof progress> <BODY Progress>"}

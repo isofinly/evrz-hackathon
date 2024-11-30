@@ -1,0 +1,1 @@
+{"start_line": 179, "code": "createRequest = <Func extends (ctx: BrowserContext, data: any) => any>(\n\n\tctx: BrowserContext,\n\n\tfunc: Func\n\n) => {\n\treturn (\n\t\tdata: Parameters<Func>[1] extends undefined ? never : Parameters<Func>[1]\n\t): ReturnType<Func> => {\n\t\treturn func(ctx, data);\n\t};\n}"}

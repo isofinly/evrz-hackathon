@@ -1,0 +1,1 @@
+{"start_line": 9, "code": "interface PopupsProps extends CommonProps {\n\treadonly popupMap: Record<string, React.ComponentType<BasePopupProps>>;\n}"}

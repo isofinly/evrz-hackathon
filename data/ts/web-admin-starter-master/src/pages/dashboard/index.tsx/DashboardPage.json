@@ -1,0 +1,1 @@
+{"start_line": 4, "code": "DashboardPage: React.FC = () => (\n\n  <Container>Dashboard Page</Container>\n\n)"}

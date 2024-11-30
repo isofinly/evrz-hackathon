@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { useEffect, useRef, useState } from \"react\"\n\n\nimport { TimerDirection, UseTimerOptions } from \"@shared/ui/timer\"\n\n\nexport const useTimer = (options: UseTimerOptions) => <BODY useTimer>"}

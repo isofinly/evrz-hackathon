@@ -1,0 +1,1 @@
+{"start_line": 5, "code": "Routing = ():JSX.Element => {\n    return (\n        <Routes>\n            <Route path={AppRoutes.home} element={<HomePage />} />\n            <Route path={AppRoutes.all} element={<NotFoundPage />} />\n        </Routes>\n    );\n}"}

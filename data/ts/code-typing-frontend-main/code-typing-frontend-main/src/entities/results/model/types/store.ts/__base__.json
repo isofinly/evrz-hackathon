@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export interface IResult <BODY IResult>\n\nexport interface IResultCode <BODY IResultCode>\n\nexport type TResultStore = IResult[]\n"}

@@ -1,0 +1,1 @@
+{"start_line": 4, "code": "interface ExpectActivityItemParams {\n\treadonly parent: Page | Locator;\n\treadonly content: string;\n\treadonly type: ActivityItemType;\n}"}

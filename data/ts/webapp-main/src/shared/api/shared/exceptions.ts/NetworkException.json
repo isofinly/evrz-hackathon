@@ -1,0 +1,1 @@
+{"start_line": 2, "code": "class NetworkException extends Error {\n\n  type: NetworkExceptionType\n\n\n  constructor(type: NetworkExceptionType) {\n    super(`${type} network exception has occured`)\n    this.type = type\n  }\n}\n"}

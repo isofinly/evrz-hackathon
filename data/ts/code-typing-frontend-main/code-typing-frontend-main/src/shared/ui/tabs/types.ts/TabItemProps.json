@@ -1,0 +1,1 @@
+{"start_line": 2, "code": "interface TabItemProps extends ListItemProps {\n    isActive?: boolean\n}"}

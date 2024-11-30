@@ -1,3 +1,0 @@
-interface AsideProps extends CommonProps {
-	readonly disableBorder?: boolean;
-}

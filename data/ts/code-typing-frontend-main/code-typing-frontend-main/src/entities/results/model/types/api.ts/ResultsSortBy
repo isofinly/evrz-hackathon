@@ -1,1 +1,0 @@
-type ResultsSortBy = keyof Pick<ResultFromApi, "endTime" | "symbolsPerMinute" | "accuracy">

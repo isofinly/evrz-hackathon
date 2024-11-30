@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "\nexport enum Theme {\n\n    LIGHT = 'light',\n\n    DARK = 'dark',\n\n}\n"}

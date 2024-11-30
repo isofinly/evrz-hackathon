@@ -1,3 +1,0 @@
-interface ExitRoomUserButtonProps extends CommonProps {
-	readonly roomId: number;
-}

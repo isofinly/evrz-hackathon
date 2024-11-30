@@ -1,5 +1,0 @@
-interface RoomsLayoutProps
-
-	extends CommonProps,
-
-		Required<React.PropsWithChildren> {}

@@ -1,1 +1,0 @@
-interface SkeletonRoomCardProps extends CommonProps {}

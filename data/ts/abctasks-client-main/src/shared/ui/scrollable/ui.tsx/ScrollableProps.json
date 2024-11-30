@@ -1,0 +1,1 @@
+{"start_line": 18, "code": "type ScrollableProps<Component extends React.ElementType> =\n\n\tBaseScrollableProps<Component> &\n\n\t\tOmit<React.ComponentProps<Component>, keyof BaseScrollableProps<Component>>;\n"}

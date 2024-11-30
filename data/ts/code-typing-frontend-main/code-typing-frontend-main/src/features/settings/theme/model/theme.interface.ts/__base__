@@ -1,5 +1,0 @@
-import { ColorHues } from "@chakra-ui/react"
-
-import { ColorTokens } from "@shared/constants"
-
-export interface AppTheme <BODY AppTheme>

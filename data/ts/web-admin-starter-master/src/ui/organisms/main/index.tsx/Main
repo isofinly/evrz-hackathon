@@ -1,3 +1,0 @@
-Main: React.FC<MainProps> = ({ children }) => (
-  <MainContainer>{children}</MainContainer>
-)

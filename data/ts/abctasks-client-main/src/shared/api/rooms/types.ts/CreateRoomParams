@@ -1,1 +1,0 @@
-interface CreateRoomParams extends Pick<Room, 'description' | 'name'> {}

@@ -1,1 +1,0 @@
-type TimerStatus = "stopped" | "started"

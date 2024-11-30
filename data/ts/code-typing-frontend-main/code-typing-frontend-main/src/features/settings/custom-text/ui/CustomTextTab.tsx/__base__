@@ -1,7 +1,0 @@
-import { Box, Image, Tooltip } from "@chakra-ui/react"
-
-import customText from "@shared/assets/text.svg"
-import { settingTabs } from "@shared/constants"
-import { AsideTab } from "@shared/ui/aside"
-
-export const CustomTextTab = () => <BODY CustomTextTab>

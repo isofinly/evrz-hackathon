@@ -1,0 +1,1 @@
+{"start_line": 6, "code": "interface UseFindResultByIdReturn {\n    result: IResult\n    resultIndex: number\n}"}

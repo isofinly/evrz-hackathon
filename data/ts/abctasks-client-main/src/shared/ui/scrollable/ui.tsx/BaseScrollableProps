@@ -1,6 +1,0 @@
-interface BaseScrollableProps<Component extends React.ElementType>
-	extends CommonProps {
-	readonly direction: ScrollDirection;
-	readonly hideScroll?: boolean;
-	readonly component?: Component;
-}

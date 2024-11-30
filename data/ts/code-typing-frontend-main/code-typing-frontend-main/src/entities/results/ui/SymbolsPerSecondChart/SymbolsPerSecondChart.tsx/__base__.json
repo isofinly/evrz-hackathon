@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { SymbolsPerSecondChartProps } from \"@entities/results\"\n\nimport {\n\n    CartesianGrid,\n\n    Line,\n\n    LineChart,\n\n    ResponsiveContainer,\n\n    Tooltip as TooltipChart,\n\n    XAxis,\n\n    YAxis\n\n} from \"recharts\"\n\n\nexport const SymbolsPerSecondChart = (props: SymbolsPerSecondChartProps) => <BODY SymbolsPerSecondChart>"}

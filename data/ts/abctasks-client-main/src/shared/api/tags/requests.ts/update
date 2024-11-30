@@ -1,7 +1,0 @@
-update = async ({ id, roomId, ...body }: UpdateTagParams) => {
-	return instance
-		.put(`tags/${roomId}/${id}/update`, {
-			json: body,
-		})
-		.json<StandardResponse<Tag>>();
-}

@@ -1,7 +1,0 @@
-interface UpdateTaskParams
-
-	extends Partial<Omit<CreateTaskParams, 'roomId'>>,
-
-		InRoomParams {
-	readonly id: number;
-}

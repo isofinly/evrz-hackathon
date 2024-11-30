@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { ResultsService, SaveResultBody } from \"@entities/results\"\n\nimport { queryKeysEnum } from \"@shared/constants\"\n\nimport { useAxiosErrorToast } from \"@shared/libs/hooks/axios-error-toast\"\n\nimport { useMutation, useQueryClient } from \"@tanstack/react-query\"\n\n\nexport const useSaveResult = () => <BODY useSaveResult>"}

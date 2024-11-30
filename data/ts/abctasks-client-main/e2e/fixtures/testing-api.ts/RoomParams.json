@@ -1,0 +1,1 @@
+{"start_line": 44, "code": "interface RoomParams {\n\treadonly id?: number;\n\treadonly name?: string;\n\treadonly description?: string;\n\treadonly createdAt?: Date | null;\n\treadonly updatedAt?: Date | null;\n\treadonly ownerId?: number;\n\treadonly members?: MemberParams[];\n}"}

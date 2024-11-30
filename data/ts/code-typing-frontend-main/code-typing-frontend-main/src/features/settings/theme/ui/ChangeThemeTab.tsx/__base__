@@ -1,7 +1,0 @@
-import { Box, Image, Tooltip } from "@chakra-ui/react"
-
-import themeIcon from "@shared/assets/theme.svg"
-import { settingTabs } from "@shared/constants"
-import { AsideTab } from "@shared/ui/aside"
-
-export const ChangeThemeTab = () => <BODY ChangeThemeTab>

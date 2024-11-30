@@ -1,0 +1,1 @@
+{"start_line": 55, "code": "type FriendlyListProps<RawData, Item, Error> =\n\n\t| ArrayQueryFriendlyListProps<Item, Error>\n\n\t| AnyQueryFriendlyListProps<RawData, Item, Error>;\n"}

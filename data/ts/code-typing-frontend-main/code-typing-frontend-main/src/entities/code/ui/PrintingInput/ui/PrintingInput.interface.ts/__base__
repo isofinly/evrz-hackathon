@@ -1,3 +1,0 @@
-import { InputProps } from "@chakra-ui/react"
-
-export interface PrintingInputProps extends InputProps <BODY PrintingInputProps>

@@ -1,3 +1,0 @@
-import { Tag } from '@/shared/api';
-
-export interface TagsMap <BODY TagsMap>

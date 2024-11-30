@@ -1,0 +1,1 @@
+{"start_line": 4, "code": "type MediaObject = { [T in keyof typeof BREAKPOINTS]: <P>(props: P) => FlattenSimpleInterpolation };\n"}

@@ -1,3 +1,0 @@
-useViewer = () => {
-    return useContext(ViewerContext)
-}

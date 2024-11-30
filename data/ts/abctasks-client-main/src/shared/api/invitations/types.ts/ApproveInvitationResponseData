@@ -1,1 +1,0 @@
-type ApproveInvitationResponseData = Promise<StandardResponse<boolean>>;

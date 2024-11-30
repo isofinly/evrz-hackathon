@@ -1,0 +1,1 @@
+{"start_line": 6, "code": "App = () => {\n  return (\n    <RouterProvider router={router}>\n      <ErrorBoundary>\n        <Pages />\n        <NotificationStack />\n      </ErrorBoundary>\n    </RouterProvider>\n  )\n}"}

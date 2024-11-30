@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { useEffect } from \"react\"\n\n\nimport { TimerStatus, useTypingCodeHandlers, useTypingCodeTimer } from \"@entities/code\"\n\nimport { Timer, useTimer } from \"@shared/ui/timer\"\n\n\nexport const TypingCodeTimer = () => <BODY TypingCodeTimer>"}

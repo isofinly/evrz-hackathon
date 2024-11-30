@@ -1,0 +1,1 @@
+{"start_line": 23, "code": "interface TaskColumnProps extends CommonProps {\n\treadonly tasks: Task[];\n\treadonly isLoading: boolean;\n\treadonly columnStatus: TaskStatus;\n\treadonly hasActions?: boolean;\n\treadonly header?: string | null;\n}"}

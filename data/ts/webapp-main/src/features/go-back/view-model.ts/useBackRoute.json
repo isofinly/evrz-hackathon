@@ -1,0 +1,1 @@
+{"start_line": 18, "code": "function useBackRoute(route: RouteInstance<RouteParams>) {\n  const navigate = useUnit(route.navigate)\n\n  const action = useCallback(\n    () => navigate({ params: {}, query: {} }),\n    [navigate],\n  )\n\n  useBackAction(action)\n}"}

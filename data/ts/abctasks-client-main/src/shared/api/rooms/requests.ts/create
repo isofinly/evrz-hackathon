@@ -1,7 +1,0 @@
-create = async (body: CreateRoomParams) => {
-	return instance
-		.post('rooms/create', {
-			json: body,
-		})
-		.json<StandardResponse<Room>>();
-}

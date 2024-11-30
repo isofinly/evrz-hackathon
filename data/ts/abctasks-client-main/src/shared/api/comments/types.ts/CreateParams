@@ -1,3 +1,0 @@
-interface CreateParams extends BaseCommentParams {
-	readonly content: string;
-}

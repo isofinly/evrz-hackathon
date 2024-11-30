@@ -1,0 +1,1 @@
+{"start_line": 19, "code": "interface GetListItemParams {\n\treadonly parent: Locator | Page;\n\treadonly name: string;\n}"}

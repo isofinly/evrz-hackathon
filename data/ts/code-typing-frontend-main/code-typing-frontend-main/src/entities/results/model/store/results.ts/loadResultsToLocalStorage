@@ -1,5 +1,0 @@
-loadResultsToLocalStorage = (state: TResultStore | null) => {
-    if (!state) return
-
-    localStorage.setItem(storageKeysEnum.results, JSON.stringify(state))
-}

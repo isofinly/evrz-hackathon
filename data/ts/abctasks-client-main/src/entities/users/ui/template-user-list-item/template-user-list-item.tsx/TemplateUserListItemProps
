@@ -1,9 +1,0 @@
-interface TemplateUserListItemProps
-
-	extends CommonProps,
-
-		User,
-
-		Omit<ListItemProps, keyof CommonProps | keyof User | 'slots'> {
-	readonly slots?: Slots<'actions' | 'extra'>;
-}

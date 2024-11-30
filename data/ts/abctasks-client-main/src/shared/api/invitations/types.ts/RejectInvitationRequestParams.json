@@ -1,0 +1,1 @@
+{"start_line": 55, "code": "interface RejectInvitationRequestParams {\n\treadonly id: number;\n}"}

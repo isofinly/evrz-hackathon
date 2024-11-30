@@ -1,0 +1,1 @@
+{"start_line": 9, "code": "Header = () => {\n  return (\n    <HeaderContainer>\n      <Logo to=\"/\" />\n      <Nav data={[]} />\n      <LogoutButton type=\"primary\" icon=\"logout\" onClick={() => logOut()}>\n        \u0412\u044b\u0439\u0442\u0438\n      </LogoutButton>\n    </HeaderContainer>\n  );\n}"}

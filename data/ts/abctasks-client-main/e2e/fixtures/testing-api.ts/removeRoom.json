@@ -1,0 +1,1 @@
+{"start_line": 261, "code": "removeRoom = async (\n\n\tctx: BrowserContext,\n\n\tdata: RoomParams = {}\n\n): Promise<boolean> => {\n\treturn request(ctx, '/room', {\n\t\tmethod: 'PUT',\n\t\tdata,\n\t});\n}"}

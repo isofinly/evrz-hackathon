@@ -1,0 +1,1 @@
+{"start_line": 8, "code": "function formatDateTime(date: Date | number) {\n  return format(date, 'yyyy.MM.dd HH:mm');\n}"}

@@ -1,6 +1,0 @@
-interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> {
-  className?: string
-  size?: 'sm' | 'base' | 'xl'
-  color?: 'primary' | 'secondary'
-  lineHeight?: 'base' | 'tight'
-}

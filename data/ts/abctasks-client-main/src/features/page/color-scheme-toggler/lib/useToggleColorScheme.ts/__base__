@@ -1,7 +1,0 @@
-
-import { useUnit } from 'effector-react';
-
-import { colorSchemeModel } from '@/shared/models';
-
-
-export const useToggleColorScheme = () => <BODY useToggleColorScheme>;

@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { ReactNode, useEffect, useState } from \"react\"\n\n\nimport { Progress } from \"@chakra-ui/react\"\n\n\nimport { useRefresh, useViewer } from \"@entities/viewer\"\n\n\nexport const publicPage = (children: ReactNode) => <BODY publicPage>\n\nconst PublicPage = ({ children }: { children: ReactNode }) => <BODY PublicPage>"}

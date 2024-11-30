@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "declare const styles: {\n\n\treadonly container: string;\n\n\treadonly text: string;\n\n};\n\nexport = styles;\n"}

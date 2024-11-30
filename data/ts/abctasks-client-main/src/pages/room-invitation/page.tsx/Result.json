@@ -1,0 +1,1 @@
+{"start_line": 49, "code": "Result: React.FC = () => {\n\tconst invitation = useUnit(invitationViaTokenModel.query.$data);\n\n\tif (!invitation) {\n\t\treturn null;\n\t}\n\n\treturn <InvitationCard {...invitation} />;\n}"}

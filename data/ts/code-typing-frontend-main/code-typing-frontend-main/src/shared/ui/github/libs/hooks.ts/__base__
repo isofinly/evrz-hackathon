@@ -1,9 +1,0 @@
-
-
-import { queryKeysEnum } from "@shared/constants"
-import { GithubService } from "@shared/ui/github"
-import { useQuery } from "@tanstack/react-query"
-
-export const useGetGithubUser = (username: string) => <BODY useGetGithubUser>
-
-export const useGetGithubRepo = (owner: string, repoName: string) => <BODY useGetGithubRepo>

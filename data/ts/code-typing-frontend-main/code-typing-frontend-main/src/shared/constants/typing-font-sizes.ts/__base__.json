@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export const typingFontSizes = [\n\n    { fontSize: 20, name: \"sm\", fullName: \"Small\" },\n\n    { fontSize: 25, name: \"md\", fullName: \"Medium\" },\n\n    { fontSize: 30, name: \"lg\", fullName: \"Large\" }\n\n]\n"}

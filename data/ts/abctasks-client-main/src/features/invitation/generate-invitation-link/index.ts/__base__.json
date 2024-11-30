@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export * as generateInvitationLinkModel from './model';\n\nexport {\n\n\tGenerateInvitationLink,\n\n\ttype GenerateInvitationLinkProps\n\n} from './generate-invitation-link';\n"}

@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export {\n\n\tSkeletonRoomCard,\n\n\ttype SkeletonRoomCardProps\n\n} from './skeleton-room-card';\n"}

@@ -1,0 +1,1 @@
+{"start_line": 2, "code": "interface UserParams {\n\treadonly id?: number;\n\treadonly email?: string;\n\treadonly username?: string;\n\treadonly password?: string;\n\treadonly activated?: boolean;\n}"}

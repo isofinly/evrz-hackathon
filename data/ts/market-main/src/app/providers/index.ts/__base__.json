@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import compose from \"compose-function\";\n\nimport { withRouter } from \"./RouterProvider\";\n\n\n\nexport const withProviders = compose(withRouter);\n"}

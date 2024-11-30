@@ -1,4 +1,0 @@
-interface AsideState {
-    currentTabName: AsideTabName | null
-    onChangeTabName: ((index: AsideTabName | null) => void) | null
-}

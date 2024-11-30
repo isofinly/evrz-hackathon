@@ -1,0 +1,1 @@
+{"start_line": 6, "code": "interface PrintingRowProps {\n    index: number\n    text: string\n    status?: PrintingRowStatus\n    endIndent?: number\n    printingInput?: ReactElement | null\n    typingValue?: string | null\n    textProps?: TextProps\n}"}

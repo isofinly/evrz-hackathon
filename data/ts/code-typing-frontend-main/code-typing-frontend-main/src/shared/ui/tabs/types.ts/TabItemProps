@@ -1,3 +1,0 @@
-interface TabItemProps extends ListItemProps {
-    isActive?: boolean
-}

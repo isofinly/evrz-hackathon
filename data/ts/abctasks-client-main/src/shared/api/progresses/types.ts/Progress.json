@@ -1,0 +1,1 @@
+{"start_line": 10, "code": "interface Progress extends Static<typeof progress> {}\n"}

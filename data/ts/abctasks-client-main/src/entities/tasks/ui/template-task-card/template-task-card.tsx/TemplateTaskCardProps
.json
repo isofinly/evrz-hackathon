@@ -1,0 +1,1 @@
+{"start_line": 22, "code": "interface TemplateTaskCardProps\n\n\textends CommonProps,\n\n\t\tPick<Task, 'title' | 'description' | 'createdAt' | 'status' | 'id'>,\n\n\t\tOmit<CardProps, keyof Task> {\n\treadonly slots: Slots<'actions' | 'tags' | 'userAvatar'>;\n}"}

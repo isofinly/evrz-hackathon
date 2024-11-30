@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export { RoomsLayout, type RoomsLayoutProps } from './rooms-layout';\n"}

@@ -1,0 +1,1 @@
+{"start_line": 4, "code": "Snow = () => {\n  return (\n    <div className=\"Snow\">\n      <div className=\"Snow__Absolute\">\n        <div className=\"Snow__Picture\"></div>\n      </div>\n      <div className=\"Snow__Picture__Star\">\n        <img src={Star} alt=\"Star\" />\n      </div>\n    </div>\n  );\n}"}

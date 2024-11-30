@@ -1,0 +1,1 @@
+{"start_line": 9, "code": "interface ConfirmUserExitProps extends CommonProps, BasePopupProps {}\n"}

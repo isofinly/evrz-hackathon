@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { Record, Static, String } from 'runtypes';\n\n\nexport const tokens = Record({\n\n\taccessToken: String,\n\n\trefreshToken: String,\n\n}).asReadonly();\n\n\nexport interface Tokens extends Static<typeof tokens> <BODY Tokens>"}

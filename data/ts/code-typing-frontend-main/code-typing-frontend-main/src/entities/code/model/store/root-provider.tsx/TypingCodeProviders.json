@@ -1,0 +1,1 @@
+{"start_line": 4, "code": "TypingCodeProviders = ({ children }: { children: ReactNode }) => {\n    return (\n        <RandomCodeProvider>\n            <TypingCodeHandlersProvider>{children}</TypingCodeHandlersProvider>\n        </RandomCodeProvider>\n    )\n}"}

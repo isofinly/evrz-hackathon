@@ -1,0 +1,1 @@
+{"start_line": 10, "code": "interface ChainedParams {\n\treadonly otherwise?: Event<any> | Effect<any, any>;\n}"}

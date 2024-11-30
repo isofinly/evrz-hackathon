@@ -1,5 +1,0 @@
-import { Button, ButtonProps } from "@chakra-ui/react"
-
-import { useTypingCodeHandlers } from "@entities/code"
-
-export const ButtonScrollToResult = (props: ButtonProps) => <BODY ButtonScrollToResult>

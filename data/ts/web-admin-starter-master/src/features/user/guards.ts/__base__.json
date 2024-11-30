@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { Guard } from 'router-guards';\n\n\nimport { UserSession, Roles } from 'api/user';\n\n\nexport function onlyAnon(): Guard<UserSession> <BODY onlyAnon>\n\nexport function onlyUsers(): Guard<UserSession> <BODY onlyUsers>\n\nexport function onlyFor(roles: Roles[]): Guard<UserSession> <BODY onlyFor>"}

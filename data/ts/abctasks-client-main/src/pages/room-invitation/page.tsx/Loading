@@ -1,9 +1,0 @@
-Loading: React.FC = () => {
-	const loaded = useUnit(invitationViaTokenModel.$loaded);
-
-	if (loaded) {
-		return null;
-	}
-
-	return <SkeletonInvitationCard />;
-}

@@ -1,4 +1,0 @@
-interface GetResultIdArgs {
-    timeStartMilliseconds: number
-    timeEndMilliseconds: number
-}

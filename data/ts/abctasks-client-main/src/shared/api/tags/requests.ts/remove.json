@@ -1,0 +1,1 @@
+{"start_line": 34, "code": "remove = async ({ roomId, id, }: RemoveTagParams) => {\n\treturn instance\n\t\t.delete(`tags/${roomId}/${id}/remove`)\n\t\t.json<StandardResponse<boolean>>();\n}"}

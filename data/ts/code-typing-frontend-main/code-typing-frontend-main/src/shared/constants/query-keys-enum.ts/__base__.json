@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export enum queryKeysEnum {\n\n    text = \"text\",\n\n    programmingLanguages = \"programmingLanguages\",\n\n    codeExample = \"codeExample\",\n\n    savedResults = \"savedResults\",\n\n    githubUser = \"githubUser\",\n\n    githubRepo = \"githubRepo\"\n\n}\n"}

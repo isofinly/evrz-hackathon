@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export * from \"./use-timer.interface.ts\"\n\nexport * from \"./use-timer.ts\"\n"}

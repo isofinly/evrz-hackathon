@@ -1,7 +1,0 @@
-import { FlexProps, ImageProps, TextProps } from "@chakra-ui/react"
-
-export interface TileProps extends FlexProps <BODY TileProps>
-
-export interface TileTextProps extends TextProps <BODY TileTextProps>
-
-export interface TileImageProps extends ImageProps <BODY TileImageProps>

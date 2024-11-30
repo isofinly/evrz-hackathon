@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export { Aside, type AsideProps } from './aside';\n"}

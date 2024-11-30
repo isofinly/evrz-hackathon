@@ -1,0 +1,1 @@
+{"start_line": 18, "code": "type UnknownWebAppUser = Omit<ParsedTelegramUser, 'id'> & {\n\n  id: string\n\n  initialized: false\n\n}\n"}

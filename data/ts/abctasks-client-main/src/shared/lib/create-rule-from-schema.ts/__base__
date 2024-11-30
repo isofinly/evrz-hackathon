@@ -1,9 +1,0 @@
-
-
-import { Rule } from 'effector-forms';
-import Joi from 'joi';
-
-export const createRuleFromSchema = <V, T = any>(
-	name: string,
-	schema: Joi.Schema<T>
-): Rule<V> => <BODY createRuleFromSchema>;

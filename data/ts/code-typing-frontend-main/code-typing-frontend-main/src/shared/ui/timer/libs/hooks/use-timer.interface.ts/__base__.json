@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export interface UseTimerReturn <BODY UseTimerReturn>\n\nexport interface UseTimerOptions <BODY UseTimerOptions>\n\nexport type TimerDirection = \"up\" | \"down\"\n"}

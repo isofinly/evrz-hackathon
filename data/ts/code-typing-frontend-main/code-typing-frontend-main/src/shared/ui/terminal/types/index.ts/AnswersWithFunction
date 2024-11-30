@@ -1,1 +1,0 @@
-type AnswersWithFunction = Partial<Record<AnswersKeys, () => void>>

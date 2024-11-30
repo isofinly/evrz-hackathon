@@ -1,0 +1,1 @@
+{"start_line": 4, "code": "isHttpError = (error: Error): error is HTTPError => {\n\treturn 'request' in error;\n}"}

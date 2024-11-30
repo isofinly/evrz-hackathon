@@ -1,0 +1,1 @@
+{"start_line": 38, "code": "translate = (name: string) => {\n\t\t\treturn t(`spheres.${name}`);\n\t\t}"}

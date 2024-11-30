@@ -1,9 +1,0 @@
-removeTask = async (
-	ctx: BrowserContext,
-	data: TaskParams = {}
-): Promise<boolean> => {
-	return request(ctx, '/task', {
-		method: 'PUT',
-		data,
-	});
-}

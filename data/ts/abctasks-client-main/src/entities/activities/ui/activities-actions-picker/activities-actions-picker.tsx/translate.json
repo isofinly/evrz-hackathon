@@ -1,0 +1,1 @@
+{"start_line": 46, "code": "translate = (name: string) => {\n\t\t\treturn t(`type.${name}`);\n\t\t}"}

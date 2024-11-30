@@ -1,0 +1,1 @@
+{"start_line": 8, "code": "interface Props {\n  className?: string\n  children: ReactNode\n}"}

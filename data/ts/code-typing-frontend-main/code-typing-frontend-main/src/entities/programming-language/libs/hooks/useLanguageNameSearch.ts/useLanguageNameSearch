@@ -1,7 +1,0 @@
-useLanguageNameSearch = () => {
-    const [searchParams] = useSearchParams()
-
-    const languageName = searchParams.get(searchParamsEnum.languageName)
-
-    return languageName
-}

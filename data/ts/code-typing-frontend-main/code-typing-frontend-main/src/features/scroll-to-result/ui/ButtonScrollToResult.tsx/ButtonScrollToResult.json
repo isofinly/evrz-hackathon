@@ -1,0 +1,1 @@
+{"start_line": 4, "code": "ButtonScrollToResult = (props: ButtonProps) => {\n    const { scrollToResult, isEnded } = useTypingCodeHandlers()\n\n    const handleScrollToResult = () => {\n        scrollToResult()\n    }\n\n    return isEnded && <Button onClick={handleScrollToResult} {...props} />\n}"}

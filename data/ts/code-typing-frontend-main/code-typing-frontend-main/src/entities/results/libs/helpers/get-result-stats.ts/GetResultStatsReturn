@@ -1,4 +1,0 @@
-interface GetResultStatsReturn {
-    charactersPerMinuteString: string
-    wordsPerMinuteString: string
-}

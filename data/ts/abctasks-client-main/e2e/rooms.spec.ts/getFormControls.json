@@ -1,0 +1,1 @@
+{"start_line": 6, "code": "getFormControls = (loc: Locator | Page, buttonText: string) => {\n\tconst name = loc.getByLabel('Name');\n\tconst description = loc.getByLabel('Description');\n\tconst button = loc.getByRole('button', { name: buttonText });\n\n\treturn {\n\t\tname,\n\t\tdescription,\n\t\tbutton,\n\t};\n}"}

@@ -1,0 +1,1 @@
+{"start_line": 4, "code": "dataExtractor = <T>({\n\n\tresult,\n\n}: {\n\n\tresult: StandardResponse<T>;\n\n}): T => {\n\treturn result.data;\n}"}

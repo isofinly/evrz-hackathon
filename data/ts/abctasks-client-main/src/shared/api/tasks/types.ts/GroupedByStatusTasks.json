@@ -1,0 +1,1 @@
+{"start_line": 44, "code": "interface GroupedByStatusTasks {\n\treadonly ready: Task[];\n\treadonly in_progress: Task[];\n\treadonly needReview: Task[];\n\treadonly done: Task[];\n}"}

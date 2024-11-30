@@ -1,3 +1,0 @@
-interface ActivateParams {
-	readonly token: string;
-}

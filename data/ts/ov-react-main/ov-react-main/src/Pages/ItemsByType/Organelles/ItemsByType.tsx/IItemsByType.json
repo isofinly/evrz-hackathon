@@ -1,0 +1,1 @@
+{"start_line": 9, "code": "interface IItemsByType {\n  type: string;\n}"}

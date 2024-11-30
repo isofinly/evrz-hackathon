@@ -1,9 +1,0 @@
-import { memo } from "react"
-
-import { Grid } from "@chakra-ui/react"
-
-import { CodeIndexesProps } from "@entities/code"
-
-const CodeIndexes = (props: CodeIndexesProps) => <BODY CodeIndexes>
-
-export default memo(CodeIndexes)

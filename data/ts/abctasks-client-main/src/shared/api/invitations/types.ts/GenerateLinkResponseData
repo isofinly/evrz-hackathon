@@ -1,1 +1,0 @@
-type GenerateLinkResponseData = Promise<StandardResponse<string>>;

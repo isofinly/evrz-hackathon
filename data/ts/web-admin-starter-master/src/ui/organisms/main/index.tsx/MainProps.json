@@ -1,0 +1,1 @@
+{"start_line": 4, "code": "type MainProps = {\n\n  children: React.ReactNode;\n\n};\n"}

@@ -1,3 +1,0 @@
-interface GetTagParams extends InRoomParams {
-	readonly id: number;
-}

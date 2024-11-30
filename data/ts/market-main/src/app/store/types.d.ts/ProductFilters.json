@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "type ProductFilters = {\n\n    limit: number;\n\n    query: string;\n\n    skip: number;\n\n    category: Category;\n\n}\n"}

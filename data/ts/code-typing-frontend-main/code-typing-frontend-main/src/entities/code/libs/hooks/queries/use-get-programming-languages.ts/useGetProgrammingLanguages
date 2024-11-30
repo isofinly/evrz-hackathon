@@ -1,6 +1,0 @@
-useGetProgrammingLanguages = () => {
-    return useQuery({
-        queryFn: () => CodeService.fetchProgrammingLanguages(),
-        queryKey: [queryKeysEnum.programmingLanguages]
-    })
-}

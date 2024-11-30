@@ -1,4 +1,0 @@
-interface GetListItemParams {
-	readonly parent: Locator | Page;
-	readonly name: string;
-}

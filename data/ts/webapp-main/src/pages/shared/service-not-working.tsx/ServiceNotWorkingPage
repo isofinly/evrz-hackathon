@@ -1,7 +1,0 @@
-ServiceNotWorkingPage = () => {
-  return (
-    <BaseTemplate>
-      <ServiceNotWorking />
-    </BaseTemplate>
-  )
-}

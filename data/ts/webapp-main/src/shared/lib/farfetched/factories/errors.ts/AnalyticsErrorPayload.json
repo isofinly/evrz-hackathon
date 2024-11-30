@@ -1,0 +1,1 @@
+{"start_line": 12, "code": "interface AnalyticsErrorPayload {\n  requestName: string\n  params: Record<string, string>\n  error: Error\n}"}

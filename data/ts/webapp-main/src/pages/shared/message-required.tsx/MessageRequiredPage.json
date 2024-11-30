@@ -1,0 +1,1 @@
+{"start_line": 3, "code": "MessageRequiredPage = () => {\n  return (\n    <BaseTemplate>\n      <MessageRequired />\n    </BaseTemplate>\n  )\n}"}

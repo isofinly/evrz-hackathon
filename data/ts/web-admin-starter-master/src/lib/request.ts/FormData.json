@@ -1,0 +1,1 @@
+{"start_line": 18, "code": "type FormData = {\n\n  file: File;\n\n  name: string;\n\n  meta?: {\n\n    [index: string]: string;\n\n  };\n\n};\n"}

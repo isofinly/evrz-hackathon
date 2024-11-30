@@ -1,0 +1,1 @@
+{"start_line": 25, "code": "handleKeyDown: KeyboardEventHandler<HTMLInputElement> = e => {\n        requestAnimationFrame(() => {\n            setCursorPosition(inputRef.current?.selectionStart)\n        })\n        onKeyDown && onKeyDown(e)\n    }"}

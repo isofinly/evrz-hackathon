@@ -1,0 +1,1 @@
+{"start_line": 6, "code": "CodeIndexes = (props: CodeIndexesProps) => {\n    return (\n        <Grid borderRight=\"2px solid\" borderColor=\"main.200\" pr=\"30px\" autoRows=\"40px\" {...props} />\n    )\n}"}

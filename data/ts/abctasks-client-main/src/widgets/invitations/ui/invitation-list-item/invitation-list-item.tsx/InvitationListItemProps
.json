@@ -1,0 +1,1 @@
+{"start_line": 14, "code": "interface InvitationListItemProps\n\n\textends CommonProps,\n\n\t\tOmit<TemplateInvitationListItemProps, 'slots' | 'id'> {\n\treadonly id: number;\n\treadonly email: string;\n\treadonly photo: string | null;\n}"}

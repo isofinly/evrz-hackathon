@@ -1,6 +1,0 @@
-tag = async (ctx: BrowserContext, data: TagParams = {}): Promise<Tag> => {
-	return request(ctx, '/tag', {
-		method: 'POST',
-		data,
-	});
-}

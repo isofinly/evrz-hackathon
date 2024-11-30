@@ -1,3 +1,0 @@
-getColumn = (locator: Locator | Page, type: string) => {
-	return locator.getByRole('region').filter({ hasText: type });
-}

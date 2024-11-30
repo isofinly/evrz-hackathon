@@ -1,3 +1,0 @@
-export interface CurrentRowState <BODY CurrentRowState>
-
-export interface CurrentRowMethods <BODY CurrentRowMethods>

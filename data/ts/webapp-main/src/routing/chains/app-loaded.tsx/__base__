@@ -1,6 +1,0 @@
-import { $$user } from '@entities/user'
-import { RouteInstance, RouteParams } from 'atomic-router'
-import { and } from 'patronum'
-import { createChain } from '../shared/create-chain'
-
-export function chainAppLoaded<T extends RouteParams>(route: RouteInstance<T>) <BODY chainAppLoaded>

@@ -1,5 +1,0 @@
-logout = async (ctx: BrowserContext): Promise<boolean> => {
-	return request(ctx, '/logout', {
-		method: 'PUT',
-	});
-}

@@ -1,3 +1,0 @@
-useRooms = () => {
-	return useUnit(roomsModel.query);
-}

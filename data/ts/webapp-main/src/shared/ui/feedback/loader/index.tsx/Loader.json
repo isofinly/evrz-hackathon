@@ -1,0 +1,1 @@
+{"start_line": 13, "code": "Loader = ({ className, style }: Props) => {\n  return (\n    <div className={clsx(styles.loader, className)} style={style}>\n      <Icon name=\"loader\" />\n    </div>\n  )\n}"}

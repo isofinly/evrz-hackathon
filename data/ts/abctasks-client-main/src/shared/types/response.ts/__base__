@@ -1,9 +1,0 @@
-import { Runtype, Record, Number, Array } from 'runtypes';
-
-export const getStandardResponse = <RT>(T: Runtype<RT>) => <BODY getStandardResponse>;
-
-export interface StandardResponse<T> <BODY StandardResponse>
-
-export const getPaginationResponse = <RT>(T: Runtype<RT>) => <BODY getPaginationResponse>;
-
-export interface PaginationResponse<T> <BODY PaginationResponse>

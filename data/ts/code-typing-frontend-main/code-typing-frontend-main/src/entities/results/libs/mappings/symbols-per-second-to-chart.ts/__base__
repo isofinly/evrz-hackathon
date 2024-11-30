@@ -1,5 +1,0 @@
-import { ISymbolsPerSecondChartItem } from "@entities/results"
-
-export const symbolsPerSecondToChart = (
-    symbolsPerSecond: number[]
-): ISymbolsPerSecondChartItem[] => <BODY symbolsPerSecondToChart>

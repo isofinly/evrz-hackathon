@@ -1,0 +1,1 @@
+{"start_line": 16, "code": "type TagPickerProps = CommonProps &\n\n\tPickerProps<number> &\n\n\tOmit<FieldProps, 'onChange' | 'value' | 'className' | 'multiline'>;\n"}

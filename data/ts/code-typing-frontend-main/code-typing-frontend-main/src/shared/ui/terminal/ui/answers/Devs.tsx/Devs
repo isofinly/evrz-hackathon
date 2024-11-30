@@ -1,8 +1,0 @@
-Devs = () => {
-    return (
-        <Flex gap={10} wrap="wrap">
-            <GithubUserItem username="denischagin" />
-            <GithubUserItem username="ttodoshi" />
-        </Flex>
-    )
-}

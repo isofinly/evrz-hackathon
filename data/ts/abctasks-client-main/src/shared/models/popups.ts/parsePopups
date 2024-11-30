@@ -1,3 +1,0 @@
-parsePopups = (raw: string): string[] => {
-	return raw.split(',');
-}

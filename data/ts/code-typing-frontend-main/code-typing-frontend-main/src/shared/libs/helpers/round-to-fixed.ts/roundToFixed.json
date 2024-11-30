@@ -1,0 +1,1 @@
+{"start_line": 1, "code": "roundToFixed = (num: number, fixed: number): number => {\n    const mult = Math.pow(10, fixed)\n    return Math.round(num * mult) / mult\n}"}

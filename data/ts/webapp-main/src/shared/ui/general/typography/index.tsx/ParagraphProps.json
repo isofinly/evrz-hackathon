@@ -1,0 +1,1 @@
+{"start_line": 37, "code": "interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> {\n  className?: string\n  size?: 'sm' | 'base' | 'xl'\n  color?: 'primary' | 'secondary'\n  lineHeight?: 'base' | 'tight'\n}"}

@@ -1,6 +1,0 @@
-useCodeErrorsHandlers = () =>
-    useUnit({
-        incrementErrors: eventIncrementErrors,
-        setErrorsCount: eventSetErrorsCount,
-        setIsError: eventSetIsError
-    })

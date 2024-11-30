@@ -1,0 +1,1 @@
+{"start_line": 5, "code": "PaginationPanel = (props: FlexProps) => {\n    return <Flex borderRadius=\"30px\" overflow=\"hidden\" {...props} />\n}"}

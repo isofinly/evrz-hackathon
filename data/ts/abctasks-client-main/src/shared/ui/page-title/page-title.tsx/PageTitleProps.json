@@ -1,0 +1,1 @@
+{"start_line": 12, "code": "interface PageTitleProps extends CommonProps {\n\treadonly title: React.ReactNode;\n\treadonly extra?: React.ReactElement | null;\n}"}

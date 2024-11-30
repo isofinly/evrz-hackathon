@@ -1,0 +1,1 @@
+{"start_line": 3, "code": "type AnyAction = {\n\n    type: string\n\n    payload?: unknown\n\n}\n"}

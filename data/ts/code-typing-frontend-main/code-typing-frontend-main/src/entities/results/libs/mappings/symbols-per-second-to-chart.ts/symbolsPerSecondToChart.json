@@ -1,0 +1,1 @@
+{"start_line": 2, "code": "symbolsPerSecondToChart = (\n\n    symbolsPerSecond: number[]\n\n): ISymbolsPerSecondChartItem[] => {\n    return symbolsPerSecond.map((value, index) => ({ name: `${index + 1}`, spm: value }))\n}"}

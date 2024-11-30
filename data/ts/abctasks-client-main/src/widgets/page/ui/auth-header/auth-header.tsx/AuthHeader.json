@@ -1,0 +1,1 @@
+{"start_line": 13, "code": "AuthHeader: React.FC<AuthHeaderProps> = (props) => {\n\tconst { className } = props;\n\n\treturn (\n\t\t<TemplateHeader\n\t\t\tclassName={className}\n\t\t\tslots={{\n\t\t\t\tright: (\n\t\t\t\t\t<>\n\t\t\t\t\t\t<ChangeLanguage />\n\t\t\t\t\t\t<AdaptiveColorSchemeToggler />\n\t\t\t\t\t</>\n\t\t\t\t),\n\t\t\t}}\n\t\t/>\n\t);\n}"}

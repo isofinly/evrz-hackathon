@@ -1,0 +1,1 @@
+{"start_line": 31, "code": "type BoundMethod<Method extends AnyMethod> = (...args: Tail<Parameters<Method>>) => void\n"}

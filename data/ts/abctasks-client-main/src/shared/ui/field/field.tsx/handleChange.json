@@ -1,0 +1,1 @@
+{"start_line": 22, "code": "handleChange: React.ChangeEventHandler<HTMLInputElement> = (evt) => {\n\t\tonChange?.(evt.target.value);\n\t}"}

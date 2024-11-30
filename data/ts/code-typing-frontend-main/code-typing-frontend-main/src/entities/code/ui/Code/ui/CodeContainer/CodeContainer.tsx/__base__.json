@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { memo } from \"react\"\n\n\nimport { Grid } from \"@chakra-ui/react\"\n\n\nimport { CodeContainerProps } from \"@entities/code\"\n\n\nconst CodeContainer = (props: CodeContainerProps) => <BODY CodeContainer>\n\nexport default memo(CodeContainer)\n"}

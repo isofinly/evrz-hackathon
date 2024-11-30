@@ -1,0 +1,1 @@
+{"start_line": 10, "code": "interface AsideProps extends CommonProps {\n\treadonly disableBorder?: boolean;\n}"}

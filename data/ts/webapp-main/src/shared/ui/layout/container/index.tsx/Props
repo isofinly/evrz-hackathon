@@ -1,9 +1,0 @@
-interface Props extends HTMLAttributes<HTMLDivElement> {
-  as?: 'section' | 'header' | 'div'
-  className?: string
-  style?: CSSProperties
-  rounded?: 'top' | 'bottom' | 'both'
-  nesting?: 0 | 1
-  padding?: 'base' | 'xl'
-  children: ReactNode
-}

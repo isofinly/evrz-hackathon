@@ -1,0 +1,1 @@
+{"start_line": 33, "code": "function attachFormData({ file, name, meta }: FormData) {\n  const data = new FormData();\n  data.append(name, file);\n  meta && Object.keys(meta).map((value) => data.append(value, meta[value]));\n  return data;\n}"}

@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { Flex } from \"@chakra-ui/react\"\n\n\nimport { GithubUserItem } from \"@shared/ui/github\"\n\n\nexport const Devs = () => <BODY Devs>"}

@@ -1,0 +1,1 @@
+{"start_line": 12, "code": "interface TemplateHeaderProps extends CommonProps {\n\treadonly slots?: Slots<'left' | 'right' | 'center'>;\n}"}

@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { ResultParams } from \"@entities/results\"\n\nimport { searchParamsEnum } from \"@shared/constants\"\n\n\nexport const mapResultToSearch = (\n\n    resultParams: Record<keyof ResultParams, unknown>\n\n): URLSearchParams => <BODY mapResultToSearch>"}

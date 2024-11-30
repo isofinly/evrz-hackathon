@@ -1,9 +1,0 @@
-interface PrintingRowProps {
-    index: number
-    text: string
-    status?: PrintingRowStatus
-    endIndent?: number
-    printingInput?: ReactElement | null
-    typingValue?: string | null
-    textProps?: TextProps
-}

@@ -1,4 +1,0 @@
-type SearchTypes = {
-  ref: React.RefObject<Input>;
-  placeholder: string;
-};

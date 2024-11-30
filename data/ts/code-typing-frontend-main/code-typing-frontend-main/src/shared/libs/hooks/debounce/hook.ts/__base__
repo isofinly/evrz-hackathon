@@ -1,9 +1,0 @@
-
-import { useRef } from "react"
-
-import { UnknownFunction, UseDebounceReturnFunction } from "./types.ts"
-
-export const useDebounce = <FunctionType extends UnknownFunction>(
-    debounceFunction: FunctionType,
-    ms: number = 400
-): UseDebounceReturnFunction<FunctionType> => <BODY useDebounce>

@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { ResultParams, ResultsSortBy } from \"@entities/results\"\n\nimport { searchParamsEnum } from \"@shared/constants\"\n\n\nexport const getResultFromSearch = (searchParams: URLSearchParams): ResultParams => <BODY getResultFromSearch>"}

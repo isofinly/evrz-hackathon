@@ -1,3 +1,0 @@
-interface LoginParams extends UserParams {
-	readonly remember?: boolean;
-}

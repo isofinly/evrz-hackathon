@@ -1,5 +1,0 @@
-import { Flex } from "@chakra-ui/react"
-
-import { PaginationItem, usePagination } from "@shared/ui/pagination"
-
-export const PaginationItems = (props: { items: number[] }) => <BODY PaginationItems>

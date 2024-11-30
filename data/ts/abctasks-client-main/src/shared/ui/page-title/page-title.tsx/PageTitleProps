@@ -1,4 +1,0 @@
-interface PageTitleProps extends CommonProps {
-	readonly title: React.ReactNode;
-	readonly extra?: React.ReactElement | null;
-}

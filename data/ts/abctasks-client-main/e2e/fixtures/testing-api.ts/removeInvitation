@@ -1,9 +1,0 @@
-removeInvitation = async (
-	ctx: BrowserContext,
-	data: InvitationParams = {}
-): Promise<boolean> => {
-	return request(ctx, '/invitation', {
-		method: 'PUT',
-		data,
-	});
-}

@@ -1,3 +1,0 @@
-interface InviteUserRequestParams extends InRoomParams {
-	readonly userId: number;
-}

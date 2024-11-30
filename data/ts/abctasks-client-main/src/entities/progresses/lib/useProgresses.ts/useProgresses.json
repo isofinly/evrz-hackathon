@@ -1,0 +1,1 @@
+{"start_line": 5, "code": "useProgresses = () => {\n\tconst query = useUnit(progressesModel.query);\n\tconst status = useUnit(progressesModel.query.$status);\n\treturn {\n\t\t...query,\n\t\tstatus,\n\t};\n}"}

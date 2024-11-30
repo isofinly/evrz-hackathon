@@ -1,3 +1,0 @@
-import { List, ListProps } from "@chakra-ui/react"
-
-export const TabList = (props: ListProps) => <BODY TabList>

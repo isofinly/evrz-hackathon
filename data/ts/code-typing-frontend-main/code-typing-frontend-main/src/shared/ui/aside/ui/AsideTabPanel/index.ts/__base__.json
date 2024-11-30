@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export { AsideTabPanel } from \"./AsideTabPanel.tsx\"\n\nexport * from \"./AsideTabPanel.interface.ts\"\n"}

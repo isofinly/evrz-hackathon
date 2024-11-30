@@ -1,0 +1,1 @@
+{"start_line": 65, "code": "function addFilter<T>(fields: (keyof T)[]) {\n  return {\n    onFilter: (value: string | number | boolean, record: T) => {\n      const normalize = (value: any): string => String(value).toLowerCase();\n      const elements = fields.map((item) => normalize(record[item]));\n      return elements.join(' ').includes(normalize(value));\n    },\n  };\n}"}

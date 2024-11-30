@@ -1,0 +1,1 @@
+{"start_line": 13, "code": "interface UserAvatarProps\n\n\textends CommonProps,\n\n\t\tPick<User, 'email' | 'photo' | 'username'> {\n\treadonly size?: number;\n\treadonly disableTooltip?: boolean;\n}"}

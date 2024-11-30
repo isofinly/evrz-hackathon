@@ -1,9 +1,0 @@
-
-import { $$stickyActions } from '@shared/ui'
-import { useUnit } from 'effector-react'
-import { ReactNode } from 'react'
-
-
-interface Props <BODY Props>
-
-export const BaseTemplate = ({ children }: Props) => <BODY BaseTemplate>

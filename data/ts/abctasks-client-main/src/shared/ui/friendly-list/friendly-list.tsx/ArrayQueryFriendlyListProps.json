@@ -1,0 +1,1 @@
+{"start_line": 43, "code": "interface ArrayQueryFriendlyListProps<Item, Error>\n\n\textends BaseFriendlyListProps<Item, Error> {\n\treadonly $query: Query<any, Item[], Error, any>;\n\treadonly getData?: never;\n}"}

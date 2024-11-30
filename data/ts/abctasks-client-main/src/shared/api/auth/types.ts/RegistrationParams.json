@@ -1,0 +1,1 @@
+{"start_line": 30, "code": "interface RegistrationParams {\n\treadonly email: string;\n\treadonly username: string;\n\treadonly password: string;\n}"}

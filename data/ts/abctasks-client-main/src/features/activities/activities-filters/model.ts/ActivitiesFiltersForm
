@@ -1,7 +1,0 @@
-interface ActivitiesFiltersForm
-
-	extends Required<
-
-		Omit<GetActivitiesInRoomParams, 'roomId' | 'count' | 'page' | 'by' | 'type'>
-
-	> {}

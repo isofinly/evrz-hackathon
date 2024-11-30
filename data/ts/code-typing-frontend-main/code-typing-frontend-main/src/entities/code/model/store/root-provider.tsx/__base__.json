@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { ReactNode } from \"react\"\n\n\nimport { RandomCodeProvider, TypingCodeHandlersProvider } from \"@entities/code\"\n\n\nexport const TypingCodeProviders = ({ children }: { children: ReactNode }) => <BODY TypingCodeProviders>"}

@@ -1,0 +1,1 @@
+{"start_line": 18, "code": "getRoomCard = (\n\n\tloc: Locator | Page,\n\n\tname: string,\n\n\tdescription: string\n\n) => {\n\treturn loc\n\t\t.getByRole('listitem')\n\t\t.filter({\n\t\t\thasText: new RegExp(`^${name}`),\n\t\t})\n\t\t.filter({ hasText: new RegExp(`${description}`) })\n\t\t.first();\n}"}

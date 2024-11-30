@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { CustomCodeExampleBody } from \"@entities/code\"\n\n\nexport const validateCustomCodeExample = ({\n\n    content,\n\n    programmingLanguageUUID\n\n}: CustomCodeExampleBody): string[] => <BODY validateCustomCodeExample>"}

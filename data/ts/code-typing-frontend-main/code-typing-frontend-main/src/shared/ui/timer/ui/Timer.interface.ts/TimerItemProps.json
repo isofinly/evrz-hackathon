@@ -1,0 +1,1 @@
+{"start_line": 4, "code": "interface TimerItemProps {\n    time: number\n    postfix: string\n    required?: boolean\n}"}

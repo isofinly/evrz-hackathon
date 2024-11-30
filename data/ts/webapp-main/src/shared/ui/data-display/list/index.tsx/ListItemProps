@@ -1,4 +1,0 @@
-interface ListItemProps extends HTMLAttributes<HTMLLIElement> {
-  className?: string
-  children: ReactNode
-}

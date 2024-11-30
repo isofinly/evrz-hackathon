@@ -1,5 +1,0 @@
-import { AxiosInstance, AxiosRequestConfig } from "axios"
-
-export const makeBaseQuery =
-    (instance: AxiosInstance) =>
-    <R>(config: AxiosRequestConfig | string) => <BODY makeBaseQuery>

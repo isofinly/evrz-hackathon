@@ -1,0 +1,1 @@
+{"start_line": 24, "code": "type ActivitiesActionsPickerProps = CommonProps &\n\n\tPickerProps<number> &\n\n\tOmit<FieldProps, 'onChange' | 'value' | 'className' | 'multiline'>;\n"}

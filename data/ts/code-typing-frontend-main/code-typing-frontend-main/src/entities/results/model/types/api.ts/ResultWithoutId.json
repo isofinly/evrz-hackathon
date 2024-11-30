@@ -1,0 +1,1 @@
+{"start_line": 10, "code": "interface ResultWithoutId extends Omit<ResultFromApi, \"id\" | \"codeExampleUUID\" | \"userID\"> {}\n"}

@@ -1,1 +1,0 @@
-type BoundMethod<Method extends AnyMethod> = (...args: Tail<Parameters<Method>>) => void

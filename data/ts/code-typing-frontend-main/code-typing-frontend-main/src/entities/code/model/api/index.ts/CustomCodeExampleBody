@@ -1,4 +1,0 @@
-interface CustomCodeExampleBody {
-    programmingLanguageUUID: string
-    content: string
-}

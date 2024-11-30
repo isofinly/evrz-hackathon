@@ -1,0 +1,1 @@
+{"start_line": 16, "code": "interface Comment extends Static<typeof comment> {}\n"}

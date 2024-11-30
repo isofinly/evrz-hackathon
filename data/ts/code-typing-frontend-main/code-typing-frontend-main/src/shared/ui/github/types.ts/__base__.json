@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export interface GithubUser <BODY GithubUser>\n\nexport interface GithubUserItemProps <BODY GithubUserItemProps>\n\nexport interface GithubRepoItemProps <BODY GithubRepoItemProps>\n\nexport interface GithubRepository <BODY GithubRepository>"}

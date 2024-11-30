@@ -1,0 +1,1 @@
+{"start_line": 10, "code": "interface RemoveUserParams extends InRoomParams {\n\treadonly userId: number;\n}"}

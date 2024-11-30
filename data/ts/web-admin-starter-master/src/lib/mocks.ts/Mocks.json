@@ -1,0 +1,1 @@
+{"start_line": 81, "code": "type Mocks = {\n\n  [key: string]: (body: string) => object;\n\n};\n"}

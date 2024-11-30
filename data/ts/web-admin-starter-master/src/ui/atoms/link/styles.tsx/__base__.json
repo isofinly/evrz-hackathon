@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import styled from 'styled-components'\n\nimport { Link } from 'react-router-dom'\n\n\nexport const LinkWrap = styled(Link)`\n\n\n  color: var(--blue);\n\n  &:hover {\n    color: green;\n  }\n`\n"}

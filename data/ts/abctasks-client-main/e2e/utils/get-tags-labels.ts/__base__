@@ -1,3 +1,0 @@
-import { Tag } from '../fixtures';
-
-export const getTagsLabels = (tags: Tag[]): string[] => <BODY getTagsLabels>;

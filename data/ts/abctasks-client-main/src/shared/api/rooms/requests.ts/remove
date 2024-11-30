@@ -1,5 +1,0 @@
-remove = async ({ roomId, }: InRoomParams) => {
-	return instance
-		.delete(`rooms/${roomId}/remove`)
-		.json<StandardResponse<boolean>>();
-}

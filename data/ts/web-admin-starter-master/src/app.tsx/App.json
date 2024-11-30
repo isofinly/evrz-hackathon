@@ -1,0 +1,1 @@
+{"start_line": 8, "code": "App = () => {\n  useAuth()\n\n  const isUserPending = useStore($isUserPending);\n  const user = useStore($user);\n\n  return (\n    <GenericTemplate\n      isAuthed={Boolean(user.role)}\n      isPending={isUserPending}\n    >\n      <Routing />\n    </GenericTemplate>\n  );\n}"}

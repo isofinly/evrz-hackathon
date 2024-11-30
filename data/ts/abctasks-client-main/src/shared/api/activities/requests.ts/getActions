@@ -1,5 +1,0 @@
-getActions = async () => {
-	return instance
-		.get('activities/actions/all')
-		.json<StandardResponse<ActivityAction[]>>();
-}

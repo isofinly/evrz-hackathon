@@ -1,2 +1,0 @@
-getProgrammingLanguageLink = (name: string) =>
-    `?${searchParamsEnum.languageName}=${encodeURIComponent(name)}`

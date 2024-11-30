@@ -1,0 +1,1 @@
+{"start_line": 7, "code": "interface CodeLoadingProgressProps extends TextProps {\n    maxLoadingCount?: number\n    delay?: number\n    symbol?: string\n    emptySymbol?: string\n    title?: string\n    onSuccess?: () => void\n}"}

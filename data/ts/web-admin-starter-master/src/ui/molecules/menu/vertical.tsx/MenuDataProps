@@ -1,5 +1,0 @@
-type MenuDataProps = {
-  menuData: Array<MenuItemProps>;
-  defaultSelectedKeys?: Array<string>;
-  defaultOpenKeys?: Array<string>;
-}

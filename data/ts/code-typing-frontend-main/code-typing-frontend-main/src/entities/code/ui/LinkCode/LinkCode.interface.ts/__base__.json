@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { TextProps } from \"@chakra-ui/react\"\n\n\nexport interface LinkCodeProps extends TextProps <BODY LinkCodeProps>"}

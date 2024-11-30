@@ -1,0 +1,1 @@
+{"start_line": 28, "code": "type PickerProps<T> = SinglePickerProps<T> | MultiplePickerProps<T>;\n"}

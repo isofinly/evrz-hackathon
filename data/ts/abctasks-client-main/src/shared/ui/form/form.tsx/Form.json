@@ -1,0 +1,1 @@
+{"start_line": 10, "code": "Form: React.FC<PaperProps<'form'>> = (props) => {\n\tconst { className, children, ...rest } = props;\n\n\treturn (\n\t\t<Paper className={cn(styles.form, className)} {...rest} component='form'>\n\t\t\t{children}\n\t\t</Paper>\n\t);\n}"}

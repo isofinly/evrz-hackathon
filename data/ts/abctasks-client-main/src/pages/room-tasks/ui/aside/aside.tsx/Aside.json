@@ -1,0 +1,1 @@
+{"start_line": 14, "code": "Aside: React.FC<AsideProps> = (props) => {\n\tconst { className, disableBorder, } = props;\n\n\treturn (\n\t\t<div className={cn(styles.aside, className)}>\n\t\t\t<TasksProgress disableBorder={disableBorder} />\n\t\t\t<LastActivities disableBorder={disableBorder} />\n\t\t</div>\n\t);\n}"}

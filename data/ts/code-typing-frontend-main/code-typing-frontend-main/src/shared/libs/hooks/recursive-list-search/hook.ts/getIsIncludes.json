@@ -1,0 +1,1 @@
+{"start_line": 20, "code": "getIsIncludes = (value1: string, value2: string) => {\n    return value1.toLowerCase().includes(value2.toLowerCase())\n}"}

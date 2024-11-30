@@ -1,6 +1,0 @@
-interface UserAvatarProps
-	extends CommonProps,
-		Pick<User, 'email' | 'photo' | 'username'> {
-	readonly size?: number;
-	readonly disableTooltip?: boolean;
-}

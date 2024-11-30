@@ -1,3 +1,0 @@
-interface CommonProps {
-	className?: string;
-}

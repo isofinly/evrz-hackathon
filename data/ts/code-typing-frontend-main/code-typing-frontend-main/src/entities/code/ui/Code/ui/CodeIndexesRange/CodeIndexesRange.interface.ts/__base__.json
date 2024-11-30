@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { CodeIndexesProps } from \"@entities/code\"\n\n\nexport interface CodeIndexesRangeProps extends CodeIndexesProps <BODY CodeIndexesRangeProps>"}

@@ -1,0 +1,1 @@
+{"start_line": 5, "code": "interface ViewerHandlers {\n    loginViewer: (accessToken: string) => void\n    logoutViewer: () => void\n}"}

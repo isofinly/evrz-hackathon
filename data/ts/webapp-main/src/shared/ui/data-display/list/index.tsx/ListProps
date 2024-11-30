@@ -1,4 +1,0 @@
-interface ListProps extends HTMLAttributes<HTMLUListElement> {
-  className?: string
-  children: ReactNode
-}

@@ -1,0 +1,1 @@
+{"start_line": 34, "code": "activate = async (query: ActivateParams) => {\n\treturn instance\n\t\t.put('auth/registration/activate', {\n\t\t\tsearchParams: new URLSearchParams(normalizeQuery(query)),\n\t\t})\n\t\t.json<StandardResponse<boolean>>();\n}"}

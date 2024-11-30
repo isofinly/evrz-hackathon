@@ -1,0 +1,1 @@
+{"start_line": 20, "code": "interface UpdateTagParams\n\n\textends Partial<Omit<CreateTagParams, 'roomId'>>,\n\n\t\tInRoomParams {\n\treadonly id: number;\n}"}

@@ -1,0 +1,1 @@
+{"start_line": 10, "code": "interface ExitRoomUserMenuItemProps extends CommonProps {\n\treadonly roomId: number;\n}"}

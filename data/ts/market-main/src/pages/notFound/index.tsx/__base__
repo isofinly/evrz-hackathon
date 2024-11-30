@@ -1,7 +1,0 @@
-import React from 'react';
-import styles from './styles.module.scss';
-
-
-const NotFoundPage: React.FC = (): JSX.Element => <BODY NotFoundPage>;
-
-export default NotFoundPage;

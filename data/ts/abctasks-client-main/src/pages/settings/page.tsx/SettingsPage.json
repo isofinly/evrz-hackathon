@@ -1,0 +1,1 @@
+{"start_line": 9, "code": "SettingsPage: React.FC = () => {\n\tusePageTitle('Settings');\n\n\treturn (\n\t\t<MainLayout>\n\t\t\t<div className={styles.header}>\n\t\t\t\t<Typography component='h2'>Settings</Typography>\n\t\t\t</div>\n\t\t</MainLayout>\n\t);\n}"}

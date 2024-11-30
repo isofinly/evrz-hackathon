@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import * as $$goBack from './model'\n\n\nexport { $$goBack }\n\nexport * from './view-model'\n"}

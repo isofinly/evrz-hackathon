@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "declare const styles: {\n\n\treadonly root: string;\n\n\treadonly 'visibility-hidden': string;\n\n};\n\nexport = styles;\n"}

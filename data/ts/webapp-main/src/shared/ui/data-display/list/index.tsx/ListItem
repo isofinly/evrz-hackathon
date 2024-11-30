@@ -1,8 +1,0 @@
-ListItem = ({ className, children, ...rest }: ListItemProps) => {
-  return (
-    <li className={styles.listItem} {...rest}>
-      <Icon className="shrink-0 translate-y-[3px]" name="checkmark-circle" />
-      <span>{children}</span>
-    </li>
-  )
-}

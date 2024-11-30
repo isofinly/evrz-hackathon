@@ -1,9 +1,0 @@
-activity = async (
-	ctx: BrowserContext,
-	data: ActivityParams = {}
-): Promise<Activity> => {
-	return request(ctx, '/activity', {
-		method: 'POST',
-		data,
-	});
-}

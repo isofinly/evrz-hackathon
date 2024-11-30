@@ -1,0 +1,1 @@
+{"start_line": 13, "code": "interface StatusSelectProps\n\n\textends CommonProps,\n\n\t\tOmit<FieldProps, 'select'> {\n\treadonly hasEmptyOption?: boolean;\n\treadonly emptyOptionText?: string;\n}"}

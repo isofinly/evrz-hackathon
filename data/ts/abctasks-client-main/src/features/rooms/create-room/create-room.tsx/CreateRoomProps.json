@@ -1,0 +1,1 @@
+{"start_line": 14, "code": "interface CreateRoomProps extends CommonProps, BasePopupProps {}\n"}

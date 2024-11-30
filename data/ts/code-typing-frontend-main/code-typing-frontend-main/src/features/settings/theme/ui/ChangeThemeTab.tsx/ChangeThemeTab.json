@@ -1,0 +1,1 @@
+{"start_line": 6, "code": "ChangeThemeTab = () => {\n    return (\n        <Tooltip label=\"Change theme (Alt+4)\">\n            <Box>\n                <AsideTab name={settingTabs.theme} cursor=\"pointer\">\n                    <Image src={themeIcon} />\n                </AsideTab>\n            </Box>\n        </Tooltip>\n    )\n}"}

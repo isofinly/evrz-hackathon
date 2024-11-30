@@ -1,0 +1,1 @@
+{"start_line": 7, "code": "interface HeadingProps extends HTMLAttributes<HTMLDivElement> {\n  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'\n  className?: string\n  font?: 'interface' | 'text'\n  size?: 'sm' | 'base' | 'xl'\n}"}

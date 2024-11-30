@@ -1,3 +1,0 @@
-interface CenterProps extends CommonProps {
-	readonly height?: Height;
-}

@@ -1,7 +1,0 @@
-update = async ({ id, roomId, ...body }: UpdateTaskParams) => {
-	return instance
-		.put(`tasks/${roomId}/${id}/update`, {
-			json: body,
-		})
-		.json<StandardResponse<Task>>();
-}

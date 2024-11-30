@@ -1,0 +1,1 @@
+{"start_line": 18, "code": "interface BaseCommentParams extends InRoomParams {\n\treadonly taskId: number;\n}"}

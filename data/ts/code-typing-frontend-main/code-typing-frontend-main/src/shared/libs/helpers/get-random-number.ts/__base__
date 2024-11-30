@@ -1,2 +1,0 @@
-
-export const getRandomNumber = (min: number, max: number) => <BODY getRandomNumber>

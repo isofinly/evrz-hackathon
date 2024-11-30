@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export * as tagsModel from './tags';\n\nexport * as tagModel from './tag';\n"}

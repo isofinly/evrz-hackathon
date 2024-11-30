@@ -1,0 +1,1 @@
+{"start_line": 47, "code": "type InviteUserResponseData = Promise<StandardResponse<Invitation>>;\n"}

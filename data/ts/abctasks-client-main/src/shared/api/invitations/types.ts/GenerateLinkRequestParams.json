@@ -1,0 +1,1 @@
+{"start_line": 39, "code": "type GenerateLinkRequestParams = InRoomParams;\n"}

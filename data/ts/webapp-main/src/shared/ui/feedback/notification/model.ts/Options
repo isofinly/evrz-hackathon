@@ -1,4 +1,0 @@
-interface Options {
-  type: ToastType
-  message: string
-}

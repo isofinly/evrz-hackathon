@@ -1,0 +1,1 @@
+{"start_line": 1, "code": "interface AnalyticsEvent {\n  name: string;\n  payload: Record<string, string | number>;\n}"}

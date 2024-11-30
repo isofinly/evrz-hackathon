@@ -1,3 +1,0 @@
-useActivityActions = () => {
-	return useUnit(activityActionsModel.query);
-}

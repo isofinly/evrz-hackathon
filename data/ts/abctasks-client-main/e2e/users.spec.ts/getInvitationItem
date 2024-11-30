@@ -1,5 +1,0 @@
-getInvitationItem = (params: GetInvitationParams) => {
-	const { parent, username } = params;
-
-	return parent.getByRole('listitem').filter({ hasText: new RegExp(username) });
-}

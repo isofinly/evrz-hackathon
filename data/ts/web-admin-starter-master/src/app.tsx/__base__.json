@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import * as React from 'react';\n\nimport { useStore } from 'effector-react';\n\n\nimport { $user, $isUserPending, useAuth } from 'features/user';\n\nimport { GenericTemplate } from 'ui/templates';\n\n\nimport { Routing } from './routing';\n\n\nexport const App = () => <BODY App>;\n"}

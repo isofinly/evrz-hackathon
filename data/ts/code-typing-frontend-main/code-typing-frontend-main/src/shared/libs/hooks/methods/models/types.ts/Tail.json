@@ -1,0 +1,1 @@
+{"start_line": 10, "code": "type Tail<Arr extends readonly unknown[]> = Arr extends readonly [unknown, ...infer Rest]\n\n    ? Rest\n\n    : []\n"}

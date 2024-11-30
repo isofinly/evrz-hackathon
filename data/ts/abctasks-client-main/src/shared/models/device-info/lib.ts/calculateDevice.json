@@ -1,0 +1,1 @@
+{"start_line": 3, "code": "calculateDevice = (): Devices => {\n\tconst { innerWidth: width } = window;\n\n\tif (width <= 540) {\n\t\treturn 'mobile';\n\t}\n\n\tif (width <= 720) {\n\t\treturn 'tablet-vertical';\n\t}\n\n\tif (width <= 1200) {\n\t\treturn 'tablet-horizontal';\n\t}\n\tif (width <= 1440) {\n\t\treturn 'desktop-small';\n\t}\n\n\treturn 'desktop-large';\n}"}

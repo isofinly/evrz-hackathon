@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import * as $$user from './model'\n\n\nexport { $$user }\n"}

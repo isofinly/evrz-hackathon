@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export * as approveInvitationModel from './model';\n\nexport {\n\n\tApproveInvitationButton,\n\n\ttype ApproveInvitationButtonProps\n\n} from './ui';\n"}

@@ -1,0 +1,1 @@
+{"start_line": 13, "code": "interface RenderProps {\n\treadonly isPopup: boolean;\n\treadonly titleId: string;\n}"}

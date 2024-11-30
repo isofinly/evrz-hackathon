@@ -1,0 +1,1 @@
+{"start_line": 19, "code": "interface SkeletonTaskCardProps extends CommonProps {\n\treadonly contentLinesCount?: number;\n}"}

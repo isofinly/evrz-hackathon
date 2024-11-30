@@ -1,4 +1,0 @@
-type LogoProps = {
-  to: string;
-  icon?: React.ReactNode;
-}

@@ -1,0 +1,1 @@
+{"start_line": 2, "code": "type UseDebounceReturnFunction<FunctionType extends UnknownFunction> = (\n\n    ...args: Parameters<FunctionType>\n\n) => void\n"}

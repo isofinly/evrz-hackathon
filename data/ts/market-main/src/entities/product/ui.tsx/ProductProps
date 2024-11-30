@@ -1,5 +1,0 @@
-type ProductProps = {
-  product: Product;
-  theme: Theme;
-  setProduct: (product: Product) => void;
-};

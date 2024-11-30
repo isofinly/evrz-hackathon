@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { Box, Text } from \"@chakra-ui/react\"\n\n\nimport { AnswersKeys, CommandsEnum, TerminalAnswerProps } from \"@shared/ui/terminal/types\"\n\n\nexport const TerminalAnswer = (props: TerminalAnswerProps) => <BODY TerminalAnswer>"}

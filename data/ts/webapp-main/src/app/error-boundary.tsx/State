@@ -1,3 +1,0 @@
-interface State {
-  error: Error | null
-}

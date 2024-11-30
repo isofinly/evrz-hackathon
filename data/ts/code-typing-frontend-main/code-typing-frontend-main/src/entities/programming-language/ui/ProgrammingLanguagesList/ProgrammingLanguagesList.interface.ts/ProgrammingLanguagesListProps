@@ -1,4 +1,0 @@
-interface ProgrammingLanguagesListProps {
-    programmingLanguages: ProgrammingLanguage[] | undefined
-    renderItem: (props: RenderProgrammingLanguageProps, index: number) => ReactElement
-}

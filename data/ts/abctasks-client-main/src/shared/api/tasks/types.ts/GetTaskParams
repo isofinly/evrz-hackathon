@@ -1,3 +1,0 @@
-interface GetTaskParams extends InRoomParams {
-	readonly id: number;
-}

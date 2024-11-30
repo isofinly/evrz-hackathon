@@ -1,0 +1,1 @@
+{"start_line": 6, "code": "useOpenCount = <T>(items: T[]): UseOpenCountReturn<T> => {\n    const [openCount, setOpenCount] = useState(1)\n\n    const handleOpenCount = () => {\n        setOpenCount(prevCount => prevCount + 1)\n    }\n\n    const isLastItem = items.length === openCount\n\n    return [items.slice(0, openCount), { handleOpenCount, openCount, isLastItem }]\n}"}

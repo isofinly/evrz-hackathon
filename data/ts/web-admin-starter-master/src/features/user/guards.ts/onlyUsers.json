@@ -1,0 +1,1 @@
+{"start_line": 8, "code": "function onlyUsers(): Guard<UserSession> {\n  return (route, context) => (context && context.role ? route : null);\n}"}

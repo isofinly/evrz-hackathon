@@ -1,5 +1,0 @@
-interface InvitationCardProps extends CommonProps {
-	readonly id: number;
-	readonly inviter: User;
-	readonly room: Room;
-}

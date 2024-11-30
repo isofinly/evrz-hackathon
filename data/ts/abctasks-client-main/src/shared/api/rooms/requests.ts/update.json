@@ -1,0 +1,1 @@
+{"start_line": 22, "code": "update = async ({ roomId, ...body }: UpdateRoomParams) => {\n\treturn instance\n\t\t.put(`rooms/${roomId}/update`, {\n\t\t\tjson: body,\n\t\t})\n\t\t.json<StandardResponse<Room>>();\n}"}

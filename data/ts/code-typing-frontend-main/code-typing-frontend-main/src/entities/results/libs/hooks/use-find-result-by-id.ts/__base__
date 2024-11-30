@@ -1,9 +1,0 @@
-import { useMemo } from "react"
-
-import { useUnit } from "effector-react"
-
-import { $resultsStore, IResult } from "@entities/results"
-
-export interface UseFindResultByIdReturn <BODY UseFindResultByIdReturn>
-
-export const useFindResultById = (resultId: string | null): UseFindResultByIdReturn | null => <BODY useFindResultById>

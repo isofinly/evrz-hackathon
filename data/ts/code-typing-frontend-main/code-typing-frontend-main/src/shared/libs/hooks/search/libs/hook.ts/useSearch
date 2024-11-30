@@ -1,9 +1,0 @@
-useSearch = <Item extends object, Value>(
-    items: Item[] | undefined,
-    value: Value,
-    valueSelector: (item: Item) => Value
-): Item[] => {
-    return useMemo(() => {
-        return searchFunction(items, value, valueSelector)
-    }, [items, value, valueSelector])
-}

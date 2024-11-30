@@ -1,0 +1,1 @@
+{"start_line": 43, "code": "interface InviteUserRequestParams extends InRoomParams {\n\treadonly userId: number;\n}"}

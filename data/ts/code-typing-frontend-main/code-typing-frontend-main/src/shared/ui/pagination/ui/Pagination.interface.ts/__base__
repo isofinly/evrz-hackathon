@@ -1,8 +1,0 @@
-
-
-
-import { FlexProps } from "@chakra-ui/react"
-
-export interface PaginationProps extends FlexProps <BODY PaginationProps>
-
-export interface PaginationItemProps extends FlexProps <BODY PaginationItemProps>

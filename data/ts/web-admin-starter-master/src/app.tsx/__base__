@@ -1,9 +1,0 @@
-import * as React from 'react';
-import { useStore } from 'effector-react';
-
-import { $user, $isUserPending, useAuth } from 'features/user';
-import { GenericTemplate } from 'ui/templates';
-
-import { Routing } from './routing';
-
-export const App = () => <BODY App>;

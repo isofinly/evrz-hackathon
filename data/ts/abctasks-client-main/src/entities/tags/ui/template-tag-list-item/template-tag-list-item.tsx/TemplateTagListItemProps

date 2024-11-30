@@ -1,9 +1,0 @@
-interface TemplateTagListItemProps
-
-	extends CommonProps,
-
-		Tag,
-
-		Omit<ListItemProps, keyof Tag | 'slots'> {
-	readonly slots?: Slots<'actions'>;
-}

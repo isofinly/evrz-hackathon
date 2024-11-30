@@ -1,6 +1,0 @@
-getStandardResponse = <RT>(T: Runtype<RT>) => {
-	return Record({
-		data: T,
-		statusCode: Number,
-	}).asReadonly();
-}

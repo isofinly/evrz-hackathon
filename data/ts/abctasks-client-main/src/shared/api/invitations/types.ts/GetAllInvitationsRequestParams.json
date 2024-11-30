@@ -1,0 +1,1 @@
+{"start_line": 25, "code": "type GetAllInvitationsRequestParams = InRoomParams;\n"}

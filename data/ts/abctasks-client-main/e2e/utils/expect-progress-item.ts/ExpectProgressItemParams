@@ -1,6 +1,0 @@
-interface ExpectProgressItemParams {
-	readonly parent: Locator | Page;
-	readonly tagName: string;
-	readonly done: number;
-	readonly total: number;
-}

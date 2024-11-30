@@ -1,5 +1,0 @@
-type InitializedWebAppUser = Omit<ParsedTelegramUser, 'id'> & {
-  id: string
-  initialized: true
-  inDatabase: DatabaseUser
-}

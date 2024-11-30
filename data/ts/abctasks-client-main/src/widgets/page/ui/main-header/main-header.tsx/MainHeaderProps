@@ -1,1 +1,0 @@
-interface MainHeaderProps extends CommonProps, TemplateHeaderProps {}

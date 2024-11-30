@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export { default as PrintingInput } from \"./PrintingInput.tsx\"\n\nexport type { PrintingInputProps } from \"./PrintingInput.interface.ts\"\n"}

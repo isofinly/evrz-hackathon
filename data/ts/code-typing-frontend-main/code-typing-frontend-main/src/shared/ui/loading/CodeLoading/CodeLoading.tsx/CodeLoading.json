@@ -1,0 +1,1 @@
+{"start_line": 8, "code": "CodeLoading: FC<CodeLoadingProps> = props => {\n    return <Flex w=\"100%\" justify=\"space-between\" {...props} />\n}"}

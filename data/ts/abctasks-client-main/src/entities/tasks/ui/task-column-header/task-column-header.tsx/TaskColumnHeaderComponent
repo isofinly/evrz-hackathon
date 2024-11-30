@@ -1,4 +1,0 @@
-interface TaskColumnHeaderComponent extends CommonProps {
-	readonly id?: string;
-	readonly slots?: Slots<'actions'>;
-}

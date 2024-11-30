@@ -1,7 +1,0 @@
-Link: React.FC<ILinkCompProps> = ({ className, children, to, onClick }) => {
-  return (
-    <LinkWrap className={className} to={to} onClick={onClick}>
-      {children}
-    </LinkWrap>
-  )
-}

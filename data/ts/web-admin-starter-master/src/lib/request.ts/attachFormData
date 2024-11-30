@@ -1,6 +1,0 @@
-function attachFormData({ file, name, meta }: FormData) {
-  const data = new FormData();
-  data.append(name, file);
-  meta && Object.keys(meta).map((value) => data.append(value, meta[value]));
-  return data;
-}

@@ -1,3 +1,0 @@
-type MenuData = {
-  data: Array<MenuItem>;
-};

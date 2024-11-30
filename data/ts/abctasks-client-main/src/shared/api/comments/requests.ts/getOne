@@ -1,5 +1,0 @@
-getOne = ({ roomId, taskId, id, }: GetOneParams) => {
-	return instance
-		.get(`comments/${roomId}/${taskId}/${id}`)
-		.json<StandardResponse<Comment>>();
-}

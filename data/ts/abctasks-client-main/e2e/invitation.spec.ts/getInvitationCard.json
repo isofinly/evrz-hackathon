@@ -1,0 +1,1 @@
+{"start_line": 6, "code": "getInvitationCard = (parent: Page | Locator): Locator => {\n\t/**\n\t * @todo\n\t * Add more safe selector\n\t */\n\treturn parent.locator('main > div > div');\n}"}

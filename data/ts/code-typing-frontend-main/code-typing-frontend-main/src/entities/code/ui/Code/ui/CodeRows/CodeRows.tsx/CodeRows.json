@@ -1,0 +1,1 @@
+{"start_line": 6, "code": "CodeRows = (props: CodeRowsProps) => {\n    return <Grid autoRows=\"40px\" {...props} />\n}"}

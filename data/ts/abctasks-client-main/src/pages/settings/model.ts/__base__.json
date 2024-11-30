@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { routes } from '@/shared/configs';\n\nimport { sessionModel } from '@/shared/models';\n\n\nexport const currentRoute = routes.settings;\n\nexport const authorizedRoute = sessionModel.chainAuthorized(currentRoute, {\n\n\totherwise: routes.login.open,\n\n});\n"}

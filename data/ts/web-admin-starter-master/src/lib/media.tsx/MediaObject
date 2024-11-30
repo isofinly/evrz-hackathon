@@ -1,1 +1,0 @@
-type MediaObject = { [T in keyof typeof BREAKPOINTS]: <P>(props: P) => FlattenSimpleInterpolation };

@@ -1,0 +1,1 @@
+{"start_line": 6, "code": "useGetGithubUser = (username: string) => {\n    return useQuery({\n        queryKey: [queryKeysEnum.githubUser, username],\n        queryFn: () => GithubService.getUserByUsername(username)\n    })\n}"}

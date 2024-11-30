@@ -1,7 +1,0 @@
-create = ({ roomId, taskId, ...body }: CreateParams) => {
-	return instance
-		.post(`comments/${roomId}/${taskId}/create`, {
-			json: body,
-		})
-		.json<StandardResponse<Comment>>();
-}

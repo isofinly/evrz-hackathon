@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { MouseEventHandler, useState } from \"react\"\n\n\nimport { Button, Flex, Text, Tooltip } from \"@chakra-ui/react\"\n\n\nimport { ResultJSON, ResultsItemProps } from \"@entities/results\"\n\nimport { formatterDate } from \"@shared/constants\"\n\n\nexport const ResultsItem = (props: ResultsItemProps) => <BODY ResultsItem>"}

@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { createApi, createDomain } from \"effector\";\n\nimport { FilterParams } from \"./types\";\n\nimport { Result } from \"../results\";\n\n\nexport function createFilter(filterName: string, { isFit }: FilterParams) <BODY createFilter>\n\nexport type Filter = ReturnType<typeof createFilter>;\n"}

@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { TileProps } from \"@shared/ui/tile\"\n\n\nexport interface ModeItemProps extends TileProps <BODY ModeItemProps>\n\nexport interface ModeSmallItemProps extends TileProps <BODY ModeSmallItemProps>"}

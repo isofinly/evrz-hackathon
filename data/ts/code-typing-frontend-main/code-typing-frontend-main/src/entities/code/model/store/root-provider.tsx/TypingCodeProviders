@@ -1,7 +1,0 @@
-TypingCodeProviders = ({ children }: { children: ReactNode }) => {
-    return (
-        <RandomCodeProvider>
-            <TypingCodeHandlersProvider>{children}</TypingCodeHandlersProvider>
-        </RandomCodeProvider>
-    )
-}

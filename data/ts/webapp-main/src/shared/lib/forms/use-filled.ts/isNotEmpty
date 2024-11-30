@@ -1,5 +1,0 @@
-function isNotEmpty<T>(object: T, path?: string): boolean {
-  const value = get(object, path)
-  if (typeof value === 'object') return Object.values(value).some(Boolean)
-  return Boolean(value)
-}

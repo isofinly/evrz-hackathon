@@ -1,0 +1,1 @@
+{"start_line": 22, "code": "interface ButtonMenuOption extends BaseMenuOption {\n\treadonly onClick?: React.MouseEventHandler<HTMLButtonElement>;\n\treadonly to?: never;\n\treadonly params?: never;\n\treadonly query?: never;\n}"}

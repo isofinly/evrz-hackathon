@@ -1,8 +1,0 @@
-interface ActivityParams {
-	readonly id?: number;
-	readonly room?: RoomParams;
-	readonly activist?: UserParams;
-	readonly action?: string;
-	readonly sphere?: string;
-	readonly createdAt?: string;
-}

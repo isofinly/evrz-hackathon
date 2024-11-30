@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import '../Styles/ListItem.css'\n\nexport interface Item <BODY Item>\nexport const ListItem = (params: Item) => <BODY ListItem>;\n"}

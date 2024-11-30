@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { FontState } from \"@entities/font\"\n\nimport { FontFamilies, storageKeysEnum, typingFontSizes } from \"@shared/constants\"\n\n\nexport const loadStateFromLocalStorage = (): FontState => <BODY loadStateFromLocalStorage>"}

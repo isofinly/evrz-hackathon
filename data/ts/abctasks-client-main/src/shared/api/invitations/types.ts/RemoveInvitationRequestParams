@@ -1,3 +1,0 @@
-interface RemoveInvitationRequestParams extends InRoomParams {
-	readonly id: number;
-}

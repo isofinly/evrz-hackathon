@@ -1,5 +1,0 @@
-interface PaginationResponse<T> {
-	readonly items: T[];
-	readonly totalCount: number;
-	readonly limit: number;
-}

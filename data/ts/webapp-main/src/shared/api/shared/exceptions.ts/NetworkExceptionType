@@ -1,1 +1,0 @@
-type NetworkExceptionType = 'TooManyRequests' | 'NotFound' | 'Unknown'

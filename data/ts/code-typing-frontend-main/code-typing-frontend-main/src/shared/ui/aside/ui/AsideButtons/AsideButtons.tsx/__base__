@@ -1,6 +1,0 @@
-
-
-
-import { Box, BoxProps } from "@chakra-ui/react"
-
-export const AsideButtons = (props: BoxProps) => <BODY AsideButtons>

@@ -1,0 +1,1 @@
+{"start_line": 24, "code": "create = () => {\n\treturn createForm<RoomFormValues>({\n\t\tfields: {\n\t\t\tname: {\n\t\t\t\tinit: '',\n\t\t\t\trules: [createRuleFromSchema('name', schemas.name)],\n\t\t\t},\n\t\t\tdescription: {\n\t\t\t\tinit: '',\n\t\t\t\trules: [createRuleFromSchema('description', schemas.description)],\n\t\t\t},\n\t\t},\n\t});\n}"}

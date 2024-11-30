@@ -1,0 +1,1 @@
+{"start_line": 10, "code": "useTypingCodeTimer = () => {\n    return useUnit({\n        timer: $typingCodeTimerStore,\n        startTimer: eventStartTimer,\n        stopTimer: eventStopTimer,\n        resetTimer: eventResetTimer,\n        changeTimerSetting: eventChangeTimerSettings\n    })\n}"}

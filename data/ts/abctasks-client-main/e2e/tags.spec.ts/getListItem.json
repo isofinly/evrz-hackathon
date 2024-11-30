@@ -1,0 +1,1 @@
+{"start_line": 24, "code": "getListItem = (params: GetListItemParams) => {\n\tconst { parent, name } = params;\n\n\treturn parent.getByRole('listitem').filter({ hasText: name });\n}"}

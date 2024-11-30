@@ -1,9 +1,0 @@
-auth = async (
-	ctx: BrowserContext,
-	data: UserParams = {}
-): Promise<Login> => {
-	return request(ctx, '/auth', {
-		method: 'POST',
-		data,
-	});
-}

@@ -1,6 +1,0 @@
-
-
-
-import { Flex, FlexProps } from "@chakra-ui/react"
-
-export const PaginationPanel = (props: FlexProps) => <BODY PaginationPanel>

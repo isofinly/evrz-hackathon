@@ -1,5 +1,0 @@
-logOut = (): Promise<void> =>
-  request({
-    method: 'get',
-    url: '/user/logout',
-  })

@@ -1,7 +1,0 @@
-Question = ({ children }: { children: string }) => {
-  return (
-    <Typography.Heading className="mb-3" size="base" font="text">
-      {children}
-    </Typography.Heading>
-  )
-}

@@ -1,1 +1,0 @@
-interface AsideContentProps extends FlexProps {}

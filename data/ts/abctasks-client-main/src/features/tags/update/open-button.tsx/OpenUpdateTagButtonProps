@@ -1,3 +1,0 @@
-interface OpenUpdateTagButtonProps extends CommonProps {
-	readonly tagId: number;
-}

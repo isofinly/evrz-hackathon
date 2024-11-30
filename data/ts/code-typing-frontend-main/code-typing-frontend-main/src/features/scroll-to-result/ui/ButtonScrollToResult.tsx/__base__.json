@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { Button, ButtonProps } from \"@chakra-ui/react\"\n\n\nimport { useTypingCodeHandlers } from \"@entities/code\"\n\n\nexport const ButtonScrollToResult = (props: ButtonProps) => <BODY ButtonScrollToResult>"}

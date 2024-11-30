@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "interface RandomCodeState {\n    randomText?: string\n    rows?: string[]\n    newRandomText: () => void\n    randomTextUUID?: string\n    isPending: boolean\n}"}

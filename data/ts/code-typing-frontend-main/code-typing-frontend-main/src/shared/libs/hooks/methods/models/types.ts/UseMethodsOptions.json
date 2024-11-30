@@ -1,0 +1,1 @@
+{"start_line": 14, "code": "interface UseMethodsOptions<State, Methods> {\n    initialState: State\n    methods: Methods\n}"}

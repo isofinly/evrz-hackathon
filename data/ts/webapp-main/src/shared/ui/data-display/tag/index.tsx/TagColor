@@ -1,1 +1,0 @@
-type TagColor = 'gray' | 'blue' | 'orange' | 'green' | 'pink' | 'purple'

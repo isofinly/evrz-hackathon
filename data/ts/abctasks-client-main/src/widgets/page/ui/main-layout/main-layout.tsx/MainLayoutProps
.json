@@ -1,0 +1,1 @@
+{"start_line": 12, "code": "interface MainLayoutProps\n\n\textends CommonProps,\n\n\t\tRequired<React.PropsWithChildren> {}\n"}

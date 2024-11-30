@@ -1,3 +1,0 @@
-type TileItemHelplistProps = {
-    isFocus?: boolean
-} & TileProps

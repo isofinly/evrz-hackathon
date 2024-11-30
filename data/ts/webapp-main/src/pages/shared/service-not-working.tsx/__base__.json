@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { BaseTemplate } from '@templates/base'\n\nimport { ServiceNotWorking } from '@widgets/service-not-working'\n\n\nexport const ServiceNotWorkingPage = () => <BODY ServiceNotWorkingPage>"}

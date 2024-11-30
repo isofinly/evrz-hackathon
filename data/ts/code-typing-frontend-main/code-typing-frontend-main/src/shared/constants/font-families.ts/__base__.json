@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export enum FontFamilies {\n\n    jetBrains = `\"JetBrains Mono\", monospace`,\n\n    dejavu = `\"DejaVu Mono\", monospace`,\n\n    fira = `\"Fira Mono\", monospace`,\n\n    ibmPlex = `\"IBM Plex Mono\", monospace`,\n\n    cascadiaCode = `\"Cascadia Code\", monospace`,\n\n    sourseCodePro = `\"Source Code Pro\", monospace`\n\n}\n"}

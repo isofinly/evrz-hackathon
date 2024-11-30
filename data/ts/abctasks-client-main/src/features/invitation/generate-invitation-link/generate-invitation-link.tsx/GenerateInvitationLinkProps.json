@@ -1,0 +1,1 @@
+{"start_line": 20, "code": "interface GenerateInvitationLinkProps extends CommonProps {\n\treadonly roomId: number;\n}"}

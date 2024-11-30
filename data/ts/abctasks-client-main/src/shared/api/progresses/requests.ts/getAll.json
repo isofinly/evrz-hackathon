@@ -1,0 +1,1 @@
+{"start_line": 6, "code": "getAll = async ({ roomId, }: InRoomParams) => {\n\treturn instance\n\t\t.get(`progress/${roomId}`)\n\t\t.json<StandardResponse<Progress[]>>();\n}"}

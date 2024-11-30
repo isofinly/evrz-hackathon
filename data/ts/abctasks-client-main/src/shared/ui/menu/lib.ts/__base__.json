@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import * as React from 'react';\n\n\nexport interface MenuContextValue <BODY MenuContextValue>\n\nconst MenuContext = React.createContext<MenuContextValue | null>(null);\n\n\nexport const MenuProvider = MenuContext.Provider;\n\n\nexport const useMenuContext = () => <BODY useMenuContext>;\n"}

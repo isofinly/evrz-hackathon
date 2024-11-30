@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export const formatterDate = new Intl.DateTimeFormat(\"en-US\", {\n\n    dateStyle: \"medium\",\n\n    timeStyle: \"short\"\n\n})\n"}

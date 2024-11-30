@@ -1,1 +1,0 @@
-interface ErrorBoundaryProps extends CommonProps {}

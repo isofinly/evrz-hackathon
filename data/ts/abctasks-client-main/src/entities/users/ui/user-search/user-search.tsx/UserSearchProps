@@ -1,4 +1,0 @@
-interface UserSearchProps extends CommonProps, FieldProps {
-	readonly onChange?: (user: User | null) => unknown;
-	readonly value?: User | null;
-}

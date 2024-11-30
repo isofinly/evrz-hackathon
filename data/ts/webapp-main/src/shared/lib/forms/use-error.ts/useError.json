@@ -1,0 +1,1 @@
+{"start_line": 9, "code": "function useError<\n\n  TValues extends FieldValues,\n\n  TPath extends FieldPath<TValues>,\n\n>(form: UseFormReturn<TValues>, path: TPath): FieldError | null {\n  const { errors } = useFormState({\n    control: form.control,\n    name: path,\n  })\n\n  return get(errors, path, null)\n}"}

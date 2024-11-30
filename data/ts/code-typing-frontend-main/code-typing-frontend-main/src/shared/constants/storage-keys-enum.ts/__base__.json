@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export enum storageKeysEnum {\n\n    results = \"results\",\n\n    timerDirection = \"timerDirection\",\n\n    timerStartSeconds = \"timerStartSeconds\",\n\n    theme = \"theme\",\n\n    fontFamily = \"fontFamily\",\n\n    typingFontSize = \"typingFontSize\"\n\n}\n"}

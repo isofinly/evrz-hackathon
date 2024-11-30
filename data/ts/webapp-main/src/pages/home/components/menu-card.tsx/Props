@@ -1,7 +1,0 @@
-interface Props {
-  className?: string
-  text: string
-  image: string
-  skeleton?: boolean
-  action: Action
-}

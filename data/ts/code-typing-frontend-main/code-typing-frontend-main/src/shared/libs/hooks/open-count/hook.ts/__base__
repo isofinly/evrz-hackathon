@@ -1,7 +1,0 @@
-
-
-import { useState } from "react"
-
-import { UseOpenCountReturn } from "@shared/libs/hooks/open-count/types.ts"
-
-export const useOpenCount = <T>(items: T[]): UseOpenCountReturn<T> => <BODY useOpenCount>

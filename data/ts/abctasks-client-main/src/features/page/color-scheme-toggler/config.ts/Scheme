@@ -1,4 +1,0 @@
-interface Scheme {
-	readonly value: colorSchemeModel.ColorScheme;
-	readonly icon: React.ComponentType;
-}

@@ -1,0 +1,1 @@
+{"start_line": 10, "code": "useResult = () => {\n    return useUnit({\n        result: $resultStore,\n        startResult: eventStartResult,\n        endResult: eventEndResult,\n        tickResult: eventTick,\n        clearResult: eventClearResult\n    })\n}"}

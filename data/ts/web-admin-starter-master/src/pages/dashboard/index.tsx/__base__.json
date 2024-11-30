@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import * as React from 'react';\n\n\nimport { Container } from './styles';\n\n\nexport const DashboardPage: React.FC = () => (\n\n  <Container>Dashboard Page</Container>\n\n);\n"}

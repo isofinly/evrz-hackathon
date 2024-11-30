@@ -1,0 +1,1 @@
+{"start_line": 13, "code": "useGetGithubRepo = (owner: string, repoName: string) => {\n    return useQuery({\n        queryKey: [queryKeysEnum.githubRepo, owner, repoName],\n        queryFn: () => GithubService.getReposByOwnerAndRepoName(owner, repoName)\n    })\n}"}

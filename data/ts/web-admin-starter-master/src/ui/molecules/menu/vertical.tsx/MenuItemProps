@@ -1,6 +1,0 @@
-type MenuItemProps = {
-  title: string;
-  icon?: React.ReactNode;
-  to?: string;
-  data?: Array<SubItemProps>;
-}

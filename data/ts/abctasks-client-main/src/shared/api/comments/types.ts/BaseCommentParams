@@ -1,3 +1,0 @@
-interface BaseCommentParams extends InRoomParams {
-	readonly taskId: number;
-}

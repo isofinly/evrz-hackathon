@@ -1,6 +1,0 @@
-interface MultiplePickerProps<T> {
-	readonly onChange: (value: T[]) => unknown;
-	readonly value: T[];
-	readonly multiple: true;
-	readonly limitTags?: number;
-}

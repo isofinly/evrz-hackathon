@@ -1,9 +1,0 @@
-import { Guard } from 'router-guards';
-
-import { UserSession, Roles } from 'api/user';
-
-export function onlyAnon(): Guard<UserSession> <BODY onlyAnon>
-
-export function onlyUsers(): Guard<UserSession> <BODY onlyUsers>
-
-export function onlyFor(roles: Roles[]): Guard<UserSession> <BODY onlyFor>

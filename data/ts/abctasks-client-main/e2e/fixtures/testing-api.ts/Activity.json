@@ -1,0 +1,1 @@
+{"start_line": 358, "code": "activity = async (\n\n\tctx: BrowserContext,\n\n\tdata: ActivityParams = {}\n\n): Promise<Activity> => {\n\treturn request(ctx, '/activity', {\n\t\tmethod: 'POST',\n\t\tdata,\n\t});\n}"}

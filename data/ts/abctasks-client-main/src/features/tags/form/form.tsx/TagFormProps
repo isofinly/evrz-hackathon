@@ -1,6 +1,0 @@
-interface TagFormProps extends CommonProps {
-	readonly $form: Form<TagFormValues>;
-	readonly buttonText: string;
-	readonly buttonDisabled?: boolean;
-	readonly hideButton?: boolean;
-}

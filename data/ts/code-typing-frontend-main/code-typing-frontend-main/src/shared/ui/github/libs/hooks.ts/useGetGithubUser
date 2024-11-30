@@ -1,6 +1,0 @@
-useGetGithubUser = (username: string) => {
-    return useQuery({
-        queryKey: [queryKeysEnum.githubUser, username],
-        queryFn: () => GithubService.getUserByUsername(username)
-    })
-}

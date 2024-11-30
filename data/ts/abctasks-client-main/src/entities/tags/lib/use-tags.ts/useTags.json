@@ -1,0 +1,1 @@
+{"start_line": 7, "code": "useTags = () => {\n\tconst query = useUnit(tagsModel.query);\n\tconst status = useUnit(tagsModel.query.$status);\n\treturn {\n\t\t...query,\n\t\tstatus,\n\t};\n}"}

@@ -1,1 +1,0 @@
-interface TaskProgressComponent extends CommonProps, Progress {}

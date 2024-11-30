@@ -1,6 +1,0 @@
-import { useEffect } from "react"
-
-import { useTypingCodeHandlers } from "@entities/code"
-import { keyboardShortcuts } from "@shared/libs"
-
-export const useNewCodeMouseDown = () => <BODY useNewCodeMouseDown>

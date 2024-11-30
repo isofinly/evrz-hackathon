@@ -1,3 +1,0 @@
-interface ApproveInvitationButtonProps extends CommonProps {
-	readonly id: number;
-}

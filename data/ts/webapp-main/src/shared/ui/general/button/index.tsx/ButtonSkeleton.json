@@ -1,0 +1,1 @@
+{"start_line": 120, "code": "ButtonSkeleton = () => {\n  return <Skeleton type=\"block\" height={56} radius={16} />\n}"}

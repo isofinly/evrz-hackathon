@@ -1,8 +1,0 @@
-interface AppointmentCommon {
-  id: string
-  link: string
-  createdAt: string
-  serviceName?: string
-  consulate: Consulate
-  requestId: string
-}

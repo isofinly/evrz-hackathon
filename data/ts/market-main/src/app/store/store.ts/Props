@@ -1,4 +1,0 @@
-type Props = {
-  setLoading: (value: boolean) => void;
-  filters: ProductFilters;
-};

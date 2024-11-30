@@ -1,3 +1,0 @@
-interface RemoveTagParams extends InRoomParams {
-	readonly id: number;
-}

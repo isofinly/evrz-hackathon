@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { AxiosInstance, AxiosRequestConfig } from \"axios\"\n\n\nexport const makeBaseQuery =\n\n    (instance: AxiosInstance) =>\n\n    <R>(config: AxiosRequestConfig | string) => <BODY makeBaseQuery>"}

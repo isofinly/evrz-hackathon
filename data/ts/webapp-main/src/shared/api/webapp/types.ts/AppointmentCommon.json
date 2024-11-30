@@ -1,0 +1,1 @@
+{"start_line": 32, "code": "interface AppointmentCommon {\n  id: string\n  link: string\n  createdAt: string\n  serviceName?: string\n  consulate: Consulate\n  requestId: string\n}"}

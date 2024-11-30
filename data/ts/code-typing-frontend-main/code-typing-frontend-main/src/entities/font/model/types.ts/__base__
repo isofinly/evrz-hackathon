@@ -1,3 +1,0 @@
-import { FontFamilies } from "@shared/constants"
-
-export interface FontState <BODY FontState>

@@ -1,0 +1,1 @@
+{"start_line": 2, "code": "interface Options<T> {\n  action: () => T | Promise<T>\n  interval?: number\n  delay?: number\n  maxAttempts?: number\n}"}

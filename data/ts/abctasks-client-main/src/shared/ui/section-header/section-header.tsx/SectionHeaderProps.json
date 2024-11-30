@@ -1,0 +1,1 @@
+{"start_line": 12, "code": "interface SectionHeaderProps extends CommonProps {\n\treadonly title: string;\n\treadonly actions?: React.ReactElement | null;\n}"}

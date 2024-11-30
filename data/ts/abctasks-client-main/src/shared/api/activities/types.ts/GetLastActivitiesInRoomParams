@@ -1,3 +1,0 @@
-interface GetLastActivitiesInRoomParams extends InRoomParams {
-	readonly count: number;
-}

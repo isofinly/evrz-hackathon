@@ -1,9 +1,0 @@
-interface CheckboxProps
-
-	extends CommonProps,
-
-		Pick<ConnectedField<any>, 'name' | 'onChange' | 'value'>,
-
-		Omit<MUICheckboxProps, keyof ConnectedField<any>> {
-	readonly label?: string | null;
-}

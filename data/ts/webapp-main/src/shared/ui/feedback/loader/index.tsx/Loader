@@ -1,7 +1,0 @@
-Loader = ({ className, style }: Props) => {
-  return (
-    <div className={clsx(styles.loader, className)} style={style}>
-      <Icon name="loader" />
-    </div>
-  )
-}

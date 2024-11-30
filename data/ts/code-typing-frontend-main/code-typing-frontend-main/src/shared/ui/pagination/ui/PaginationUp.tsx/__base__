@@ -1,5 +1,0 @@
-
-
-import { PaginationItem, PaginationPanel, usePagination } from "@shared/ui/pagination"
-
-export const PaginationUp = () => <BODY PaginationUp>

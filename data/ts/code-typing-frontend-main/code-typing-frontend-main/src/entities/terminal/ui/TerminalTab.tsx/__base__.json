@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { Tooltip } from \"@chakra-ui/react\"\n\n\nimport { useTerminalHandlers, useTerminalIsOpen } from \"@entities/terminal\"\n\nimport { AsideTab } from \"@shared/ui/aside\"\n\nimport { TerminalIcon } from \"@shared/ui/icons\"\n\n\nexport const TerminalTab = () => <BODY TerminalTab>"}

@@ -1,4 +1,0 @@
-import { ModeItemProps } from "./ModeItem.interface.ts"
-import { Tile } from "@shared/ui/tile"
-
-export const ModeItem = (props: ModeItemProps) => <BODY ModeItem>

@@ -1,4 +1,0 @@
-interface AlertDialogLogoutProps {
-    isOpen: boolean
-    onClose: () => void
-}

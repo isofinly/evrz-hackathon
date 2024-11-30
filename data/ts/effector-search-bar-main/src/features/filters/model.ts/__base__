@@ -1,7 +1,0 @@
-import { createApi, createDomain } from "effector";
-import { FilterParams } from "./types";
-import { Result } from "../results";
-
-export function createFilter(filterName: string, { isFit }: FilterParams) <BODY createFilter>
-
-export type Filter = ReturnType<typeof createFilter>;

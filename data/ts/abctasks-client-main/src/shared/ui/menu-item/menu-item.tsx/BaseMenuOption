@@ -1,4 +1,0 @@
-interface BaseMenuOption {
-	readonly label: string;
-	readonly icon?: React.ReactElement;
-}

@@ -1,5 +1,0 @@
-import { Stack, Text } from "@chakra-ui/react"
-
-import { ResultsItem, ResultsListProps } from "@entities/results"
-
-export const ResultsList = ({ results }: ResultsListProps) => <BODY ResultsList>

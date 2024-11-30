@@ -1,0 +1,1 @@
+{"start_line": 4, "code": "withStrictMode =\n\n\t(Component: React.ComponentType): React.ComponentType =>\n\n\t() => {\n\t\treturn (\n\t\t\t<React.StrictMode>\n\t\t\t\t<Component />\n\t\t\t</React.StrictMode>\n\t\t);\n\t}"}

@@ -1,0 +1,1 @@
+{"start_line": 11, "code": "interface GithubRepoItemProps {\n    owner: string\n    repo: string\n}"}

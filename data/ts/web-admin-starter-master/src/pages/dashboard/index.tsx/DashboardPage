@@ -1,3 +1,0 @@
-DashboardPage: React.FC = () => (
-  <Container>Dashboard Page</Container>
-)

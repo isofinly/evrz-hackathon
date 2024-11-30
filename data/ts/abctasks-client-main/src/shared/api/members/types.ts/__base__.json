@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { InRoomParams } from '@/shared/types';\n\n\nexport interface AddUserRoomParams extends InRoomParams <BODY AddUserRoomParams>\n\nexport interface InviteByHashParams extends InRoomParams <BODY InviteByHashParams>\n\nexport interface RemoveUserParams extends InRoomParams <BODY RemoveUserParams>"}

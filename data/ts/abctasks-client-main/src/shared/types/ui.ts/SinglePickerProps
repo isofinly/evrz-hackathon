@@ -1,6 +1,0 @@
-interface SinglePickerProps<T> {
-	readonly onChange: (value: T | null) => unknown;
-	readonly value: T | null;
-	readonly multiple?: never;
-	readonly limitTags?: never;
-}

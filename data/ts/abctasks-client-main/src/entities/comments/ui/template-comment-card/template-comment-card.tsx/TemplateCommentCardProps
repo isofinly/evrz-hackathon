@@ -1,3 +1,0 @@
-interface TemplateCommentCardProps extends CommonProps, Comment {
-	readonly actions?: React.ReactElement | null;
-}

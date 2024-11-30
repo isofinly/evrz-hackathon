@@ -1,2 +1,0 @@
-
-export const transformCodeToRows = (text: string | null): string[] | undefined => <BODY transformCodeToRows>

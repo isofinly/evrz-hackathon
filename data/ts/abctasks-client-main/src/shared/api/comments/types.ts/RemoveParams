@@ -1,3 +1,0 @@
-interface RemoveParams extends BaseCommentParams {
-	readonly id: number;
-}

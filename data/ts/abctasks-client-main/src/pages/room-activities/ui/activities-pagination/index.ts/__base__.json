@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export {\n\n\tActivitiesPagination,\n\n\ttype ActivitiesPaginationProps\n\n} from './activities-pagination';\n"}

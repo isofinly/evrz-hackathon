@@ -1,0 +1,1 @@
+{"start_line": 9, "code": "type RecursiveListItemType = {\n\n    name: string\n\n    action?: () => void\n\n    children?: RecursiveListItemType[]\n\n    parents?: string[]\n\n    renderItem?: (props: RenderItemProps) => ReactNode\n\n}\n"}

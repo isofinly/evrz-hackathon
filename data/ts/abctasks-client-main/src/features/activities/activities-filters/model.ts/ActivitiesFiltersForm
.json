@@ -1,0 +1,1 @@
+{"start_line": 9, "code": "interface ActivitiesFiltersForm\n\n\textends Required<\n\n\t\tOmit<GetActivitiesInRoomParams, 'roomId' | 'count' | 'page' | 'by' | 'type'>\n\n\t> {}\n"}

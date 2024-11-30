@@ -1,0 +1,1 @@
+{"start_line": 4, "code": "interface ExpectAlertParams {\n\treadonly parent: Page | Locator;\n\treadonly type: Type;\n\treadonly message: string;\n\treadonly title?: string;\n}"}

@@ -1,3 +1,0 @@
-interface SearchUsersQuery {
-	readonly username: string;
-}

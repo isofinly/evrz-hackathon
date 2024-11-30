@@ -1,3 +1,0 @@
-export interface ViewerState <BODY ViewerState>
-
-export interface ViewerHandlers <BODY ViewerHandlers>

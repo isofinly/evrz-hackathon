@@ -1,3 +1,0 @@
-interface ColorCircleProps extends BoxProps {
-    color: string
-}

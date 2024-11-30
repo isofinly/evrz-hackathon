@@ -1,4 +1,0 @@
-interface PaginationParams {
-	readonly page?: number;
-	readonly count?: number;
-}

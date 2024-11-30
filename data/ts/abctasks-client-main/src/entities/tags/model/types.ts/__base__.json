@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { Tag } from '@/shared/api';\n\n\nexport interface TagsMap <BODY TagsMap>"}

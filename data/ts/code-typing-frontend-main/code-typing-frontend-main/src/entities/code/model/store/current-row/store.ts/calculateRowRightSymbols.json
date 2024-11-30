@@ -1,0 +1,1 @@
+{"start_line": 12, "code": "calculateRowRightSymbols = (row: string, typingValue: string) => {\n    let currentRowRightSymbols = 0\n\n    const startIndexText = row.search(/\\S/g)\n\n    for (let i = startIndexText; i < typingValue.length; i++) {\n        if (typingValue[i] === row[i]) currentRowRightSymbols++\n    }\n\n    return currentRowRightSymbols\n}"}

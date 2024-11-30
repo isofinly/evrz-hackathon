@@ -1,0 +1,1 @@
+{"start_line": 63, "code": "interface TagParams {\n\treadonly id?: number;\n\treadonly room?: RoomParams;\n\treadonly name?: string;\n\treadonly mainColor?: string;\n\treadonly secondColor?: string;\n}"}

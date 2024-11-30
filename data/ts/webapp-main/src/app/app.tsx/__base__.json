@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { Pages } from '@pages'\n\nimport { router } from '@routing/shared'\n\nimport { NotificationStack } from '@shared/ui'\n\nimport { RouterProvider } from 'atomic-router-react'\n\nimport { ErrorBoundary } from './error-boundary'\n\n\nexport const App = () => <BODY App>"}

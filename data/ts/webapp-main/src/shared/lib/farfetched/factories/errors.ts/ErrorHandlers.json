@@ -1,0 +1,1 @@
+{"start_line": 8, "code": "type ErrorHandlers = {\n\n  [Type in NetworkExceptionType]?: string\n\n}\n"}

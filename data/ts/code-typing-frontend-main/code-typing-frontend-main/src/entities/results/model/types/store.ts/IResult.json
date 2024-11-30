@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "interface IResult {\n    resultId: string\n    timeResultMilliseconds: number\n    timeStartMilliseconds: number\n    timeEndMilliseconds: number\n    text: string\n    charactersPerMinuteString: string\n    wordsPerMinuteString: string\n}"}

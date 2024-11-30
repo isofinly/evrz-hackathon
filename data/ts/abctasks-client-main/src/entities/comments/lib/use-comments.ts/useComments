@@ -1,3 +1,0 @@
-useComments = () => {
-	return useUnit(commentsModel.query);
-}

@@ -1,9 +1,0 @@
-interface RoomParams {
-	readonly id?: number;
-	readonly name?: string;
-	readonly description?: string;
-	readonly createdAt?: Date | null;
-	readonly updatedAt?: Date | null;
-	readonly ownerId?: number;
-	readonly members?: MemberParams[];
-}

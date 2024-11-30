@@ -1,0 +1,1 @@
+{"start_line": 308, "code": "task = async (\n\n\tctx: BrowserContext,\n\n\tdata: TaskParams = {}\n\n): Promise<Task> => {\n\treturn request(ctx, '/task', {\n\t\tmethod: 'POST',\n\t\tdata,\n\t});\n}"}

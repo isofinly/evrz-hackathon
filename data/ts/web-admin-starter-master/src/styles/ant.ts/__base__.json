@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { createGlobalStyle } from 'styled-components';\n\n\nexport const AntStylesOveride = createGlobalStyle`\n\n\n   .ant-layout {\n    min-height: 100vh;\n  }\n\n  .ant-spin-nested-loading > div > .ant-spin {\n    max-height: 100%;\n  }\n`;\n"}

@@ -1,0 +1,1 @@
+{"start_line": 34, "code": "interface Activity extends Static<typeof activity> {}\n"}

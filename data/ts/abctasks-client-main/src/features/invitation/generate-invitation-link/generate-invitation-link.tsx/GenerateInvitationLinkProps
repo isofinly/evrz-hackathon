@@ -1,3 +1,0 @@
-interface GenerateInvitationLinkProps extends CommonProps {
-	readonly roomId: number;
-}

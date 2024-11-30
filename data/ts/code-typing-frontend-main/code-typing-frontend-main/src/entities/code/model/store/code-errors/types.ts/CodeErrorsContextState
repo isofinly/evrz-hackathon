@@ -1,4 +1,0 @@
-interface CodeErrorsContextState {
-    isError: boolean
-    errorsCount: number
-}

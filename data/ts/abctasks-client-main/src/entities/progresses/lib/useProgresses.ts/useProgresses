@@ -1,8 +1,0 @@
-useProgresses = () => {
-	const query = useUnit(progressesModel.query);
-	const status = useUnit(progressesModel.query.$status);
-	return {
-		...query,
-		status,
-	};
-}

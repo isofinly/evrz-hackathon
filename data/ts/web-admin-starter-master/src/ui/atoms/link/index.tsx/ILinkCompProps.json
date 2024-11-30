@@ -1,0 +1,1 @@
+{"start_line": 4, "code": "interface ILinkCompProps {\n  children?: React.ReactNode | null\n  onClick?: () => void\n  className?: string\n  to: string\n}"}

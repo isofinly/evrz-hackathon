@@ -1,4 +1,0 @@
-interface StandardResponse<T> {
-	readonly data: T;
-	readonly statusCode: number;
-}

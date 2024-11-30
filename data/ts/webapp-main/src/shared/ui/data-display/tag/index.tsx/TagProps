@@ -1,6 +1,0 @@
-interface TagProps {
-  className?: string
-  color?: TagColor
-  icon?: IconName
-  children: ReactNode
-}

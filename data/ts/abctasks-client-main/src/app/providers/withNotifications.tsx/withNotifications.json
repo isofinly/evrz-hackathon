@@ -1,0 +1,1 @@
+{"start_line": 9, "code": "withNotifications =\n\n\t(Component: React.ComponentType): React.ComponentType =>\n\n\t() => {\n\t\treturn (\n\t\t\t<>\n\t\t\t\t<Component />\n\t\t\t\t<SnackbarList\n\t\t\t\t\tmodel={notificationsModel.notifications}\n\t\t\t\t\tdomRootSelector='body'\n\t\t\t\t/>\n\t\t\t</>\n\t\t);\n\t}"}

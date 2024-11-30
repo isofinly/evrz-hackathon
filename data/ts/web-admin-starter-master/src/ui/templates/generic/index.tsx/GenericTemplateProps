@@ -1,4 +1,0 @@
-type GenericTemplateProps = {
-  isAuthed: boolean;
-  isPending: boolean;
-}

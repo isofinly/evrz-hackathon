@@ -1,5 +1,0 @@
-generateLink = async ({
-	roomId,
-}: GenerateLinkRequestParams): GenerateLinkResponseData => {
-	return instance.post(`invitations/invite/${roomId}/generate-link`).json();
-}

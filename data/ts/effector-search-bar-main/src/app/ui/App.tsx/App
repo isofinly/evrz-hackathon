@@ -1,6 +1,0 @@
-function App() {
-  const routes = useRoutes(routesMap);
-
-  {/*<REVIEW>Использование <></> и можно описать так return routes;</REVIEW>*/}
-  return <>{routes}</>;
-}

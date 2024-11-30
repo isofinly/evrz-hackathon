@@ -1,0 +1,1 @@
+{"start_line": 251, "code": "room = async (\n\n\tctx: BrowserContext,\n\n\tdata: RoomParams = {}\n\n): Promise<Room> => {\n\treturn request(ctx, '/room', {\n\t\tmethod: 'POST',\n\t\tdata,\n\t});\n}"}

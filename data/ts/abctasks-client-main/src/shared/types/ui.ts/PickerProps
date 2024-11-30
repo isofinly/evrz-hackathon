@@ -1,1 +1,0 @@
-type PickerProps<T> = SinglePickerProps<T> | MultiplePickerProps<T>;

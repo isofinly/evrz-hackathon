@@ -1,0 +1,1 @@
+{"start_line": 88, "code": "useCurrentRowHandlers = () =>\n\n    useUnit({\n\n        nextRow: eventNextRow,\n\n        setTypingValue: eventSetTypingValue,\n\n        setValueWithTab: eventSetValueWithTab,\n\n        resetState: eventResetState\n\n    })\n"}

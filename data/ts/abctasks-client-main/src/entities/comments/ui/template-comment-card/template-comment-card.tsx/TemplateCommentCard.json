@@ -1,0 +1,1 @@
+{"start_line": 15, "code": "TemplateCommentCard: React.FC<TemplateCommentCardProps> = (\n\n\tprops\n\n) => {\n\tconst { content, className } = props;\n\n\treturn (\n\t\t<Card className={className}>\n\t\t\t<CardContent>\n\t\t\t\t<Typography>{content}</Typography>\n\t\t\t</CardContent>\n\t\t</Card>\n\t);\n}"}

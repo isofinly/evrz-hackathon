@@ -1,7 +1,0 @@
-import { Link, Text } from "@chakra-ui/react"
-
-import { NavLink } from "react-router-dom"
-
-import { LinkCodeProps } from "./LinkCode.interface.ts"
-
-export const LinkCode = (props: LinkCodeProps) => <BODY LinkCode>

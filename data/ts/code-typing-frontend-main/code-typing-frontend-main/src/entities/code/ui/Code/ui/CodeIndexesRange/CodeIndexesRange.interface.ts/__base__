@@ -1,3 +1,0 @@
-import { CodeIndexesProps } from "@entities/code"
-
-export interface CodeIndexesRangeProps extends CodeIndexesProps <BODY CodeIndexesRangeProps>

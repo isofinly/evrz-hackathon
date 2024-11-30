@@ -1,3 +1,0 @@
-CodeRow = (props: CodeRowProps) => {
-    return <Flex align="center" w="100%" {...props} />
-}

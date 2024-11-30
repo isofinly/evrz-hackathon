@@ -1,3 +1,0 @@
-handleSubmit = (values: Record<keyof LoginCredentials, string>) => {
-        loginMutate(values)
-    }

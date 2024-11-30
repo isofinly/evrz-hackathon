@@ -1,0 +1,1 @@
+{"start_line": 14, "code": "interface SinglePickerProps<T> {\n\treadonly onChange: (value: T | null) => unknown;\n\treadonly value: T | null;\n\treadonly multiple?: never;\n\treadonly limitTags?: never;\n}"}

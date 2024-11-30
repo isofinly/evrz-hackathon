@@ -1,0 +1,1 @@
+{"start_line": 66, "code": "remove = async ({\n\n\troomId,\n\n\tid,\n\n}: RemoveInvitationRequestParams): RemoveInvitationResponseData => {\n\treturn instance.delete(`invitations/invite/${roomId}/${id}`).json();\n}"}

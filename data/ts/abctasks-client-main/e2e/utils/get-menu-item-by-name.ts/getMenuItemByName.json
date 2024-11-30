@@ -1,0 +1,1 @@
+{"start_line": 2, "code": "getMenuItemByName = (\n\n\tparent: Page | Locator,\n\n\tname: string\n\n): Locator => {\n\treturn parent.getByRole('menuitem', { name });\n}"}

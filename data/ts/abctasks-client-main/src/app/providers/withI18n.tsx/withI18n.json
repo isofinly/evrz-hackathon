@@ -1,0 +1,1 @@
+{"start_line": 7, "code": "withI18n =\n\n\t(Component: React.ComponentType): React.ComponentType =>\n\n\t() => {\n\t\treturn (\n\t\t\t<I18nextProvider i18n={i18n}>\n\t\t\t\t<Component />\n\t\t\t</I18nextProvider>\n\t\t);\n\t}"}

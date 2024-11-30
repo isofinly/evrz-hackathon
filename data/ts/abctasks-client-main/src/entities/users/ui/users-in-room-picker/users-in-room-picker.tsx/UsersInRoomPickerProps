@@ -1,3 +1,0 @@
-type UsersInRoomPickerProps = CommonProps &
-	PickerProps<number> &
-	Omit<FieldProps, 'onChange' | 'value' | 'className' | 'multiline'>;

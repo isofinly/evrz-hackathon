@@ -1,9 +1,0 @@
-member = async (
-	ctx: BrowserContext,
-	data: MemberParams = {}
-): Promise<Member> => {
-	return request(ctx, '/member', {
-		method: 'POST',
-		data,
-	});
-}

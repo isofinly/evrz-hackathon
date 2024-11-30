@@ -1,0 +1,1 @@
+{"start_line": 13, "code": "getAll = async ({ roomId, ...query }: GetTasksParams) => {\n\treturn instance\n\t\t.get(`tasks/${roomId}`, {\n\t\t\tsearchParams: new URLSearchParams(normalizeQuery(query)),\n\t\t})\n\t\t.json<StandardResponse<Task[]>>();\n}"}

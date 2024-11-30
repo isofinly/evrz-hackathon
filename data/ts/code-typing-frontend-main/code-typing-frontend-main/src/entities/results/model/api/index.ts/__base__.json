@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { ResultFromApi, ResultWithoutId } from \"@entities/results\"\n\n\nexport type GetSavedResultsResponse = {\n\n    content: ResultFromApi[]\n\n    totalPages: number\n\n    totalElements: number\n\n}\n\nexport type SaveResultBody = ResultWithoutId | ResultFromApi\n"}

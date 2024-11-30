@@ -1,0 +1,1 @@
+{"start_line": 5, "code": "function wait<R, T>(data: R): Promise<T> {\n  return new Promise((resolve) => {\n    setTimeout(\n      resolve,\n      Math.floor(Math.random() * 500) + 300,\n      JSON.stringify(data),\n    );\n  });\n}"}

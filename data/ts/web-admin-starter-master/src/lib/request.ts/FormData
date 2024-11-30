@@ -1,7 +1,0 @@
-type FormData = {
-  file: File;
-  name: string;
-  meta?: {
-    [index: string]: string;
-  };
-};

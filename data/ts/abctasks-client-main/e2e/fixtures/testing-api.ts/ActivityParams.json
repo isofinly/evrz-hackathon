@@ -1,0 +1,1 @@
+{"start_line": 119, "code": "interface ActivityParams {\n\treadonly id?: number;\n\treadonly room?: RoomParams;\n\treadonly activist?: UserParams;\n\treadonly action?: string;\n\treadonly sphere?: string;\n\treadonly createdAt?: string;\n}"}

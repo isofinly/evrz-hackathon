@@ -1,0 +1,1 @@
+{"start_line": 5, "code": "AsideButtons = (props: BoxProps) => {\n    return <Box display=\"flex\" w=\"100%\" justifyContent=\"end\" {...props} />\n}"}

@@ -1,5 +1,0 @@
-interface FailResponse extends ResponseMeta {
-  data: {
-    message: '';
-  };
-}

@@ -1,0 +1,1 @@
+{"start_line": 103, "code": "interface InvitationParams {\n\treadonly id?: number;\n\treadonly room?: RoomParams;\n\treadonly inviter?: UserParams;\n\treadonly user?: UserParams;\n\treadonly status?: string;\n}"}

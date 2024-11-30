@@ -1,7 +1,0 @@
-import { useMethods } from "@shared/libs"
-
-export type TTypingStatus = "printing" | "not-started" | "ended"
-
-export interface UseTypingActionState <BODY UseTypingActionState>
-
-export const useTypingAction = () => <BODY useTypingAction>

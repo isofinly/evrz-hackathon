@@ -1,3 +1,0 @@
-type UseDebounceReturnFunction<FunctionType extends UnknownFunction> = (
-    ...args: Parameters<FunctionType>
-) => void

@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { FontFamilies } from \"@shared/constants\"\n\n\nexport interface FontState <BODY FontState>"}

@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { Link, Text } from \"@chakra-ui/react\"\n\n\nimport { NavLink } from \"react-router-dom\"\n\n\nimport { LinkCodeProps } from \"./LinkCode.interface.ts\"\n\n\nexport const LinkCode = (props: LinkCodeProps) => <BODY LinkCode>"}

@@ -1,7 +1,0 @@
-import { CodeExamplesResponse, CodeService } from "@entities/code"
-import { queryKeysEnum } from "@shared/constants"
-import { useQuery, UseQueryOptions } from "@tanstack/react-query"
-
-export const useGetCodeExamples = (
-    options?: Omit<UseQueryOptions<CodeExamplesResponse>, "queryKey">
-) => <BODY useGetCodeExamples>

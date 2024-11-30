@@ -1,6 +1,0 @@
-interface IconProps
-
-  extends Omit<SVGProps<SVGSVGElement>, 'name' | 'type'> {
-  name: IconName
-  size?: number | string
-}

@@ -1,3 +1,0 @@
-interface ExitRoomUserMenuItemProps extends CommonProps {
-	readonly roomId: number;
-}

@@ -1,5 +1,0 @@
-import { useUnit } from "effector-react"
-
-import { eventChangeTheme } from "@features/settings/theme"
-
-export const useChangeTheme = () => <BODY useChangeTheme>

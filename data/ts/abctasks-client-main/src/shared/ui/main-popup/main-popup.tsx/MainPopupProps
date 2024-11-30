@@ -1,6 +1,0 @@
-interface MainPopupProps extends CommonProps, BasePopupProps {
-	readonly onClose: VoidFunction;
-	readonly title: string;
-	readonly maxWidth?: Breakpoint;
-	readonly DialogTitleProps?: DialogTitleProps;
-}

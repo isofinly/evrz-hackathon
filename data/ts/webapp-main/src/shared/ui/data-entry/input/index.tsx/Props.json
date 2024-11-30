@@ -1,0 +1,1 @@
+{"start_line": 17, "code": "type Props = InputProps & {\n\n  label?: string\n\n  filled?: boolean\n\n  error?: string\n\n  icon?: ReactNode\n\n}\n"}

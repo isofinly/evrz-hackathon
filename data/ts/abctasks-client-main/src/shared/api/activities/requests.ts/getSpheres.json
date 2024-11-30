@@ -1,0 +1,1 @@
+{"start_line": 28, "code": "getSpheres = async () => {\n\treturn instance\n\t\t.get('activities/spheres/all')\n\t\t.json<StandardResponse<ActivitySphere[]>>();\n}"}

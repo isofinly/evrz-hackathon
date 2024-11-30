@@ -1,7 +1,0 @@
-import { Flex } from "@chakra-ui/react"
-
-import { GithubRepoItem } from "@shared/ui/github"
-import { GithubRepoItemProps } from "@shared/ui/github/types"
-import { motion } from "framer-motion"
-
-export const Repos = () => <BODY Repos>

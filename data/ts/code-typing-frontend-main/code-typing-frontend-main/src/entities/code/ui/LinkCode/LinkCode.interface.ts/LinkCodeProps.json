@@ -1,0 +1,1 @@
+{"start_line": 2, "code": "interface LinkCodeProps extends TextProps {\n    title: string\n    path: string\n}"}

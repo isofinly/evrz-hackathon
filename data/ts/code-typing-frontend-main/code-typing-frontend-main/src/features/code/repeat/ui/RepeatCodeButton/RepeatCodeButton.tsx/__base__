@@ -1,6 +1,0 @@
-import { IconButton, Tooltip } from "@chakra-ui/react"
-
-import { useTypingCodeHandlers } from "@entities/code"
-import { RefreshIcon } from "@shared/ui/icons"
-
-export const RepeatCodeButton = () => <BODY RepeatCodeButton>

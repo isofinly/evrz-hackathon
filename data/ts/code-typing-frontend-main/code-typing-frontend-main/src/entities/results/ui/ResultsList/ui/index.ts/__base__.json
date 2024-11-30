@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export { ResultsList } from \"./ResultsList.tsx\"\n\nexport type { ResultsListProps } from \"./ResultsList.interface.ts\"\n"}

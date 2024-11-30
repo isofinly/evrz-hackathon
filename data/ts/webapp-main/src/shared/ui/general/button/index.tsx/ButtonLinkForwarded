@@ -1,5 +1,0 @@
-interface ButtonLinkForwarded extends FC<ButtonLinkProps<RouteParams>> {
-  <T extends RouteParams>(
-    props: ButtonLinkProps<T>,
-  ): ReturnType<FC<ButtonLinkProps<T>>>
-}

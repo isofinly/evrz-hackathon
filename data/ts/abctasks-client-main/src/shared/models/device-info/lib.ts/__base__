@@ -1,4 +1,0 @@
-import { Devices } from './types';
-
-
-export const calculateDevice = (): Devices => <BODY calculateDevice>;

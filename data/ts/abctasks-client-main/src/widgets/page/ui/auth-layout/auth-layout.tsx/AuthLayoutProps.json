@@ -1,0 +1,1 @@
+{"start_line": 11, "code": "interface AuthLayoutProps extends CommonProps {\n\treadonly classes?: Classes<'header' | 'center'>;\n}"}

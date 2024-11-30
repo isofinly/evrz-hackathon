@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export {\n\n\tSkeletonTagLabel,\n\n\ttype SkeletonTagLabelProps\n\n} from './skeleton-tag-label';\n"}

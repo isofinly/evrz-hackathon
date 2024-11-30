@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "import { CodeService } from \"@entities/code\"\n\nimport { queryKeysEnum } from \"@shared/constants\"\n\nimport { useQuery } from \"@tanstack/react-query\"\n\n\nexport const useGetProgrammingLanguages = () => <BODY useGetProgrammingLanguages>"}

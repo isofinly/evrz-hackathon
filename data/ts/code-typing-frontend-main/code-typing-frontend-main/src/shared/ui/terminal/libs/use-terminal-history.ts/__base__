@@ -1,8 +1,0 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react"
-
-import { CommandsEnum } from "@shared/ui/terminal/types"
-
-export const useTerminalHistory = (
-    terminalCommands: string[],
-    onChangeValue: Dispatch<SetStateAction<string>>
-) => <BODY useTerminalHistory>

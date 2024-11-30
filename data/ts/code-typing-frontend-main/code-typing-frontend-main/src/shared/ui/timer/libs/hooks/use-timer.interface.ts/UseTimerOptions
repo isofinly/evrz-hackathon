@@ -1,6 +1,0 @@
-interface UseTimerOptions {
-    startSeconds: number
-    direction: TimerDirection
-    timeout?: number
-    onEnd?: () => void
-}

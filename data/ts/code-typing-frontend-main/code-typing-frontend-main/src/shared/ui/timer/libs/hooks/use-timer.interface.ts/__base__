@@ -1,5 +1,0 @@
-export interface UseTimerReturn <BODY UseTimerReturn>
-
-export interface UseTimerOptions <BODY UseTimerOptions>
-
-export type TimerDirection = "up" | "down"

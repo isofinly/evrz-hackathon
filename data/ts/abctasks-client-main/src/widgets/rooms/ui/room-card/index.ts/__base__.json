@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export { RoomCard, type RoomCardProps } from './room-card';\n"}

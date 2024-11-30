@@ -1,0 +1,1 @@
+{"start_line": 13, "code": "loadResultsFromLocalStorage = (): TResultStore | null => {\n    const preloadResultsString = localStorage.getItem(storageKeysEnum.results)\n    return preloadResultsString ? JSON.parse(preloadResultsString) : null\n}"}

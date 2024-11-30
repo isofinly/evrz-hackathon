@@ -1,4 +1,0 @@
-type TypingTimerSettings = {
-    direction: TimerDirection
-    startSeconds: number
-}

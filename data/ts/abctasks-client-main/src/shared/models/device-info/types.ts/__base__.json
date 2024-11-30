@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export type Devices =\n\n\t| 'mobile'\n\n\t| 'tablet-vertical'\n\n\t| 'tablet-horizontal'\n\n\t| 'desktop-small'\n\n\t| 'desktop-large';\n"}

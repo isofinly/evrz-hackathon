@@ -1,3 +1,0 @@
-AsideContent = (props: AsideContentProps) => {
-    return <Flex {...props} />
-}

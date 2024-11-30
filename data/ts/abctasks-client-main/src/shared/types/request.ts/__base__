@@ -1,9 +1,0 @@
-export interface InRoomParams <BODY InRoomParams>
-
-export interface PaginationParams <BODY PaginationParams>
-
-export type SortDirection = 'asc' | 'desc';
-
-export interface SortParams <BODY SortParams>
-
-export interface DatesFiltersParams <BODY DatesFiltersParams>

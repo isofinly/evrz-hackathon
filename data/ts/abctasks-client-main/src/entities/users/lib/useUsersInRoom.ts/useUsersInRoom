@@ -1,3 +1,0 @@
-useUsersInRoom = () => {
-	return useUnit(usersInRoomModel.query);
-}

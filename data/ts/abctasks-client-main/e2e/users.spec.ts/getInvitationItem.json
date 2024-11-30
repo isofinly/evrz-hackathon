@@ -1,0 +1,1 @@
+{"start_line": 21, "code": "getInvitationItem = (params: GetInvitationParams) => {\n\tconst { parent, username } = params;\n\n\treturn parent.getByRole('listitem').filter({ hasText: new RegExp(username) });\n}"}

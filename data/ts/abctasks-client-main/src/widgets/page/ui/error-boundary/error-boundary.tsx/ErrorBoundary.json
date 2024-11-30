@@ -1,0 +1,1 @@
+{"start_line": 10, "code": "class ErrorBoundary extends React.Component<React.PropsWithChildren> {\n\n\tcomponentDidCatch(error: Error): void {\n\t\tconsole.log(error);\n\t}\n\n\tstatic getDerivedStateFromError() {\n\t\treturn <div>Error</div>;\n\t}\n\n\trender(): React.ReactNode {\n\t\tconst { children } = this.props;\n\t\treturn children;\n\t}\n}\n"}

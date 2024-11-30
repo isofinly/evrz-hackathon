@@ -1,3 +1,0 @@
-import { ResultFromApi } from "@entities/results"
-
-export interface ResultsItemProps extends ResultFromApi <BODY ResultsItemProps>

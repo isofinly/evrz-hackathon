@@ -1,3 +1,0 @@
-type UseMethodsInit<State, Methods extends AnyMethodsMap<State>> =
-    | (() => UseMethodsOptions<State, Methods>)
-    | UseMethodsOptions<State, Methods>

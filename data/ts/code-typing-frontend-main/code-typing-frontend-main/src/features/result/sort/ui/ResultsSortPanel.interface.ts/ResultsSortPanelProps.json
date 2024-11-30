@@ -1,0 +1,1 @@
+{"start_line": 2, "code": "interface ResultsSortPanelProps {\n    onChangeResults: (field: keyof ResultParams, value: string) => void\n    resultParams: ResultParams\n}"}

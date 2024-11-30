@@ -1,5 +1,0 @@
-interface TaskFormValues
-
-	extends Pick<Task, 'title' | 'description' | 'status'> {
-	readonly tagIds: number[];
-}

@@ -1,0 +1,1 @@
+{"start_line": 51, "code": "interface GetTasksParams extends InRoomParams, DatesFiltersParams {\n\treadonly authorIds?: number[];\n\treadonly tagIds?: number[];\n}"}

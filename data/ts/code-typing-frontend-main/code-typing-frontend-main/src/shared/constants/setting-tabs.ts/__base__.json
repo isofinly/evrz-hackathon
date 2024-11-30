@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export const settingTabs = {\n\n    language: \"language\",\n\n    typingMode: \"typingMode\",\n\n    customText: \"customText\",\n\n    theme: \"theme\",\n\n    font: \"font\"\n\n} as const\n"}

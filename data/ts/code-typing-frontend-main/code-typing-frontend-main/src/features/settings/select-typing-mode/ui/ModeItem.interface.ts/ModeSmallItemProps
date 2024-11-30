@@ -1,3 +1,0 @@
-interface ModeSmallItemProps extends TileProps {
-    isActive?: boolean
-}

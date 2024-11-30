@@ -1,0 +1,1 @@
+{"start_line": 36, "code": "useSyncScheme = () => {\n\tconst { setMode } = useColorScheme();\n\tconst mode = useUnit($biScheme);\n\n\tuseLayoutEffect(() => {\n\t\tsetMode(mode);\n\t}, [mode]);\n}"}

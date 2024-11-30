@@ -1,5 +1,0 @@
-getSpheres = async () => {
-	return instance
-		.get('activities/spheres/all')
-		.json<StandardResponse<ActivitySphere[]>>();
-}

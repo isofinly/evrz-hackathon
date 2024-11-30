@@ -1,0 +1,1 @@
+{"start_line": 51, "code": "Preview: React.FC<FieldProps> = (props) => {\n\tconst { $form, } = props;\n\n\tconst values = useUnit($form.$values);\n\n\treturn (\n\t\t<Center className={styles.preview}>\n\t\t\t<TagLabel {...values} />\n\t\t</Center>\n\t);\n}"}

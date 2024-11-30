@@ -1,9 +1,0 @@
-room = async (
-	ctx: BrowserContext,
-	data: RoomParams = {}
-): Promise<Room> => {
-	return request(ctx, '/room', {
-		method: 'POST',
-		data,
-	});
-}

@@ -1,0 +1,1 @@
+{"start_line": 0, "code": "export const localStorageItems = {\n\n    accessToken: \"accessToken\",\n\n    isSmartSearch: \"isSmartSearch\"\n\n}\n"}

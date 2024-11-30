@@ -1,7 +1,0 @@
-interface InvitationParams {
-	readonly id?: number;
-	readonly room?: RoomParams;
-	readonly inviter?: UserParams;
-	readonly user?: UserParams;
-	readonly status?: string;
-}
