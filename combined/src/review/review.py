@@ -23,7 +23,7 @@ from src.review.api import get_response
 FILE_EXTENSIONS = ["py", "cs", "ts", "tsx", "css", "scss"]
 
 
-DATA_PATH = Path(__file__).parent.parent.parent / "data"
+DATA_PATH = Path(__file__).parent.parent.parent.parent / "data"
 
 
 class FileReviewer:
