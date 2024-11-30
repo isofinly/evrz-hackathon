@@ -7,10 +7,16 @@ LANGUAGE = {
     "py": Language(ts_python.language()),
     "cs": Language(ts_csharp.language()),
     "tsx": Language(ts_typescript.language_tsx()),
-    "ts": Language(ts_typescript.language_typescript())
+    "ts": Language(ts_typescript.language_typescript()),
 }
 
 
 IMPORTANT_NODES = {
-    "py": ["import_statement", "import_as_statement", "import_from_statement", "class_decloration", "function_decloration"]
+    "py": [
+        "import_statement",
+        "import_as_statement",
+        "import_from_statement",
+        "class_decloration",
+        "function_decloration",
+    ]
 }

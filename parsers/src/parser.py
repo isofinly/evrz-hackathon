@@ -1,5 +1,5 @@
-from parsers.language import LANGUAGE
-from parsers.make_chunks import chunk_code
+from language import LANGUAGE
+from make_chunks import chunk_code
 
 from pathlib import Path
 
