@@ -222,10 +222,42 @@ def parse_review_tags(directory: str) -> list:
             with open(file_path, "r", encoding="utf-8") as f:
                 lines = f.readlines()
 
-            for i, line in enumerate(lines):
+            i = 0
+            while i < len(lines):
+                line = lines[i]
                 match = review_pattern.search(line)
                 if match:
                     review_content = match.group(1).strip()
+
+                    # Look ahead for the code block
+                    code_lines = []
+                    next_idx = i + 1
+                    brace_count = 0
+                    in_type_def = False
+
+                    while next_idx < len(lines):
+                        next_line = lines[next_idx].rstrip()
+
+                        # Start of type definition
+                        if "type" in next_line or "interface" in next_line:
+                            in_type_def = True
+
+                        if in_type_def:
+                            code_lines.append(next_line)
+                            brace_count += next_line.count("{") - next_line.count("}")
+                            if brace_count == 0 and len(code_lines) > 0:
+                                # End of type definition
+                                break
+                        elif not next_line.startswith(("//<REVIEW>", "// <REVIEW>")):
+                            # Regular code line
+                            if next_line.strip():
+                                code_lines.append(next_line)
+                                break
+
+                        next_idx += 1
+
+                    code_block = "\n".join(code_lines).rstrip() if code_lines else ""
+
                     # Extract suggested code if present
                     suggested_code = None
                     if "`" in review_content:
@@ -233,16 +265,14 @@ def parse_review_tags(directory: str) -> list:
                         if code_match:
                             suggested_code = code_match.group(1)
 
-                    # Get the actual code line (next line after comment)
-                    code_line = lines[i + 1] if i + 1 < len(lines) else ""
-
                     reviews.append({
                         "file": str(rel_path),
                         "line_number": i + 2,  # +2 because we want to show the actual code line number
                         "review": review_content,
-                        "code": code_line.rstrip(),
+                        "code": code_block,
                         "suggested_code": suggested_code
                     })
+                i += 1
 
         except Exception as e:
             logger.warning(f"Could not process file {file_path}: {e}")
