@@ -218,7 +218,7 @@ class MinioStorage:
         elements = []
 
         # Add title with total review count
-        current_time = datetime.now().strftime("%d.%m.%Y %H:%M")
+        current_time = datetime.now().strftime("%d.%m.%Y %H:%M %Z")
         elements.append(
             Paragraph(
                 f"Код-ревью (из {len(reviews)} ревью) от {current_time}", title_style
