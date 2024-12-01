@@ -251,6 +251,26 @@ class MinioStorage:
                     current_code = review["code"].strip()
                     current_code = html.unescape(current_code)
                     current_code = current_code.replace("\t", "    ")
+                    # Remove line numbers and the separator character
+                    lines = current_code.splitlines()
+                    cleaned_lines = []
+                    for line in lines:
+                        # Skip empty lines
+                        if not line.strip():
+                            cleaned_lines.append('')
+                            continue
+                        # Remove line numbers and separator (│)
+                        parts = line.split('│', 1)
+                        if len(parts) > 1:
+                            cleaned_lines.append(parts[1].rstrip())
+                        else:
+                            cleaned_lines.append(line.rstrip())
+                    current_code = '\n'.join(cleaned_lines)
+
+                    # Remove any leading spaces while preserving relative indentation
+                    if cleaned_lines:
+                        min_indent = min(len(line) - len(line.lstrip()) for line in cleaned_lines if line.strip())
+                        current_code = '\n'.join(line[min_indent:] if line.strip() else line for line in cleaned_lines)
                     elements.append(Preformatted(current_code, code_style))
                 except Exception as e:
                     logger.error(f"Error processing code block: {e}")
