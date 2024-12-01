@@ -17,8 +17,8 @@ from src.review.parsers.parser import parse_file
 from src.review.parsers.project_parser import parse_project_structure
 from src.review.rag import Data
 
-# from src.review.api import get_response
-from src.review.gemma_api import get_response
+from src.review.api import get_response
+# from src.review.gemma_api import get_response
 
 
 FILE_EXTENSIONS = ["py", "cs", "ts", "tsx", "css", "scss"]
@@ -33,10 +33,10 @@ class FileReviewer:
     def __init__(self, file_path: Path, result_path: Path) -> None:
         self.file_path = file_path
         self.result_path = result_path
-        
+
         try:
             # Find the 'src' part in the path and get everything after it
-            src_index = file_path.parts.index('src')
+            src_index = file_path.parts.index("src")
             self.relative_path = Path(*file_path.parts[src_index:])
         except ValueError:
             self.relative_path = file_path
@@ -80,7 +80,9 @@ class FileReviewer:
 
         for chunk in declarations.values():
             system_prompt = self.prompt_generator.generate_system_prompt()
-            user_prompt = self.prompt_generator.generate_user_prompt(chunk, self.relative_path)
+            user_prompt = self.prompt_generator.generate_user_prompt(
+                chunk, self.relative_path
+            )
             context = self.prompt_generator.generate_context(str(chunk))
 
             review_json = get_response(system_prompt, user_prompt, context)
@@ -112,7 +114,6 @@ class ProjectReviewer:
         self.max_workers = max_workers
         self.print_lock = threading.Lock()
 
-
     def _review_structure(self) -> None:
         project_structure = parse_project_structure(self.project_path)
         # TODO: review project structure
@@ -127,20 +128,20 @@ class ProjectReviewer:
             with self.print_lock:
                 print(f"Error reviewing {file}: {str(e)}")
         # time.sleep(1)
-            
 
     def review(self) -> None:
         files_to_review = [
-            file for file in self.project_path.rglob("*")
+            file
+            for file in self.project_path.rglob("*")
             if file.is_file() and get_file_extension(file) in FILE_EXTENSIONS
         ]
-            
+
         with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
             future_to_file = {
-                executor.submit(self._review_file, file): file 
+                executor.submit(self._review_file, file): file
                 for file in files_to_review
             }
-            
+
             # Process completed reviews with progress bar
             with tqdm(total=len(files_to_review)) as pbar:
                 for future in as_completed(future_to_file):

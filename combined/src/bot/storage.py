@@ -241,7 +241,7 @@ class MinioStorage:
                 )
 
                 # Review comment
-                elements.append(Paragraph("• Review Comment:", heading_style))
+                elements.append(Paragraph("• Комментарий:", heading_style))
                 escaped_review = html.escape(review["review"])  # Escape HTML tags
                 elements.append(Paragraph(escaped_review, normal_style))
 
