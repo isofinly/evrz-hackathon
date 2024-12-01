@@ -142,10 +142,12 @@ class MinioStorage:
             logger.error(f"Error in syntax highlighting: {e}")
             return code
 
-    def generate_review_report(self, reviews: list, user_id: int) -> str:
+    def generate_review_report(self, reviews: list, user_id: int, original_filename: str = None) -> str:
         """Generate a PDF review report with all reviews and upload it to MinIO"""
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        report_name = f"review_report_{user_id}_{timestamp}.pdf"
+        # Use original filename if provided, otherwise fallback to default name
+        base_name = original_filename.rsplit('.', 1)[0] if original_filename else f"review_report_{user_id}"
+        report_name = f"{base_name}_review_{timestamp}.pdf"
         pdf_path = f"/tmp/{report_name}"
 
         # Create PDF document with smaller margins

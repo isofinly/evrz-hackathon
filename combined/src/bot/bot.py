@@ -48,24 +48,27 @@ def create_review_message(reviews: list, page: int, total_pages: int) -> str:
     message_parts = [f"📝 Обзоры кода (Страница {page}/{total_pages})\n"]
 
     for review in current_reviews:
-        message_parts.extend(
-            [
-                f"\n📄 {review['file']} (line {review['line_number']})",
-                f"💡 Ревью: {review['review']}",
-                f"\nТекущий код:",
-                f"```\n{review['code']}\n```",
-            ]
-        )
+        # Escape special characters in the review text
+        review_text = review['review'].replace('_', '\\_').replace('*', '\\*').replace('`', '\\`')
+
+        message_parts.extend([
+            f"\n📄 {review['file']} (line {review['line_number']})",
+            f"💡 Ревью: {review_text}",
+            f"\nТекущий код:",
+            f"```\n{review['code'].strip()}\n```",
+        ])
 
         if review.get("suggested_code"):
             message_parts.append(f"Предлагаемый код:")
-            message_parts.append(f"```\n{review['suggested_code']}\n```")
+            message_parts.append(f"```\n{review['suggested_code'].strip()}\n```")
 
         message_parts.append("─" * 40)
 
     message_parts.append(
         "\nИспользуй кнопки ниже для навигации по страницам или скачай полный отчет."
     )
+
+    # Join all parts and ensure proper escaping
     return "\n".join(message_parts)
 
 
@@ -221,11 +224,12 @@ def handle_download(call):
             )
             return
 
-        # Get ALL reviews, not just current page
+        # Get ALL reviews and original filename
         all_reviews = review_results[str(user_id)]["reviews"]
+        original_filename = review_results[str(user_id)].get("original_filename")
 
         # Generate report with all reviews
-        object_name = storage.generate_review_report(all_reviews, user_id)
+        object_name = storage.generate_review_report(all_reviews, user_id, original_filename)
 
         # Get download URL
         download_url = storage.get_presigned_url("reports", object_name)
@@ -379,6 +383,7 @@ def handle_document(message):
                     review_results[chat_id] = {
                         "reviews": reviews,
                         "total_pages": total_pages,
+                        "original_filename": file_name
                     }
 
                     # Send first page with download button
@@ -408,7 +413,7 @@ def handle_document(message):
         logger.error(f"Error processing file: {e}", exc_info=True)
         bot.reply_to(
             message,
-            "❌ Произошла ошибка при обработке файла. Попробуйте снова.",
+            "❌ Произшла ошибка при обработке файла. Попробуйте снова.",
         )
 
 
