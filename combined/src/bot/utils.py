@@ -31,8 +31,16 @@ def extract_archive(file_path: str, extract_dir: str) -> bool:
         elif file_path_lower.endswith(".rar"):
             import rarfile
 
-            with rarfile.RarFile(file_path, "r") as z:
-                z.extractall(extract_dir)
+            try:
+                rarfile.UNRAR_TOOL = "unrar"  # Specify the unrar tool path
+                with rarfile.RarFile(file_path, "r") as z:
+                    z.extractall(extract_dir)
+            except rarfile.BadRarFile as e:
+                logger.error(f"RAR extraction failed. Please ensure 'unrar' is installed: {str(e)}")
+                return False
+            except Exception as e:
+                logger.error(f"RAR extraction failed: {str(e)}")
+                return False
 
         # Verify extraction was successful
         extracted_contents = list(Path(extract_dir).rglob("*"))

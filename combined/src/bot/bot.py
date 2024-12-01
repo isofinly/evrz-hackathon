@@ -48,24 +48,27 @@ def create_review_message(reviews: list, page: int, total_pages: int) -> str:
     message_parts = [f"📝 Обзоры кода (Страница {page}/{total_pages})\n"]
 
     for review in current_reviews:
-        message_parts.extend(
-            [
-                f"\n📄 {review['file']} (line {review['line_number']})",
-                f"💡 Ревью: {review['review']}",
-                f"\nТекущий код:",
-                f"```\n{review['code']}\n```",
-            ]
-        )
+        # Escape special characters in the review text
+        review_text = review['review'].replace('_', '\\_').replace('*', '\\*').replace('`', '\\`')
+
+        message_parts.extend([
+            f"\n📄 {review['file']} (line {review['line_number']})",
+            f"💡 Ревью: {review_text}",
+            f"\nТекущий код:",
+            f"```\n{review['code'].strip()}\n```",
+        ])
 
         if review.get("suggested_code"):
             message_parts.append(f"Предлагаемый код:")
-            message_parts.append(f"```\n{review['suggested_code']}\n```")
+            message_parts.append(f"```\n{review['suggested_code'].strip()}\n```")
 
         message_parts.append("─" * 40)
 
     message_parts.append(
         "\nИспользуй кнопки ниже для навигации по страницам или скачай полный отчет."
     )
+
+    # Join all parts and ensure proper escaping
     return "\n".join(message_parts)
 
 
