@@ -29,10 +29,10 @@ jina = "*"
 chromadb = "*"
 transformers = "4.46.3"
 numpy = "*"
-torch = [
-    { platform = "darwin", version = "^2.1.0", source = "PyPI" },
-    { platform = "linux", version = "^2.1.0+cpu", source = "torch-cpu" },
-]
+# torch = [
+#     { platform = "darwin", version = "^2.1.2", source = "PyPI" },
+#     { platform = "linux", version = "^2.1.2+cpu", source = "torch-cpu" },
+# ]
 optimum = "*"
 onnx = "*"
 
