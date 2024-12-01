@@ -152,18 +152,3 @@ class ProjectReviewer:
                         with self.print_lock:
                             print(f"Review failed for {file}: {str(e)}")
                     pbar.update(1)
-
-
-def review2() -> None:
-    project_reviewer = ProjectReviewer(
-        Path("../react-2/market-main"), Path("../react-2/REVIEW/market-main")
-    )
-    # project_reviewer = ProjectReviewer(
-    #     Path("../python/FlaskApiEcommerce-master"), Path("../python/REVIEW/FlaskApiEcommerce-master")
-    # )
-    # project_reviewer = ProjectReviewer(Path("./TEST_PROJECT"), Path("./TEST_PROJECT/REVIEW"))
-    project_reviewer.review()
-
-
-if __name__ == "__main__":
-    review2()
