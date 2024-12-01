@@ -131,10 +131,7 @@ class MinioStorage:
 
         # Use a formatter that outputs plain text with ANSI color codes
         formatter = HtmlFormatter(
-            style="monokai",
-            noclasses=True,
-            nowrap=True,
-            linenos=False
+            style="monokai", noclasses=True, nowrap=True, linenos=False
         )
 
         try:
@@ -218,13 +215,13 @@ class MinioStorage:
         elements = []
 
         # Add title with total review count
-        elements.append(Paragraph(f"Code Review Report ({len(reviews)} reviews)", title_style))
+        elements.append(Paragraph(f"Код-ревью ({len(reviews)} ревью)", title_style))
         elements.append(Spacer(1, 0.2 * inch))
 
         # Group reviews by file for better organization
         reviews_by_file = {}
         for review in reviews:
-            file_path = review['file']
+            file_path = review["file"]
             if file_path not in reviews_by_file:
                 reviews_by_file[file_path] = []
             reviews_by_file[file_path].append(review)
@@ -232,21 +229,23 @@ class MinioStorage:
         # Process reviews grouped by file
         for file_path, file_reviews in reviews_by_file.items():
             # Add file header
-            elements.append(Paragraph(f"File: {file_path}", heading_style))
+            elements.append(Paragraph(f"Файл: {file_path}", heading_style))
             elements.append(Spacer(1, 0.1 * inch))
 
             # Sort reviews by line number
-            file_reviews.sort(key=lambda x: x['line_number'])
+            file_reviews.sort(key=lambda x: x["line_number"])
 
             for review in file_reviews:
-                elements.append(Paragraph(f"Line {review['line_number']}", normal_style))
+                elements.append(
+                    Paragraph(f"Строка {review['line_number']}", normal_style)
+                )
 
                 # Review comment
-                elements.append(Paragraph("• Review Comment:", heading_style))
+                elements.append(Paragraph("• Комментарий ревью:", heading_style))
                 elements.append(Paragraph(review["review"], normal_style))
 
                 # Current code section
-                elements.append(Paragraph("• Current Code:", heading_style))
+                elements.append(Paragraph("• Текущий код:", heading_style))
                 try:
                     current_code = review["code"].strip()
                     current_code = html.unescape(current_code)
@@ -257,8 +256,8 @@ class MinioStorage:
                     elements.append(Preformatted(review["code"], code_style))
 
                 # Suggested code section (if present)
-                if review.get('suggested_code'):
-                    elements.append(Paragraph("• Suggested Code:", heading_style))
+                if review.get("suggested_code"):
+                    elements.append(Paragraph("• Предлагаемый код:", heading_style))
                     try:
                         suggested_code = review["suggested_code"].strip()
                         suggested_code = html.unescape(suggested_code)
@@ -266,7 +265,9 @@ class MinioStorage:
                         elements.append(Preformatted(suggested_code, code_style))
                     except Exception as e:
                         logger.error(f"Error processing suggested code block: {e}")
-                        elements.append(Preformatted(review["suggested_code"], code_style))
+                        elements.append(
+                            Preformatted(review["suggested_code"], code_style)
+                        )
 
                 # Add separator between reviews
                 elements.append(Spacer(1, 0.2 * inch))

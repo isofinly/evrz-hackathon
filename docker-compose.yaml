@@ -13,6 +13,7 @@ services:
       - MINIO_ENDPOINT=${MINIO_ENDPOINT}
       - MINIO_SECURE=${MINIO_SECURE}
       - BOT_TOKEN=${BOT_TOKEN}
+
   minio:
     container_name: minio
     image: minio/minio

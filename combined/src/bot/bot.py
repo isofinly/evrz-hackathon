@@ -45,26 +45,26 @@ def create_review_message(reviews: list, page: int, total_pages: int) -> str:
     end_idx = start_idx + REVIEWS_PER_PAGE
     current_reviews = reviews[start_idx:end_idx]
 
-    message_parts = [f"📝 Code Reviews (Page {page}/{total_pages})\n"]
+    message_parts = [f"📝 Обзоры кода (Страница {page}/{total_pages})\n"]
 
     for review in current_reviews:
         message_parts.extend(
             [
                 f"\n📄 {review['file']} (line {review['line_number']})",
-                f"💡 Review: {review['review']}",
-                f"\nCurrent code:",
+                f"💡 Ревью: {review['review']}",
+                f"\nТекущий код:",
                 f"```\n{review['code']}\n```",
             ]
         )
 
         if review.get("suggested_code"):
-            message_parts.append(f"Suggested code:")
+            message_parts.append(f"Предлагаемый код:")
             message_parts.append(f"```\n{review['suggested_code']}\n```")
 
         message_parts.append("─" * 40)
 
     message_parts.append(
-        "\nUse the buttons below to navigate pages or download the complete report."
+        "\nИспользуй кнопки ниже для навигации по страницам или скачай полный отчет."
     )
     return "\n".join(message_parts)
 
@@ -109,7 +109,7 @@ def create_pagination_keyboard(
     # Add download button in new row
     keyboard.add(
         InlineKeyboardButton(
-            "📥 Download Full Report", callback_data=f"download_{user_id}_all"
+            "📥 Скачать полный отчет", callback_data=f"download_{user_id}_all"
         )
     )
 
@@ -126,7 +126,7 @@ def handle_pagination(call):
 
         if str(user_id) not in review_results:
             bot.answer_callback_query(
-                call.id, "Review session expired. Please send the archive again."
+                call.id, "Сессия проверки закончена. Отправь архив снова."
             )
             return
 
@@ -150,7 +150,7 @@ def handle_pagination(call):
     except Exception as e:
         logger.error(f"Error handling pagination: {e}", exc_info=True)
         bot.answer_callback_query(
-            call.id, "❌ Failed to change page. Please try again."
+            call.id, "❌ Не удалось перейти на другую страницу. Попробуйте снова."
         )
 
 
@@ -199,11 +199,11 @@ def is_supported_file(file_name: str) -> tuple[bool, str]:
 def send_welcome(message):
     """Handle the /start and /help commands."""
     welcome_text = (
-        "Hello! I can help you find and process review tags in your code.\n\n"
-        "You can send me:\n"
-        "1. Archive files (ZIP, RAR, 7z) containing your project\n"
-        "2. Individual code files (Python, JavaScript, TypeScript, etc.)\n\n"
-        "I'll look for `<REVIEW></REVIEW>` tags and show you what needs to be changed."
+        "Привет! Я помогу найти и проверить твой код на соответствие стандартам.\n\n"
+        "Вы можете отправить мне:\n"
+        "1. Архивные файлы (ZIP, RAR, 7z) с вашим проектом\n"
+        "2. Отдельные файлы с кодом (Python, JavaScript, TypeScript и др.)\n\n"
+        "Я проанализирую базу знаний и покажу, что нужно изменить."
     )
     bot.reply_to(message, welcome_text)
 
@@ -217,7 +217,7 @@ def handle_download(call):
 
         if str(user_id) not in review_results:
             bot.answer_callback_query(
-                call.id, "Review session expired. Please send the archive again."
+                call.id, "Сессия проверки закончена. Отправь архив снова."
             )
             return
 
@@ -233,14 +233,14 @@ def handle_download(call):
         bot.answer_callback_query(call.id)
         bot.send_message(
             call.message.chat.id,
-            f"📥 [Download Complete Review Report]({download_url})",
+            f"📥 [Скачать полный отчет]({download_url})",
             parse_mode="Markdown",
         )
 
     except Exception as e:
         logger.error(f"Error generating review report: {e}", exc_info=True)
         bot.answer_callback_query(
-            call.id, "❌ Failed to generate report. Please try again."
+            call.id, "❌ Не удалось сгенерировать отчет. Попробуйте снова."
         )
 
 
@@ -252,8 +252,8 @@ def handle_document(message):
         file_size = message.document.file_size
 
         # Check file size (Telegram's limit is 50MB)
-        if file_size > 50 * 1024 * 1024:  # 50MB in bytes
-            bot.reply_to(message, "❌ File is too large. Maximum size is 50MB.")
+        if file_size > 20 * 1024 * 1024 - 128:  # 20MB in bytes
+            bot.reply_to(message, "❌ Файл слишком большой. Максимальный размер 20MB.")
             return
 
         is_supported, file_type = is_supported_file(file_name)
@@ -261,12 +261,12 @@ def handle_document(message):
         if not is_supported:
             bot.reply_to(
                 message,
-                "❌ Unsupported file type. Please send a code file or archive (ZIP, RAR, 7z).",
+                "❌ Неподдерживаемый тип файла. Отправь файл с кодом или архив (ZIP, RAR, 7z).",
             )
             return
 
         # Show progress for large files
-        status_message = bot.reply_to(message, "📥 Downloading file...")
+        status_message = bot.reply_to(message, "📥 Скачивание файла...")
 
         try:
             # Download file in chunks for large files
@@ -300,9 +300,9 @@ def handle_document(message):
 
                 # Update status
                 bot.edit_message_text(
-                    "📦 Extracting files..."
+                    "📦 Извлечение файлов..."
                     if file_type == "archive"
-                    else "📄 Processing file...",
+                    else "📄 Обработка файла...",
                     chat_id=status_message.chat.id,
                     message_id=status_message.message_id,
                 )
@@ -314,7 +314,7 @@ def handle_document(message):
                     logger.info(f"Attempting to extract {file_name} to {extract_dir}")
                     if not extract_archive(file_path, extract_dir):
                         bot.edit_message_text(
-                            "❌ Failed to extract the archive. Please ensure it is not corrupted.",
+                            "❌ Не удалось извлечь архив. Пожалуйста, убедитесь, что он не поврежден.",
                             chat_id=status_message.chat.id,
                             message_id=status_message.message_id,
                         )
@@ -324,7 +324,7 @@ def handle_document(message):
                     extracted_items = list(Path(extract_dir).iterdir())
                     if not extracted_items:
                         bot.edit_message_text(
-                            "❌ The archive appears to be empty.",
+                            "❌ Архив оказался пустым.",
                             chat_id=status_message.chat.id,
                             message_id=status_message.message_id,
                         )
@@ -345,7 +345,7 @@ def handle_document(message):
                     except Exception as e:
                         logger.error(f"Project review failed: {str(e)}", exc_info=True)
                         bot.edit_message_text(
-                            "❌ Failed to process the archive contents. Please ensure the archive structure is correct.",
+                            "❌ Не удалось обработать содержимое архива. Пожалуйста, убедитесь, что структура архива корректна.",
                             chat_id=status_message.chat.id,
                             message_id=status_message.message_id,
                         )
@@ -354,8 +354,7 @@ def handle_document(message):
                     # Use FileReviewer for single files
                     result_file = review_dir / file_name
                     file_reviewer = FileReviewer(
-                        file_path=Path(file_path),
-                        result_path=result_file
+                        file_path=Path(file_path), result_path=result_file
                     )
                     file_reviewer.review()
 
@@ -364,7 +363,7 @@ def handle_document(message):
 
                 # Update status
                 bot.edit_message_text(
-                    "✅ Processing complete!",
+                    "✅ Обработка завершена!",
                     chat_id=status_message.chat.id,
                     message_id=status_message.message_id,
                 )
@@ -395,14 +394,12 @@ def handle_document(message):
                         parse_mode="Markdown",
                     )
                 else:
-                    bot.send_message(
-                        message.chat.id, "✅ No `<REVIEW></REVIEW>` tags found."
-                    )
+                    bot.send_message(message.chat.id, "✅ Ничего не найдено.")
 
         except Exception as e:
             logger.error(f"Error downloading/processing file: {e}", exc_info=True)
             bot.edit_message_text(
-                "❌ Failed to process the file. Please try again.",
+                "❌ Не удалось обработать файл. Попробуйте снова.",
                 chat_id=status_message.chat.id,
                 message_id=status_message.message_id,
             )
@@ -411,7 +408,7 @@ def handle_document(message):
         logger.error(f"Error processing file: {e}", exc_info=True)
         bot.reply_to(
             message,
-            "❌ An error occurred while processing your file. Please try again.",
+            "❌ Произошла ошибка при обработке файла. Попробуйте снова.",
         )
 
 
@@ -419,7 +416,7 @@ def handle_document(message):
 def echo_all(message):
     """Handle all other messages."""
     bot.reply_to(
-        message, "Please send me a code file or archive (ZIP, RAR, 7z) to review."
+        message, "Отправь мне файл с кодом или архив (ZIP, RAR, 7z) для проверки."
     )
 
 

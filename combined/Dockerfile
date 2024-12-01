@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.12-slim
 
 WORKDIR /app
 
@@ -14,10 +14,10 @@ RUN pip install poetry
 
 COPY . .
 
-RUN pip install torch==2.1.2 --index-url https://download.pytorch.org/whl/cpu
+RUN pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
 
 RUN poetry config virtualenvs.create false
 
-RUN poetry install
+RUN poetry install --only main --no-interaction --no-ansi
 
 CMD ["poetry", "run", "telegram_review_bot"]
