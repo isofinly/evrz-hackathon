@@ -92,7 +92,7 @@ If running the bot locally (outside Docker), you'll need to handle PyTorch insta
 
 ## Review pipeline
 
-![Review pipeline](evraz_uml.png)
+![Review pipeline](evraz_uml_dark.png)
 
 1. **RAG**: Create a vector database from the knowledge base to align code chunks with relevant review examples.
 2. **Review**:
