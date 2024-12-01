@@ -224,11 +224,12 @@ def handle_download(call):
             )
             return
 
-        # Get ALL reviews, not just current page
+        # Get ALL reviews and original filename
         all_reviews = review_results[str(user_id)]["reviews"]
+        original_filename = review_results[str(user_id)].get("original_filename")
 
         # Generate report with all reviews
-        object_name = storage.generate_review_report(all_reviews, user_id)
+        object_name = storage.generate_review_report(all_reviews, user_id, original_filename)
 
         # Get download URL
         download_url = storage.get_presigned_url("reports", object_name)
@@ -382,6 +383,7 @@ def handle_document(message):
                     review_results[chat_id] = {
                         "reviews": reviews,
                         "total_pages": total_pages,
+                        "original_filename": file_name
                     }
 
                     # Send first page with download button
@@ -411,7 +413,7 @@ def handle_document(message):
         logger.error(f"Error processing file: {e}", exc_info=True)
         bot.reply_to(
             message,
-            "❌ Произошла ошибка при обработке файла. Попробуйте снова.",
+            "❌ Произшла ошибка при обработке файла. Попробуйте снова.",
         )
 
 
