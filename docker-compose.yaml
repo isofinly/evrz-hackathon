@@ -3,14 +3,14 @@ services:
     container_name: telegram-review-bot
     image: telegram-review-bot
     build:
-      context: ./telegram-review-bot
+      context: ./combined
       dockerfile: Dockerfile
     depends_on:
       - minio
     environment:
-      - MINIO_ROOT_USER=${MINIO_ROOT_USER}
-      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD}
-      - MINIO_URL=${MINIO_URL}
+      - MINIO_ACCESS_KEY=${MINIO_ACCESS_KEY}
+      - MINIO_SECRET_KEY=${MINIO_SECRET_KEY}
+      - MINIO_ENDPOINT=${MINIO_ENDPOINT}
       - MINIO_SECURE=${MINIO_SECURE}
       - BOT_TOKEN=${BOT_TOKEN}
   minio:
@@ -22,8 +22,8 @@ services:
     volumes:
       - ./persistence/minio/:/data
     environment:
-      MINIO_ROOT_USER: mnusr
-      MINIO_ROOT_PASSWORD: Strong#Pass#2024
+      MINIO_ACCESS_KEY: mnusr
+      MINIO_SECRET_KEY: Strong#Pass#2024
     command: server --console-address ":9001" /data
     restart: on-failure:3
     healthcheck:

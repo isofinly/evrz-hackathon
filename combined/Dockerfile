@@ -1,4 +1,4 @@
-FROM python:3.13-slim
+FROM python:3.11-slim
 
 WORKDIR /app
 
@@ -10,17 +10,14 @@ RUN apt-get update && apt-get install -y \
     unrar-free \
     && rm -rf /var/lib/apt/lists/*
 
-# Install poetry
 RUN pip install poetry
 
-# Copy the entire telegram-review-bot directory
 COPY . .
 
-# Configure poetry
+RUN pip install torch==2.1.2 --index-url https://download.pytorch.org/whl/cpu
+
 RUN poetry config virtualenvs.create false
 
-# Install dependencies
-RUN poetry install --only main --no-interaction --no-ansi
+RUN poetry install
 
-# Run the bot
 CMD ["poetry", "run", "telegram_review_bot"]
