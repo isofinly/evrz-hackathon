@@ -228,22 +228,21 @@ def parse_review_tags(directory: str) -> list:
                 match = review_pattern.search(line)
                 if match:
                     review_content = match.group(1).strip()
-                    
+
                     # Get preceding 3 lines, excluding REVIEW comments
                     code_lines = []
                     start_idx = max(0, i - 3)
                     for idx in range(start_idx, i):
                         if "<REVIEW>" not in lines[idx]:
-                            # Add line number (1-based indexing) with padding
-                            code_lines.append(f"{idx + 1:4d} │ {lines[idx]}")
+                            code_lines.append(lines[idx])
 
                     # Add following 2 lines, excluding REVIEW comments
                     end_idx = min(i + 3, len(lines))
                     for idx in range(i + 1, end_idx):
                         if "<REVIEW>" not in lines[idx]:
-                            code_lines.append(f"{idx + 1:4d} │ {lines[idx]}")
+                            code_lines.append(lines[idx])
 
-                    code_block = "".join(code_lines)  # Changed to join without additional newlines
+                    code_block = "".join(code_lines)
 
                     # Extract suggested code if present
                     suggested_code = None
