@@ -228,35 +228,22 @@ def parse_review_tags(directory: str) -> list:
                 match = review_pattern.search(line)
                 if match:
                     review_content = match.group(1).strip()
-
-                    # Look ahead for the code block
+                    
+                    # Get preceding 3 lines, excluding REVIEW comments
                     code_lines = []
-                    next_idx = i + 1
-                    brace_count = 0
-                    in_type_def = False
+                    start_idx = max(0, i - 3)
+                    for idx in range(start_idx, i):
+                        if "<REVIEW>" not in lines[idx]:
+                            # Add line number (1-based indexing) with padding
+                            code_lines.append(f"{idx + 1:4d} │ {lines[idx]}")
 
-                    while next_idx < len(lines):
-                        next_line = lines[next_idx].rstrip()
+                    # Add following 2 lines, excluding REVIEW comments
+                    end_idx = min(i + 3, len(lines))
+                    for idx in range(i + 1, end_idx):
+                        if "<REVIEW>" not in lines[idx]:
+                            code_lines.append(f"{idx + 1:4d} │ {lines[idx]}")
 
-                        # Start of type definition
-                        if "type" in next_line or "interface" in next_line:
-                            in_type_def = True
-
-                        if in_type_def:
-                            code_lines.append(next_line)
-                            brace_count += next_line.count("{") - next_line.count("}")
-                            if brace_count == 0 and len(code_lines) > 0:
-                                # End of type definition
-                                break
-                        elif not next_line.startswith(("//<REVIEW>", "// <REVIEW>")):
-                            # Regular code line
-                            if next_line.strip():
-                                code_lines.append(next_line)
-                                break
-
-                        next_idx += 1
-
-                    code_block = "\n".join(code_lines).rstrip() if code_lines else ""
+                    code_block = "".join(code_lines)  # Changed to join without additional newlines
 
                     # Extract suggested code if present
                     suggested_code = None

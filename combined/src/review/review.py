@@ -1,6 +1,7 @@
 import json
 import re
 import threading
+import time
 from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -16,8 +17,8 @@ from src.review.parsers.parser import parse_file
 from src.review.parsers.project_parser import parse_project_structure
 from src.review.rag import Data
 
-from src.review.api import get_response
-# from gemma_api import get_response
+# from src.review.api import get_response
+from src.review.gemma_api import get_response
 
 
 FILE_EXTENSIONS = ["py", "cs", "ts", "tsx", "css", "scss"]
@@ -87,8 +88,8 @@ class FileReviewer:
                 review_json.index("{") : review_json.rindex("}") + 1
             ]
 
-            # print(review_json)
-            # print()
+            print(review_json)
+            print()
 
             try:
                 json_responses.append(json.loads(review_json))
@@ -103,7 +104,7 @@ class FileReviewer:
 
 class ProjectReviewer:
     def __init__(
-        self, project_path: Path, result_path: Path, max_workers: int = 3
+        self, project_path: Path, result_path: Path, max_workers: int = 1
     ) -> None:
         self.project_path = project_path
         self.result_path = result_path
@@ -125,6 +126,8 @@ class ProjectReviewer:
         except Exception as e:
             with self.print_lock:
                 print(f"Error reviewing {file}: {str(e)}")
+        # time.sleep(1)
+            
 
     def review(self) -> None:
         files_to_review = [
@@ -151,12 +154,12 @@ class ProjectReviewer:
 
 
 def review2() -> None:
-    # project_reviewer = ProjectReviewer(
-    #     Path("../react-2/market-main"), Path("../react-2/REVIEW/market-main")
-    # )
     project_reviewer = ProjectReviewer(
-        Path("../react-2/effector-search-bar-main"), Path("../react-2/REVIEW/effector-search-bar-main")
+        Path("../react-2/market-main"), Path("../react-2/REVIEW/market-main")
     )
+    # project_reviewer = ProjectReviewer(
+    #     Path("../python/FlaskApiEcommerce-master"), Path("../python/REVIEW/FlaskApiEcommerce-master")
+    # )
     # project_reviewer = ProjectReviewer(Path("./TEST_PROJECT"), Path("./TEST_PROJECT/REVIEW"))
     project_reviewer.review()
 
