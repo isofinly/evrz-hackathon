@@ -90,13 +90,9 @@ If running the bot locally (outside Docker), you'll need to handle PyTorch insta
    - **Review Preview:** The bot will reply with paginated preview of the review results.
    - **Review Download:** Use the provided button to download the full review report as a PDF file.
 
-## Packages structure
-
-- `src/bot` — Telegram bot code.
-- `src/review` — Code review logic.
-- - `src/review/parsers` - Code chunking logic
-
 ## Review pipeline
+
+![Review pipeline](evraz_uml.png)
 
 1. **RAG**: Create a vector database from the knowledge base to align code chunks with relevant review examples.
 2. **Review**:
@@ -106,6 +102,12 @@ If running the bot locally (outside Docker), you'll need to handle PyTorch insta
    - Use RAG to generate prompts and contextual information for the model.
    - Generate and format the review
 
+
+## Packages structure
+
+- `src/bot` — Telegram bot code.
+- `src/review` — Code review logic.
+- - `src/review/parsers` - Code chunking logic
 
 ## Contributing
 
